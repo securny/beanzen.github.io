@@ -1,0 +1,5 @@
+<section class="features" id="features" aria-labelledby="featuresTitle">
+  <h2 id="featuresTitle">{{ t.features_title }}</h2>
+  {% for feature in t.features %}<div class="feature"><div class="featureIcon" aria-hidden="true">{% include icon.html name=feature.icon %}</div><div class="featureText"><h3>{{ feature.title }}</h3><p>{{ feature.description }}</p></div></div>{% endfor %}
+  <div class="privacySummary"><div><h2>{{ t.local_title }}</h2><p>{{ t.local_description }}</p></div><a href="{{ prefix | append: '/privacy/' | relative_url }}">{{ t.read_privacy }} {% include icon.html name='arrow' %}</a></div>
+</section>

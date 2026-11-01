@@ -1,0 +1,8 @@
+---
+layout: null
+permalink: /sitemap.xml
+---
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+{% assign all_pages = site.documents | concat: site.html_pages %}{% for document in all_pages %}{% if document.key and document.noindex != true %}<url><loc>{{ document.url | absolute_url | xml_escape }}</loc>{% for locale in site.data.languages %}{% assign alternate = all_pages | where: 'key', document.key | where: 'lang', locale.code | first %}{% if alternate %}<xhtml:link rel="alternate" hreflang="{{ locale.code }}" href="{{ alternate.url | absolute_url | xml_escape }}"/>{% endif %}{% endfor %}</url>
+{% endif %}{% endfor %}</urlset>

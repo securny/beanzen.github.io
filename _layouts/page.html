@@ -1,0 +1,19 @@
+{% assign language = page.lang | default: 'en' %}{% assign t = site.data.locales[language] %}{% assign locale = site.data.languages | where: 'code', language | first %}{% assign prefix = locale.prefix | default: '' %}
+<!doctype html>
+<html lang="{{ language }}">
+{% include head.html %}
+<body class="subPageBody">
+  <a class="skipLink" href="#main">{{ t.skip }}</a>
+  <div class="headerBackground subPageHeaderBackground"><div class="container subPageContainer">
+    {% include header.html %}
+    <main class="page markdown-body" id="main" tabindex="-1">
+      <h1>{{ page.title }}</h1>
+      {% if page.intro %}<p class="pageIntro">{{ page.intro }}</p>{% endif %}
+      {% if page.policy %}<p class="updated">{{ t.effective }} <time datetime="{{ site.policy_date }}">{{ site.policy_date }}</time></p>{% endif %}
+      {% if page.sections %}<nav class="contents" aria-label="{{ t.on_this_page }}"><span>{{ t.on_this_page }}</span><ul>{% for item in page.sections %}<li><a href="#{{ item.id }}">{{ item.title }}</a></li>{% endfor %}</ul></nav>{% endif %}
+      {{ content }}
+    </main>
+    {% include footer.html %}
+  </div></div>
+</body>
+</html>

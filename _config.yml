@@ -1,0 +1,70 @@
+# BeanZen · emilbaehr/automatic-app-landing-page (MIT)
+url: "https://beanzen.ru"
+baseurl: ""
+page_title: BeanZen — Your coffee, in perspective
+app_name: BeanZen
+app_icon: assets/appicon.png
+app_description: Connect your coffee scale, follow your brew, and keep the details worth repeating.
+# Add only verified public store URLs. Empty values hide store badges.
+ios_app_id: ""
+ios_app_country: us
+appstore_link: ""
+playstore_link: ""
+enable_smart_app_banner: false
+app_screenshot: assets/screenshot/beanzen-ios.png
+your_name: Dmitry Berezkin
+email_address: hello@beanzen.ru
+policy_date: "2026-11-01"
+device_color: black
+cover_image: ""
+cover_overlay_color: "#35251d"
+cover_overlay_transparency: 1
+topbar_color: "#271b15"
+topbar_transparency: 0.45
+topbar_title_color: "#f6f0e5"
+body_background_color: "#faf8f3"
+link_color: "#6b422d"
+app_title_color: "#ffffff"
+app_price_color: "#e6d8c7"
+app_description_color: "#eee4d7"
+feature_title_color: "#35251d"
+feature_text_color: "#62574e"
+feature_icons_foreground_color: "#6b422d"
+feature_icons_background_color: "#eee5d6"
+social_icons_foreground_color: "#6b422d"
+social_icons_background_color: "#eee5d6"
+footer_text_color: "#62574e"
+lang: en
+timezone: Europe/Moscow
+sass:
+  style: compressed
+collections:
+  pages:
+    output: true
+    permalink: /:path/
+defaults:
+  - scope:
+      path: ""
+    values:
+      lang: en
+markdown: kramdown
+kramdown:
+  input: Kramdown
+strict_front_matter: true
+liquid:
+  error_mode: strict
+exclude:
+  - LICENSE
+  - README.md
+  - PRODUCT.md
+  - DESIGN.md
+  - Gemfile
+  - Gemfile.lock
+  - vendor
+  - docs
+  - scripts
+  - .bundle
+  - .github
+  - .impeccable
+  - .ruby-version
+  - node_modules

@@ -1,0 +1,10 @@
+<footer>
+  <p class="footerText">{{ t.made_by }} {{ site.your_name }}<br><a href="mailto:{{ site.email_address }}">{{ site.email_address }}</a></p>
+  <nav class="footerLinks" aria-label="{{ t.legal_navigation }}">
+    <a href="{{ prefix | append: '/support/' | relative_url }}">{{ t.support }}</a>
+    <a href="{{ prefix | append: '/privacy/' | relative_url }}">{{ t.privacy }}</a>
+    <a href="{{ prefix | append: '/delete-data/' | relative_url }}">{{ t.delete_data }}</a>
+    <a href="{{ prefix | append: '/terms/' | relative_url }}">{{ t.terms }}</a>
+  </nav>
+  <small class="footerCopyright">© {{ 'now' | date: '%Y' }} {{ site.your_name }} · {{ t.footer_note }}</small>
+</footer>

@@ -1,0 +1,356 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-11-01T09:27:48.365259+00:00",
+  "title": "Design System: BeanZen",
+  "extensions": {
+    "typographyMeta": {
+      "app-name": {
+        "displayName": "App name",
+        "purpose": "BeanZen identity in the hero."
+      },
+      "hero-description": {
+        "displayName": "Hero description",
+        "purpose": "Main product proposition."
+      },
+      "reading-body": {
+        "displayName": "Reading body",
+        "purpose": "Support and legal content."
+      }
+    },
+    "shadows": [],
+    "motion": [
+      {
+        "name": "action-background",
+        "value": "background-color .2s",
+        "purpose": "Primary support link hover; disabled for reduced motion."
+      },
+      {
+        "name": "scroll",
+        "value": "smooth",
+        "purpose": "Anchor scrolling; automatic for reduced motion."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "tablet",
+        "value": "992px"
+      },
+      {
+        "name": "mobile",
+        "value": "700px"
+      }
+    ],
+    "colorMeta": {
+      "espresso": {
+        "role": "primary",
+        "displayName": "Espresso",
+        "tonalRamp": [
+          "oklch(15% 0.0283 47.69)",
+          "oklch(26% 0.0283 47.69)",
+          "oklch(38% 0.0283 47.69)",
+          "oklch(49% 0.0283 47.69)",
+          "oklch(61% 0.0283 47.69)",
+          "oklch(72% 0.0283 47.69)",
+          "oklch(84% 0.0283 47.69)",
+          "oklch(95% 0.0283 47.69)"
+        ]
+      },
+      "deep-espresso": {
+        "role": "neutral",
+        "displayName": "Deep espresso",
+        "tonalRamp": [
+          "oklch(15% 0.0222 47.76)",
+          "oklch(26% 0.0222 47.76)",
+          "oklch(38% 0.0222 47.76)",
+          "oklch(49% 0.0222 47.76)",
+          "oklch(61% 0.0222 47.76)",
+          "oklch(72% 0.0222 47.76)",
+          "oklch(84% 0.0222 47.76)",
+          "oklch(95% 0.0222 47.76)"
+        ]
+      },
+      "cream": {
+        "role": "neutral",
+        "displayName": "Cream",
+        "tonalRamp": [
+          "oklch(15% 0.0070 88.64)",
+          "oklch(26% 0.0070 88.64)",
+          "oklch(38% 0.0070 88.64)",
+          "oklch(49% 0.0070 88.64)",
+          "oklch(61% 0.0070 88.64)",
+          "oklch(72% 0.0070 88.64)",
+          "oklch(84% 0.0070 88.64)",
+          "oklch(95% 0.0070 88.64)"
+        ]
+      },
+      "coffee-accent": {
+        "role": "primary",
+        "displayName": "Coffee accent",
+        "tonalRamp": [
+          "oklch(15% 0.0658 47.51)",
+          "oklch(26% 0.0658 47.51)",
+          "oklch(38% 0.0658 47.51)",
+          "oklch(49% 0.0658 47.51)",
+          "oklch(61% 0.0658 47.51)",
+          "oklch(72% 0.0658 47.51)",
+          "oklch(84% 0.0658 47.51)",
+          "oklch(95% 0.0658 47.51)"
+        ]
+      },
+      "muted-text": {
+        "role": "neutral",
+        "displayName": "Muted text",
+        "tonalRamp": [
+          "oklch(15% 0.0203 61.59)",
+          "oklch(26% 0.0203 61.59)",
+          "oklch(38% 0.0203 61.59)",
+          "oklch(49% 0.0203 61.59)",
+          "oklch(61% 0.0203 61.59)",
+          "oklch(72% 0.0203 61.59)",
+          "oklch(84% 0.0203 61.59)",
+          "oklch(95% 0.0203 61.59)"
+        ]
+      },
+      "white": {
+        "role": "neutral",
+        "displayName": "White",
+        "tonalRamp": [
+          "oklch(15% 0.0000 0.00)",
+          "oklch(26% 0.0000 0.00)",
+          "oklch(38% 0.0000 0.00)",
+          "oklch(49% 0.0000 0.00)",
+          "oklch(61% 0.0000 0.00)",
+          "oklch(72% 0.0000 0.00)",
+          "oklch(84% 0.0000 0.00)",
+          "oklch(95% 0.0000 0.00)"
+        ]
+      },
+      "header-title": {
+        "role": "neutral",
+        "displayName": "Header title",
+        "tonalRamp": [
+          "oklch(15% 0.0160 82.79)",
+          "oklch(26% 0.0160 82.79)",
+          "oklch(38% 0.0160 82.79)",
+          "oklch(49% 0.0160 82.79)",
+          "oklch(61% 0.0160 82.79)",
+          "oklch(72% 0.0160 82.79)",
+          "oklch(84% 0.0160 82.79)",
+          "oklch(95% 0.0160 82.79)"
+        ]
+      },
+      "hero-description": {
+        "role": "neutral",
+        "displayName": "Hero description",
+        "tonalRamp": [
+          "oklch(15% 0.0205 74.65)",
+          "oklch(26% 0.0205 74.65)",
+          "oklch(38% 0.0205 74.65)",
+          "oklch(49% 0.0205 74.65)",
+          "oklch(61% 0.0205 74.65)",
+          "oklch(72% 0.0205 74.65)",
+          "oklch(84% 0.0205 74.65)",
+          "oklch(95% 0.0205 74.65)"
+        ]
+      },
+      "hero-detail": {
+        "role": "neutral",
+        "displayName": "Hero detail",
+        "tonalRamp": [
+          "oklch(15% 0.0276 72.79)",
+          "oklch(26% 0.0276 72.79)",
+          "oklch(38% 0.0276 72.79)",
+          "oklch(49% 0.0276 72.79)",
+          "oklch(61% 0.0276 72.79)",
+          "oklch(72% 0.0276 72.79)",
+          "oklch(84% 0.0276 72.79)",
+          "oklch(95% 0.0276 72.79)"
+        ]
+      },
+      "hero-muted": {
+        "role": "neutral",
+        "displayName": "Hero muted",
+        "tonalRamp": [
+          "oklch(15% 0.0349 71.60)",
+          "oklch(26% 0.0349 71.60)",
+          "oklch(38% 0.0349 71.60)",
+          "oklch(49% 0.0349 71.60)",
+          "oklch(61% 0.0349 71.60)",
+          "oklch(72% 0.0349 71.60)",
+          "oklch(84% 0.0349 71.60)",
+          "oklch(95% 0.0349 71.60)"
+        ]
+      },
+      "icon-surface": {
+        "role": "neutral",
+        "displayName": "Icon surface",
+        "tonalRamp": [
+          "oklch(15% 0.0223 80.68)",
+          "oklch(26% 0.0223 80.68)",
+          "oklch(38% 0.0223 80.68)",
+          "oklch(49% 0.0223 80.68)",
+          "oklch(61% 0.0223 80.68)",
+          "oklch(72% 0.0223 80.68)",
+          "oklch(84% 0.0223 80.68)",
+          "oklch(95% 0.0223 80.68)"
+        ]
+      },
+      "reading-block": {
+        "role": "neutral",
+        "displayName": "Reading block",
+        "tonalRamp": [
+          "oklch(15% 0.0173 84.59)",
+          "oklch(26% 0.0173 84.59)",
+          "oklch(38% 0.0173 84.59)",
+          "oklch(49% 0.0173 84.59)",
+          "oklch(61% 0.0173 84.59)",
+          "oklch(72% 0.0173 84.59)",
+          "oklch(84% 0.0173 84.59)",
+          "oklch(95% 0.0173 84.59)"
+        ]
+      },
+      "divider": {
+        "role": "neutral",
+        "displayName": "Divider",
+        "tonalRamp": [
+          "oklch(15% 0.0273 74.72)",
+          "oklch(26% 0.0273 74.72)",
+          "oklch(38% 0.0273 74.72)",
+          "oklch(49% 0.0273 74.72)",
+          "oklch(61% 0.0273 74.72)",
+          "oklch(72% 0.0273 74.72)",
+          "oklch(84% 0.0273 74.72)",
+          "oklch(95% 0.0273 74.72)"
+        ]
+      },
+      "button": {
+        "role": "neutral",
+        "displayName": "Button",
+        "tonalRamp": [
+          "oklch(15% 0.0308 81.75)",
+          "oklch(26% 0.0308 81.75)",
+          "oklch(38% 0.0308 81.75)",
+          "oklch(49% 0.0308 81.75)",
+          "oklch(61% 0.0308 81.75)",
+          "oklch(72% 0.0308 81.75)",
+          "oklch(84% 0.0308 81.75)",
+          "oklch(95% 0.0308 81.75)"
+        ]
+      },
+      "button-hover": {
+        "role": "neutral",
+        "displayName": "Button hover",
+        "tonalRamp": [
+          "oklch(15% 0.0260 82.39)",
+          "oklch(26% 0.0260 82.39)",
+          "oklch(38% 0.0260 82.39)",
+          "oklch(49% 0.0260 82.39)",
+          "oklch(61% 0.0260 82.39)",
+          "oklch(72% 0.0260 82.39)",
+          "oklch(84% 0.0260 82.39)",
+          "oklch(95% 0.0260 82.39)"
+        ]
+      },
+      "focus": {
+        "role": "neutral",
+        "displayName": "Focus",
+        "tonalRamp": [
+          "oklch(15% 0.0753 74.57)",
+          "oklch(26% 0.0753 74.57)",
+          "oklch(38% 0.0753 74.57)",
+          "oklch(49% 0.0753 74.57)",
+          "oklch(61% 0.0753 74.57)",
+          "oklch(72% 0.0753 74.57)",
+          "oklch(84% 0.0753 74.57)",
+          "oklch(95% 0.0753 74.57)"
+        ]
+      },
+      "selection": {
+        "role": "neutral",
+        "displayName": "Selection",
+        "tonalRamp": [
+          "oklch(15% 0.0464 74.68)",
+          "oklch(26% 0.0464 74.68)",
+          "oklch(38% 0.0464 74.68)",
+          "oklch(49% 0.0464 74.68)",
+          "oklch(61% 0.0464 74.68)",
+          "oklch(72% 0.0464 74.68)",
+          "oklch(84% 0.0464 74.68)",
+          "oklch(95% 0.0464 74.68)"
+        ]
+      }
+    }
+  },
+  "components": [
+    {
+      "name": "Primary support action",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "The filled support link in the espresso hero.",
+      "html": "<div class=\"ds-hero\"><a class=\"ds-primary\" href=\"https://beanzen.ru/support/\">Get support <svg viewBox=\"0 0 24 24\" width=\"24\" height=\"24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M4 12h15m-6-6 6 6-6 6\"/></svg></a></div>",
+      "css": "@font-face{font-family:Manrope;src:url(https://beanzen.ru/assets/fonts/manrope-variable.ttf) format(\"truetype\");font-weight:200 800;font-style:normal;font-display:swap;}a:focus-visible{outline:3px solid #947345;outline-offset:5px;}a{ text-underline-offset:5px;} .ds-hero{background:#35251d;padding:24px;}.ds-primary{display:inline-flex;align-items:center;gap:16px;min-height:50px;padding:12px 20px;background:#f1e5d0;color:#35251d;font:700 16px/1.65 Manrope,-apple-system,BlinkMacSystemFont,\"Segoe UI\",sans-serif;border-radius:8px;text-decoration:none;transition:background-color .2s;}.ds-primary:hover{background:#fff5e3;text-decoration:none;}@media(max-width:700px){.ds-primary{font-size:14.5px;}}@media(prefers-reduced-motion:reduce){.ds-primary{transition:none;}}"
+    },
+    {
+      "name": "Secondary exploration action",
+      "kind": "button",
+      "refersTo": "button-secondary",
+      "description": "Underlined link beside the primary action.",
+      "html": "<div class=\"ds-hero\"><a class=\"ds-secondary\" href=\"https://beanzen.ru/#features\">Explore BeanZen</a></div>",
+      "css": "@font-face{font-family:Manrope;src:url(https://beanzen.ru/assets/fonts/manrope-variable.ttf) format(\"truetype\");font-weight:200 800;font-style:normal;font-display:swap;}a:focus-visible{outline:3px solid #947345;outline-offset:5px;}a{ text-underline-offset:5px;} .ds-hero{background:#35251d;padding:24px;}.ds-secondary{display:inline-block;color:#f4e8d8;font:400 16px/1.65 Manrope,-apple-system,BlinkMacSystemFont,\"Segoe UI\",sans-serif;padding:12px 0;text-decoration:underline;}.ds-secondary:hover{text-decoration:underline;}@media(max-width:700px){.ds-secondary{font-size:14.5px;}}"
+    },
+    {
+      "name": "App and language navigation",
+      "kind": "nav",
+      "description": "Light hero navigation with a distinct active language.",
+      "html": "<div class=\"ds-nav-surface\"><nav class=\"ds-nav\" aria-label=\"Main navigation\"><a href=\"https://beanzen.ru/\" aria-current=\"page\">The app</a><a href=\"https://beanzen.ru/support/\">Support</a><a href=\"https://beanzen.ru/privacy/\">Privacy</a></nav><nav class=\"ds-language\" aria-label=\"Language\"><a href=\"https://beanzen.ru/\" lang=\"en\" aria-current=\"true\">EN</a><a href=\"https://beanzen.ru/ru/\" lang=\"ru\">RU</a></nav></div>",
+      "css": "@font-face{font-family:Manrope;src:url(https://beanzen.ru/assets/fonts/manrope-variable.ttf) format(\"truetype\");font-weight:200 800;font-style:normal;font-display:swap;}a:focus-visible{outline:3px solid #947345;outline-offset:5px;}a{ text-underline-offset:5px;} .ds-nav-surface{display:flex;align-items:center;gap:32px;background:#35251d;padding:24px;font-family:Manrope,-apple-system,BlinkMacSystemFont,\"Segoe UI\",sans-serif;line-height:1.65;}.ds-nav{display:flex;align-items:center;flex-wrap:wrap;gap:28px;}.ds-nav a{color:#eee4d7;font-size:15.5px;text-decoration:none;}.ds-nav a:hover,.ds-nav a[aria-current]{color:#fff;text-decoration:underline;}.ds-language{display:flex;gap:12px;flex-shrink:0;font-size:15px;}.ds-language a{color:#ddcbb6;padding:8px 0;text-decoration:none;}.ds-language a:hover{text-decoration:underline;}.ds-language a[aria-current]{color:#fff;font-weight:800;text-decoration:underline;}@media(max-width:700px){.ds-nav-surface{flex-wrap:wrap;gap:16px;}.ds-nav{order:3;width:100%;gap:12px 24px;}.ds-nav a{font-size:14px;}.ds-language{margin-left:auto;font-size:13.5px;}}"
+    },
+    {
+      "name": "Feature row",
+      "kind": "custom",
+      "refersTo": "feature-icon",
+      "description": "Flat feature presentation with an inline icon and readable copy.",
+      "html": "<div class=\"ds-feature\"><div class=\"ds-icon\" aria-hidden=\"true\"><svg viewBox=\"0 0 24 24\" width=\"24\" height=\"24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M4 4v16h16M7 15l4-5 4 2 5-7\"/></svg></div><div class=\"ds-feature-text\"><h3>Follow every pour</h3><p>See weight and flow rate over time, keep an eye on the timer, and follow your brew ratio as you make coffee.</p></div></div>",
+      "css": "@font-face{font-family:Manrope;src:url(https://beanzen.ru/assets/fonts/manrope-variable.ttf) format(\"truetype\");font-weight:200 800;font-style:normal;font-display:swap;}.ds-feature{display:flex;align-items:flex-start;background:#faf8f3;font-family:Manrope,-apple-system,BlinkMacSystemFont,\"Segoe UI\",sans-serif;padding:0 20px 0 0;}.ds-icon{display:flex;flex:0 0 48px;color:#6b422d;background:#eee5d6;border-radius:12px;padding:12px;box-sizing:border-box;}.ds-feature-text{margin-left:16px;}.ds-feature-text h3{color:#35251d;font-size:17.5px;line-height:1.4;font-weight:800;margin:0;}.ds-feature-text p{color:#62574e;font-size:15px;line-height:1.75;margin:8px 0 0;}"
+    },
+    {
+      "name": "Page contents",
+      "kind": "nav",
+      "refersTo": "contents",
+      "description": "Wrapping section links on support and legal reading pages.",
+      "html": "<nav class=\"ds-contents\" aria-label=\"On this page\"><span>On this page</span><ul><li><a href=\"https://beanzen.ru/privacy/#local-data\">Data on your device</a></li><li><a href=\"https://beanzen.ru/privacy/#integrations\">Optional integrations</a></li></ul></nav>",
+      "css": "@font-face{font-family:Manrope;src:url(https://beanzen.ru/assets/fonts/manrope-variable.ttf) format(\"truetype\");font-weight:200 800;font-style:normal;font-display:swap;}a:focus-visible{outline:3px solid #947345;outline-offset:5px;}a{ text-underline-offset:5px;} .ds-contents{padding:22px 26px;background:#eee8dc;border-radius:12px;margin:30px 0 40px;color:#35251d;font:400 14.5px/1.85 Manrope,-apple-system,BlinkMacSystemFont,\"Segoe UI\",sans-serif;}.ds-contents>span{font-weight:800;}.ds-contents ul{list-style:none;display:flex;gap:8px 22px;flex-wrap:wrap;padding:0;margin:12px 0 0;}.ds-contents li{padding:0;margin:0;}.ds-contents a{color:#6b422d;font-size:14.5px;text-decoration:underline;}.ds-contents a:hover{text-decoration:underline;}"
+    },
+    {
+      "name": "Contact block",
+      "kind": "custom",
+      "refersTo": "contact-block",
+      "description": "Quiet tonal block for the public developer contact.",
+      "html": "<div class=\"ds-contact\"><p><strong>Dmitry Berezkin</strong><br><a href=\"mailto:hello@beanzen.ru?subject=BeanZen%20support\">hello@beanzen.ru</a></p><p>Use this address for app issues, feedback, feature requests and privacy questions. English and Russian are welcome.</p></div>",
+      "css": "@font-face{font-family:Manrope;src:url(https://beanzen.ru/assets/fonts/manrope-variable.ttf) format(\"truetype\");font-weight:200 800;font-style:normal;font-display:swap;}a:focus-visible{outline:3px solid #947345;outline-offset:5px;}a{ text-underline-offset:5px;} .ds-contact{padding:24px 28px;background:#eee8dc;border-radius:12px;margin:26px 0 36px;color:#35251d;font:400 16.5px/1.85 Manrope,-apple-system,BlinkMacSystemFont,\"Segoe UI\",sans-serif;}.ds-contact p{margin:0 0 18px;}.ds-contact p:last-child{margin-bottom:0;}.ds-contact strong{font-weight:600;}.ds-contact a{color:#6b422d;text-decoration:underline;}.ds-contact a:hover{text-decoration:underline;}@media(max-width:700px){.ds-contact{padding:20px;font-size:16px;}}"
+    }
+  ],
+  "narrative": {
+    "northStar": "Automatic App Landing Page",
+    "overview": "BeanZen follows emilbaehr/automatic-app-landing-page: a phone preview beside app information, followed by a feature list and direct support/legal navigation. Warm espresso and cream colors extend the original BeanZen app icon. Locally hosted Manrope supports both English and Russian.\n\nUse generous spacing and restrained decoration. Support and legal pages are flat reading surfaces with clear headings, underlined links and compact contents/contact blocks.",
+    "keyCharacteristics": [
+      "Template-led phone preview and app information hero.",
+      "Warm espresso/cream palette and local Manrope.",
+      "Flat, readable support and legal pages.",
+      "Equivalent English/Russian navigation and visible keyboard focus."
+    ],
+    "rules": [],
+    "dos": [
+      "Do preserve the selected template structure and the original app identity.",
+      "Do use the existing Sass cascade and configuration before introducing new styling.",
+      "Do keep English and Russian layouts equivalent and let navigation wrap.",
+      "Do preserve visible focus, the skip link and reduced-motion behavior.",
+      "Do keep store badges conditional on verified configured URLs."
+    ],
+    "donts": [
+      "Don't restore the superseded custom chart concept or treat earlier comps as authority.",
+      "Don't turn the feature list into elevated cards or add decorative reading-page surfaces.",
+      "Don't add invented controls, token scales, store links or external font services."
+    ]
+  }
+}

@@ -1,0 +1,14 @@
+[
+  {
+    "code": "en",
+    "name": "English",
+    "short": "EN",
+    "prefix": ""
+  },
+  {
+    "code": "ru",
+    "name": "Русский",
+    "short": "RU",
+    "prefix": "/ru"
+  }
+]
