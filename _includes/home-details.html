@@ -1,0 +1,10 @@
+<div class="homeDetails">
+  <section class="homeSection" aria-labelledby="compatibilityTitle"><h2 id="compatibilityTitle">{{ t.compatibility_title }}</h2><p>{{ t.compatibility_intro }}</p>
+    <p class="modelNames">Acaia Pearl · BOOKOO Themis · DiFluid Microbalance · TIMEMORE · HOTO · Decent</p>
+    <a href="{{ prefix | append: '/scales/' | relative_url }}">{{ t.compatibility_link }} {% include icon.html name='arrow' %}</a>
+  </section>
+  <section class="homeSection" aria-labelledby="guideTitle"><h2 id="guideTitle">{{ t.guide_title }}</h2><p>{{ t.guide_intro }}</p><a href="{{ prefix | append: '/guide/' | relative_url }}">{{ t.guide_link }} {% include icon.html name='arrow' %}</a></section>
+  <section class="homeSection screenSection" aria-labelledby="screensTitle"><h2 id="screensTitle">{{ t.screens_title }}</h2><p>{{ t.screens_intro }} {{ t.screenshot_language }}</p>
+    <div class="screenGallery">{% for screen in site.data.screens %}{% if screen.home %}{% include app-screen.html id=screen.id %}{% endif %}{% endfor %}</div>
+  </section>
+</div>

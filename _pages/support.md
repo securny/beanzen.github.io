@@ -20,6 +20,8 @@ sections:
   - id: privacy
     title: "Privacy and deletion"
 ---
+{% assign locale = site.data.languages | where: 'code', page.lang | first %}{% assign prefix = locale.prefix | default: '' %}
+
 ## Contact the developer {#contact}
 
 <div class="contactBlock">
@@ -54,7 +56,7 @@ Supported measurements depend on your machine and firmware. The integration uses
 
 ## History, photos and files {#history}
 
-Brew records are stored locally. Before removing the app or clearing its storage, export anything you want to keep. An exported brewing profile may not include every local item, photo or setting; check the exported files before relying on them.
+Brew records are stored locally. You can save or share an image of a brew, but this is not a full backup of your journal, photos and settings. The current interface has no complete file or profile export command. Before deleting the app or clearing storage, verify any device backup you intend to rely on; recovery is not guaranteed.
 
 When importing from Beanconqueror, select the export file and any associated photo files requested by the import flow. If an import fails, tell support the format and error message without sending private journal content unless needed and you choose to share it.
 
@@ -63,3 +65,6 @@ When importing from Beanconqueror, select the export file and any associated pho
 Beanzen has no Beanzen account or developer-hosted coffee journal. To remove records, saved tokens, exported files or device backups, follow **[Delete Beanzen data]({{ prefix | append: '/delete-data/' | relative_url }})**.
 
 For a request concerning an email you sent to support, write to [{{ site.email_address }}](mailto:{{ site.email_address }}?subject=Beanzen%20privacy%20request).
+
+
+See the [brewing guide]({{ '/guide/' | relative_url }}), [all features]({{ '/features/' | relative_url }}) and the [scale catalog]({{ '/scales/' | relative_url }}).

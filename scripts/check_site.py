@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """Check the generated store-facing resources and internal navigation."""
 import argparse
+import hashlib
 import json
 import re
 import sys
@@ -71,7 +72,7 @@ def main():
             check("alt" in image, f"{relative}: missing image alternative")
         check("mailto:hello@beanzen.ru" in text, f"{relative}: no public contact")
 
-    required = ("", "support/", "privacy/", "delete-data/", "terms/")
+    required = ("", "features/", "scales/", "guide/", "support/", "privacy/", "delete-data/", "terms/")
     for locale in locales:
         lang = locale["code"]
         prefix = locale["prefix"].strip("/")
@@ -96,6 +97,18 @@ def main():
             if route == "delete-data/":
                 check("RESET" in text and "Android" in text and "iOS" in text,
                       f"{relative}: missing local deletion instructions")
+            if route == "":
+                check('href="https://github.com/securny/beanzen/releases"' in text,
+                      f"{relative}: missing Android APK download")
+                check('class="playStoreLink"' not in text and 'class="appStoreLink"' not in text,
+                      f"{relative}: unverified store badge")
+            if route == "features/":
+                for feature in json.loads((source / "_data/features.json").read_text())["items"]:
+                    check(feature["id"] in document.ids, f"{relative}: feature missing: {feature['id']}")
+            if route == "scales/":
+                for scale in json.loads((source / "_data/scales.json").read_text())["rows"]:
+                    check(scale["id"] in document.ids, f"{relative}: scale missing: {scale['id']}")
+            check('BeanZen' not in text, f"{relative}: incorrect public product spelling")
 
     for relative, document in documents.items():
         page_url = "/" + relative.removesuffix("index.html")
@@ -135,7 +148,15 @@ def main():
         check(not (root / private).exists(), f"Internal source published: {private}")
     tree = ET.parse(root / "sitemap.xml")
     locations = tree.findall("{*}url/{*}loc")
-    check(len(locations) == 5 * len(locales), "Sitemap should contain all localized public pages")
+    check(len(locations) == len(required) * len(locales), "Sitemap should contain all localized public pages")
+    provenance = json.loads((source / "docs/screenshot-provenance.json").read_text())
+    for screenshot in provenance["selected_screenshots"]:
+        path = root / "assets/screenshot" / screenshot["filename"]
+        check(path.exists(), f"Missing native screenshot: {path.name}")
+        if path.exists():
+            check(hashlib.sha256(path.read_bytes()).hexdigest() == screenshot["sha256"],
+                  f"Native screenshot differs from source capture: {path.name}")
+    check(not (root / "assets/screenshot/beanzen-ios.png").exists(), "Superseded screenshot is still published")
     dictionaries = source / "_data/locales"
     english = json.loads((dictionaries / "en.json").read_text())
     for locale in locales:

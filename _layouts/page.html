@@ -6,7 +6,7 @@
   <a class="skipLink" href="#main">{{ t.skip }}</a>
   <div class="headerBackground subPageHeaderBackground"><div class="container subPageContainer">
     {% include header.html %}
-    <main class="page markdown-body" id="main" tabindex="-1">
+    <main class="page markdown-body{% if page.wide %} widePage{% endif %}" id="main" tabindex="-1">
       <h1>{{ page.title }}</h1>
       {% if page.intro %}<p class="pageIntro">{{ page.intro }}</p>{% endif %}
       {% if page.policy %}<p class="updated">{{ t.effective }} <time datetime="{{ site.policy_date }}">{{ site.policy_date }}</time></p>{% endif %}

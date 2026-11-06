@@ -23,6 +23,8 @@ sections:
   - id: rights
     title: "Your choices"
 ---
+{% assign locale = site.data.languages | where: 'code', page.lang | first %}{% assign prefix = locale.prefix | default: '' %}
+
 ## Who is responsible {#about}
 
 Beanzen is developed by **{{ site.your_name }}**. This policy covers the Beanzen mobile application for iOS and Android and the website at **beanzen.ru**.
@@ -41,7 +43,7 @@ Beanzen processes and stores the information you choose to record, including:
 - Bluetooth device names and identifiers, local machine addresses, connection preferences and supported equipment measurements.
 - The application version and platform saved with a brew record.
 
-This information is used to display live measurements, save and organize your coffee journal, connect your equipment, and create files or images that you choose to export or share. It is not automatically uploaded to the developer.
+This information is used to display live measurements, save and organize your coffee journal, connect your equipment, and create brew images that you choose to save or share. It is not automatically uploaded to the developer.
 
 ## Connections and sharing {#integrations}
 
@@ -61,9 +63,9 @@ The scale token is saved locally using the platform's protected credential stora
 
 This sign-in is optional and is not required for scales that do not need Xiaomi authentication.
 
-### Import, export and sharing
+### Import and sharing
 
-Beanzen reads only the import files or photos that you select. Exported files and images are sent to the destination you choose through the system file picker or share sheet. The receiving app or service applies its own privacy practices. Exported content can include your notes, photos, equipment information and brew records; review it before sharing.
+Beanzen reads only the import files or photos that you select. Brew images are sent to the destination you choose through the system share sheet. The receiving app or service applies its own privacy practices. Shared content can include your notes, equipment information and brew details; review it before sharing. The current interface has no complete journal or profile file export command.
 
 ### Device backups and diagnostic information
 
@@ -74,7 +76,7 @@ Your operating system or backup service may include application data in backups,
 - **Bluetooth / Nearby devices:** find and connect to a compatible coffee scale.
 - **Local network:** connect to a machine you configure, such as GaggiMate.
 - **Camera:** take a photo for a coffee or equipment record when you choose.
-- **Photos and files:** select images or import files; save or share an image or export when requested.
+- **Photos and files:** select images or import files; save or share a brew image when requested.
 
 You can decline or revoke permissions in your device settings. The corresponding feature may then be unavailable. Beanzen does not use these permissions for advertising or location tracking.
 

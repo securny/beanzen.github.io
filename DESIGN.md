@@ -1,37 +1,41 @@
 ---
 name: Beanzen
-description: Warm, template-led website for the Beanzen coffee journal.
+description: Fully light, template-led website for the Beanzen coffee journal.
 colors:
-  espresso: "#35251d"
-  deep-espresso: "#271b15"
-  cream: "#faf8f3"
-  coffee-accent: "#6b422d"
-  muted-text: "#62574e"
+  link-blue: "#005fcc"
+  action-blue: "#0066cc"
+  action-hover: "#0052a3"
   white: "#ffffff"
-  header-title: "#f6f0e5"
-  hero-description: "#eee4d7"
-  hero-detail: "#e6d8c7"
-  hero-muted: "#ddcbb6"
-  icon-surface: "#eee5d6"
-  reading-block: "#eee8dc"
-  divider: "#d9ccbb"
-  button: "#f1e5d0"
-  button-hover: "#fff5e3"
-  focus: "#947345"
-  selection: "#d9c3a6"
+  native-gray: "#f2f2f7"
+  text: "#1c1c1e"
+  markdown-heading: "rgba(0, 0, 0, 1)"
+  muted-text: "#58585e"
+  navigation-text: "#48484a"
+  divider: "#d1d1d6"
+  focus: "#007aff"
+  selection: "#cce5ff"
+  scrollbar: "#8e8e93"
+  screenshot-border: "rgba(128, 128, 128, .25)"
+  section-border: "rgba(128, 128, 128, .3)"
+  header-border: "rgba(72, 72, 74, .2)"
 typography:
   app-name:
-    fontFamily: 'Manrope, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif'
+    fontFamily: "Manrope, -apple-system, BlinkMacSystemFont, \"Segoe UI\", sans-serif"
     fontSize: "clamp(3.8rem, 4vw, 5.4rem)"
     fontWeight: 700
     lineHeight: 1.15
     letterSpacing: "-.035em"
   hero-description:
-    fontFamily: 'Manrope, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif'
+    fontFamily: "Manrope, -apple-system, BlinkMacSystemFont, \"Segoe UI\", sans-serif"
     fontSize: "clamp(3rem, 3.3vw, 4.2rem)"
     fontWeight: 600
     lineHeight: 1.22
     letterSpacing: "-.025em"
+  section-title:
+    fontSize: "clamp(2.8rem, 3vw, 3.6rem)"
+    fontWeight: 700
+    lineHeight: 1.3
+    letterSpacing: "-.03em"
   feature-title:
     fontSize: "1.75rem"
     fontWeight: 800
@@ -40,7 +44,7 @@ typography:
     fontSize: "1.5rem"
     lineHeight: 1.75
   reading-body:
-    fontFamily: 'Manrope, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif'
+    fontFamily: "Manrope, -apple-system, BlinkMacSystemFont, \"Segoe UI\", sans-serif"
     fontSize: "1.65rem"
     lineHeight: 1.85
   reading-title:
@@ -48,45 +52,64 @@ typography:
     fontWeight: 600
     lineHeight: 1.2
     letterSpacing: "-.035em"
+  feature-detail-title:
+    fontSize: "2.1rem"
+    fontWeight: 600
+    lineHeight: 1.25
   button:
     fontSize: "1.6rem"
     fontWeight: 700
+  capability:
+    fontSize: "1.4rem"
+  screen-caption:
+    fontSize: "1.35rem"
+    lineHeight: 1.6
 rounded:
   action: "8px"
   reading-block: "12px"
   app-icon: "22px"
   hero-bottom: "36px"
+  hero-screen: "28px"
+  gallery-screen: "24px"
 spacing:
   inline: "16px"
   section-gap: "32px"
   container-gutter: "28px"
   mobile-gutter: "22px"
+  gallery-gap: "48px"
 components:
   button-primary:
-    backgroundColor: "{colors.button}"
-    textColor: "{colors.espresso}"
+    backgroundColor: "{colors.action-blue}"
+    textColor: "{colors.white}"
     typography: "{typography.button}"
     rounded: "{rounded.action}"
     padding: "12px 20px"
   button-primary-hover:
-    backgroundColor: "{colors.button-hover}"
+    backgroundColor: "{colors.action-hover}"
   button-secondary:
-    textColor: "#f4e8d8"
+    textColor: "{colors.link-blue}"
+    typography: "{typography.button}"
     padding: "12px 0"
   feature-icon:
-    backgroundColor: "{colors.icon-surface}"
-    textColor: "{colors.coffee-accent}"
+    backgroundColor: "{colors.native-gray}"
+    textColor: "{colors.link-blue}"
     rounded: "{rounded.reading-block}"
     padding: "12px"
   contents:
-    backgroundColor: "{colors.reading-block}"
+    backgroundColor: "{colors.native-gray}"
     rounded: "{rounded.reading-block}"
     padding: "22px 26px"
   contact-block:
-    backgroundColor: "{colors.reading-block}"
-    textColor: "{colors.espresso}"
+    backgroundColor: "{colors.native-gray}"
+    textColor: "{colors.text}"
     rounded: "{rounded.reading-block}"
     padding: "24px 28px"
+  scale-search:
+    backgroundColor: "{colors.white}"
+    textColor: "{colors.text}"
+    typography: "{typography.reading-body}"
+    rounded: "{rounded.action}"
+    padding: "12px 16px"
 ---
 
 # Design System: Beanzen
@@ -95,87 +118,101 @@ components:
 
 **Creative North Star: "Automatic App Landing Page"**
 
-Beanzen follows emilbaehr/automatic-app-landing-page: a phone preview beside app information, followed by a feature list and direct support/legal navigation. Warm espresso and cream colors extend the original Beanzen app icon. Locally hosted Manrope supports both English and Russian.
+Beanzen extends emilbaehr/automatic-app-landing-page: an authentic application preview beside app information, flat feature summaries, and straightforward reading pages. The approved variant 1 is fully light: white and native gray surfaces, dark text, and blue links/actions. The original app icon remains the identity asset; its brown artwork does not define a brown website palette.
 
-Use generous spacing and restrained decoration. Support and legal pages are flat reading surfaces with clear headings, underlined links and compact contents/contact blocks.
+Locally hosted Manrope serves English and Russian. Preserve the upstream layout, Jekyll/Sass structure and MIT attribution while extending the same readable visual language to detailed features, scale compatibility and the brewing guide. Real native application captures supply product evidence, rather than generated app UI or decorative phone hardware.
 
 **Key Characteristics:**
 
-- Template-led phone preview and app information hero.
-- Warm espresso/cream palette and local Manrope.
-- Flat, readable support and legal pages.
+- Fully light native palette, including the header and hero.
+- Template-led application preview and app-information hero.
+- Flat reading pages, quiet dividers and blue interactive cues.
+- Actual iOS screenshots with captions and source provenance.
 - Equivalent English/Russian navigation and visible keyboard focus.
 
 ## Colors
 
-The palette is warm and quiet, drawn from the original app identity. Frontmatter values are normative literals, not CSS custom properties.
+The frontmatter records actual configuration and Sass literals; it does not introduce CSS custom properties or a new scale.
 
 ### Primary
 
-- **Coffee accent:** links, feature glyphs and related navigation on light surfaces.
-- **Espresso:** hero background and main reading text.
+- **Link blue:** links, feature glyphs and the search caret.
+- **Action blue / action hover:** filled APK download action and its hover state.
+- **Focus:** shared visible keyboard outline.
 
 ### Neutral
 
-- **Cream:** page background, including support and legal pages.
-- **White / header title / hero description:** high-contrast hero title, brand and navigation text.
-- **Hero detail / hero muted:** secondary hero copy, platform label and language navigation.
-- **Muted text:** feature descriptions, footer and reading-page metadata.
-- **Icon surface / reading block:** feature-icon backgrounds and contents/contact blocks.
-- **Divider:** light-surface separators; the hero header uses translucent hero-description color.
-- **Button / button hover:** primary action fill and hover state.
-- **Focus / selection:** keyboard outline and selected text treatment.
+- **White:** document and reading-page background, skip link, search field and primary-action text.
+- **Native gray:** fully light hero, feature-icon holders and contents/contact blocks.
+- **Text:** home headings, identity and main reading copy.
+- **Markdown heading:** inherited black reading-page headings; this existing cascade difference is recorded, not a request to restyle them.
+- **Muted text:** descriptions, captions, footer, status text and reading-page navigation.
+- **Navigation text:** default home-header links; active links use Text.
+- **Divider / header border / section border:** privacy/read-page separators, home-header separator and catalog groups respectively.
+- **Screenshot border:** quiet boundary around raw native captures.
+- **Selection / scrollbar:** selection background and scroll thumb. Selection text uses Text.
 
-Configuration colors flow from `_config.yml` through `main.scss`. Imports run in this order: `base`, `layout`, `github-markdown`, `beanzen`. The final Beanzen overrides win; some override colors are literals rather than configuration variables. Preserve that incumbent hierarchy. Unused template syntax-highlighting colors are not a brand palette.
+**The Fully Light Rule.** Keep both header and hero light; neither the rejected brown palette nor the briefly selected graphite hero has visual authority.
+
+`_config.yml` supplies theme colors through `main.scss`. Imports run `base`, `layout`, `github-markdown`, `beanzen`, then `catalog`; later literal overrides win. The white configured topbar is superseded by a transparent header over the native-gray hero. Inherited device, drop-shadow and syntax-highlight settings do not form a new brand palette. Markdown headings retain their inherited opaque-black color, while body copy uses Text.
 
 ## Typography
 
-Manrope is hosted at `assets/fonts/manrope-variable.ttf`, with variable weights (200–800) and `font-display: swap`. The root font size is (62.5%); existing rem values therefore correspond to ten-pixel units under default browser settings. Body defaults are (2rem) and (1.65), with explicit component sizes taking precedence.
+Manrope is hosted at `assets/fonts/manrope-variable.ttf`, with weights (200–800) and `font-display: swap`. The root size is (62.5%); one rem corresponds to (10px) under default browser settings. Body defaults are (2rem) and line height (1.65), with component overrides taking precedence. Frontmatter roles preserve observed sizes rather than implying a uniform type scale.
 
-Use the frontmatter app-name and hero-description roles for the app identity and main proposition. Feature headings are compact and bold; descriptions use a relaxed line height. Reading pages use the reading-body role, with headings inherited from Markdown styling then overridden by Beanzen: second-level headings are (2.4rem), line height (1.35), and third-level headings are (1.85rem). Reading text is capped at (75ch), introductory text at (65ch), and hero detail at (47ch).
+App name and hero proposition use the app-name and hero-description roles. The hero detail is (1.75rem), line height (1.7), capped at (47ch). Compact feature summaries use the feature-title/body roles. Reading pages use reading-body; second-level headings are (2.4rem), line height (1.35), and ordinary third-level headings are (1.85rem). Detailed feature headings use feature-detail-title. Reading text is capped at (75ch), introductory copy at (65ch); wide feature/catalog pages deliberately remove the page cap.
 
-At the tablet override the hero description becomes (3rem); at mobile it uses `clamp(2.8rem, 7vw, 3.5rem)`. Mobile app names are (3.8rem), reading titles (3.2rem), and reading body (1.6rem). Preserve these explicit exceptions rather than inventing a new type scale.
+At tablet width the hero proposition becomes (3rem), supporting detail (1.6rem) and header links (1.4rem). On mobile the proposition is `clamp(2.8rem, 7vw, 3.5rem)`, app name (3.8rem), reading title (3.2rem), reading body (1.6rem), reading second-level headings (2.25rem), and action labels (1.45rem). Home screenshot captions remain (1.2rem) with line height (1.5); gallery captions use screen-caption. Preserve these explicit differences.
 
 ## Layout
 
-The inherited container is a centered twelve-column grid, capped at (1170px), with (30px) column gaps and final horizontal gutters (28px). The header row is (96px). The landing hero nests a two-column layout (40% / remaining space), a (6%) column gap, and padding (38px 0 52px): phone left, app information right. The phone preview is (320px × 676px); its screen is a real app image, with a development-build caption.
+The inherited centered twelve-column grid is capped at (1170px), with (30px) column gaps and final horizontal gutters (28px). Header height is (96px). The hero nests columns (40% / remaining space), gap (6%), padding (38px 0 52px): screenshot left, app information right. The final raw preview width is (296px), with natural image height and a normal-flow caption.
 
-At (992px) and below, the hero remains two columns with a (32px) gap; the phone becomes (280px) wide and features move from three columns to two. At (700px) and below, gutters become (22px), header/navigation wrap, app information precedes the phone, and features become one column. Mobile hero spacing is (36px 0 30px) with a (42px) gap. Earlier template media queries remain in the inherited stylesheet; the later Beanzen overrides define the final behavior.
+At (992px) and below the hero stays in two columns with a (32px) gap; the screenshot is (270px) wide and feature summaries become two columns. At (700px) and below gutters become (22px); header links wrap into a full-width row; app information precedes the screenshot; feature summaries become one column. Mobile hero padding is (36px 0 30px), gap (42px), preview width `min(280px, 100%)`. These final catalog rules supersede earlier phone-frame dimensions in the inherited stylesheets.
 
-Features begin after (72px) on desktop, (56px) at tablet and (42px) on mobile. Reading pages occupy grid columns (2 / 12) with margin (56px auto 24px); mobile uses full width and a (36px) top margin. Contents links and footer navigation wrap without a JavaScript menu.
+Feature summaries begin after (72px), tablet (56px), mobile (42px). Home expansion sections use top spacing (64px), mobile (48px). The screenshot gallery has three columns with gap (48px), tablet gap (24px), then one column with gap (36px). Gallery figures cap at (300px).
+
+Reading pages span columns (2 / 12), margin (56px auto 24px); mobile uses full width and top margin (36px). Wide feature/catalog pages span all columns. Feature text with a capture uses `minmax(0, 1fr) 260px`, gap (72px); tablet uses (220px), gap (36px); mobile stacks with gap (12px). Feature text caps at (70ch). Catalog capabilities use seven columns, then four at tablet, three on mobile, with gap (12px 20px). Search caps at (600px). Anchor indexes wrap naturally; no JavaScript menu is required.
 
 ## Elevation & Depth
 
-The current surfaces are flat. Cream/espresso contrast, quiet borders and the phone frame provide separation. The inherited drop-shadow utility exists in `base.scss`, but the actual hero icon is not wrapped in its shadow class and the action container explicitly removes its inherited filter. Do not promote unused template effects into a new shadow system.
+Surfaces are flat. Native-gray tonal areas, fine borders and whitespace separate content. There is no active card-shadow system: inherited drop-shadow utilities are not applied to the hero icon, and the action container removes its filter. The native screenshot is presented without the old device-frame overlay. Do not promote unused template effects into design tokens.
 
 ## Shapes
 
-Actions and the skip link have modest rounded corners; feature icons and reading blocks use the reading-block radius. The hero has rounded bottom corners only, reduced to (24px) on mobile. Header icons are (10px) radius on desktop and (8px) on mobile. App icon radius changes with its size: desktop (22px), tablet (18px), mobile (16px). Keep the actual icon and phone assets; do not redraw their identity.
+Actions, search and skip link use the action radius. Feature-icon holders and contents/contact blocks use the reading-block radius. The hero rounds only its bottom corners, reduced to (24px) on mobile. Header icons use (10px), mobile (8px); the large app icon uses app-icon, tablet (18px), mobile (16px).
+
+Raw hero screenshots use hero-screen, gallery screenshots gallery-screen, with the screenshot-border. The earlier tablet screenshot radius (26px) remains in `beanzen.scss` but is superseded by the final hero-screen rule in `catalog.scss`. Preserve the real icon and image aspect ratios.
 
 ## Components
 
-- **Primary support link:** cream filled, minimum height (50px), inline arrow, frontmatter padding and radius. Hover changes fill. Secondary exploration link is underlined, with no filled container. Mobile action type is (1.45rem).
-- **Navigation:** app/support/privacy links plus a separate EN/RU switch. Active links are underlined; active language is also weight (800). Hero links are light; reading-page links use muted text and espresso active states. Mobile moves main navigation to a full-width third row.
-- **Phone preview:** black template device frame and real development screenshot; maintain its caption and aspect ratio. Store badges render only when verified URLs are configured.
-- **Features:** flat icon-and-text rows, no card shell. Inline stroke SVGs are (24px), stroke width (1.6); the icon holder starts at (48px) and uses the existing warm background.
-- **Privacy summary:** horizontal border-separated text/link row; stacks vertically at the tablet breakpoint.
-- **Contents / contact block:** light tonal backgrounds, no shadow. Contents links wrap. Mobile contact padding is (20px).
-- **Footer:** centered author/contact, wrapping support/legal links and copyright; preserve direct public access.
+- **Primary APK action:** blue fill, white text, inline stroke arrow, minimum height (50px), gap (16px), frontmatter padding and radius. It links to `https://github.com/securny/beanzen/releases`; label the distribution APK. Hover uses action-hover. This is the download action; support remains a direct navigation destination.
+- **Secondary exploration link:** underlined blue link with no filled container; leads to detailed features. Public App Store and Google Play badges remain conditional on verified configured URLs; both are currently absent.
+- **Navigation:** Features, Scales, Guide and Support plus separate EN/RU navigation. Current page is underlined; current language is also weight (800). Home defaults use Navigation text; reading pages use Muted text. Hover/current states use Text. Language links target equivalent pages.
+- **Native captures:** unchanged raw (1206 × 2622) iOS PNGs, natural ratio, quiet border and readable captions; gallery links open the full image. The source of truth is `docs/screenshot-provenance.json`: app version (26.10.21), build (26102101), unchanged main commit `90110460fc5b03d1e8ef9f9ca7ff1ab5fd2d434a`, iPhone 17 Pro simulator running iOS (27.0). Captures are English even on Russian pages. Real saved `.slog` measurements coexist with explicitly sample coffee/water/equipment metadata; no live Bluetooth or Android capture is claimed.
+- **Feature summaries and detail:** flat icon/text rows, then anchor-indexed groups with (24) detailed feature descriptions and optional native screenshots. Inline SVGs are (24px), stroke width (1.6); summary icon holders use (48px) basis and padding (12px). Do not put the rows into card shells.
+- **Scale catalog:** (26) entries across (19) implemented protocol families, separated by fine rules. Each entry states evidence scope, caveats and seven individual capabilities in a definition grid. Protocol implementation is distinct from physical model/platform/command testing. Search is progressively revealed by JavaScript, filters entries and their index links, and announces the remaining count; without JavaScript all entries remain readable.
+- **Reading surfaces:** the guide is plain ordered explanatory content. Contents and contact blocks use native-gray fill and no shadow; contents links wrap. Contact padding becomes (20px) on mobile. Privacy summary is a horizontal border-separated row, stacked at tablet width.
+- **Footer:** centered author/contact, wrapping direct support/legal links and copyright. Public support, privacy, deletion and terms remain available without an account.
 
-All keyboard targets use the existing visible focus outline (3px solid focus color, offset 5px). Links underline on hover with an underline offset (5px). The skip link becomes visible on focus. The primary action transitions its background color over (.2s); reduced-motion preference removes transitions and changes smooth scrolling to automatic scrolling. No input, chip or dialog component exists in the current site.
+**The Native Evidence Rule.** Use only the current documented application captures, with truthful platform, recording and sample-metadata captions; do not fabricate product UI or device validation.
+
+All keyboard targets use a visible outline (3px solid Focus, offset 5px). Links underline on hover with offset (5px), except the filled primary action. The skip link appears on focus. The primary background transition is (.2s); reduced-motion preference disables transitions and changes smooth anchor scrolling to automatic. No chip, dialog, card or other input component is currently implemented beyond catalog search.
 
 ## Do's and Don'ts
 
 ### Do:
 
-- **Do** preserve the selected template structure and the original app identity.
-- **Do** use the existing Sass cascade and configuration before introducing new styling.
-- **Do** keep English and Russian layouts equivalent and let navigation wrap.
-- **Do** preserve visible focus, the skip link and reduced-motion behavior.
-- **Do** keep store badges conditional on verified configured URLs.
+- **Do** preserve the selected upstream template, original app icon and local Manrope.
+- **Do** use the existing configuration and Sass cascade, including final catalog overrides.
+- **Do** keep English and Russian layouts equivalent and allow navigation to wrap.
+- **Do** preserve visible focus, the skip link, meaningful alt text and reduced-motion behavior.
+- **Do** keep native screenshot provenance, captions and sample-data limitations accurate.
+- **Do** keep APK download, support and conditional store badges distinct.
 
 ### Don't:
 
-- **Don't** restore the superseded custom chart concept or treat earlier comps as authority.
-- **Don't** turn the feature list into elevated cards or add decorative reading-page surfaces.
-- **Don't** add invented controls, token scales, store links or external font services.
+- **Don't** restore the rejected brown/cream palette or the superseded graphite header/hero.
+- **Don't** restore the old phone-frame overlay, generated app UI, July development screenshot or rejected composition comps.
+- **Don't** turn flat feature/catalog sections into elevated cards or add decorative reading-page surfaces.
+- **Don't** invent token scales, model validation, store URLs, Android captures or profile-export controls.

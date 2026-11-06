@@ -1,0 +1,743 @@
+{
+  "families": 19,
+  "audit_date": "2026-11-06",
+  "rows": [
+    {
+      "id": "lfsmart-scale",
+      "name": "LFSmart Scale",
+      "group": "l-f-smart-scale",
+      "capabilities": {
+        "weight": true,
+        "tare": true,
+        "timerStart": false,
+        "timerPause": false,
+        "timerReset": false,
+        "scaleTimerRead": false,
+        "physicalButtonEvents": false
+      },
+      "notes": {
+        "en": "LFSmart / Lefu protocol. Also sold as Futula Kitchen Scale 3, LFScale CK811, LEFU CK811 and CK811BLE. These are aliases, not separate tested models. Catalog records physical verification; platform is not specified.",
+        "ru": "Протокол LFSmart / Lefu. Также продаются как Futula Kitchen Scale 3, LFScale CK811, LEFU CK811 и CK811BLE. Это названия одного семейства, а не отдельно проверенные модели. В каталоге отмечена проверка на весах без указания платформы."
+      },
+      "evidence": [
+        {
+          "app": "Beanzen catalog",
+          "platform": "unspecified",
+          "date": null,
+          "scope": [
+            "hardware_verified_flag_no_per_feature_scope"
+          ],
+          "source": "BeanZen:Sources/BeanZen/Resources/scales.json#lfsmart-scale"
+        }
+      ],
+      "status": "catalog",
+      "evidence_text": {
+        "en": "",
+        "ru": ""
+      }
+    },
+    {
+      "id": "kp2048b",
+      "name": "KP2048B",
+      "group": "k-p2048-b",
+      "capabilities": {
+        "weight": true,
+        "tare": true,
+        "timerStart": false,
+        "timerPause": false,
+        "timerReset": false,
+        "scaleTimerRead": false,
+        "physicalButtonEvents": false
+      },
+      "notes": {
+        "en": "Unbranded KP2048B / KT630B protocol. Detection also accepts blackcoffee names, but that name does not establish a model. Catalog records physical verification; platform is not specified.",
+        "ru": "Безымянные весы KP2048B с протоколом KT630B. Адаптер также распознаёт имена blackcoffee, но модель по ним не установлена. В каталоге отмечена проверка на весах без указания платформы."
+      },
+      "evidence": [
+        {
+          "app": "Beanzen catalog",
+          "platform": "unspecified",
+          "date": null,
+          "scope": [
+            "hardware_verified_flag_no_per_feature_scope"
+          ],
+          "source": "BeanZen:Sources/BeanZen/Resources/scales.json#kp2048b"
+        }
+      ],
+      "status": "catalog",
+      "evidence_text": {
+        "en": "",
+        "ru": ""
+      }
+    },
+    {
+      "id": "hoto-scale",
+      "name": "HOTO Smart Kitchen Scale",
+      "group": "hoto-scale",
+      "capabilities": {
+        "weight": true,
+        "tare": true,
+        "timerStart": false,
+        "timerPause": false,
+        "timerReset": false,
+        "scaleTimerRead": false,
+        "physicalButtonEvents": false
+      },
+      "notes": {
+        "en": "HOTO Xiaomi-ecosystem scale (model ID hoto.k_scale.qwcfc). Requires optional Xiaomi sign-in to obtain the device token and authenticate to the scale; no Beanzen account is required. Catalog records physical verification; platform is not specified.",
+        "ru": "Весы HOTO экосистемы Xiaomi (модель hoto.k_scale.qwcfc). Для получения токена и аутентификации весов нужен необязательный вход Xiaomi; аккаунт Beanzen не требуется. В каталоге отмечена проверка на весах без указания платформы."
+      },
+      "evidence": [
+        {
+          "app": "Beanzen catalog",
+          "platform": "unspecified",
+          "date": null,
+          "scope": [
+            "hardware_verified_flag_no_per_feature_scope"
+          ],
+          "source": "BeanZen:Sources/BeanZen/Resources/scales.json#hoto-scale"
+        }
+      ],
+      "status": "catalog",
+      "evidence_text": {
+        "en": "",
+        "ru": ""
+      }
+    },
+    {
+      "id": "timemore-dot",
+      "name": "TIMEMORE Dot",
+      "group": "timemore-dot",
+      "capabilities": {
+        "weight": true,
+        "tare": true,
+        "timerStart": true,
+        "timerPause": true,
+        "timerReset": true,
+        "scaleTimerRead": true,
+        "physicalButtonEvents": false
+      },
+      "notes": {
+        "en": "Physical verification is recorded for Dot. Timer commands and reading the scale timer are implemented; the original September timer checklist was deferred, so do not describe every timer function as physically verified.",
+        "ru": "Для Dot зафиксирована проверка на весах. Управление таймером и чтение его показаний реализованы; исходная сентябрьская проверка таймера была отложена, поэтому нельзя называть каждую функцию таймера проверенной."
+      },
+      "evidence": [
+        {
+          "app": "Beanzen catalog",
+          "platform": "unspecified",
+          "date": null,
+          "scope": [
+            "hardware_verified_flag_no_per_feature_scope"
+          ],
+          "source": "BeanZen:Sources/BeanZen/Resources/scales.json#timemore-dot"
+        }
+      ],
+      "status": "catalog",
+      "evidence_text": {
+        "en": "",
+        "ru": ""
+      }
+    },
+    {
+      "id": "timemore-basic-3",
+      "name": "TIMEMORE Basic 3",
+      "group": "timemore-dot",
+      "capabilities": {
+        "weight": true,
+        "tare": true,
+        "timerStart": true,
+        "timerPause": true,
+        "timerReset": true,
+        "scaleTimerRead": true,
+        "physicalButtonEvents": false
+      },
+      "notes": {
+        "en": "Uses the Dot adapter by protocol equivalence. Basic 3 has not been physically tested; its actual Bluetooth name is not confirmed.",
+        "ru": "Использует адаптер Dot по сходству протокола. Basic 3 не проверялись на весах; реальное Bluetooth-имя не подтверждено."
+      },
+      "evidence": [],
+      "status": "protocol",
+      "evidence_text": {
+        "en": "",
+        "ru": ""
+      }
+    },
+    {
+      "id": "timemore-black-mirror",
+      "name": "TIMEMORE Black Mirror",
+      "group": "timemore-black-mirror-scale",
+      "capabilities": {
+        "weight": true,
+        "tare": true,
+        "timerStart": true,
+        "timerPause": true,
+        "timerReset": true,
+        "scaleTimerRead": false,
+        "physicalButtonEvents": false
+      },
+      "notes": {
+        "en": "Applies to the older Black Mirror generation using Bluetooth service 181D. Other generations or firmware may differ. Protocol implementation, not physical validation.",
+        "ru": "Относится к старому поколению Black Mirror с Bluetooth-сервисом 181D. Другие поколения и прошивки могут отличаться. Реализован протокол, проверки на весах нет."
+      },
+      "evidence": [],
+      "status": "protocol",
+      "evidence_text": {
+        "en": "",
+        "ru": ""
+      }
+    },
+    {
+      "id": "acaia-pearl",
+      "name": "Acaia Pearl",
+      "group": "acaia-scale",
+      "capabilities": {
+        "weight": true,
+        "tare": true,
+        "timerStart": true,
+        "timerPause": true,
+        "timerReset": true,
+        "scaleTimerRead": true,
+        "physicalButtonEvents": true
+      },
+      "notes": {
+        "en": "New-revision Pearl has been physically exercised with Beanzen on iOS and Android. This does not establish compatibility with every Pearl revision or firmware. The older 1820/2A80 path remains unverified.",
+        "ru": "Pearl новой ревизии проверяли с Beanzen на iOS и Android. Это не подтверждает все ревизии и прошивки Pearl. Старый путь 1820/2A80 не проверен."
+      },
+      "evidence": [
+        {
+          "app": "Beanzen",
+          "platform": "ios",
+          "date": "2026-09-07",
+          "scope": [
+            "weight",
+            "timer_button_events"
+          ],
+          "source": "CoffeeScale:plans/2026-09-05-scale-button-events.md:218"
+        },
+        {
+          "app": "Beanzen",
+          "platform": "android",
+          "date": "2026-09-09",
+          "scope": [
+            "weight",
+            "timer_start",
+            "timer_pause",
+            "timer_reset",
+            "timer_resume",
+            "scale_timer_read",
+            "timer_button_events"
+          ],
+          "source": "CoffeeScale:Scales/Acaia/Acaia_spec.md:393"
+        }
+      ],
+      "status": "beanzen",
+      "evidence_text": {
+        "en": "Beanzen · iOS · 2026-09-07 — weight, timer button events. Beanzen · Android · 2026-09-09 — weight, timer start, timer pause, timer reset, timer resume, scale timer reading, timer button events.",
+        "ru": "Beanzen · iOS · 2026-09-07 — вес, события кнопок таймера. Beanzen · Android · 2026-09-09 — вес, старт таймера, пауза таймера, сброс таймера, продолжение таймера, чтение таймера весов, события кнопок таймера."
+      }
+    },
+    {
+      "id": "acaia-lunar",
+      "name": "Acaia Lunar",
+      "group": "acaia-scale",
+      "capabilities": {
+        "weight": true,
+        "tare": true,
+        "timerStart": true,
+        "timerPause": true,
+        "timerReset": true,
+        "scaleTimerRead": true,
+        "physicalButtonEvents": true
+      },
+      "notes": {
+        "en": "Uses the shared Acaia adapter. This model is not physically verified; Pearl testing does not verify another Acaia model or revision.",
+        "ru": "Использует общий адаптер Acaia. Эта модель не проверена на весах; проверка Pearl не подтверждает другую модель или ревизию Acaia."
+      },
+      "evidence": [],
+      "status": "protocol",
+      "evidence_text": {
+        "en": "",
+        "ru": ""
+      }
+    },
+    {
+      "id": "acaia-pyxis",
+      "name": "Acaia Pyxis",
+      "group": "acaia-scale",
+      "capabilities": {
+        "weight": true,
+        "tare": true,
+        "timerStart": true,
+        "timerPause": true,
+        "timerReset": true,
+        "scaleTimerRead": true,
+        "physicalButtonEvents": true
+      },
+      "notes": {
+        "en": "Uses the shared Acaia adapter. This model is not physically verified; Pearl testing does not verify another Acaia model or revision.",
+        "ru": "Использует общий адаптер Acaia. Эта модель не проверена на весах; проверка Pearl не подтверждает другую модель или ревизию Acaia."
+      },
+      "evidence": [],
+      "status": "protocol",
+      "evidence_text": {
+        "en": "",
+        "ru": ""
+      }
+    },
+    {
+      "id": "acaia-cinco",
+      "name": "Acaia Cinco",
+      "group": "acaia-scale",
+      "capabilities": {
+        "weight": true,
+        "tare": true,
+        "timerStart": true,
+        "timerPause": true,
+        "timerReset": true,
+        "scaleTimerRead": true,
+        "physicalButtonEvents": true
+      },
+      "notes": {
+        "en": "Uses the shared Acaia adapter. This model is not physically verified; Pearl testing does not verify another Acaia model or revision.",
+        "ru": "Использует общий адаптер Acaia. Эта модель не проверена на весах; проверка Pearl не подтверждает другую модель или ревизию Acaia."
+      },
+      "evidence": [],
+      "status": "protocol",
+      "evidence_text": {
+        "en": "",
+        "ru": ""
+      }
+    },
+    {
+      "id": "bookoo-themis",
+      "name": "BOOKOO Themis Mini / BOOKOO Themis Ultra",
+      "group": "bookoo-scale",
+      "capabilities": {
+        "weight": true,
+        "tare": true,
+        "timerStart": true,
+        "timerPause": true,
+        "timerReset": true,
+        "scaleTimerRead": true,
+        "physicalButtonEvents": true
+      },
+      "notes": {
+        "en": "Themis Ultra weight, timer commands and timer-button synchronization were physically checked with Beanzen on iPhone. Mini is protocol-only. Ultra tare was not checked. Ultra cannot resume its scale timer with the start command; the app timer can continue.",
+        "ru": "Вес, команды таймера и синхронизацию кнопки Themis Ultra проверяли с Beanzen на iPhone. Для Mini реализован только протокол. Тара Ultra не проверялась. Команда старта не продолжает таймер Ultra после паузы; таймер приложения может продолжаться."
+      },
+      "evidence": [
+        {
+          "app": "Beanzen",
+          "platform": "ios",
+          "date": "2026-10-05",
+          "scope": [
+            "ultra_weight",
+            "ultra_timer_start",
+            "ultra_timer_pause",
+            "ultra_timer_reset",
+            "ultra_scale_timer_read",
+            "ultra_timer_button_events"
+          ],
+          "source": "CoffeeScale:Scales/Bookoo/Bookoo_spec.md:3"
+        }
+      ],
+      "status": "beanzen",
+      "evidence_text": {
+        "en": "Beanzen · iOS · 2026-10-05 — Ultra weight, timer start, timer pause, timer reset, scale timer reading, timer button events.",
+        "ru": "Beanzen · iOS · 2026-10-05 — Ultra: вес, старт таймера, пауза таймера, сброс таймера, чтение таймера весов, события кнопок таймера."
+      }
+    },
+    {
+      "id": "decent-scale",
+      "name": "Decent Scale / Half Decent",
+      "group": "decent-scale",
+      "capabilities": {
+        "weight": true,
+        "tare": true,
+        "timerStart": true,
+        "timerPause": true,
+        "timerReset": true,
+        "scaleTimerRead": true,
+        "physicalButtonEvents": true
+      },
+      "notes": {
+        "en": "Decent Scale and Half Decent share an adapter. Protocol implementation only; revisions and physical-button behavior have not been checked on hardware.",
+        "ru": "Decent Scale и Half Decent используют один адаптер. Реализован протокол; ревизии и поведение физических кнопок не проверялись на весах."
+      },
+      "evidence": [],
+      "status": "protocol",
+      "evidence_text": {
+        "en": "",
+        "ru": ""
+      }
+    },
+    {
+      "id": "espressiscale",
+      "name": "EspressiScale",
+      "group": "decent-scale",
+      "capabilities": {
+        "weight": true,
+        "tare": true,
+        "timerStart": true,
+        "timerPause": true,
+        "timerReset": true,
+        "scaleTimerRead": true,
+        "physicalButtonEvents": true
+      },
+      "notes": {
+        "en": "Open-source firmware that emulates Decent. Weight and commands use that adapter; emission of physical-button packets is not confirmed.",
+        "ru": "Открытая прошивка, эмулирующая Decent. Вес и команды обрабатывает этот адаптер; передача событий физических кнопок не подтверждена."
+      },
+      "evidence": [],
+      "status": "protocol",
+      "evidence_text": {
+        "en": "",
+        "ru": ""
+      }
+    },
+    {
+      "id": "difluid-microbalance",
+      "name": "DiFluid Microbalance",
+      "group": "di-fluid-scale",
+      "capabilities": {
+        "weight": true,
+        "tare": true,
+        "timerStart": true,
+        "timerPause": true,
+        "timerReset": false,
+        "scaleTimerRead": true,
+        "physicalButtonEvents": false
+      },
+      "notes": {
+        "en": "Beanzen Android weight streaming and tare have explicit physical evidence. CoffeeScale later records hardware tests for both Microbalance models; do not treat that as both-platform Beanzen validation. No reset command. Resume preserves the scale display but does not resume its timer.",
+        "ru": "Для Beanzen Android явно подтверждены на весах передача веса и тара. Позднее CoffeeScale фиксирует проверки обеих Microbalance; это не проверка Beanzen на обеих платформах. Команды сброса нет. Продолжение сохраняет показания дисплея, но не запускает таймер весов."
+      },
+      "evidence": [
+        {
+          "app": "Beanzen",
+          "platform": "android",
+          "date": "2026-09-01",
+          "scope": [
+            "weight",
+            "tare"
+          ],
+          "source": "CoffeeScale:Scales/DiFluid/DiFluid_spec.md:1210"
+        },
+        {
+          "app": "CoffeeScale",
+          "platform": "unspecified",
+          "date": "2026-10-07",
+          "scope": [
+            "model_hardware_test_recorded",
+            "timer_resume_does_not_continue",
+            "auto_detect_timing_disable"
+          ],
+          "source": "CoffeeScale:docs/appstore/store-listing-1.42.md:12"
+        }
+      ],
+      "status": "beanzen",
+      "evidence_text": {
+        "en": "Beanzen · Android · 2026-09-01 — weight, tare. CoffeeScale · platform not specified · 2026-10-07 — model-level test; individual commands not specified, hardware timer does not resume, disable automatic timing detection.",
+        "ru": "Beanzen · Android · 2026-09-01 — вес, тара. CoffeeScale · платформа не указана · 2026-10-07 — проверка модели; отдельные команды не указаны, таймер весов не продолжается, отключение автоматического определения тайминга."
+      }
+    },
+    {
+      "id": "difluid-microbalance-ti",
+      "name": "DiFluid Microbalance Ti",
+      "group": "di-fluid-scale",
+      "capabilities": {
+        "weight": true,
+        "tare": true,
+        "timerStart": true,
+        "timerPause": true,
+        "timerReset": false,
+        "scaleTimerRead": true,
+        "physicalButtonEvents": false
+      },
+      "notes": {
+        "en": "Shared DiFluid protocol; the Ti uses service 00DD rather than Microbalance service 00EE. CoffeeScale records physical tests for both models; no explicit Beanzen Ti platform test was found. No reset command; resume does not continue the scale timer.",
+        "ru": "Общий протокол DiFluid; Ti использует сервис 00DD вместо 00EE у Microbalance. CoffeeScale фиксирует проверки обеих моделей; явной проверки Ti с Beanzen по платформам не найдено. Команды сброса нет; продолжение не запускает таймер весов."
+      },
+      "evidence": [
+        {
+          "app": "CoffeeScale",
+          "platform": "unspecified",
+          "date": "2026-10-07",
+          "scope": [
+            "model_hardware_test_recorded"
+          ],
+          "source": "CoffeeScale:docs/appstore/store-listing-1.42.md:32"
+        }
+      ],
+      "status": "related",
+      "evidence_text": {
+        "en": "CoffeeScale · platform not specified · 2026-10-07 — model-level test; individual commands not specified.",
+        "ru": "CoffeeScale · платформа не указана · 2026-10-07 — проверка модели; отдельные команды не указаны."
+      }
+    },
+    {
+      "id": "atomax-skale-ii",
+      "name": "Atomax Skale II",
+      "group": "skale-i-i-scale",
+      "capabilities": {
+        "weight": true,
+        "tare": true,
+        "timerStart": false,
+        "timerPause": false,
+        "timerReset": false,
+        "scaleTimerRead": false,
+        "physicalButtonEvents": false
+      },
+      "notes": {
+        "en": "Protocol implementation only. The button characteristic is not consumed by the adapter, so physical-button synchronization is not implemented.",
+        "ru": "Реализован протокол. Адаптер не читает характеристику кнопок, поэтому синхронизация физических кнопок не реализована."
+      },
+      "evidence": [],
+      "status": "protocol",
+      "evidence_text": {
+        "en": "",
+        "ru": ""
+      }
+    },
+    {
+      "id": "weighmybru",
+      "name": "WeighMyBru",
+      "group": "weigh-my-bru-scale",
+      "capabilities": {
+        "weight": true,
+        "tare": true,
+        "timerStart": true,
+        "timerPause": true,
+        "timerReset": true,
+        "scaleTimerRead": false,
+        "physicalButtonEvents": false
+      },
+      "notes": {
+        "en": "Protocol implementation only; no physical validation found. Actual firmware may require further verification.",
+        "ru": "Реализован протокол; проверки на весах не найдено. Конкретная прошивка может потребовать дополнительной проверки."
+      },
+      "evidence": [],
+      "status": "protocol",
+      "evidence_text": {
+        "en": "",
+        "ru": ""
+      }
+    },
+    {
+      "id": "atomheart-eclair",
+      "name": "AtomHeart Eclair",
+      "group": "eclair-scale",
+      "capabilities": {
+        "weight": true,
+        "tare": true,
+        "timerStart": false,
+        "timerPause": false,
+        "timerReset": false,
+        "scaleTimerRead": false,
+        "physicalButtonEvents": false
+      },
+      "notes": {
+        "en": "Protocol implementation only. The app sends tare but no hardware timer commands because timer opcodes differ between known firmware dialects.",
+        "ru": "Реализован протокол. Приложение отправляет тару, но не команды таймера весов: коды таймера различаются в известных вариантах прошивки."
+      },
+      "evidence": [],
+      "status": "protocol",
+      "evidence_text": {
+        "en": "",
+        "ru": ""
+      }
+    },
+    {
+      "id": "eureka-precisa",
+      "name": "Eureka Precisa / Solo Barista LSJ-001",
+      "group": "eureka-precisa-scale",
+      "capabilities": {
+        "weight": true,
+        "tare": true,
+        "timerStart": true,
+        "timerPause": true,
+        "timerReset": true,
+        "scaleTimerRead": true,
+        "physicalButtonEvents": false
+      },
+      "notes": {
+        "en": "Eureka Precisa CFS-9002 / CFS-9002BT and Solo Barista LSJ-001 share the implemented protocol and Bluetooth-name detection. Neither has physical validation in this source audit.",
+        "ru": "Eureka Precisa CFS-9002 / CFS-9002BT и Solo Barista LSJ-001 используют реализованный протокол и распознавание Bluetooth-имени. Для них не найдено проверки на весах."
+      },
+      "evidence": [],
+      "status": "protocol",
+      "evidence_text": {
+        "en": "",
+        "ru": ""
+      }
+    },
+    {
+      "id": "varia-aku",
+      "name": "Varia AKU / Varia AKU PRO / Varia AKU PLUS / Varia AKU MICRO",
+      "group": "varia-aku-scale",
+      "capabilities": {
+        "weight": true,
+        "tare": true,
+        "timerStart": false,
+        "timerPause": false,
+        "timerReset": false,
+        "scaleTimerRead": false,
+        "physicalButtonEvents": true
+      },
+      "notes": {
+        "en": "The adapter covers AKU, MINI, PRO, PLUS and MICRO by shared protocol and Bluetooth-name prefixes. None is physically verified. Scale timer-button events are decoded, but app-to-scale timer commands are not implemented.",
+        "ru": "Адаптер охватывает AKU, MINI, PRO, PLUS и MICRO по общему протоколу и префиксам Bluetooth-имени. Проверки на весах нет. События кнопки таймера читаются, но команды таймера из приложения не реализованы."
+      },
+      "evidence": [],
+      "status": "protocol",
+      "evidence_text": {
+        "en": "",
+        "ru": ""
+      }
+    },
+    {
+      "id": "varia-aku-mini",
+      "name": "Varia AKU Mini",
+      "group": "varia-aku-scale",
+      "capabilities": {
+        "weight": true,
+        "tare": true,
+        "timerStart": false,
+        "timerPause": false,
+        "timerReset": false,
+        "scaleTimerRead": false,
+        "physicalButtonEvents": true
+      },
+      "notes": {
+        "en": "The adapter covers AKU, MINI, PRO, PLUS and MICRO by shared protocol and Bluetooth-name prefixes. None is physically verified. Scale timer-button events are decoded, but app-to-scale timer commands are not implemented.",
+        "ru": "Адаптер охватывает AKU, MINI, PRO, PLUS и MICRO по общему протоколу и префиксам Bluetooth-имени. Проверки на весах нет. События кнопки таймера читаются, но команды таймера из приложения не реализованы."
+      },
+      "evidence": [],
+      "status": "protocol",
+      "evidence_text": {
+        "en": "",
+        "ru": ""
+      }
+    },
+    {
+      "id": "ikape-a01",
+      "name": "IKAPE A01",
+      "group": "i-kape-scale",
+      "capabilities": {
+        "weight": true,
+        "tare": true,
+        "timerStart": false,
+        "timerPause": false,
+        "timerReset": false,
+        "scaleTimerRead": false,
+        "physicalButtonEvents": false
+      },
+      "notes": {
+        "en": "Protocol implementation only; no physical validation found. Actual firmware may require further verification.",
+        "ru": "Реализован протокол; проверки на весах не найдено. Конкретная прошивка может потребовать дополнительной проверки."
+      },
+      "evidence": [],
+      "status": "protocol",
+      "evidence_text": {
+        "en": "",
+        "ru": ""
+      }
+    },
+    {
+      "id": "insmart-863a",
+      "name": "INSMART 863A",
+      "group": "insmart-scale",
+      "capabilities": {
+        "weight": true,
+        "tare": true,
+        "timerStart": false,
+        "timerPause": false,
+        "timerReset": false,
+        "scaleTimerRead": false,
+        "physicalButtonEvents": false
+      },
+      "notes": {
+        "en": "Protocol implementation only; no physical validation found. Actual firmware may require further verification.",
+        "ru": "Реализован протокол; проверки на весах не найдено. Конкретная прошивка может потребовать дополнительной проверки."
+      },
+      "evidence": [],
+      "status": "protocol",
+      "evidence_text": {
+        "en": "",
+        "ru": ""
+      }
+    },
+    {
+      "id": "felicita",
+      "name": "Felicita Arc",
+      "group": "felicita-scale",
+      "capabilities": {
+        "weight": true,
+        "tare": true,
+        "timerStart": true,
+        "timerPause": true,
+        "timerReset": true,
+        "scaleTimerRead": false,
+        "physicalButtonEvents": false
+      },
+      "notes": {
+        "en": "Arc is the protocol reference. Incline and Parallel are related-model candidates, not confirmed compatibility: the spec explicitly calls the shared protocol an assumption. No physical validation of the current adapter.",
+        "ru": "Протокол восстановлен для Arc. Incline и Parallel — предполагаемые родственные модели, а не подтверждённая совместимость: в спецификации общий протокол прямо назван предположением. Текущий адаптер не проверен на весах."
+      },
+      "evidence": [],
+      "status": "protocol",
+      "evidence_text": {
+        "en": "",
+        "ru": ""
+      }
+    },
+    {
+      "id": "dsd-tech",
+      "name": "DSD TECH / Tencent protocol",
+      "group": "tencent-scale",
+      "capabilities": {
+        "weight": true,
+        "tare": true,
+        "timerStart": false,
+        "timerPause": false,
+        "timerReset": false,
+        "scaleTimerRead": false,
+        "physicalButtonEvents": false
+      },
+      "notes": {
+        "en": "DSD TECH is a Bluetooth-module name, not an established scale manufacturer or model. Tencent is a historical adapter alias. Other devices may advertise the same name.",
+        "ru": "DSD TECH — имя Bluetooth-модуля, а не установленная марка или модель весов. Tencent — историческое имя адаптера. Такое имя могут передавать другие устройства."
+      },
+      "evidence": [],
+      "status": "protocol",
+      "evidence_text": {
+        "en": "",
+        "ru": ""
+      }
+    },
+    {
+      "id": "diy-coffee-scale",
+      "name": "DIY Coffee Scale",
+      "group": "diy-coffee-scale",
+      "capabilities": {
+        "weight": true,
+        "tare": false,
+        "timerStart": false,
+        "timerPause": false,
+        "timerReset": false,
+        "scaleTimerRead": false,
+        "physicalButtonEvents": false
+      },
+      "notes": {
+        "en": "One DIY project with MicroPython mpy-coffee and Rust coffee-scale firmware variants. Weight reception only: tare is a physical device action, with no app tare or scale-timer command.",
+        "ru": "Один DIY-проект с прошивками MicroPython mpy-coffee и Rust coffee-scale. Только приём веса: тара выполняется кнопкой устройства; команды тары и таймера из приложения не реализованы."
+      },
+      "evidence": [],
+      "status": "protocol",
+      "evidence_text": {
+        "en": "",
+        "ru": ""
+      }
+    }
+  ]
+}

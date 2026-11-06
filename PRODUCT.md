@@ -20,11 +20,11 @@ Provide the website portion of an App Store and Google Play submission, with acc
 
 ## Capabilities and Constraints
 
-The website repository is https://github.com/securny/beanzen.github.io and is initially empty. Its default Pages project path is /beanzen.github.io. Do not change the mobile app or unrelated projects. Do not invent store links, reviews, downloads, pricing, or operator contact details.
+The website repository is https://github.com/securny/beanzen.github.io and is deployed on beanzen.ru. Its default Pages project path is /beanzen.github.io. Do not change the mobile app or unrelated projects. Do not invent store links, reviews, downloads, pricing, or operator contact details.
 
 ## Evidence on Hand
 
-Read-only inspection of /Users/berezkin/development/BeanZen shows local brew records and photos, Bluetooth scales, GaggiMate local-network connectivity, optional Xiaomi authentication to retrieve Hoto device tokens, import/export, and user-initiated sharing. These are repository observations, not a completed release privacy audit. The existing app icon is available in Darwin/Assets.xcassets/AppIcon.appiconset/AppIcon~ios-marketing.png. No current store-ready screenshots or verified store URLs were supplied.
+Read-only inspection of /Users/berezkin/development/BeanZen shows local brew records and photos, Bluetooth scales, GaggiMate local-network connectivity, optional Xiaomi authentication to retrieve Hoto device tokens, Beanconqueror imports and user-initiated brew-image sharing. These are repository observations, not a completed release privacy audit. The existing app icon is available in Darwin/Assets.xcassets/AppIcon.appiconset/AppIcon~ios-marketing.png. Current native iOS captures are now available with source provenance; no Android capture or public store URLs are claimed.
 
 ## Open Decisions
 
@@ -44,3 +44,9 @@ The owner subsequently selects emilbaehr/automatic-app-landing-page. Its phone p
 ## Product Name
 
 The product name is **Beanzen**, with a lowercase z. Use this spelling in all website copy, metadata, translations and future content. Existing filesystem paths and application identifiers retain their actual spelling.
+
+## Approved expansion (2026-11-06)
+
+Add equivalent English/Russian detailed feature, scale compatibility and brewing guide pages. Use current native screenshots with recorded measurements and explicit sample metadata. Android downloads link to https://github.com/securny/beanzen/releases, labelled APK. Distinguish protocol implementation from model/platform/command hardware tests. Do not advertise the unused profile serializer as a user-facing export.
+
+The owner rejected the brown/cream palette and finally selected variant 1: a fully light native palette with white and light-gray surfaces, dark text and blue accents. The briefly selected graphite header/hero is superseded. Keep the chosen upstream template structure, the app icon and Jekyll/GitHub Pages compatibility. Pages artifact retention remains one day.

@@ -15,14 +15,15 @@
         <div class="downloadButtonsContainer">
           {% if site.appstore_link != '' %}<a class="appStoreLink" href="{{ site.appstore_link }}"><img class="appStore" src="{{ '/assets/appstore.png' | relative_url }}" alt="{{ t.app_store }}" width="224" height="75"></a>{% endif %}
           {% if site.playstore_link != '' %}<a class="playStoreLink" href="{{ site.playstore_link }}"><img class="playStore" src="{{ '/assets/playstore.png' | relative_url }}" alt="{{ t.google_play }}" width="253" height="75"></a>{% endif %}
-          <a class="primaryButton" href="{{ prefix | append: '/support/' | relative_url }}">{{ t.get_support }} {% include icon.html name='arrow' %}</a>
-          <a class="secondaryButton" href="#features">{{ t.explore }}</a>
-        </div><p class="privacyNote">{{ t.hero_note }}</p>
+          <a class="primaryButton" href="{{ site.android_download_link }}">{{ t.download_android }} {% include icon.html name='arrow' %}</a>
+          <a class="secondaryButton" href="{{ prefix | append: '/features/' | relative_url }}">{{ t.explore }}</a>
+        </div><p class="downloadNote">{{ t.download_note }}</p><p class="privacyNote">{{ t.hero_note }}</p>
       </div>
     </main>
   </div></div></div>
   <div class="container contentContainer">
     {% include features.html %}
+    {% include home-details.html %}
     {% include footer.html %}
   </div>
 </body>

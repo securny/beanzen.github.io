@@ -18,11 +18,11 @@
   "tagline": "Your coffee, in perspective.",
   "description": "Connect your coffee scale, follow your brew, and keep the details worth repeating. A local brewing journal for the way you make coffee.",
   "get_support": "Get support",
-  "explore": "Explore Beanzen",
+  "explore": "Explore the features",
   "hero_note": "No Beanzen account. No ads. No subscriptions.",
   "features_title": "From the first pour to the next brew.",
-  "screenshot_alt": "Beanzen development interface showing weight and flow charts, a brew timer and Bluetooth scale controls.",
-  "screenshot_caption": "Interface from a development build. Appearance may vary by version.",
+  "screenshot_alt": "Beanzen on iOS displaying a saved espresso brew and its recorded measurement charts.",
+  "screenshot_caption": "Actual iOS app · saved brew with recorded measurements.",
   "app_store": "Download on the App Store",
   "google_play": "Get it on Google Play",
   "local_title": "Your coffee. Your device.",
@@ -32,32 +32,85 @@
     {
       "icon": "chart",
       "title": "Follow every pour",
-      "description": "See weight and flow rate over time, keep an eye on the timer, and follow your brew ratio as you make coffee."
+      "description": "See weight and flow rate over time, keep an eye on the timer, and follow your brew ratio as you make coffee.",
+      "anchor": "brew-charts"
     },
     {
       "icon": "journal",
       "title": "Keep a brewing journal",
-      "description": "Save brews, coffee details, grind settings and tasting notes. Return to the details behind a cup you enjoyed."
+      "description": "Save brews, coffee details, grind settings and tasting notes. Return to the details behind a cup you enjoyed.",
+      "anchor": "brew-history"
     },
     {
       "icon": "connection",
       "title": "Connect your scale",
-      "description": "Use a compatible Bluetooth coffee scale. Support depends on the scale model and firmware."
+      "description": "Use a compatible Bluetooth coffee scale. Support depends on the scale model and firmware.",
+      "anchor": "scale-timer-buttons"
     },
     {
       "icon": "photo",
       "title": "Remember the details",
-      "description": "Add photos of your coffee and equipment to your local records. Share a brew when you choose."
+      "description": "Add photos of your coffee and equipment to your local records. Share a brew when you choose.",
+      "anchor": "photo-galleries"
     },
     {
       "icon": "machine",
       "title": "See your espresso data",
-      "description": "Connect to a GaggiMate-equipped machine on your local network to record supported brewing channels."
+      "description": "Connect to a GaggiMate-equipped machine on your local network to record supported brewing channels.",
+      "anchor": "gaggimate"
     },
     {
       "icon": "transfer",
       "title": "Bring your history along",
-      "description": "Import a Beanconqueror export and export brewing profiles. Files stay under your control."
+      "description": "Import a Beanconqueror export with its photos. Share a brew as an image through your phone’s share sheet.",
+      "anchor": "beanconqueror-import"
     }
-  ]
+  ],
+  "features_nav": "Features",
+  "scales_nav": "Scales",
+  "guide_nav": "Guide",
+  "download_android": "Download APK for Android",
+  "download_note": "Android downloads are on GitHub Releases. Google Play and App Store links will appear here when available.",
+  "all_features": "Every feature, explained",
+  "compatibility_title": "Find your scale.",
+  "compatibility_intro": "Beanzen implements 19 Bluetooth protocol families. Check your model, the available commands and what has been verified on hardware.",
+  "compatibility_link": "See models and capabilities",
+  "guide_title": "Make your first brew.",
+  "guide_intro": "Connect a scale, set your dose, record a brew and find it again in your journal.",
+  "guide_link": "Open the brewing guide",
+  "screens_title": "Inside Beanzen.",
+  "screens_intro": "Real screens from the current iOS app. Saved brews use recorded measurements and sample journal details.",
+  "how": "How to use it",
+  "note": "Good to know",
+  "feature_index": "Browse features",
+  "guide_feature_link": "Detailed features",
+  "yes": "Yes",
+  "no": "No",
+  "capability_caption": "Commands implemented by the adapter. Hardware test scope is described under each model.",
+  "weight": "Weight",
+  "tare": "Tare",
+  "timerStart": "Start",
+  "timerPause": "Pause",
+  "timerReset": "Reset",
+  "scaleTimerRead": "Read scale timer",
+  "physicalButtonEvents": "Scale timer buttons",
+  "scale_commands": "Scale timer commands",
+  "scale_signals": "Scale timer input",
+  "hardware_title": "Hardware evidence",
+  "implementation_title": "Available in the adapter",
+  "status_beanzen": "Beanzen hardware test — see scope",
+  "status_related": "Tested in CoffeeScale; Beanzen test not established",
+  "status_catalog": "Hardware flag in catalog; platform and command scope unspecified",
+  "status_protocol": "Protocol implemented; no hardware verification found",
+  "scale_index": "Jump to a model",
+  "scale_search": "Find a model or alias",
+  "scale_search_placeholder": "For example: Pearl, Themis, Hoto",
+  "no_scale_results": "No matching models. Try an alias or clear your search.",
+  "matching_models": "Matching entries:",
+  "scale_full_list": "All models remain available when JavaScript is disabled.",
+  "scale_intro": "The app timer works independently. Commands below refer to the timer inside the scale. A shared protocol does not establish hardware compatibility for every model or firmware.",
+  "scale_limits_title": "Before you connect",
+  "scale_limits": "Start, pause and reset are separate capabilities. Resume can behave differently: BOOKOO Themis Ultra cannot resume its hardware timer through Start; DiFluid preserves the displayed time but does not resume its hardware timer. The app timer can still continue.",
+  "scale_more": "Connection steps and troubleshooting",
+  "screenshot_language": "Screenshots show the English iOS interface."
 }

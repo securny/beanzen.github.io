@@ -1,0 +1,2445 @@
+{
+  "schemaVersion": 1,
+  "auditDate": "2026-11-06",
+  "brand": "Beanzen",
+  "sourceCommits": {
+    "BeanZen": "90110460fc5b03d1e8ef9f9ca7ff1ab5fd2d434a",
+    "CoffeeScale": "29fd14a09e06a3b9435b2396624ac2357d4b87ad"
+  },
+  "counts": {
+    "adapters": 19,
+    "catalogRecords": 26,
+    "catalogHardwareVerifiedFlags": 5,
+    "expandedNamedVariants": 34,
+    "assumedRelatedVariants": 2
+  },
+  "countExplanation": {
+    "en": "34 named variants include hardware models, open-source firmware/projects and the unidentified DSD TECH protocol. Two Felicita relatives are explicitly assumed. This is not 34 tested commercial models. Alias names and DIY firmware variants do not add to the count.",
+    "ru": "34 именованных варианта включают модели весов, открытые прошивки/проекты и неидентифицированный протокол DSD TECH. Две родственные Felicita указаны как предположение. Это не 34 проверенные коммерческие модели. Псевдонимы и варианты прошивок DIY не увеличивают число."
+  },
+  "capabilityMeaning": {
+    "en": "Implemented means present in the current adapter, not physically verified. False means the app does not send/decode that operation. The app brew timer still works independently. Hardware evidence is scoped by app, platform, model and operation.",
+    "ru": "Реализовано означает наличие в текущем адаптере, а не проверку на весах. False означает, что приложение не отправляет/не распознаёт эту операцию. Таймер заваривания приложения работает самостоятельно. Проверки на весах ограничены приложением, платформой, моделью и операцией."
+  },
+  "groups": [
+    {
+      "id": "acaia-scale",
+      "adapter": "AcaiaScale",
+      "catalogIds": [
+        "acaia-pearl",
+        "acaia-lunar",
+        "acaia-pyxis",
+        "acaia-cinco"
+      ],
+      "models": [
+        {
+          "id": "acaia-pearl",
+          "name": "Acaia Pearl",
+          "status": "hardware_observed"
+        },
+        {
+          "id": "acaia-lunar",
+          "name": "Acaia Lunar",
+          "status": "protocol_implemented"
+        },
+        {
+          "id": "acaia-pyxis",
+          "name": "Acaia Pyxis",
+          "status": "protocol_implemented"
+        },
+        {
+          "id": "acaia-cinco",
+          "name": "Acaia Cinco",
+          "status": "protocol_implemented"
+        }
+      ]
+    },
+    {
+      "id": "bookoo-scale",
+      "adapter": "BookooScale",
+      "catalogIds": [
+        "bookoo-themis"
+      ],
+      "models": [
+        {
+          "id": "bookoo-themis-mini",
+          "name": "BOOKOO Themis Mini",
+          "status": "protocol_implemented"
+        },
+        {
+          "id": "bookoo-themis-ultra",
+          "name": "BOOKOO Themis Ultra",
+          "status": "hardware_observed"
+        }
+      ]
+    },
+    {
+      "id": "decent-scale",
+      "adapter": "DecentScale",
+      "catalogIds": [
+        "decent-scale",
+        "espressiscale"
+      ],
+      "models": [
+        {
+          "id": "decent-scale",
+          "name": "Decent Scale",
+          "status": "protocol_implemented"
+        },
+        {
+          "id": "half-decent",
+          "name": "Half Decent",
+          "status": "protocol_implemented"
+        },
+        {
+          "id": "espressiscale",
+          "name": "EspressiScale",
+          "status": "protocol_implemented"
+        }
+      ]
+    },
+    {
+      "id": "di-fluid-scale",
+      "adapter": "DiFluidScale",
+      "catalogIds": [
+        "difluid-microbalance",
+        "difluid-microbalance-ti"
+      ],
+      "models": [
+        {
+          "id": "difluid-microbalance",
+          "name": "DiFluid Microbalance",
+          "status": "hardware_observed"
+        },
+        {
+          "id": "difluid-microbalance-ti",
+          "name": "DiFluid Microbalance Ti",
+          "status": "hardware_observed"
+        }
+      ]
+    },
+    {
+      "id": "diy-coffee-scale",
+      "adapter": "DiyCoffeeScale",
+      "catalogIds": [
+        "diy-coffee-scale"
+      ],
+      "models": [
+        {
+          "id": "diy-coffee-scale",
+          "name": "DIY Coffee Scale",
+          "status": "protocol_implemented"
+        }
+      ]
+    },
+    {
+      "id": "eclair-scale",
+      "adapter": "EclairScale",
+      "catalogIds": [
+        "atomheart-eclair"
+      ],
+      "models": [
+        {
+          "id": "atomheart-eclair",
+          "name": "AtomHeart Eclair",
+          "status": "protocol_implemented"
+        }
+      ]
+    },
+    {
+      "id": "eureka-precisa-scale",
+      "adapter": "EurekaPrecisaScale",
+      "catalogIds": [
+        "eureka-precisa"
+      ],
+      "models": [
+        {
+          "id": "eureka-precisa",
+          "name": "Eureka Precisa",
+          "status": "protocol_implemented"
+        },
+        {
+          "id": "solo-barista-lsj-001",
+          "name": "Solo Barista LSJ-001",
+          "status": "protocol_implemented"
+        }
+      ]
+    },
+    {
+      "id": "felicita-scale",
+      "adapter": "FelicitaScale",
+      "catalogIds": [
+        "felicita"
+      ],
+      "models": [
+        {
+          "id": "felicita-arc",
+          "name": "Felicita Arc",
+          "status": "protocol_implemented"
+        },
+        {
+          "id": "felicita-incline",
+          "name": "Felicita Incline",
+          "status": "assumed_family"
+        },
+        {
+          "id": "felicita-parallel",
+          "name": "Felicita Parallel",
+          "status": "assumed_family"
+        }
+      ]
+    },
+    {
+      "id": "hoto-scale",
+      "adapter": "HotoScale",
+      "catalogIds": [
+        "hoto-scale"
+      ],
+      "models": [
+        {
+          "id": "hoto-scale",
+          "name": "HOTO Smart Kitchen Scale",
+          "status": "hardware_observed"
+        }
+      ]
+    },
+    {
+      "id": "i-kape-scale",
+      "adapter": "IKapeScale",
+      "catalogIds": [
+        "ikape-a01"
+      ],
+      "models": [
+        {
+          "id": "ikape-a01",
+          "name": "IKAPE A01",
+          "status": "protocol_implemented"
+        }
+      ]
+    },
+    {
+      "id": "insmart-scale",
+      "adapter": "InsmartScale",
+      "catalogIds": [
+        "insmart-863a"
+      ],
+      "models": [
+        {
+          "id": "insmart-863a",
+          "name": "INSMART 863A",
+          "status": "protocol_implemented"
+        }
+      ]
+    },
+    {
+      "id": "k-p2048-b",
+      "adapter": "KP2048B",
+      "catalogIds": [
+        "kp2048b"
+      ],
+      "models": [
+        {
+          "id": "kp2048b",
+          "name": "KP2048B",
+          "status": "hardware_observed"
+        }
+      ]
+    },
+    {
+      "id": "l-f-smart-scale",
+      "adapter": "LFSmartScale",
+      "catalogIds": [
+        "lfsmart-scale"
+      ],
+      "models": [
+        {
+          "id": "lfsmart-scale",
+          "name": "LFSmart Scale",
+          "status": "hardware_observed"
+        }
+      ]
+    },
+    {
+      "id": "skale-i-i-scale",
+      "adapter": "SkaleIIScale",
+      "catalogIds": [
+        "atomax-skale-ii"
+      ],
+      "models": [
+        {
+          "id": "atomax-skale-ii",
+          "name": "Atomax Skale II",
+          "status": "protocol_implemented"
+        }
+      ]
+    },
+    {
+      "id": "tencent-scale",
+      "adapter": "TencentScale",
+      "catalogIds": [
+        "dsd-tech"
+      ],
+      "models": [
+        {
+          "id": "dsd-tech",
+          "name": "DSD TECH / Tencent protocol",
+          "status": "protocol_implemented"
+        }
+      ]
+    },
+    {
+      "id": "timemore-black-mirror-scale",
+      "adapter": "TimemoreBlackMirrorScale",
+      "catalogIds": [
+        "timemore-black-mirror"
+      ],
+      "models": [
+        {
+          "id": "timemore-black-mirror",
+          "name": "TIMEMORE Black Mirror",
+          "status": "protocol_implemented"
+        }
+      ]
+    },
+    {
+      "id": "timemore-dot",
+      "adapter": "TimemoreDot",
+      "catalogIds": [
+        "timemore-dot",
+        "timemore-basic-3"
+      ],
+      "models": [
+        {
+          "id": "timemore-dot",
+          "name": "TIMEMORE Dot",
+          "status": "hardware_observed"
+        },
+        {
+          "id": "timemore-basic-3",
+          "name": "TIMEMORE Basic 3",
+          "status": "protocol_implemented"
+        }
+      ]
+    },
+    {
+      "id": "varia-aku-scale",
+      "adapter": "VariaAkuScale",
+      "catalogIds": [
+        "varia-aku",
+        "varia-aku-mini"
+      ],
+      "models": [
+        {
+          "id": "varia-aku",
+          "name": "Varia AKU",
+          "status": "protocol_implemented"
+        },
+        {
+          "id": "varia-aku-pro",
+          "name": "Varia AKU PRO",
+          "status": "protocol_implemented"
+        },
+        {
+          "id": "varia-aku-plus",
+          "name": "Varia AKU PLUS",
+          "status": "protocol_implemented"
+        },
+        {
+          "id": "varia-aku-micro",
+          "name": "Varia AKU MICRO",
+          "status": "protocol_implemented"
+        },
+        {
+          "id": "varia-aku-mini",
+          "name": "Varia AKU Mini",
+          "status": "protocol_implemented"
+        }
+      ]
+    },
+    {
+      "id": "weigh-my-bru-scale",
+      "adapter": "WeighMyBruScale",
+      "catalogIds": [
+        "weighmybru"
+      ],
+      "models": [
+        {
+          "id": "weighmybru",
+          "name": "WeighMyBru",
+          "status": "protocol_implemented"
+        }
+      ]
+    }
+  ],
+  "rows": [
+    {
+      "id": "lfsmart-scale",
+      "name": "LFSmart Scale",
+      "groupId": "l-f-smart-scale",
+      "adapter": "LFSmartScale",
+      "catalogHardwareVerified": true,
+      "models": [
+        {
+          "id": "lfsmart-scale",
+          "name": "LFSmart Scale",
+          "status": "hardware_observed"
+        }
+      ],
+      "capabilities": {
+        "weight": {
+          "implemented": true,
+          "source": "BeanZen:Sources/BeanZen/Scales/LFSmartScale.swift:51"
+        },
+        "tare": {
+          "implemented": true,
+          "source": "BeanZen:Sources/BeanZen/Scales/LFSmartScale.swift:63"
+        },
+        "timerStart": {
+          "implemented": false,
+          "source": "BeanZen:Sources/BeanZen/Scales/ScaleAdapter.swift:165"
+        },
+        "timerPause": {
+          "implemented": false,
+          "source": "BeanZen:Sources/BeanZen/Scales/ScaleAdapter.swift:165"
+        },
+        "timerReset": {
+          "implemented": false,
+          "source": "BeanZen:Sources/BeanZen/Scales/ScaleAdapter.swift:165"
+        },
+        "scaleTimerRead": {
+          "implemented": false,
+          "source": "BeanZen:Sources/BeanZen/Scales/ScaleAdapter.swift:165"
+        },
+        "physicalButtonEvents": {
+          "implemented": false,
+          "source": "BeanZen:Sources/BeanZen/Scales/ScaleAdapter.swift:165",
+          "events": [],
+          "mechanism": null
+        },
+        "timerResume": {
+          "commandImplemented": false,
+          "usesStartCommandDefault": true,
+          "physicallyContinues": null,
+          "source": "BeanZen:Sources/BeanZen/Scales/ScaleAdapter.swift:169"
+        }
+      },
+      "hardwareEvidence": [
+        {
+          "app": "Beanzen catalog",
+          "platform": "unspecified",
+          "date": null,
+          "scope": [
+            "hardware_verified_flag_no_per_feature_scope"
+          ],
+          "source": "BeanZen:Sources/BeanZen/Resources/scales.json#lfsmart-scale"
+        }
+      ],
+      "beanzenPlatforms": {
+        "ios": "not_established",
+        "android": "not_established"
+      },
+      "notes": {
+        "en": "LFSmart / Lefu protocol. Also sold as Futula Kitchen Scale 3, LFScale CK811, LEFU CK811 and CK811BLE. These are aliases, not separate tested models. Catalog records physical verification; platform is not specified.",
+        "ru": "Протокол LFSmart / Lefu. Также продаются как Futula Kitchen Scale 3, LFScale CK811, LEFU CK811 и CK811BLE. Это названия одного семейства, а не отдельно проверенные модели. В каталоге отмечена проверка на весах без указания платформы."
+      },
+      "sources": [
+        "BeanZen:Sources/BeanZen/Resources/scales.json#lfsmart-scale",
+        "BeanZen:Sources/BeanZen/Scales/LFSmartScale.swift",
+        "CoffeeScale/Scales/Futula/LFSmartScale_spec.md",
+        "CoffeeScaleIOSApp/coffeescaleapp.github.io/_config.yml:40"
+      ],
+      "aliases": [
+        "LFSmart Scale",
+        "Futula Kitchen Scale 3",
+        "LFScale CK811",
+        "LEFU CK811",
+        "CK811BLE"
+      ],
+      "status": "hardware_observed_scoped",
+      "modelFirmwareUncertainty": {
+        "en": "Hardware observations, where present, apply to the documented device and firmware only. Other revisions have not been established.",
+        "ru": "Проверки на весах, где они есть, относятся только к описанному устройству и прошивке. Другие ревизии не подтверждены."
+      }
+    },
+    {
+      "id": "kp2048b",
+      "name": "KP2048B",
+      "groupId": "k-p2048-b",
+      "adapter": "KP2048B",
+      "catalogHardwareVerified": true,
+      "models": [
+        {
+          "id": "kp2048b",
+          "name": "KP2048B",
+          "status": "hardware_observed"
+        }
+      ],
+      "capabilities": {
+        "weight": {
+          "implemented": true,
+          "source": "BeanZen:Sources/BeanZen/Scales/KP2048B.swift:58"
+        },
+        "tare": {
+          "implemented": true,
+          "source": "BeanZen:Sources/BeanZen/Scales/KP2048B.swift:81"
+        },
+        "timerStart": {
+          "implemented": false,
+          "source": "BeanZen:Sources/BeanZen/Scales/ScaleAdapter.swift:165"
+        },
+        "timerPause": {
+          "implemented": false,
+          "source": "BeanZen:Sources/BeanZen/Scales/ScaleAdapter.swift:165"
+        },
+        "timerReset": {
+          "implemented": false,
+          "source": "BeanZen:Sources/BeanZen/Scales/ScaleAdapter.swift:165"
+        },
+        "scaleTimerRead": {
+          "implemented": false,
+          "source": "BeanZen:Sources/BeanZen/Scales/ScaleAdapter.swift:165"
+        },
+        "physicalButtonEvents": {
+          "implemented": false,
+          "source": "BeanZen:Sources/BeanZen/Scales/ScaleAdapter.swift:165",
+          "events": [],
+          "mechanism": null
+        },
+        "timerResume": {
+          "commandImplemented": false,
+          "usesStartCommandDefault": true,
+          "physicallyContinues": null,
+          "source": "BeanZen:Sources/BeanZen/Scales/ScaleAdapter.swift:169"
+        }
+      },
+      "hardwareEvidence": [
+        {
+          "app": "Beanzen catalog",
+          "platform": "unspecified",
+          "date": null,
+          "scope": [
+            "hardware_verified_flag_no_per_feature_scope"
+          ],
+          "source": "BeanZen:Sources/BeanZen/Resources/scales.json#kp2048b"
+        }
+      ],
+      "beanzenPlatforms": {
+        "ios": "not_established",
+        "android": "not_established"
+      },
+      "notes": {
+        "en": "Unbranded KP2048B / KT630B protocol. Detection also accepts blackcoffee names, but that name does not establish a model. Catalog records physical verification; platform is not specified.",
+        "ru": "Безымянные весы KP2048B с протоколом KT630B. Адаптер также распознаёт имена blackcoffee, но модель по ним не установлена. В каталоге отмечена проверка на весах без указания платформы."
+      },
+      "sources": [
+        "BeanZen:Sources/BeanZen/Resources/scales.json#kp2048b",
+        "BeanZen:Sources/BeanZen/Scales/KP2048B.swift",
+        "CoffeeScale/Scales/KP2048B/KP2048B_desc.md"
+      ],
+      "status": "hardware_observed_scoped",
+      "modelFirmwareUncertainty": {
+        "en": "Hardware observations, where present, apply to the documented device and firmware only. Other revisions have not been established.",
+        "ru": "Проверки на весах, где они есть, относятся только к описанному устройству и прошивке. Другие ревизии не подтверждены."
+      }
+    },
+    {
+      "id": "hoto-scale",
+      "name": "HOTO Smart Kitchen Scale",
+      "groupId": "hoto-scale",
+      "adapter": "HotoScale",
+      "catalogHardwareVerified": true,
+      "models": [
+        {
+          "id": "hoto-scale",
+          "name": "HOTO Smart Kitchen Scale",
+          "status": "hardware_observed"
+        }
+      ],
+      "capabilities": {
+        "weight": {
+          "implemented": true,
+          "source": "BeanZen:Sources/BeanZen/Scales/HotoScale.swift:114"
+        },
+        "tare": {
+          "implemented": true,
+          "source": "BeanZen:Sources/BeanZen/Scales/HotoScale.swift:130"
+        },
+        "timerStart": {
+          "implemented": false,
+          "source": "BeanZen:Sources/BeanZen/Scales/ScaleAdapter.swift:165"
+        },
+        "timerPause": {
+          "implemented": false,
+          "source": "BeanZen:Sources/BeanZen/Scales/ScaleAdapter.swift:165"
+        },
+        "timerReset": {
+          "implemented": false,
+          "source": "BeanZen:Sources/BeanZen/Scales/ScaleAdapter.swift:165"
+        },
+        "scaleTimerRead": {
+          "implemented": false,
+          "source": "BeanZen:Sources/BeanZen/Scales/ScaleAdapter.swift:165"
+        },
+        "physicalButtonEvents": {
+          "implemented": false,
+          "source": "BeanZen:Sources/BeanZen/Scales/ScaleAdapter.swift:165",
+          "events": [],
+          "mechanism": null
+        },
+        "timerResume": {
+          "commandImplemented": false,
+          "usesStartCommandDefault": true,
+          "physicallyContinues": null,
+          "source": "BeanZen:Sources/BeanZen/Scales/ScaleAdapter.swift:169"
+        }
+      },
+      "hardwareEvidence": [
+        {
+          "app": "Beanzen catalog",
+          "platform": "unspecified",
+          "date": null,
+          "scope": [
+            "hardware_verified_flag_no_per_feature_scope"
+          ],
+          "source": "BeanZen:Sources/BeanZen/Resources/scales.json#hoto-scale"
+        }
+      ],
+      "beanzenPlatforms": {
+        "ios": "not_established",
+        "android": "not_established"
+      },
+      "notes": {
+        "en": "HOTO Xiaomi-ecosystem scale (model ID hoto.k_scale.qwcfc). Requires optional Xiaomi sign-in to obtain the device token and authenticate to the scale; no Beanzen account is required. Catalog records physical verification; platform is not specified.",
+        "ru": "Весы HOTO экосистемы Xiaomi (модель hoto.k_scale.qwcfc). Для получения токена и аутентификации весов нужен необязательный вход Xiaomi; аккаунт Beanzen не требуется. В каталоге отмечена проверка на весах без указания платформы."
+      },
+      "sources": [
+        "BeanZen:Sources/BeanZen/Resources/scales.json#hoto-scale",
+        "BeanZen:Sources/BeanZen/Scales/HotoScale.swift",
+        "CoffeeScale/Scales/Hoto/HotoScale_spec.md"
+      ],
+      "requirements": {
+        "en": "Bluetooth permission; optional Xiaomi account sign-in and device-token retrieval for HOTO authentication.",
+        "ru": "Разрешение Bluetooth; необязательный вход в аккаунт Xiaomi и получение токена для аутентификации HOTO."
+      },
+      "modelId": "hoto.k_scale.qwcfc",
+      "status": "hardware_observed_scoped",
+      "modelFirmwareUncertainty": {
+        "en": "Hardware observations, where present, apply to the documented device and firmware only. Other revisions have not been established.",
+        "ru": "Проверки на весах, где они есть, относятся только к описанному устройству и прошивке. Другие ревизии не подтверждены."
+      }
+    },
+    {
+      "id": "timemore-dot",
+      "name": "TIMEMORE Dot",
+      "groupId": "timemore-dot",
+      "adapter": "TimemoreDot",
+      "catalogHardwareVerified": true,
+      "models": [
+        {
+          "id": "timemore-dot",
+          "name": "TIMEMORE Dot",
+          "status": "hardware_observed"
+        }
+      ],
+      "capabilities": {
+        "weight": {
+          "implemented": true,
+          "source": "BeanZen:Sources/BeanZen/Scales/TimemoreDot.swift:95"
+        },
+        "tare": {
+          "implemented": true,
+          "source": "BeanZen:Sources/BeanZen/Scales/TimemoreDot.swift:199"
+        },
+        "timerStart": {
+          "implemented": true,
+          "source": "BeanZen:Sources/BeanZen/Scales/TimemoreDot.swift:218"
+        },
+        "timerPause": {
+          "implemented": true,
+          "source": "BeanZen:Sources/BeanZen/Scales/TimemoreDot.swift:224"
+        },
+        "timerReset": {
+          "implemented": true,
+          "source": "BeanZen:Sources/BeanZen/Scales/TimemoreDot.swift:229"
+        },
+        "scaleTimerRead": {
+          "implemented": true,
+          "source": "BeanZen:Sources/BeanZen/Scales/TimemoreDot.swift:133"
+        },
+        "physicalButtonEvents": {
+          "implemented": false,
+          "source": "BeanZen:Sources/BeanZen/Scales/ScaleAdapter.swift:165",
+          "events": [],
+          "mechanism": null
+        },
+        "timerResume": {
+          "commandImplemented": true,
+          "usesStartCommandDefault": true,
+          "physicallyContinues": null,
+          "source": "BeanZen:Sources/BeanZen/Scales/ScaleAdapter.swift:169"
+        }
+      },
+      "hardwareEvidence": [
+        {
+          "app": "Beanzen catalog",
+          "platform": "unspecified",
+          "date": null,
+          "scope": [
+            "hardware_verified_flag_no_per_feature_scope"
+          ],
+          "source": "BeanZen:Sources/BeanZen/Resources/scales.json#timemore-dot"
+        }
+      ],
+      "beanzenPlatforms": {
+        "ios": "not_established",
+        "android": "not_established"
+      },
+      "notes": {
+        "en": "Physical verification is recorded for Dot. Timer commands and reading the scale timer are implemented; the original September timer checklist was deferred, so do not describe every timer function as physically verified.",
+        "ru": "Для Dot зафиксирована проверка на весах. Управление таймером и чтение его показаний реализованы; исходная сентябрьская проверка таймера была отложена, поэтому нельзя называть каждую функцию таймера проверенной."
+      },
+      "sources": [
+        "BeanZen:Sources/BeanZen/Resources/scales.json#timemore-dot",
+        "BeanZen:Sources/BeanZen/Scales/TimemoreDot.swift",
+        "CoffeeScale/Scales/TimemoreDot/"
+      ],
+      "status": "hardware_observed_scoped",
+      "modelFirmwareUncertainty": {
+        "en": "Hardware observations, where present, apply to the documented device and firmware only. Other revisions have not been established.",
+        "ru": "Проверки на весах, где они есть, относятся только к описанному устройству и прошивке. Другие ревизии не подтверждены."
+      }
+    },
+    {
+      "id": "timemore-basic-3",
+      "name": "TIMEMORE Basic 3",
+      "groupId": "timemore-dot",
+      "adapter": "TimemoreDot",
+      "catalogHardwareVerified": false,
+      "models": [
+        {
+          "id": "timemore-basic-3",
+          "name": "TIMEMORE Basic 3",
+          "status": "protocol_implemented"
+        }
+      ],
+      "capabilities": {
+        "weight": {
+          "implemented": true,
+          "source": "BeanZen:Sources/BeanZen/Scales/TimemoreDot.swift:95"
+        },
+        "tare": {
+          "implemented": true,
+          "source": "BeanZen:Sources/BeanZen/Scales/TimemoreDot.swift:199"
+        },
+        "timerStart": {
+          "implemented": true,
+          "source": "BeanZen:Sources/BeanZen/Scales/TimemoreDot.swift:218"
+        },
+        "timerPause": {
+          "implemented": true,
+          "source": "BeanZen:Sources/BeanZen/Scales/TimemoreDot.swift:224"
+        },
+        "timerReset": {
+          "implemented": true,
+          "source": "BeanZen:Sources/BeanZen/Scales/TimemoreDot.swift:229"
+        },
+        "scaleTimerRead": {
+          "implemented": true,
+          "source": "BeanZen:Sources/BeanZen/Scales/TimemoreDot.swift:133"
+        },
+        "physicalButtonEvents": {
+          "implemented": false,
+          "source": "BeanZen:Sources/BeanZen/Scales/ScaleAdapter.swift:165",
+          "events": [],
+          "mechanism": null
+        },
+        "timerResume": {
+          "commandImplemented": true,
+          "usesStartCommandDefault": true,
+          "physicallyContinues": null,
+          "source": "BeanZen:Sources/BeanZen/Scales/ScaleAdapter.swift:169"
+        }
+      },
+      "hardwareEvidence": [],
+      "beanzenPlatforms": {
+        "ios": "not_established",
+        "android": "not_established"
+      },
+      "notes": {
+        "en": "Uses the Dot adapter by protocol equivalence. Basic 3 has not been physically tested; its actual Bluetooth name is not confirmed.",
+        "ru": "Использует адаптер Dot по сходству протокола. Basic 3 не проверялись на весах; реальное Bluetooth-имя не подтверждено."
+      },
+      "sources": [
+        "BeanZen:Sources/BeanZen/Resources/scales.json#timemore-basic-3",
+        "BeanZen:Sources/BeanZen/Scales/TimemoreDot.swift",
+        "CoffeeScale/Scales/TimemoreBasic/"
+      ],
+      "status": "protocol_implemented",
+      "modelFirmwareUncertainty": {
+        "en": "Hardware observations, where present, apply to the documented device and firmware only. Other revisions have not been established.",
+        "ru": "Проверки на весах, где они есть, относятся только к описанному устройству и прошивке. Другие ревизии не подтверждены."
+      }
+    },
+    {
+      "id": "timemore-black-mirror",
+      "name": "TIMEMORE Black Mirror",
+      "groupId": "timemore-black-mirror-scale",
+      "adapter": "TimemoreBlackMirrorScale",
+      "catalogHardwareVerified": false,
+      "models": [
+        {
+          "id": "timemore-black-mirror",
+          "name": "TIMEMORE Black Mirror",
+          "status": "protocol_implemented"
+        }
+      ],
+      "capabilities": {
+        "weight": {
+          "implemented": true,
+          "source": "BeanZen:Sources/BeanZen/Scales/TimemoreBlackMirrorScale.swift:109"
+        },
+        "tare": {
+          "implemented": true,
+          "source": "BeanZen:Sources/BeanZen/Scales/TimemoreBlackMirrorScale.swift:191"
+        },
+        "timerStart": {
+          "implemented": true,
+          "source": "BeanZen:Sources/BeanZen/Scales/TimemoreBlackMirrorScale.swift:223"
+        },
+        "timerPause": {
+          "implemented": true,
+          "source": "BeanZen:Sources/BeanZen/Scales/TimemoreBlackMirrorScale.swift:228"
+        },
+        "timerReset": {
+          "implemented": true,
+          "source": "BeanZen:Sources/BeanZen/Scales/TimemoreBlackMirrorScale.swift:233"
+        },
+        "scaleTimerRead": {
+          "implemented": false,
+          "source": "BeanZen:Sources/BeanZen/Scales/ScaleAdapter.swift:165"
+        },
+        "physicalButtonEvents": {
+          "implemented": false,
+          "source": "BeanZen:Sources/BeanZen/Scales/ScaleAdapter.swift:165",
+          "events": [],
+          "mechanism": null
+        },
+        "timerResume": {
+          "commandImplemented": true,
+          "usesStartCommandDefault": true,
+          "physicallyContinues": null,
+          "source": "BeanZen:Sources/BeanZen/Scales/ScaleAdapter.swift:169"
+        }
+      },
+      "hardwareEvidence": [],
+      "beanzenPlatforms": {
+        "ios": "not_established",
+        "android": "not_established"
+      },
+      "notes": {
+        "en": "Applies to the older Black Mirror generation using Bluetooth service 181D. Other generations or firmware may differ. Protocol implementation, not physical validation.",
+        "ru": "Относится к старому поколению Black Mirror с Bluetooth-сервисом 181D. Другие поколения и прошивки могут отличаться. Реализован протокол, проверки на весах нет."
+      },
+      "sources": [
+        "BeanZen:Sources/BeanZen/Resources/scales.json#timemore-black-mirror",
+        "BeanZen:Sources/BeanZen/Scales/TimemoreBlackMirrorScale.swift",
+        "CoffeeScale/Scales/TimemoreBlackMirror/"
+      ],
+      "status": "protocol_implemented",
+      "modelFirmwareUncertainty": {
+        "en": "Hardware observations, where present, apply to the documented device and firmware only. Other revisions have not been established.",
+        "ru": "Проверки на весах, где они есть, относятся только к описанному устройству и прошивке. Другие ревизии не подтверждены."
+      }
+    },
+    {
+      "id": "acaia-pearl",
+      "name": "Acaia Pearl",
+      "groupId": "acaia-scale",
+      "adapter": "AcaiaScale",
+      "catalogHardwareVerified": true,
+      "models": [
+        {
+          "id": "acaia-pearl",
+          "name": "Acaia Pearl",
+          "status": "hardware_observed"
+        }
+      ],
+      "capabilities": {
+        "weight": {
+          "implemented": true,
+          "source": "BeanZen:Sources/BeanZen/Scales/AcaiaScale.swift:217"
+        },
+        "tare": {
+          "implemented": true,
+          "source": "BeanZen:Sources/BeanZen/Scales/AcaiaScale.swift:495"
+        },
+        "timerStart": {
+          "implemented": true,
+          "source": "BeanZen:Sources/BeanZen/Scales/AcaiaScale.swift:511"
+        },
+        "timerPause": {
+          "implemented": true,
+          "source": "BeanZen:Sources/BeanZen/Scales/AcaiaScale.swift:514"
+        },
+        "timerReset": {
+          "implemented": true,
+          "source": "BeanZen:Sources/BeanZen/Scales/AcaiaScale.swift:517"
+        },
+        "scaleTimerRead": {
+          "implemented": true,
+          "source": "BeanZen:Sources/BeanZen/Scales/AcaiaScale.swift:247"
+        },
+        "physicalButtonEvents": {
+          "implemented": true,
+          "source": "BeanZen:Sources/BeanZen/Scales/AcaiaScale.swift:255",
+          "events": [
+            "tare",
+            "timer_start",
+            "timer_pause",
+            "timer_reset"
+          ],
+          "mechanism": "decoded_packets"
+        },
+        "timerResume": {
+          "commandImplemented": true,
+          "usesStartCommandDefault": true,
+          "physicallyContinues": null,
+          "source": "BeanZen:Sources/BeanZen/Scales/ScaleAdapter.swift:169"
+        }
+      },
+      "hardwareEvidence": [
+        {
+          "app": "Beanzen",
+          "platform": "ios",
+          "date": "2026-09-07",
+          "scope": [
+            "weight",
+            "timer_button_events"
+          ],
+          "source": "CoffeeScale:plans/2026-09-05-scale-button-events.md:218"
+        },
+        {
+          "app": "Beanzen",
+          "platform": "android",
+          "date": "2026-09-09",
+          "scope": [
+            "weight",
+            "timer_start",
+            "timer_pause",
+            "timer_reset",
+            "timer_resume",
+            "scale_timer_read",
+            "timer_button_events"
+          ],
+          "source": "CoffeeScale:Scales/Acaia/Acaia_spec.md:393"
+        }
+      ],
+      "beanzenPlatforms": {
+        "ios": "scoped_hardware_evidence",
+        "android": "scoped_hardware_evidence"
+      },
+      "notes": {
+        "en": "New-revision Pearl has been physically exercised with Beanzen on iOS and Android. This does not establish compatibility with every Pearl revision or firmware. The older 1820/2A80 path remains unverified.",
+        "ru": "Pearl новой ревизии проверяли с Beanzen на iOS и Android. Это не подтверждает все ревизии и прошивки Pearl. Старый путь 1820/2A80 не проверен."
+      },
+      "sources": [
+        "BeanZen:Sources/BeanZen/Resources/scales.json#acaia-pearl",
+        "BeanZen:Sources/BeanZen/Scales/AcaiaScale.swift",
+        "CoffeeScale/Scales/Acaia/Acaia_spec.md"
+      ],
+      "status": "hardware_observed_scoped",
+      "modelFirmwareUncertainty": {
+        "en": "Hardware observations, where present, apply to the documented device and firmware only. Other revisions have not been established.",
+        "ru": "Проверки на весах, где они есть, относятся только к описанному устройству и прошивке. Другие ревизии не подтверждены."
+      }
+    },
+    {
+      "id": "acaia-lunar",
+      "name": "Acaia Lunar",
+      "groupId": "acaia-scale",
+      "adapter": "AcaiaScale",
+      "catalogHardwareVerified": false,
+      "models": [
+        {
+          "id": "acaia-lunar",
+          "name": "Acaia Lunar",
+          "status": "protocol_implemented"
+        }
+      ],
+      "capabilities": {
+        "weight": {
+          "implemented": true,
+          "source": "BeanZen:Sources/BeanZen/Scales/AcaiaScale.swift:217"
+        },
+        "tare": {
+          "implemented": true,
+          "source": "BeanZen:Sources/BeanZen/Scales/AcaiaScale.swift:495"
+        },
+        "timerStart": {
+          "implemented": true,
+          "source": "BeanZen:Sources/BeanZen/Scales/AcaiaScale.swift:511"
+        },
+        "timerPause": {
+          "implemented": true,
+          "source": "BeanZen:Sources/BeanZen/Scales/AcaiaScale.swift:514"
+        },
+        "timerReset": {
+          "implemented": true,
+          "source": "BeanZen:Sources/BeanZen/Scales/AcaiaScale.swift:517"
+        },
+        "scaleTimerRead": {
+          "implemented": true,
+          "source": "BeanZen:Sources/BeanZen/Scales/AcaiaScale.swift:247"
+        },
+        "physicalButtonEvents": {
+          "implemented": true,
+          "source": "BeanZen:Sources/BeanZen/Scales/AcaiaScale.swift:255",
+          "events": [
+            "tare",
+            "timer_start",
+            "timer_pause",
+            "timer_reset"
+          ],
+          "mechanism": "decoded_packets"
+        },
+        "timerResume": {
+          "commandImplemented": true,
+          "usesStartCommandDefault": true,
+          "physicallyContinues": null,
+          "source": "BeanZen:Sources/BeanZen/Scales/ScaleAdapter.swift:169"
+        }
+      },
+      "hardwareEvidence": [],
+      "beanzenPlatforms": {
+        "ios": "not_established",
+        "android": "not_established"
+      },
+      "notes": {
+        "en": "Uses the shared Acaia adapter. This model is not physically verified; Pearl testing does not verify another Acaia model or revision.",
+        "ru": "Использует общий адаптер Acaia. Эта модель не проверена на весах; проверка Pearl не подтверждает другую модель или ревизию Acaia."
+      },
+      "sources": [
+        "BeanZen:Sources/BeanZen/Resources/scales.json#acaia-lunar",
+        "BeanZen:Sources/BeanZen/Scales/AcaiaScale.swift",
+        "CoffeeScale/Scales/Acaia/Acaia_spec.md"
+      ],
+      "status": "protocol_implemented",
+      "modelFirmwareUncertainty": {
+        "en": "Hardware observations, where present, apply to the documented device and firmware only. Other revisions have not been established.",
+        "ru": "Проверки на весах, где они есть, относятся только к описанному устройству и прошивке. Другие ревизии не подтверждены."
+      }
+    },
+    {
+      "id": "acaia-pyxis",
+      "name": "Acaia Pyxis",
+      "groupId": "acaia-scale",
+      "adapter": "AcaiaScale",
+      "catalogHardwareVerified": false,
+      "models": [
+        {
+          "id": "acaia-pyxis",
+          "name": "Acaia Pyxis",
+          "status": "protocol_implemented"
+        }
+      ],
+      "capabilities": {
+        "weight": {
+          "implemented": true,
+          "source": "BeanZen:Sources/BeanZen/Scales/AcaiaScale.swift:217"
+        },
+        "tare": {
+          "implemented": true,
+          "source": "BeanZen:Sources/BeanZen/Scales/AcaiaScale.swift:495"
+        },
+        "timerStart": {
+          "implemented": true,
+          "source": "BeanZen:Sources/BeanZen/Scales/AcaiaScale.swift:511"
+        },
+        "timerPause": {
+          "implemented": true,
+          "source": "BeanZen:Sources/BeanZen/Scales/AcaiaScale.swift:514"
+        },
+        "timerReset": {
+          "implemented": true,
+          "source": "BeanZen:Sources/BeanZen/Scales/AcaiaScale.swift:517"
+        },
+        "scaleTimerRead": {
+          "implemented": true,
+          "source": "BeanZen:Sources/BeanZen/Scales/AcaiaScale.swift:247"
+        },
+        "physicalButtonEvents": {
+          "implemented": true,
+          "source": "BeanZen:Sources/BeanZen/Scales/AcaiaScale.swift:255",
+          "events": [
+            "tare",
+            "timer_start",
+            "timer_pause",
+            "timer_reset"
+          ],
+          "mechanism": "decoded_packets"
+        },
+        "timerResume": {
+          "commandImplemented": true,
+          "usesStartCommandDefault": true,
+          "physicallyContinues": null,
+          "source": "BeanZen:Sources/BeanZen/Scales/ScaleAdapter.swift:169"
+        }
+      },
+      "hardwareEvidence": [],
+      "beanzenPlatforms": {
+        "ios": "not_established",
+        "android": "not_established"
+      },
+      "notes": {
+        "en": "Uses the shared Acaia adapter. This model is not physically verified; Pearl testing does not verify another Acaia model or revision.",
+        "ru": "Использует общий адаптер Acaia. Эта модель не проверена на весах; проверка Pearl не подтверждает другую модель или ревизию Acaia."
+      },
+      "sources": [
+        "BeanZen:Sources/BeanZen/Resources/scales.json#acaia-pyxis",
+        "BeanZen:Sources/BeanZen/Scales/AcaiaScale.swift",
+        "CoffeeScale/Scales/Acaia/Acaia_spec.md"
+      ],
+      "status": "protocol_implemented",
+      "modelFirmwareUncertainty": {
+        "en": "Hardware observations, where present, apply to the documented device and firmware only. Other revisions have not been established.",
+        "ru": "Проверки на весах, где они есть, относятся только к описанному устройству и прошивке. Другие ревизии не подтверждены."
+      }
+    },
+    {
+      "id": "acaia-cinco",
+      "name": "Acaia Cinco",
+      "groupId": "acaia-scale",
+      "adapter": "AcaiaScale",
+      "catalogHardwareVerified": false,
+      "models": [
+        {
+          "id": "acaia-cinco",
+          "name": "Acaia Cinco",
+          "status": "protocol_implemented"
+        }
+      ],
+      "capabilities": {
+        "weight": {
+          "implemented": true,
+          "source": "BeanZen:Sources/BeanZen/Scales/AcaiaScale.swift:217"
+        },
+        "tare": {
+          "implemented": true,
+          "source": "BeanZen:Sources/BeanZen/Scales/AcaiaScale.swift:495"
+        },
+        "timerStart": {
+          "implemented": true,
+          "source": "BeanZen:Sources/BeanZen/Scales/AcaiaScale.swift:511"
+        },
+        "timerPause": {
+          "implemented": true,
+          "source": "BeanZen:Sources/BeanZen/Scales/AcaiaScale.swift:514"
+        },
+        "timerReset": {
+          "implemented": true,
+          "source": "BeanZen:Sources/BeanZen/Scales/AcaiaScale.swift:517"
+        },
+        "scaleTimerRead": {
+          "implemented": true,
+          "source": "BeanZen:Sources/BeanZen/Scales/AcaiaScale.swift:247"
+        },
+        "physicalButtonEvents": {
+          "implemented": true,
+          "source": "BeanZen:Sources/BeanZen/Scales/AcaiaScale.swift:255",
+          "events": [
+            "tare",
+            "timer_start",
+            "timer_pause",
+            "timer_reset"
+          ],
+          "mechanism": "decoded_packets"
+        },
+        "timerResume": {
+          "commandImplemented": true,
+          "usesStartCommandDefault": true,
+          "physicallyContinues": null,
+          "source": "BeanZen:Sources/BeanZen/Scales/ScaleAdapter.swift:169"
+        }
+      },
+      "hardwareEvidence": [],
+      "beanzenPlatforms": {
+        "ios": "not_established",
+        "android": "not_established"
+      },
+      "notes": {
+        "en": "Uses the shared Acaia adapter. This model is not physically verified; Pearl testing does not verify another Acaia model or revision.",
+        "ru": "Использует общий адаптер Acaia. Эта модель не проверена на весах; проверка Pearl не подтверждает другую модель или ревизию Acaia."
+      },
+      "sources": [
+        "BeanZen:Sources/BeanZen/Resources/scales.json#acaia-cinco",
+        "BeanZen:Sources/BeanZen/Scales/AcaiaScale.swift",
+        "CoffeeScale/Scales/Acaia/Acaia_spec.md"
+      ],
+      "status": "protocol_implemented",
+      "modelFirmwareUncertainty": {
+        "en": "Hardware observations, where present, apply to the documented device and firmware only. Other revisions have not been established.",
+        "ru": "Проверки на весах, где они есть, относятся только к описанному устройству и прошивке. Другие ревизии не подтверждены."
+      }
+    },
+    {
+      "id": "bookoo-themis",
+      "name": "BOOKOO Themis",
+      "groupId": "bookoo-scale",
+      "adapter": "BookooScale",
+      "catalogHardwareVerified": false,
+      "models": [
+        {
+          "id": "bookoo-themis-mini",
+          "name": "BOOKOO Themis Mini",
+          "status": "protocol_implemented"
+        },
+        {
+          "id": "bookoo-themis-ultra",
+          "name": "BOOKOO Themis Ultra",
+          "status": "hardware_observed"
+        }
+      ],
+      "capabilities": {
+        "weight": {
+          "implemented": true,
+          "source": "BeanZen:Sources/BeanZen/Scales/BookooScale.swift:92"
+        },
+        "tare": {
+          "implemented": true,
+          "source": "BeanZen:Sources/BeanZen/Scales/BookooScale.swift:295"
+        },
+        "timerStart": {
+          "implemented": true,
+          "source": "BeanZen:Sources/BeanZen/Scales/BookooScale.swift:320"
+        },
+        "timerPause": {
+          "implemented": true,
+          "source": "BeanZen:Sources/BeanZen/Scales/BookooScale.swift:327"
+        },
+        "timerReset": {
+          "implemented": true,
+          "source": "BeanZen:Sources/BeanZen/Scales/BookooScale.swift:334"
+        },
+        "scaleTimerRead": {
+          "implemented": true,
+          "source": "BeanZen:Sources/BeanZen/Scales/BookooScale.swift:111"
+        },
+        "physicalButtonEvents": {
+          "implemented": true,
+          "source": "BeanZen:Sources/BeanZen/Scales/BookooScale.swift:246",
+          "events": [
+            "timer_start",
+            "timer_pause",
+            "timer_reset"
+          ],
+          "mechanism": "inferred_timer_phase"
+        },
+        "timerResume": {
+          "commandImplemented": true,
+          "usesStartCommandDefault": true,
+          "physicallyContinues": null,
+          "source": "BeanZen:Sources/BeanZen/Scales/ScaleAdapter.swift:169",
+          "physicallyContinuesByModel": {
+            "bookoo-themis-ultra": false,
+            "bookoo-themis-mini": null
+          }
+        }
+      },
+      "hardwareEvidence": [
+        {
+          "app": "Beanzen",
+          "platform": "ios",
+          "date": "2026-10-05",
+          "scope": [
+            "ultra_weight",
+            "ultra_timer_start",
+            "ultra_timer_pause",
+            "ultra_timer_reset",
+            "ultra_scale_timer_read",
+            "ultra_timer_button_events"
+          ],
+          "source": "CoffeeScale:Scales/Bookoo/Bookoo_spec.md:3"
+        }
+      ],
+      "beanzenPlatforms": {
+        "ios": "scoped_hardware_evidence",
+        "android": "not_established"
+      },
+      "notes": {
+        "en": "Themis Ultra weight, timer commands and timer-button synchronization were physically checked with Beanzen on iPhone. Mini is protocol-only. Ultra tare was not checked. Ultra cannot resume its scale timer with the start command; the app timer can continue.",
+        "ru": "Вес, команды таймера и синхронизацию кнопки Themis Ultra проверяли с Beanzen на iPhone. Для Mini реализован только протокол. Тара Ultra не проверялась. Команда старта не продолжает таймер Ultra после паузы; таймер приложения может продолжаться."
+      },
+      "sources": [
+        "BeanZen:Sources/BeanZen/Resources/scales.json#bookoo-themis",
+        "BeanZen:Sources/BeanZen/Scales/BookooScale.swift",
+        "CoffeeScale/Scales/Bookoo/Bookoo_spec.md"
+      ],
+      "status": "mixed_models",
+      "modelFirmwareUncertainty": {
+        "en": "Hardware observations, where present, apply to the documented device and firmware only. Other revisions have not been established.",
+        "ru": "Проверки на весах, где они есть, относятся только к описанному устройству и прошивке. Другие ревизии не подтверждены."
+      }
+    },
+    {
+      "id": "decent-scale",
+      "name": "Decent Scale",
+      "groupId": "decent-scale",
+      "adapter": "DecentScale",
+      "catalogHardwareVerified": false,
+      "models": [
+        {
+          "id": "decent-scale",
+          "name": "Decent Scale",
+          "status": "protocol_implemented"
+        },
+        {
+          "id": "half-decent",
+          "name": "Half Decent",
+          "status": "protocol_implemented"
+        }
+      ],
+      "capabilities": {
+        "weight": {
+          "implemented": true,
+          "source": "BeanZen:Sources/BeanZen/Scales/DecentScale.swift:128"
+        },
+        "tare": {
+          "implemented": true,
+          "source": "BeanZen:Sources/BeanZen/Scales/DecentScale.swift:356"
+        },
+        "timerStart": {
+          "implemented": true,
+          "source": "BeanZen:Sources/BeanZen/Scales/DecentScale.swift:419"
+        },
+        "timerPause": {
+          "implemented": true,
+          "source": "BeanZen:Sources/BeanZen/Scales/DecentScale.swift:424"
+        },
+        "timerReset": {
+          "implemented": true,
+          "source": "BeanZen:Sources/BeanZen/Scales/DecentScale.swift:429"
+        },
+        "scaleTimerRead": {
+          "implemented": true,
+          "source": "BeanZen:Sources/BeanZen/Scales/DecentScale.swift:155"
+        },
+        "physicalButtonEvents": {
+          "implemented": true,
+          "source": "BeanZen:Sources/BeanZen/Scales/DecentScale.swift:163",
+          "events": [
+            "tare",
+            "timer_toggle",
+            "timer_reset"
+          ],
+          "mechanism": "decoded_packets"
+        },
+        "timerResume": {
+          "commandImplemented": true,
+          "usesStartCommandDefault": true,
+          "physicallyContinues": null,
+          "source": "BeanZen:Sources/BeanZen/Scales/ScaleAdapter.swift:169"
+        }
+      },
+      "hardwareEvidence": [],
+      "beanzenPlatforms": {
+        "ios": "not_established",
+        "android": "not_established"
+      },
+      "notes": {
+        "en": "Decent Scale and Half Decent share an adapter. Protocol implementation only; revisions and physical-button behavior have not been checked on hardware.",
+        "ru": "Decent Scale и Half Decent используют один адаптер. Реализован протокол; ревизии и поведение физических кнопок не проверялись на весах."
+      },
+      "sources": [
+        "BeanZen:Sources/BeanZen/Resources/scales.json#decent-scale",
+        "BeanZen:Sources/BeanZen/Scales/DecentScale.swift",
+        "CoffeeScale/Scales/Decent/Decent_spec.md"
+      ],
+      "status": "protocol_implemented",
+      "modelFirmwareUncertainty": {
+        "en": "Hardware observations, where present, apply to the documented device and firmware only. Other revisions have not been established.",
+        "ru": "Проверки на весах, где они есть, относятся только к описанному устройству и прошивке. Другие ревизии не подтверждены."
+      }
+    },
+    {
+      "id": "espressiscale",
+      "name": "EspressiScale",
+      "groupId": "decent-scale",
+      "adapter": "DecentScale",
+      "catalogHardwareVerified": false,
+      "models": [
+        {
+          "id": "espressiscale",
+          "name": "EspressiScale",
+          "status": "protocol_implemented"
+        }
+      ],
+      "capabilities": {
+        "weight": {
+          "implemented": true,
+          "source": "BeanZen:Sources/BeanZen/Scales/DecentScale.swift:128"
+        },
+        "tare": {
+          "implemented": true,
+          "source": "BeanZen:Sources/BeanZen/Scales/DecentScale.swift:356"
+        },
+        "timerStart": {
+          "implemented": true,
+          "source": "BeanZen:Sources/BeanZen/Scales/DecentScale.swift:419"
+        },
+        "timerPause": {
+          "implemented": true,
+          "source": "BeanZen:Sources/BeanZen/Scales/DecentScale.swift:424"
+        },
+        "timerReset": {
+          "implemented": true,
+          "source": "BeanZen:Sources/BeanZen/Scales/DecentScale.swift:429"
+        },
+        "scaleTimerRead": {
+          "implemented": true,
+          "source": "BeanZen:Sources/BeanZen/Scales/DecentScale.swift:155"
+        },
+        "physicalButtonEvents": {
+          "implemented": true,
+          "source": "BeanZen:Sources/BeanZen/Scales/DecentScale.swift:163",
+          "events": [
+            "tare",
+            "timer_toggle",
+            "timer_reset"
+          ],
+          "mechanism": "decoded_packets",
+          "modelEmissionConfirmed": false
+        },
+        "timerResume": {
+          "commandImplemented": true,
+          "usesStartCommandDefault": true,
+          "physicallyContinues": null,
+          "source": "BeanZen:Sources/BeanZen/Scales/ScaleAdapter.swift:169"
+        }
+      },
+      "hardwareEvidence": [],
+      "beanzenPlatforms": {
+        "ios": "not_established",
+        "android": "not_established"
+      },
+      "notes": {
+        "en": "Open-source firmware that emulates Decent. Weight and commands use that adapter; emission of physical-button packets is not confirmed.",
+        "ru": "Открытая прошивка, эмулирующая Decent. Вес и команды обрабатывает этот адаптер; передача событий физических кнопок не подтверждена."
+      },
+      "sources": [
+        "BeanZen:Sources/BeanZen/Resources/scales.json#espressiscale",
+        "BeanZen:Sources/BeanZen/Scales/DecentScale.swift",
+        "CoffeeScale/Scales/EspressiScale/"
+      ],
+      "status": "protocol_implemented",
+      "modelFirmwareUncertainty": {
+        "en": "Hardware observations, where present, apply to the documented device and firmware only. Other revisions have not been established.",
+        "ru": "Проверки на весах, где они есть, относятся только к описанному устройству и прошивке. Другие ревизии не подтверждены."
+      }
+    },
+    {
+      "id": "difluid-microbalance",
+      "name": "DiFluid Microbalance",
+      "groupId": "di-fluid-scale",
+      "adapter": "DiFluidScale",
+      "catalogHardwareVerified": false,
+      "models": [
+        {
+          "id": "difluid-microbalance",
+          "name": "DiFluid Microbalance",
+          "status": "hardware_observed"
+        }
+      ],
+      "capabilities": {
+        "weight": {
+          "implemented": true,
+          "source": "BeanZen:Sources/BeanZen/Scales/DiFluidScale.swift:189"
+        },
+        "tare": {
+          "implemented": true,
+          "source": "BeanZen:Sources/BeanZen/Scales/DiFluidScale.swift:426"
+        },
+        "timerStart": {
+          "implemented": true,
+          "source": "BeanZen:Sources/BeanZen/Scales/DiFluidScale.swift:437"
+        },
+        "timerPause": {
+          "implemented": true,
+          "source": "BeanZen:Sources/BeanZen/Scales/DiFluidScale.swift:444"
+        },
+        "timerReset": {
+          "implemented": false,
+          "source": "BeanZen:Sources/BeanZen/Scales/DiFluidScale.swift:457"
+        },
+        "scaleTimerRead": {
+          "implemented": true,
+          "source": "BeanZen:Sources/BeanZen/Scales/DiFluidScale.swift:239"
+        },
+        "physicalButtonEvents": {
+          "implemented": false,
+          "source": "BeanZen:Sources/BeanZen/Scales/ScaleAdapter.swift:165",
+          "events": [],
+          "mechanism": null
+        },
+        "timerResume": {
+          "commandImplemented": true,
+          "usesStartCommandDefault": false,
+          "physicallyContinues": false,
+          "source": "BeanZen:Sources/BeanZen/Scales/DiFluidScale.swift:467"
+        }
+      },
+      "hardwareEvidence": [
+        {
+          "app": "Beanzen",
+          "platform": "android",
+          "date": "2026-09-01",
+          "scope": [
+            "weight",
+            "tare"
+          ],
+          "source": "CoffeeScale:Scales/DiFluid/DiFluid_spec.md:1210"
+        },
+        {
+          "app": "CoffeeScale",
+          "platform": "unspecified",
+          "date": "2026-10-07",
+          "scope": [
+            "model_hardware_test_recorded",
+            "timer_resume_does_not_continue",
+            "auto_detect_timing_disable"
+          ],
+          "source": "CoffeeScale:docs/appstore/store-listing-1.42.md:12"
+        }
+      ],
+      "beanzenPlatforms": {
+        "ios": "not_established",
+        "android": "scoped_hardware_evidence"
+      },
+      "notes": {
+        "en": "Beanzen Android weight streaming and tare have explicit physical evidence. CoffeeScale later records hardware tests for both Microbalance models; do not treat that as both-platform Beanzen validation. No reset command. Resume preserves the scale display but does not resume its timer.",
+        "ru": "Для Beanzen Android явно подтверждены на весах передача веса и тара. Позднее CoffeeScale фиксирует проверки обеих Microbalance; это не проверка Beanzen на обеих платформах. Команды сброса нет. Продолжение сохраняет показания дисплея, но не запускает таймер весов."
+      },
+      "sources": [
+        "BeanZen:Sources/BeanZen/Resources/scales.json#difluid-microbalance",
+        "BeanZen:Sources/BeanZen/Scales/DiFluidScale.swift",
+        "CoffeeScale/Scales/DiFluid/DiFluid_spec.md"
+      ],
+      "firmwareNote": {
+        "en": "Vendor protocol reference starts at firmware V300; this is not a guarantee for all firmware.",
+        "ru": "Вендорская документация начинается с прошивки V300; это не гарантия для всех прошивок."
+      },
+      "status": "hardware_observed_scoped",
+      "modelFirmwareUncertainty": {
+        "en": "Vendor protocol reference starts at firmware V300; this is not a guarantee for all firmware.",
+        "ru": "Вендорская документация начинается с прошивки V300; это не гарантия для всех прошивок."
+      }
+    },
+    {
+      "id": "difluid-microbalance-ti",
+      "name": "DiFluid Microbalance Ti",
+      "groupId": "di-fluid-scale",
+      "adapter": "DiFluidScale",
+      "catalogHardwareVerified": false,
+      "models": [
+        {
+          "id": "difluid-microbalance-ti",
+          "name": "DiFluid Microbalance Ti",
+          "status": "hardware_observed"
+        }
+      ],
+      "capabilities": {
+        "weight": {
+          "implemented": true,
+          "source": "BeanZen:Sources/BeanZen/Scales/DiFluidScale.swift:189"
+        },
+        "tare": {
+          "implemented": true,
+          "source": "BeanZen:Sources/BeanZen/Scales/DiFluidScale.swift:426"
+        },
+        "timerStart": {
+          "implemented": true,
+          "source": "BeanZen:Sources/BeanZen/Scales/DiFluidScale.swift:437"
+        },
+        "timerPause": {
+          "implemented": true,
+          "source": "BeanZen:Sources/BeanZen/Scales/DiFluidScale.swift:444"
+        },
+        "timerReset": {
+          "implemented": false,
+          "source": "BeanZen:Sources/BeanZen/Scales/DiFluidScale.swift:457"
+        },
+        "scaleTimerRead": {
+          "implemented": true,
+          "source": "BeanZen:Sources/BeanZen/Scales/DiFluidScale.swift:239"
+        },
+        "physicalButtonEvents": {
+          "implemented": false,
+          "source": "BeanZen:Sources/BeanZen/Scales/ScaleAdapter.swift:165",
+          "events": [],
+          "mechanism": null
+        },
+        "timerResume": {
+          "commandImplemented": true,
+          "usesStartCommandDefault": false,
+          "physicallyContinues": false,
+          "source": "BeanZen:Sources/BeanZen/Scales/DiFluidScale.swift:467"
+        }
+      },
+      "hardwareEvidence": [
+        {
+          "app": "CoffeeScale",
+          "platform": "unspecified",
+          "date": "2026-10-07",
+          "scope": [
+            "model_hardware_test_recorded"
+          ],
+          "source": "CoffeeScale:docs/appstore/store-listing-1.42.md:32"
+        }
+      ],
+      "beanzenPlatforms": {
+        "ios": "not_established",
+        "android": "not_established"
+      },
+      "notes": {
+        "en": "Shared DiFluid protocol; the Ti uses service 00DD rather than Microbalance service 00EE. CoffeeScale records physical tests for both models; no explicit Beanzen Ti platform test was found. No reset command; resume does not continue the scale timer.",
+        "ru": "Общий протокол DiFluid; Ti использует сервис 00DD вместо 00EE у Microbalance. CoffeeScale фиксирует проверки обеих моделей; явной проверки Ti с Beanzen по платформам не найдено. Команды сброса нет; продолжение не запускает таймер весов."
+      },
+      "sources": [
+        "BeanZen:Sources/BeanZen/Resources/scales.json#difluid-microbalance-ti",
+        "BeanZen:Sources/BeanZen/Scales/DiFluidScale.swift",
+        "CoffeeScale/Scales/DiFluid/DiFluid_spec.md"
+      ],
+      "firmwareNote": {
+        "en": "Vendor protocol reference starts at firmware V010; this is not a guarantee for all firmware.",
+        "ru": "Вендорская документация начинается с прошивки V010; это не гарантия для всех прошивок."
+      },
+      "status": "hardware_observed_scoped",
+      "modelFirmwareUncertainty": {
+        "en": "Vendor protocol reference starts at firmware V010; this is not a guarantee for all firmware.",
+        "ru": "Вендорская документация начинается с прошивки V010; это не гарантия для всех прошивок."
+      }
+    },
+    {
+      "id": "atomax-skale-ii",
+      "name": "Atomax Skale II",
+      "groupId": "skale-i-i-scale",
+      "adapter": "SkaleIIScale",
+      "catalogHardwareVerified": false,
+      "models": [
+        {
+          "id": "atomax-skale-ii",
+          "name": "Atomax Skale II",
+          "status": "protocol_implemented"
+        }
+      ],
+      "capabilities": {
+        "weight": {
+          "implemented": true,
+          "source": "BeanZen:Sources/BeanZen/Scales/SkaleIIScale.swift:102"
+        },
+        "tare": {
+          "implemented": true,
+          "source": "BeanZen:Sources/BeanZen/Scales/SkaleIIScale.swift:214"
+        },
+        "timerStart": {
+          "implemented": false,
+          "source": "BeanZen:Sources/BeanZen/Scales/ScaleAdapter.swift:165"
+        },
+        "timerPause": {
+          "implemented": false,
+          "source": "BeanZen:Sources/BeanZen/Scales/ScaleAdapter.swift:165"
+        },
+        "timerReset": {
+          "implemented": false,
+          "source": "BeanZen:Sources/BeanZen/Scales/ScaleAdapter.swift:165"
+        },
+        "scaleTimerRead": {
+          "implemented": false,
+          "source": "BeanZen:Sources/BeanZen/Scales/ScaleAdapter.swift:165"
+        },
+        "physicalButtonEvents": {
+          "implemented": false,
+          "source": "BeanZen:Sources/BeanZen/Scales/ScaleAdapter.swift:165",
+          "events": [],
+          "mechanism": null
+        },
+        "timerResume": {
+          "commandImplemented": false,
+          "usesStartCommandDefault": true,
+          "physicallyContinues": null,
+          "source": "BeanZen:Sources/BeanZen/Scales/ScaleAdapter.swift:169"
+        }
+      },
+      "hardwareEvidence": [],
+      "beanzenPlatforms": {
+        "ios": "not_established",
+        "android": "not_established"
+      },
+      "notes": {
+        "en": "Protocol implementation only. The button characteristic is not consumed by the adapter, so physical-button synchronization is not implemented.",
+        "ru": "Реализован протокол. Адаптер не читает характеристику кнопок, поэтому синхронизация физических кнопок не реализована."
+      },
+      "sources": [
+        "BeanZen:Sources/BeanZen/Resources/scales.json#atomax-skale-ii",
+        "BeanZen:Sources/BeanZen/Scales/SkaleIIScale.swift",
+        "CoffeeScale/Scales/SkaleII/SkaleII_spec.md"
+      ],
+      "status": "protocol_implemented",
+      "modelFirmwareUncertainty": {
+        "en": "Hardware observations, where present, apply to the documented device and firmware only. Other revisions have not been established.",
+        "ru": "Проверки на весах, где они есть, относятся только к описанному устройству и прошивке. Другие ревизии не подтверждены."
+      }
+    },
+    {
+      "id": "weighmybru",
+      "name": "WeighMyBru",
+      "groupId": "weigh-my-bru-scale",
+      "adapter": "WeighMyBruScale",
+      "catalogHardwareVerified": false,
+      "models": [
+        {
+          "id": "weighmybru",
+          "name": "WeighMyBru",
+          "status": "protocol_implemented"
+        }
+      ],
+      "capabilities": {
+        "weight": {
+          "implemented": true,
+          "source": "BeanZen:Sources/BeanZen/Scales/WeighMyBruScale.swift:88"
+        },
+        "tare": {
+          "implemented": true,
+          "source": "BeanZen:Sources/BeanZen/Scales/WeighMyBruScale.swift:151"
+        },
+        "timerStart": {
+          "implemented": true,
+          "source": "BeanZen:Sources/BeanZen/Scales/WeighMyBruScale.swift:178"
+        },
+        "timerPause": {
+          "implemented": true,
+          "source": "BeanZen:Sources/BeanZen/Scales/WeighMyBruScale.swift:183"
+        },
+        "timerReset": {
+          "implemented": true,
+          "source": "BeanZen:Sources/BeanZen/Scales/WeighMyBruScale.swift:188"
+        },
+        "scaleTimerRead": {
+          "implemented": false,
+          "source": "BeanZen:Sources/BeanZen/Scales/ScaleAdapter.swift:165"
+        },
+        "physicalButtonEvents": {
+          "implemented": false,
+          "source": "BeanZen:Sources/BeanZen/Scales/ScaleAdapter.swift:165",
+          "events": [],
+          "mechanism": null
+        },
+        "timerResume": {
+          "commandImplemented": true,
+          "usesStartCommandDefault": true,
+          "physicallyContinues": null,
+          "source": "BeanZen:Sources/BeanZen/Scales/ScaleAdapter.swift:169"
+        }
+      },
+      "hardwareEvidence": [],
+      "beanzenPlatforms": {
+        "ios": "not_established",
+        "android": "not_established"
+      },
+      "notes": {
+        "en": "Protocol implementation only; no physical validation found. Actual firmware may require further verification.",
+        "ru": "Реализован протокол; проверки на весах не найдено. Конкретная прошивка может потребовать дополнительной проверки."
+      },
+      "sources": [
+        "BeanZen:Sources/BeanZen/Resources/scales.json#weighmybru",
+        "BeanZen:Sources/BeanZen/Scales/WeighMyBruScale.swift",
+        "CoffeeScale/Scales/WeighMyBru/"
+      ],
+      "status": "protocol_implemented",
+      "modelFirmwareUncertainty": {
+        "en": "Hardware observations, where present, apply to the documented device and firmware only. Other revisions have not been established.",
+        "ru": "Проверки на весах, где они есть, относятся только к описанному устройству и прошивке. Другие ревизии не подтверждены."
+      }
+    },
+    {
+      "id": "atomheart-eclair",
+      "name": "AtomHeart Eclair",
+      "groupId": "eclair-scale",
+      "adapter": "EclairScale",
+      "catalogHardwareVerified": false,
+      "models": [
+        {
+          "id": "atomheart-eclair",
+          "name": "AtomHeart Eclair",
+          "status": "protocol_implemented"
+        }
+      ],
+      "capabilities": {
+        "weight": {
+          "implemented": true,
+          "source": "BeanZen:Sources/BeanZen/Scales/EclairScale.swift:86"
+        },
+        "tare": {
+          "implemented": true,
+          "source": "BeanZen:Sources/BeanZen/Scales/EclairScale.swift:155"
+        },
+        "timerStart": {
+          "implemented": false,
+          "source": "BeanZen:Sources/BeanZen/Scales/ScaleAdapter.swift:165"
+        },
+        "timerPause": {
+          "implemented": false,
+          "source": "BeanZen:Sources/BeanZen/Scales/ScaleAdapter.swift:165"
+        },
+        "timerReset": {
+          "implemented": false,
+          "source": "BeanZen:Sources/BeanZen/Scales/ScaleAdapter.swift:165"
+        },
+        "scaleTimerRead": {
+          "implemented": false,
+          "source": "BeanZen:Sources/BeanZen/Scales/ScaleAdapter.swift:165"
+        },
+        "physicalButtonEvents": {
+          "implemented": false,
+          "source": "BeanZen:Sources/BeanZen/Scales/ScaleAdapter.swift:165",
+          "events": [],
+          "mechanism": null
+        },
+        "timerResume": {
+          "commandImplemented": false,
+          "usesStartCommandDefault": true,
+          "physicallyContinues": null,
+          "source": "BeanZen:Sources/BeanZen/Scales/ScaleAdapter.swift:169"
+        }
+      },
+      "hardwareEvidence": [],
+      "beanzenPlatforms": {
+        "ios": "not_established",
+        "android": "not_established"
+      },
+      "notes": {
+        "en": "Protocol implementation only. The app sends tare but no hardware timer commands because timer opcodes differ between known firmware dialects.",
+        "ru": "Реализован протокол. Приложение отправляет тару, но не команды таймера весов: коды таймера различаются в известных вариантах прошивки."
+      },
+      "sources": [
+        "BeanZen:Sources/BeanZen/Resources/scales.json#atomheart-eclair",
+        "BeanZen:Sources/BeanZen/Scales/EclairScale.swift",
+        "CoffeeScale/Scales/Eclair/Eclair_spec.md"
+      ],
+      "status": "protocol_implemented",
+      "modelFirmwareUncertainty": {
+        "en": "Hardware observations, where present, apply to the documented device and firmware only. Other revisions have not been established.",
+        "ru": "Проверки на весах, где они есть, относятся только к описанному устройству и прошивке. Другие ревизии не подтверждены."
+      }
+    },
+    {
+      "id": "eureka-precisa",
+      "name": "Eureka Precisa",
+      "groupId": "eureka-precisa-scale",
+      "adapter": "EurekaPrecisaScale",
+      "catalogHardwareVerified": false,
+      "models": [
+        {
+          "id": "eureka-precisa",
+          "name": "Eureka Precisa",
+          "status": "protocol_implemented"
+        },
+        {
+          "id": "solo-barista-lsj-001",
+          "name": "Solo Barista LSJ-001",
+          "status": "protocol_implemented"
+        }
+      ],
+      "capabilities": {
+        "weight": {
+          "implemented": true,
+          "source": "BeanZen:Sources/BeanZen/Scales/EurekaPrecisaScale.swift:94"
+        },
+        "tare": {
+          "implemented": true,
+          "source": "BeanZen:Sources/BeanZen/Scales/EurekaPrecisaScale.swift:178"
+        },
+        "timerStart": {
+          "implemented": true,
+          "source": "BeanZen:Sources/BeanZen/Scales/EurekaPrecisaScale.swift:210"
+        },
+        "timerPause": {
+          "implemented": true,
+          "source": "BeanZen:Sources/BeanZen/Scales/EurekaPrecisaScale.swift:215"
+        },
+        "timerReset": {
+          "implemented": true,
+          "source": "BeanZen:Sources/BeanZen/Scales/EurekaPrecisaScale.swift:220"
+        },
+        "scaleTimerRead": {
+          "implemented": true,
+          "source": "BeanZen:Sources/BeanZen/Scales/EurekaPrecisaScale.swift:126"
+        },
+        "physicalButtonEvents": {
+          "implemented": false,
+          "source": "BeanZen:Sources/BeanZen/Scales/ScaleAdapter.swift:165",
+          "events": [],
+          "mechanism": null
+        },
+        "timerResume": {
+          "commandImplemented": true,
+          "usesStartCommandDefault": true,
+          "physicallyContinues": null,
+          "source": "BeanZen:Sources/BeanZen/Scales/ScaleAdapter.swift:169"
+        }
+      },
+      "hardwareEvidence": [],
+      "beanzenPlatforms": {
+        "ios": "not_established",
+        "android": "not_established"
+      },
+      "notes": {
+        "en": "Eureka Precisa CFS-9002 / CFS-9002BT and Solo Barista LSJ-001 share the implemented protocol and Bluetooth-name detection. Neither has physical validation in this source audit.",
+        "ru": "Eureka Precisa CFS-9002 / CFS-9002BT и Solo Barista LSJ-001 используют реализованный протокол и распознавание Bluetooth-имени. Для них не найдено проверки на весах."
+      },
+      "sources": [
+        "BeanZen:Sources/BeanZen/Resources/scales.json#eureka-precisa",
+        "BeanZen:Sources/BeanZen/Scales/EurekaPrecisaScale.swift",
+        "CoffeeScale/Scales/EurekaPrecisa/"
+      ],
+      "status": "protocol_implemented",
+      "modelFirmwareUncertainty": {
+        "en": "Hardware observations, where present, apply to the documented device and firmware only. Other revisions have not been established.",
+        "ru": "Проверки на весах, где они есть, относятся только к описанному устройству и прошивке. Другие ревизии не подтверждены."
+      }
+    },
+    {
+      "id": "varia-aku",
+      "name": "Varia AKU",
+      "groupId": "varia-aku-scale",
+      "adapter": "VariaAkuScale",
+      "catalogHardwareVerified": false,
+      "models": [
+        {
+          "id": "varia-aku",
+          "name": "Varia AKU",
+          "status": "protocol_implemented"
+        },
+        {
+          "id": "varia-aku-pro",
+          "name": "Varia AKU PRO",
+          "status": "protocol_implemented"
+        },
+        {
+          "id": "varia-aku-plus",
+          "name": "Varia AKU PLUS",
+          "status": "protocol_implemented"
+        },
+        {
+          "id": "varia-aku-micro",
+          "name": "Varia AKU MICRO",
+          "status": "protocol_implemented"
+        }
+      ],
+      "capabilities": {
+        "weight": {
+          "implemented": true,
+          "source": "BeanZen:Sources/BeanZen/Scales/VariaAkuScale.swift:107"
+        },
+        "tare": {
+          "implemented": true,
+          "source": "BeanZen:Sources/BeanZen/Scales/VariaAkuScale.swift:270"
+        },
+        "timerStart": {
+          "implemented": false,
+          "source": "BeanZen:Sources/BeanZen/Scales/ScaleAdapter.swift:165"
+        },
+        "timerPause": {
+          "implemented": false,
+          "source": "BeanZen:Sources/BeanZen/Scales/ScaleAdapter.swift:165"
+        },
+        "timerReset": {
+          "implemented": false,
+          "source": "BeanZen:Sources/BeanZen/Scales/ScaleAdapter.swift:165"
+        },
+        "scaleTimerRead": {
+          "implemented": false,
+          "source": "BeanZen:Sources/BeanZen/Scales/ScaleAdapter.swift:165"
+        },
+        "physicalButtonEvents": {
+          "implemented": true,
+          "source": "BeanZen:Sources/BeanZen/Scales/VariaAkuScale.swift:222",
+          "events": [
+            "timer_start",
+            "timer_pause",
+            "timer_reset"
+          ],
+          "mechanism": "decoded_packets"
+        },
+        "timerResume": {
+          "commandImplemented": false,
+          "usesStartCommandDefault": true,
+          "physicallyContinues": null,
+          "source": "BeanZen:Sources/BeanZen/Scales/ScaleAdapter.swift:169"
+        }
+      },
+      "hardwareEvidence": [],
+      "beanzenPlatforms": {
+        "ios": "not_established",
+        "android": "not_established"
+      },
+      "notes": {
+        "en": "The adapter covers AKU, MINI, PRO, PLUS and MICRO by shared protocol and Bluetooth-name prefixes. None is physically verified. Scale timer-button events are decoded, but app-to-scale timer commands are not implemented.",
+        "ru": "Адаптер охватывает AKU, MINI, PRO, PLUS и MICRO по общему протоколу и префиксам Bluetooth-имени. Проверки на весах нет. События кнопки таймера читаются, но команды таймера из приложения не реализованы."
+      },
+      "sources": [
+        "BeanZen:Sources/BeanZen/Resources/scales.json#varia-aku",
+        "BeanZen:Sources/BeanZen/Scales/VariaAkuScale.swift",
+        "CoffeeScale/Scales/VariaAku/"
+      ],
+      "status": "protocol_implemented",
+      "modelFirmwareUncertainty": {
+        "en": "Hardware observations, where present, apply to the documented device and firmware only. Other revisions have not been established.",
+        "ru": "Проверки на весах, где они есть, относятся только к описанному устройству и прошивке. Другие ревизии не подтверждены."
+      }
+    },
+    {
+      "id": "varia-aku-mini",
+      "name": "Varia AKU Mini",
+      "groupId": "varia-aku-scale",
+      "adapter": "VariaAkuScale",
+      "catalogHardwareVerified": false,
+      "models": [
+        {
+          "id": "varia-aku-mini",
+          "name": "Varia AKU Mini",
+          "status": "protocol_implemented"
+        }
+      ],
+      "capabilities": {
+        "weight": {
+          "implemented": true,
+          "source": "BeanZen:Sources/BeanZen/Scales/VariaAkuScale.swift:107"
+        },
+        "tare": {
+          "implemented": true,
+          "source": "BeanZen:Sources/BeanZen/Scales/VariaAkuScale.swift:270"
+        },
+        "timerStart": {
+          "implemented": false,
+          "source": "BeanZen:Sources/BeanZen/Scales/ScaleAdapter.swift:165"
+        },
+        "timerPause": {
+          "implemented": false,
+          "source": "BeanZen:Sources/BeanZen/Scales/ScaleAdapter.swift:165"
+        },
+        "timerReset": {
+          "implemented": false,
+          "source": "BeanZen:Sources/BeanZen/Scales/ScaleAdapter.swift:165"
+        },
+        "scaleTimerRead": {
+          "implemented": false,
+          "source": "BeanZen:Sources/BeanZen/Scales/ScaleAdapter.swift:165"
+        },
+        "physicalButtonEvents": {
+          "implemented": true,
+          "source": "BeanZen:Sources/BeanZen/Scales/VariaAkuScale.swift:222",
+          "events": [
+            "timer_start",
+            "timer_pause",
+            "timer_reset"
+          ],
+          "mechanism": "decoded_packets"
+        },
+        "timerResume": {
+          "commandImplemented": false,
+          "usesStartCommandDefault": true,
+          "physicallyContinues": null,
+          "source": "BeanZen:Sources/BeanZen/Scales/ScaleAdapter.swift:169"
+        }
+      },
+      "hardwareEvidence": [],
+      "beanzenPlatforms": {
+        "ios": "not_established",
+        "android": "not_established"
+      },
+      "notes": {
+        "en": "The adapter covers AKU, MINI, PRO, PLUS and MICRO by shared protocol and Bluetooth-name prefixes. None is physically verified. Scale timer-button events are decoded, but app-to-scale timer commands are not implemented.",
+        "ru": "Адаптер охватывает AKU, MINI, PRO, PLUS и MICRO по общему протоколу и префиксам Bluetooth-имени. Проверки на весах нет. События кнопки таймера читаются, но команды таймера из приложения не реализованы."
+      },
+      "sources": [
+        "BeanZen:Sources/BeanZen/Resources/scales.json#varia-aku-mini",
+        "BeanZen:Sources/BeanZen/Scales/VariaAkuScale.swift",
+        "CoffeeScale/Scales/VariaAku/"
+      ],
+      "status": "protocol_implemented",
+      "modelFirmwareUncertainty": {
+        "en": "Hardware observations, where present, apply to the documented device and firmware only. Other revisions have not been established.",
+        "ru": "Проверки на весах, где они есть, относятся только к описанному устройству и прошивке. Другие ревизии не подтверждены."
+      }
+    },
+    {
+      "id": "ikape-a01",
+      "name": "IKAPE A01",
+      "groupId": "i-kape-scale",
+      "adapter": "IKapeScale",
+      "catalogHardwareVerified": false,
+      "models": [
+        {
+          "id": "ikape-a01",
+          "name": "IKAPE A01",
+          "status": "protocol_implemented"
+        }
+      ],
+      "capabilities": {
+        "weight": {
+          "implemented": true,
+          "source": "BeanZen:Sources/BeanZen/Scales/IKapeScale.swift:94"
+        },
+        "tare": {
+          "implemented": true,
+          "source": "BeanZen:Sources/BeanZen/Scales/IKapeScale.swift:171"
+        },
+        "timerStart": {
+          "implemented": false,
+          "source": "BeanZen:Sources/BeanZen/Scales/ScaleAdapter.swift:165"
+        },
+        "timerPause": {
+          "implemented": false,
+          "source": "BeanZen:Sources/BeanZen/Scales/ScaleAdapter.swift:165"
+        },
+        "timerReset": {
+          "implemented": false,
+          "source": "BeanZen:Sources/BeanZen/Scales/ScaleAdapter.swift:165"
+        },
+        "scaleTimerRead": {
+          "implemented": false,
+          "source": "BeanZen:Sources/BeanZen/Scales/ScaleAdapter.swift:165"
+        },
+        "physicalButtonEvents": {
+          "implemented": false,
+          "source": "BeanZen:Sources/BeanZen/Scales/ScaleAdapter.swift:165",
+          "events": [],
+          "mechanism": null
+        },
+        "timerResume": {
+          "commandImplemented": false,
+          "usesStartCommandDefault": true,
+          "physicallyContinues": null,
+          "source": "BeanZen:Sources/BeanZen/Scales/ScaleAdapter.swift:169"
+        }
+      },
+      "hardwareEvidence": [],
+      "beanzenPlatforms": {
+        "ios": "not_established",
+        "android": "not_established"
+      },
+      "notes": {
+        "en": "Protocol implementation only; no physical validation found. Actual firmware may require further verification.",
+        "ru": "Реализован протокол; проверки на весах не найдено. Конкретная прошивка может потребовать дополнительной проверки."
+      },
+      "sources": [
+        "BeanZen:Sources/BeanZen/Resources/scales.json#ikape-a01",
+        "BeanZen:Sources/BeanZen/Scales/IKapeScale.swift",
+        "CoffeeScale/Scales/iKape/iKape_spec.md"
+      ],
+      "status": "protocol_implemented",
+      "modelFirmwareUncertainty": {
+        "en": "Hardware observations, where present, apply to the documented device and firmware only. Other revisions have not been established.",
+        "ru": "Проверки на весах, где они есть, относятся только к описанному устройству и прошивке. Другие ревизии не подтверждены."
+      }
+    },
+    {
+      "id": "insmart-863a",
+      "name": "INSMART 863A",
+      "groupId": "insmart-scale",
+      "adapter": "InsmartScale",
+      "catalogHardwareVerified": false,
+      "models": [
+        {
+          "id": "insmart-863a",
+          "name": "INSMART 863A",
+          "status": "protocol_implemented"
+        }
+      ],
+      "capabilities": {
+        "weight": {
+          "implemented": true,
+          "source": "BeanZen:Sources/BeanZen/Scales/InsmartScale.swift:109"
+        },
+        "tare": {
+          "implemented": true,
+          "source": "BeanZen:Sources/BeanZen/Scales/InsmartScale.swift:197"
+        },
+        "timerStart": {
+          "implemented": false,
+          "source": "BeanZen:Sources/BeanZen/Scales/ScaleAdapter.swift:165"
+        },
+        "timerPause": {
+          "implemented": false,
+          "source": "BeanZen:Sources/BeanZen/Scales/ScaleAdapter.swift:165"
+        },
+        "timerReset": {
+          "implemented": false,
+          "source": "BeanZen:Sources/BeanZen/Scales/ScaleAdapter.swift:165"
+        },
+        "scaleTimerRead": {
+          "implemented": false,
+          "source": "BeanZen:Sources/BeanZen/Scales/ScaleAdapter.swift:165"
+        },
+        "physicalButtonEvents": {
+          "implemented": false,
+          "source": "BeanZen:Sources/BeanZen/Scales/ScaleAdapter.swift:165",
+          "events": [],
+          "mechanism": null
+        },
+        "timerResume": {
+          "commandImplemented": false,
+          "usesStartCommandDefault": true,
+          "physicallyContinues": null,
+          "source": "BeanZen:Sources/BeanZen/Scales/ScaleAdapter.swift:169"
+        }
+      },
+      "hardwareEvidence": [],
+      "beanzenPlatforms": {
+        "ios": "not_established",
+        "android": "not_established"
+      },
+      "notes": {
+        "en": "Protocol implementation only; no physical validation found. Actual firmware may require further verification.",
+        "ru": "Реализован протокол; проверки на весах не найдено. Конкретная прошивка может потребовать дополнительной проверки."
+      },
+      "sources": [
+        "BeanZen:Sources/BeanZen/Resources/scales.json#insmart-863a",
+        "BeanZen:Sources/BeanZen/Scales/InsmartScale.swift",
+        "CoffeeScale/Scales/Insmart/Insmart_spec.md"
+      ],
+      "status": "protocol_implemented",
+      "modelFirmwareUncertainty": {
+        "en": "Hardware observations, where present, apply to the documented device and firmware only. Other revisions have not been established.",
+        "ru": "Проверки на весах, где они есть, относятся только к описанному устройству и прошивке. Другие ревизии не подтверждены."
+      }
+    },
+    {
+      "id": "felicita",
+      "name": "Felicita",
+      "groupId": "felicita-scale",
+      "adapter": "FelicitaScale",
+      "catalogHardwareVerified": false,
+      "models": [
+        {
+          "id": "felicita-arc",
+          "name": "Felicita Arc",
+          "status": "protocol_implemented"
+        },
+        {
+          "id": "felicita-incline",
+          "name": "Felicita Incline",
+          "status": "assumed_family"
+        },
+        {
+          "id": "felicita-parallel",
+          "name": "Felicita Parallel",
+          "status": "assumed_family"
+        }
+      ],
+      "capabilities": {
+        "weight": {
+          "implemented": true,
+          "source": "BeanZen:Sources/BeanZen/Scales/FelicitaScale.swift:107"
+        },
+        "tare": {
+          "implemented": true,
+          "source": "BeanZen:Sources/BeanZen/Scales/FelicitaScale.swift:263"
+        },
+        "timerStart": {
+          "implemented": true,
+          "source": "BeanZen:Sources/BeanZen/Scales/FelicitaScale.swift:302"
+        },
+        "timerPause": {
+          "implemented": true,
+          "source": "BeanZen:Sources/BeanZen/Scales/FelicitaScale.swift:307"
+        },
+        "timerReset": {
+          "implemented": true,
+          "source": "BeanZen:Sources/BeanZen/Scales/FelicitaScale.swift:312"
+        },
+        "scaleTimerRead": {
+          "implemented": false,
+          "source": "BeanZen:Sources/BeanZen/Scales/ScaleAdapter.swift:165"
+        },
+        "physicalButtonEvents": {
+          "implemented": false,
+          "source": "BeanZen:Sources/BeanZen/Scales/ScaleAdapter.swift:165",
+          "events": [],
+          "mechanism": null
+        },
+        "timerResume": {
+          "commandImplemented": true,
+          "usesStartCommandDefault": true,
+          "physicallyContinues": null,
+          "source": "BeanZen:Sources/BeanZen/Scales/ScaleAdapter.swift:169"
+        }
+      },
+      "hardwareEvidence": [],
+      "beanzenPlatforms": {
+        "ios": "not_established",
+        "android": "not_established"
+      },
+      "notes": {
+        "en": "Arc is the protocol reference. Incline and Parallel are related-model candidates, not confirmed compatibility: the spec explicitly calls the shared protocol an assumption. No physical validation of the current adapter.",
+        "ru": "Протокол восстановлен для Arc. Incline и Parallel — предполагаемые родственные модели, а не подтверждённая совместимость: в спецификации общий протокол прямо назван предположением. Текущий адаптер не проверен на весах."
+      },
+      "sources": [
+        "BeanZen:Sources/BeanZen/Resources/scales.json#felicita",
+        "BeanZen:Sources/BeanZen/Scales/FelicitaScale.swift",
+        "CoffeeScale/Scales/Felicita/"
+      ],
+      "status": "mixed_protocol_and_assumed",
+      "modelFirmwareUncertainty": {
+        "en": "Hardware observations, where present, apply to the documented device and firmware only. Other revisions have not been established.",
+        "ru": "Проверки на весах, где они есть, относятся только к описанному устройству и прошивке. Другие ревизии не подтверждены."
+      }
+    },
+    {
+      "id": "dsd-tech",
+      "name": "DSD TECH / Tencent protocol",
+      "groupId": "tencent-scale",
+      "adapter": "TencentScale",
+      "catalogHardwareVerified": false,
+      "models": [
+        {
+          "id": "dsd-tech",
+          "name": "DSD TECH / Tencent protocol",
+          "status": "protocol_implemented"
+        }
+      ],
+      "capabilities": {
+        "weight": {
+          "implemented": true,
+          "source": "BeanZen:Sources/BeanZen/Scales/TencentScale.swift:96"
+        },
+        "tare": {
+          "implemented": true,
+          "source": "BeanZen:Sources/BeanZen/Scales/TencentScale.swift:192"
+        },
+        "timerStart": {
+          "implemented": false,
+          "source": "BeanZen:Sources/BeanZen/Scales/ScaleAdapter.swift:165"
+        },
+        "timerPause": {
+          "implemented": false,
+          "source": "BeanZen:Sources/BeanZen/Scales/ScaleAdapter.swift:165"
+        },
+        "timerReset": {
+          "implemented": false,
+          "source": "BeanZen:Sources/BeanZen/Scales/ScaleAdapter.swift:165"
+        },
+        "scaleTimerRead": {
+          "implemented": false,
+          "source": "BeanZen:Sources/BeanZen/Scales/ScaleAdapter.swift:165"
+        },
+        "physicalButtonEvents": {
+          "implemented": false,
+          "source": "BeanZen:Sources/BeanZen/Scales/ScaleAdapter.swift:165",
+          "events": [],
+          "mechanism": null
+        },
+        "timerResume": {
+          "commandImplemented": false,
+          "usesStartCommandDefault": true,
+          "physicallyContinues": null,
+          "source": "BeanZen:Sources/BeanZen/Scales/ScaleAdapter.swift:169"
+        }
+      },
+      "hardwareEvidence": [],
+      "beanzenPlatforms": {
+        "ios": "not_established",
+        "android": "not_established"
+      },
+      "notes": {
+        "en": "DSD TECH is a Bluetooth-module name, not an established scale manufacturer or model. Tencent is a historical adapter alias. Other devices may advertise the same name.",
+        "ru": "DSD TECH — имя Bluetooth-модуля, а не установленная марка или модель весов. Tencent — историческое имя адаптера. Такое имя могут передавать другие устройства."
+      },
+      "sources": [
+        "BeanZen:Sources/BeanZen/Resources/scales.json#dsd-tech",
+        "BeanZen:Sources/BeanZen/Scales/TencentScale.swift",
+        "CoffeeScale/Scales/Tencent/Tencent_spec.md"
+      ],
+      "status": "protocol_implemented",
+      "modelFirmwareUncertainty": {
+        "en": "Hardware observations, where present, apply to the documented device and firmware only. Other revisions have not been established.",
+        "ru": "Проверки на весах, где они есть, относятся только к описанному устройству и прошивке. Другие ревизии не подтверждены."
+      }
+    },
+    {
+      "id": "diy-coffee-scale",
+      "name": "DIY Coffee Scale",
+      "groupId": "diy-coffee-scale",
+      "adapter": "DiyCoffeeScale",
+      "catalogHardwareVerified": false,
+      "models": [
+        {
+          "id": "diy-coffee-scale",
+          "name": "DIY Coffee Scale",
+          "status": "protocol_implemented"
+        }
+      ],
+      "capabilities": {
+        "weight": {
+          "implemented": true,
+          "source": "BeanZen:Sources/BeanZen/Scales/DiyCoffeeScale.swift:125"
+        },
+        "tare": {
+          "implemented": false,
+          "source": "BeanZen:Sources/BeanZen/Scales/DiyCoffeeScale.swift:186"
+        },
+        "timerStart": {
+          "implemented": false,
+          "source": "BeanZen:Sources/BeanZen/Scales/ScaleAdapter.swift:165"
+        },
+        "timerPause": {
+          "implemented": false,
+          "source": "BeanZen:Sources/BeanZen/Scales/ScaleAdapter.swift:165"
+        },
+        "timerReset": {
+          "implemented": false,
+          "source": "BeanZen:Sources/BeanZen/Scales/ScaleAdapter.swift:165"
+        },
+        "scaleTimerRead": {
+          "implemented": false,
+          "source": "BeanZen:Sources/BeanZen/Scales/ScaleAdapter.swift:165"
+        },
+        "physicalButtonEvents": {
+          "implemented": false,
+          "source": "BeanZen:Sources/BeanZen/Scales/ScaleAdapter.swift:165",
+          "events": [],
+          "mechanism": null
+        },
+        "timerResume": {
+          "commandImplemented": false,
+          "usesStartCommandDefault": true,
+          "physicallyContinues": null,
+          "source": "BeanZen:Sources/BeanZen/Scales/ScaleAdapter.swift:169"
+        }
+      },
+      "hardwareEvidence": [],
+      "beanzenPlatforms": {
+        "ios": "not_established",
+        "android": "not_established"
+      },
+      "notes": {
+        "en": "One DIY project with MicroPython mpy-coffee and Rust coffee-scale firmware variants. Weight reception only: tare is a physical device action, with no app tare or scale-timer command.",
+        "ru": "Один DIY-проект с прошивками MicroPython mpy-coffee и Rust coffee-scale. Только приём веса: тара выполняется кнопкой устройства; команды тары и таймера из приложения не реализованы."
+      },
+      "sources": [
+        "BeanZen:Sources/BeanZen/Resources/scales.json#diy-coffee-scale",
+        "BeanZen:Sources/BeanZen/Scales/DiyCoffeeScale.swift",
+        "CoffeeScale/Scales/DiyCoffeeScale/"
+      ],
+      "firmwareVariants": [
+        "mpy-coffee (MicroPython)",
+        "coffee-scale (Rust)"
+      ],
+      "status": "protocol_implemented",
+      "modelFirmwareUncertainty": {
+        "en": "Hardware observations, where present, apply to the documented device and firmware only. Other revisions have not been established.",
+        "ru": "Проверки на весах, где они есть, относятся только к описанному устройству и прошивке. Другие ревизии не подтверждены."
+      }
+    }
+  ]
+}

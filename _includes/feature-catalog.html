@@ -1,0 +1,12 @@
+{% assign language = page.lang | default: 'en' %}{% assign t = site.data.locales[language] %}{% assign locale = site.data.languages | where: 'code', language | first %}{% assign prefix = locale.prefix | default: '' %}
+<nav class="featureIndex" aria-label="{{ t.feature_index }}">{% for group in site.data.features.groups %}<a href="#{{ group.id }}">{{ group[language] }}</a>{% endfor %}</nav>
+{% for group in site.data.features.groups %}
+<section class="featureGroup" aria-labelledby="{{ group.id }}">
+  <h2 id="{{ group.id }}">{{ group[language] }}</h2>
+  <div class="featureGroupBody{% if group.screen %} withScreen{% endif %}"><div>
+  {% assign items = site.data.features.items | where: 'group', group.id %}{% for item in items %}{% assign copy = item[language] %}
+    <article class="featureDetail" aria-labelledby="{{ item.id }}"><h3 id="{{ item.id }}">{{ copy.title }}</h3><p>{{ copy.description }}</p><p><strong>{{ t.how }}.</strong> {{ copy.how }}</p>{% if copy.note != '' %}<p class="featureNote"><strong>{{ t.note }}.</strong> {{ copy.note }}</p>{% endif %}</article>
+  {% endfor %}
+  </div>{% if group.screen %}{% include app-screen.html id=group.screen %}{% endif %}</div>
+</section>{% endfor %}
+<p><a href="{{ prefix | append: '/guide/' | relative_url }}">{{ t.guide_link }}</a> · <a href="{{ prefix | append: '/scales/' | relative_url }}">{{ t.compatibility_link }}</a></p>

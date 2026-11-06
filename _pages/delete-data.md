@@ -14,10 +14,12 @@ sections:
   - id: all-data
     title: "All local data"
   - id: copies
-    title: "Exports and backups"
+    title: "Saved copies and backups"
   - id: contact
     title: "Support requests"
 ---
+{% assign locale = site.data.languages | where: 'code', page.lang | first %}{% assign prefix = locale.prefix | default: '' %}
+
 ## Delete journal records and photos {#records}
 
 Open the relevant brew, coffee or equipment record in Beanzen, choose its delete action, and confirm the deletion. Remove individual photos from the record's photo controls where available.
@@ -32,14 +34,14 @@ Clearing a token means you may need to repeat Xiaomi setup before connecting to 
 
 ## Remove all local app data {#all-data}
 
-Before starting, export any records you want to keep and check the exported files. This action can permanently remove your local history.
+Before starting, save any images or notes you need and verify any device backup you intend to rely on. Shared images are not a full journal backup, and the current interface has no complete file export command. This action can permanently remove your local history.
 
 - **Android:** open your device's Settings, find **Apps → Beanzen → Storage** (wording varies), and choose **Clear storage / Clear data**. You can also uninstall the app. Clear saved Hoto tokens first.
 - **iOS:** clear saved Hoto tokens in Beanzen first. Then open **Settings → General → iPhone Storage → Beanzen → Delete App**. Choose **Delete App**, not **Offload App**, because offloading preserves app data.
 
 Menu names depend on your operating-system version. These actions remove application data on that device. They do not remove separate exports, saved images, backups, or information held by a third-party service.
 
-## Remove exported files, photos and backups {#copies}
+## Remove saved files, photos and backups {#copies}
 
 Delete copies separately from the Files or Photos app, your chosen sharing destination, and any device backup service. Check recently deleted folders if you want to remove those copies permanently. A backup restore can bring back previously saved app data.
 

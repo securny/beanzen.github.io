@@ -1,9 +1,8 @@
 <header class="siteHeader">
   <a class="logo" href="{{ prefix | append: '/' | relative_url }}" aria-label="Beanzen — {{ t.home }}"><img class="headerIcon" src="{{ site.app_icon | relative_url }}" width="44" height="44" alt=""><span class="headerName">Beanzen</span></a>
   <nav class="scroll" aria-label="{{ t.navigation }}"><ul>
-    <li><a href="{{ prefix | append: '/' | relative_url }}" {% if page.key == 'home' %}aria-current="page"{% endif %}>{{ t.app }}</a></li>
-    <li><a href="{{ prefix | append: '/support/' | relative_url }}" {% if page.key == 'support' %}aria-current="page"{% endif %}>{{ t.support }}</a></li>
-    <li><a href="{{ prefix | append: '/privacy/' | relative_url }}" {% if page.key == 'privacy' %}aria-current="page"{% endif %}>{{ t.privacy_short }}</a></li>
+    {% assign nav_keys = 'features,scales,guide,support' | split: ',' %}{% for nav_key in nav_keys %}{% assign nav_label = nav_key | append: '_nav' %}{% if nav_key == 'support' %}{% assign nav_label = 'support' %}{% endif %}
+    <li><a href="{{ prefix | append: '/' | append: nav_key | append: '/' | relative_url }}" {% if page.key == nav_key %}aria-current="page"{% endif %}>{{ t[nav_label] }}</a></li>{% endfor %}
   </ul></nav>
   <nav class="languageNav" aria-label="{{ t.languages }}">{% for locale in site.data.languages %}{% assign alternate = site.documents | concat: site.html_pages | where: 'key', page.key | where: 'lang', locale.code | first %}{% if alternate %}<a href="{{ alternate.url | relative_url }}" lang="{{ locale.code }}" hreflang="{{ locale.code }}" aria-label="{{ locale.name }}" {% if page.lang == locale.code %}aria-current="true"{% endif %}>{{ locale.short }}</a>{% endif %}{% endfor %}</nav>
 </header>

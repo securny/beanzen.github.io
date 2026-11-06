@@ -17,15 +17,17 @@ sections:
   - id: contact
     title: "Contact and changes"
 ---
+{% assign locale = site.data.languages | where: 'code', page.lang | first %}{% assign prefix = locale.prefix | default: '' %}
+
 ## Using Beanzen {#use}
 
 Beanzen is developed by **{{ site.your_name }}**. You may use it for its intended purpose: recording and reviewing coffee brewing and connecting supported equipment. Use the application and website lawfully and respect other people's rights.
 
 Beanzen does not require a Beanzen account and does not offer subscriptions. Distribution through an app store is also subject to that store's terms and any applicable application license, including Apple's standard end-user license agreement where applicable.
 
-## Your records and exports {#records}
+## Your records and shared content {#records}
 
-You keep your rights to the notes, photos and other content you add. Only import or share content you are entitled to use. Review exported files before sharing them.
+You keep your rights to the notes, photos and other content you add. Only import or share content you are entitled to use. Review shared images before sending them.
 
 Your journal is stored locally. You are responsible for keeping any copies you need before deleting data, uninstalling the app, changing devices, or restoring a backup. The developer cannot recover a journal that exists only on your device.
 

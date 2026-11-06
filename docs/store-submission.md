@@ -14,7 +14,7 @@ Checked against official store documentation on **2026-11-01**. This repository 
 
 Each has a Russian equivalent under `/ru/`. The pages are static HTML, have no login requirement, and remain usable without JavaScript. They identify Beanzen, Dmitry Berezkin and hello@beanzen.ru.
 
-The policy describes locally stored records and photos, permissions, optional Xiaomi authentication and protected Hoto tokens, local GaggiMate connections, imports/exports, backups, support correspondence, and website hosting. This addresses the categories of disclosure required by the [Google Play User Data policy](https://support.google.com/googleplay/android-developer/answer/10144311?hl=en).
+The policy describes locally stored records and photos, permissions, optional Xiaomi authentication and protected Hoto tokens, local GaggiMate connections, imports and user-initiated image sharing, backups, support correspondence, and website hosting. This addresses the categories of disclosure required by the [Google Play User Data policy](https://support.google.com/googleplay/android-developer/answer/10144311?hl=en).
 
 ## Before using the URLs
 
