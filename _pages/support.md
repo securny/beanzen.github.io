@@ -1,6 +1,6 @@
 ---
 layout: page
-title: "BeanZen support"
+title: "Beanzen support"
 intro: "Questions about a brew, a connection, or your data? You can contact the developer directly."
 description: "Questions about a brew, a connection, or your data? You can contact the developer directly."
 lang: en
@@ -23,26 +23,26 @@ sections:
 ## Contact the developer {#contact}
 
 <div class="contactBlock">
-<p><strong>{{ site.your_name }}</strong><br><a href="mailto:{{ site.email_address }}?subject=BeanZen%20support">{{ site.email_address }}</a></p>
+<p><strong>{{ site.your_name }}</strong><br><a href="mailto:{{ site.email_address }}?subject=Beanzen%20support">{{ site.email_address }}</a></p>
 <p>Use this address for app issues, feedback, feature requests and privacy questions. English and Russian are welcome.</p>
 </div>
 
-To help investigate an issue, include your BeanZen version, iOS or Android version, equipment model and firmware if relevant, and the steps that led to the problem. Attach a screenshot only if you are comfortable sharing its contents.
+To help investigate an issue, include your Beanzen version, iOS or Android version, equipment model and firmware if relevant, and the steps that led to the problem. Attach a screenshot only if you are comfortable sharing its contents.
 
 Never send passwords, verification codes or Xiaomi device tokens. Remove personal information from logs before sending them. Read our [Privacy Policy]({{ prefix | append: '/privacy/' | relative_url }}) for how support correspondence is handled.
 
 ## Connect a Bluetooth scale {#scales}
 
 1. Turn on your scale, enable Bluetooth, and keep the scale near your phone.
-2. Allow BeanZen to use Bluetooth or Nearby devices when your phone asks.
+2. Allow Beanzen to use Bluetooth or Nearby devices when your phone asks.
 3. Close other apps that might already be connected to the scale. Many scales allow only one active connection.
-4. Use **FIND** in BeanZen and select your scale if prompted.
+4. Use **FIND** in Beanzen and select your scale if prompted.
 
 If the scale is not found, restart it and check permissions in your phone settings. Compatibility depends on the exact model and firmware. Contact support with those details if you are unsure.
 
 ## Hoto / Xiaomi setup {#hoto}
 
-Some Hoto scales need a token associated with your Xiaomi account. Use the Xiaomi sign-in flow in BeanZen when requested, with the account and region where your scale is registered. Complete any verification requested by Xiaomi.
+Some Hoto scales need a token associated with your Xiaomi account. Use the Xiaomi sign-in flow in Beanzen when requested, with the account and region where your scale is registered. Complete any verification requested by Xiaomi.
 
 This optional connection communicates with Xiaomi and is described in the [Privacy Policy]({{ prefix | append: '/privacy/' | relative_url }}#integrations). If a saved token no longer works, you can clear it by pressing and holding **RESET** on the brewing screen. This clears saved Hoto tokens and may require signing in again.
 
@@ -60,6 +60,6 @@ When importing from Beanconqueror, select the export file and any associated pho
 
 ## Privacy and deleting data {#privacy}
 
-BeanZen has no BeanZen account or developer-hosted coffee journal. To remove records, saved tokens, exported files or device backups, follow **[Delete BeanZen data]({{ prefix | append: '/delete-data/' | relative_url }})**.
+Beanzen has no Beanzen account or developer-hosted coffee journal. To remove records, saved tokens, exported files or device backups, follow **[Delete Beanzen data]({{ prefix | append: '/delete-data/' | relative_url }})**.
 
-For a request concerning an email you sent to support, write to [{{ site.email_address }}](mailto:{{ site.email_address }}?subject=BeanZen%20privacy%20request).
+For a request concerning an email you sent to support, write to [{{ site.email_address }}](mailto:{{ site.email_address }}?subject=Beanzen%20privacy%20request).

@@ -12,7 +12,7 @@ Checked against official store documentation on **2026-11-01**. This repository 
 | Data controls | https://beanzen.ru/delete-data/ | Local data removal and support-mail deletion instructions |
 | Terms | https://beanzen.ru/terms/ | General usage terms; no subscription flow |
 
-Each has a Russian equivalent under `/ru/`. The pages are static HTML, have no login requirement, and remain usable without JavaScript. They identify BeanZen, Dmitry Berezkin and hello@beanzen.ru.
+Each has a Russian equivalent under `/ru/`. The pages are static HTML, have no login requirement, and remain usable without JavaScript. They identify Beanzen, Dmitry Berezkin and hello@beanzen.ru.
 
 The policy describes locally stored records and photos, permissions, optional Xiaomi authentication and protected Hoto tokens, local GaggiMate connections, imports/exports, backups, support correspondence, and website hosting. This addresses the categories of disclosure required by the [Google Play User Data policy](https://support.google.com/googleplay/android-developer/answer/10144311?hl=en).
 
@@ -35,14 +35,14 @@ The policy describes locally stored records and photos, permissions, optional Xi
 - [ ] Supply accurate release screenshots, description, age rating and review notes. Explain how to review hardware-dependent features and optional Xiaomi sign-in; provide the access or demonstration material the reviewer needs.
 - [ ] Complete developer identity, distribution agreements and territory-specific trader details in the console.
 
-There is no BeanZen account creation in the confirmed app, so an in-app BeanZen account deletion flow is not applicable. If account creation is introduced, implement deletion inside the app before release; a website instruction alone is insufficient. [Apple account-deletion guidance](https://developer.apple.com/help/app-review/guideline-reference/5-1-1-account-deletion).
+There is no Beanzen account creation in the confirmed app, so an in-app Beanzen account deletion flow is not applicable. If account creation is introduced, implement deletion inside the app before release; a website instruction alone is insufficient. [Apple account-deletion guidance](https://developer.apple.com/help/app-review/guideline-reference/5-1-1-account-deletion).
 
 ## Google Play Console
 
 - [ ] Set the **Privacy Policy URL** to `https://beanzen.ru/privacy/`; also provide the policy inside the app.
 - [ ] Use **hello@beanzen.ru** as the support email and `https://beanzen.ru/` as the developer website where requested.
 - [ ] Complete **Data safety** for the exact binary and all dependencies. Review off-device Xiaomi authentication, device identifiers and any applicable exceptions; local-only journal storage does not by itself determine every answer. Do not automatically declare all transmission encrypted: the GaggiMate integration uses local HTTP/WebSocket traffic. Evaluate which traffic falls within the questionnaire's scope. [Google Data safety guidance](https://support.google.com/googleplay/android-developer/answer/10787469?hl=en).
-- [ ] Answer the account-creation questions according to the actual app: there are no BeanZen accounts. Do not describe a nonexistent account deletion service. The website's `/delete-data/` resource explains local data controls.
+- [ ] Answer the account-creation questions according to the actual app: there are no Beanzen accounts. Do not describe a nonexistent account deletion service. The website's `/delete-data/` resource explains local data controls.
 - [ ] If account creation is added later, provide both in-app deletion initiation and a functional external deletion pathway for the account and associated data. [Google account deletion policy](https://support.google.com/googleplay/android-developer/answer/10144311?hl=en#account_deletion).
 - [ ] Complete App access, Ads, Target audience and content, content rating, developer verification, and required release/testing steps. Describe hardware dependencies for review.
 - [ ] Verify current Android target API, permission and signing requirements for the submitted binary.
@@ -58,8 +58,8 @@ Read-only inspection of `/Users/berezkin/development/BeanZen` found these starte
 | `Darwin/fastlane/metadata/en-US/privacy_url.txt` | `https://example.org/privacy/` | `https://beanzen.ru/privacy/` |
 | `Darwin/fastlane/metadata/en-US/support_url.txt` | `https://example.org/support/` | `https://beanzen.ru/support/` |
 | `Darwin/fastlane/metadata/en-US/software_url.txt` | `https://example.org/app/` | `https://beanzen.ru/` |
-| `Darwin/fastlane/metadata/en-US/description.txt` | Skip starter description | Actual BeanZen release description |
-| `Darwin/fastlane/metadata/en-US/subtitle.txt` | Skip starter subtitle | Actual BeanZen subtitle |
+| `Darwin/fastlane/metadata/en-US/description.txt` | Skip starter description | Actual Beanzen release description |
+| `Darwin/fastlane/metadata/en-US/subtitle.txt` | Skip starter subtitle | Actual Beanzen subtitle |
 | `Darwin/fastlane/metadata/app_privacy_details.json` | `DATA_NOT_COLLECTED` | Verify against all release flows before use |
 
 The mobile repository was not modified by this website task. Verify the in-app policy entry point separately.

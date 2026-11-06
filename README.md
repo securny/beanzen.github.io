@@ -1,6 +1,6 @@
-# BeanZen website
+# Beanzen website
 
-Jekyll website for **BeanZen**, developed by **Dmitry Berezkin**. English at `/`, Russian at `/ru/`. Public support contact: **hello@beanzen.ru**. Domain: **beanzen.ru**.
+Jekyll website for **Beanzen**, developed by **Dmitry Berezkin**. English at `/`, Russian at `/ru/`. Public support contact: **hello@beanzen.ru**. Domain: **beanzen.ru**.
 
 Based on [Automatic App Landing Page](https://github.com/emilbaehr/automatic-app-landing-page) by Emil Baehr. The template's phone preview, application hero, feature section, Sass structure and Markdown pages are retained and adapted. Its MIT license is preserved in [LICENSE](LICENSE).
 
@@ -59,10 +59,10 @@ The workflow retains the `github-pages` build artifact for **1 day**. Retrying o
 - `_config.yml`: developer, contact, domain, template colors, phone frame, screenshot and store links.
 - `_data/locales/en.json`, `ru.json`: localized navigation, home page and feature list.
 - `_pages/*.md`, `_pages/ru/*.md`: support and policy content. Use the same `key` on equivalent pages and explicit `permalink` values.
-- `_sass/beanzen.scss`: BeanZen adaptation over the original template styles.
+- `_sass/beanzen.scss`: Beanzen adaptation over the original template styles.
 - `assets/screenshot/beanzen-ios.png`: a real development screenshot from the app repository; the caption identifies it as a development build. Replace it with a current release screenshot before a launch campaign if the interface changes.
 
-Store badges stay hidden until `appstore_link` and/or `playstore_link` contain verified public listing URLs. No third-party app ID is shipped. To enable Apple's Smart App Banner, fill `ios_app_id` with BeanZen's numeric ID and set `enable_smart_app_banner: true`.
+Store badges stay hidden until `appstore_link` and/or `playstore_link` contain verified public listing URLs. No third-party app ID is shipped. To enable Apple's Smart App Banner, fill `ios_app_id` with Beanzen's numeric ID and set `enable_smart_app_banner: true`.
 
 ### Add a language
 
@@ -76,7 +76,7 @@ English is the default and `x-default` language. There are no automatic language
 
 ## Privacy content maintenance
 
-The owner confirmed local storage and no BeanZen accounts, servers, analytics, advertising or subscriptions. The policy also documents optional Xiaomi authentication, local GaggiMate HTTP/WebSocket traffic, protected scale tokens, photos, import/export, operating-system backups, support email and GitHub Pages hosting.
+The owner confirmed local storage and no Beanzen accounts, servers, analytics, advertising or subscriptions. The policy also documents optional Xiaomi authentication, local GaggiMate HTTP/WebSocket traffic, protected scale tokens, photos, import/export, operating-system backups, support email and GitHub Pages hosting.
 
 If these practices change, update both policy translations, the effective date in `_config.yml`, in-app disclosures and both store privacy declarations together. Implement the published support-mail retention practice: keep messages only as needed to resolve the request and related follow-up, then delete unless law requires retention.
 

@@ -1,4 +1,4 @@
-name: Build and deploy BeanZen
+name: Build and deploy Beanzen
 
 on:
   push:

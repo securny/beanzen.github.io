@@ -1,14 +1,14 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>{% if page.key != 'home' %}{{ page.title | escape }} · {% endif %}BeanZen</title>
+  <title>{% if page.key != 'home' %}{{ page.title | escape }} · {% endif %}Beanzen</title>
   <meta name="description" content="{{ page.description | default: t.description | escape }}">
   <meta name="theme-color" content="#35251d">
   <link rel="canonical" href="{{ page.url | absolute_url }}">
   {% if page.noindex %}<meta name="robots" content="noindex">{% endif %}
   {% for locale in site.data.languages %}{% assign alternate = site.documents | concat: site.html_pages | where: 'key', page.key | where: 'lang', locale.code | first %}{% if alternate %}<link rel="alternate" hreflang="{{ locale.code }}" href="{{ alternate.url | absolute_url }}">{% if locale.code == 'en' %}<link rel="alternate" hreflang="x-default" href="{{ alternate.url | absolute_url }}">{% endif %}{% endif %}{% endfor %}
   <meta property="og:type" content="website">
-  <meta property="og:title" content="{{ page.title | escape }} · BeanZen">
+  <meta property="og:title" content="{{ page.title | escape }} · Beanzen">
   <meta property="og:description" content="{{ page.description | default: t.description | escape }}">
   <meta property="og:url" content="{{ page.url | absolute_url }}">
   <meta property="og:image" content="{{ site.app_icon | absolute_url }}">

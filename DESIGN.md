@@ -1,6 +1,6 @@
 ---
-name: BeanZen
-description: Warm, template-led website for the BeanZen coffee journal.
+name: Beanzen
+description: Warm, template-led website for the Beanzen coffee journal.
 colors:
   espresso: "#35251d"
   deep-espresso: "#271b15"
@@ -89,13 +89,13 @@ components:
     padding: "24px 28px"
 ---
 
-# Design System: BeanZen
+# Design System: Beanzen
 
 ## Overview
 
 **Creative North Star: "Automatic App Landing Page"**
 
-BeanZen follows emilbaehr/automatic-app-landing-page: a phone preview beside app information, followed by a feature list and direct support/legal navigation. Warm espresso and cream colors extend the original BeanZen app icon. Locally hosted Manrope supports both English and Russian.
+Beanzen follows emilbaehr/automatic-app-landing-page: a phone preview beside app information, followed by a feature list and direct support/legal navigation. Warm espresso and cream colors extend the original Beanzen app icon. Locally hosted Manrope supports both English and Russian.
 
 Use generous spacing and restrained decoration. Support and legal pages are flat reading surfaces with clear headings, underlined links and compact contents/contact blocks.
 
@@ -126,13 +126,13 @@ The palette is warm and quiet, drawn from the original app identity. Frontmatter
 - **Button / button hover:** primary action fill and hover state.
 - **Focus / selection:** keyboard outline and selected text treatment.
 
-Configuration colors flow from `_config.yml` through `main.scss`. Imports run in this order: `base`, `layout`, `github-markdown`, `beanzen`. The final BeanZen overrides win; some override colors are literals rather than configuration variables. Preserve that incumbent hierarchy. Unused template syntax-highlighting colors are not a brand palette.
+Configuration colors flow from `_config.yml` through `main.scss`. Imports run in this order: `base`, `layout`, `github-markdown`, `beanzen`. The final Beanzen overrides win; some override colors are literals rather than configuration variables. Preserve that incumbent hierarchy. Unused template syntax-highlighting colors are not a brand palette.
 
 ## Typography
 
 Manrope is hosted at `assets/fonts/manrope-variable.ttf`, with variable weights (200–800) and `font-display: swap`. The root font size is (62.5%); existing rem values therefore correspond to ten-pixel units under default browser settings. Body defaults are (2rem) and (1.65), with explicit component sizes taking precedence.
 
-Use the frontmatter app-name and hero-description roles for the app identity and main proposition. Feature headings are compact and bold; descriptions use a relaxed line height. Reading pages use the reading-body role, with headings inherited from Markdown styling then overridden by BeanZen: second-level headings are (2.4rem), line height (1.35), and third-level headings are (1.85rem). Reading text is capped at (75ch), introductory text at (65ch), and hero detail at (47ch).
+Use the frontmatter app-name and hero-description roles for the app identity and main proposition. Feature headings are compact and bold; descriptions use a relaxed line height. Reading pages use the reading-body role, with headings inherited from Markdown styling then overridden by Beanzen: second-level headings are (2.4rem), line height (1.35), and third-level headings are (1.85rem). Reading text is capped at (75ch), introductory text at (65ch), and hero detail at (47ch).
 
 At the tablet override the hero description becomes (3rem); at mobile it uses `clamp(2.8rem, 7vw, 3.5rem)`. Mobile app names are (3.8rem), reading titles (3.2rem), and reading body (1.6rem). Preserve these explicit exceptions rather than inventing a new type scale.
 
@@ -140,7 +140,7 @@ At the tablet override the hero description becomes (3rem); at mobile it uses `c
 
 The inherited container is a centered twelve-column grid, capped at (1170px), with (30px) column gaps and final horizontal gutters (28px). The header row is (96px). The landing hero nests a two-column layout (40% / remaining space), a (6%) column gap, and padding (38px 0 52px): phone left, app information right. The phone preview is (320px × 676px); its screen is a real app image, with a development-build caption.
 
-At (992px) and below, the hero remains two columns with a (32px) gap; the phone becomes (280px) wide and features move from three columns to two. At (700px) and below, gutters become (22px), header/navigation wrap, app information precedes the phone, and features become one column. Mobile hero spacing is (36px 0 30px) with a (42px) gap. Earlier template media queries remain in the inherited stylesheet; the later BeanZen overrides define the final behavior.
+At (992px) and below, the hero remains two columns with a (32px) gap; the phone becomes (280px) wide and features move from three columns to two. At (700px) and below, gutters become (22px), header/navigation wrap, app information precedes the phone, and features become one column. Mobile hero spacing is (36px 0 30px) with a (42px) gap. Earlier template media queries remain in the inherited stylesheet; the later Beanzen overrides define the final behavior.
 
 Features begin after (72px) on desktop, (56px) at tablet and (42px) on mobile. Reading pages occupy grid columns (2 / 12) with margin (56px auto 24px); mobile uses full width and a (36px) top margin. Contents links and footer navigation wrap without a JavaScript menu.
 

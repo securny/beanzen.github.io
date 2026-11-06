@@ -1,8 +1,8 @@
-# BeanZen · emilbaehr/automatic-app-landing-page (MIT)
+# Beanzen · emilbaehr/automatic-app-landing-page (MIT)
 url: "https://beanzen.ru"
 baseurl: ""
-page_title: BeanZen — Your coffee, in perspective
-app_name: BeanZen
+page_title: Beanzen — Your coffee, in perspective
+app_name: Beanzen
 app_icon: assets/appicon.png
 app_description: Connect your coffee scale, follow your brew, and keep the details worth repeating.
 # Add only verified public store URLs. Empty values hide store badges.
