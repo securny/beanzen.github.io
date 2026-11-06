@@ -38,6 +38,10 @@ Jekyll 3.10 is compatible with GitHub Pages. The site uses no custom plugins or 
 
 Set the custom domain on GitHub before changing DNS. For the GitHub project URL without a custom domain, change `url` to `https://securny.github.io`, `baseurl` to `/beanzen.github.io`, and remove the custom-domain setting and CNAME. All internal links and CSS resources respect `baseurl`.
 
+### Retry a failed deployment
+
+The workflow retains the `github-pages` build artifact for **30 days**. Retrying only the deploy job requires that artifact to still exist. If GitHub reports “No artifacts named github-pages” after an artifact expired or was deleted, choose **Re-run all jobs** so the build uploads a fresh artifact, or start a new run with **Run workflow**. Retrying only failed jobs does not rebuild a previously successful build.
+
 ## URLs for store submissions
 
 | Purpose | English | Russian |

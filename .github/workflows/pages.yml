@@ -32,7 +32,10 @@ jobs:
         if: github.event_name != 'pull_request'
         uses: actions/upload-pages-artifact@v4
         with:
+          name: github-pages
           path: _site
+          # Allow deployment retries throughout GitHub's 30-day rerun window.
+          retention-days: 30
 
   deploy:
     if: github.event_name != 'pull_request'
@@ -45,6 +48,10 @@ jobs:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
+      - name: Check Pages configuration
+        uses: actions/configure-pages@v5
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+        with:
+          artifact_name: github-pages
