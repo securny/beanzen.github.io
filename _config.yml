@@ -1,10 +1,9 @@
-# Beanzen · emilbaehr/automatic-app-landing-page (MIT)
 url: "https://beanzen.ru"
 baseurl: ""
-page_title: Beanzen — Your coffee, in perspective
+page_title: Beanzen — Your brewing journal
 app_name: Beanzen
 app_icon: assets/appicon.png
-app_description: Connect your coffee scale, follow your brew, and keep the details worth repeating.
+app_description: Connect your Bluetooth scale and keep a brewing journal.
 # Add only verified public store URLs. Empty values hide store badges.
 ios_app_id: ""
 ios_app_country: us
@@ -12,29 +11,10 @@ appstore_link: ""
 playstore_link: ""
 android_download_link: "https://github.com/securny/beanzen/releases"
 enable_smart_app_banner: false
-app_screenshot: assets/screenshot/beanzen-multichannel-ios-en.png
+app_screenshot: assets/screenshot/beanzen-real-main-replay-ios-en.png
 your_name: Dmitry Berezkin
 email_address: hello@beanzen.ru
 policy_date: "2026-11-06"
-device_color: black
-cover_image: ""
-cover_overlay_color: "#f2f2f7"
-cover_overlay_transparency: 1
-topbar_color: "#ffffff"
-topbar_transparency: 0.45
-topbar_title_color: "#1c1c1e"
-body_background_color: "#ffffff"
-link_color: "#005fcc"
-app_title_color: "#1c1c1e"
-app_price_color: "#58585e"
-app_description_color: "#1c1c1e"
-feature_title_color: "#1c1c1e"
-feature_text_color: "#58585e"
-feature_icons_foreground_color: "#005fcc"
-feature_icons_background_color: "#f2f2f7"
-social_icons_foreground_color: "#005fcc"
-social_icons_background_color: "#f2f2f7"
-footer_text_color: "#58585e"
 lang: en
 timezone: Europe/Moscow
 sass:

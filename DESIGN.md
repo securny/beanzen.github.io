@@ -1,6 +1,6 @@
 ---
 name: Beanzen
-description: Fully light, template-led website for the Beanzen coffee journal.
+description: Fully light website for the Beanzen coffee journal.
 colors:
   link-blue: "#005fcc"
   action-blue: "#0066cc"
@@ -116,18 +116,18 @@ components:
 
 ## Overview
 
-**Creative North Star: "Automatic App Landing Page"**
+**Creative North Star: "Beanzen brewing interface"**
 
-Beanzen extends emilbaehr/automatic-app-landing-page: an authentic application preview beside app information, flat feature summaries, and straightforward reading pages. The approved variant 1 is fully light: white and native gray surfaces, dark text, and blue links/actions. The original app icon remains the identity asset; its brown artwork does not define a brown website palette.
+Beanzen is a standalone Jekyll site: an authentic application preview beside app information, flat feature summaries, and straightforward reading pages. The approved variant 1 is fully light: white and native gray surfaces, dark text, and blue links/actions. The original app icon remains the identity asset; its brown artwork does not define a brown website palette.
 
-Locally hosted Manrope serves English and Russian. Preserve the upstream layout, Jekyll/Sass structure and MIT attribution while extending the same readable visual language to detailed features, scale compatibility and the brewing guide. Real native application captures supply product evidence, rather than generated app UI or decorative phone hardware.
+Locally hosted Manrope serves English and Russian. Preserve the Beanzen layout, Jekyll/Sass structure and retained MIT attribution while extending the same readable visual language to detailed features, scale compatibility and the brewing guide. Real native application captures supply product evidence, rather than generated app UI or decorative phone hardware.
 
 **Key Characteristics:**
 
 - Fully light native palette, including the header and hero.
-- Template-led application preview and app-information hero.
+- Main brewing interface as the primary product image.
 - Flat reading pages, quiet dividers and blue interactive cues.
-- Actual iOS screenshots with captions and source provenance.
+- Actual iOS main-screen captures with internal source provenance.
 - Equivalent English/Russian navigation and visible keyboard focus.
 
 ## Colors
@@ -154,7 +154,7 @@ The frontmatter records actual configuration and Sass literals; it does not intr
 
 **The Fully Light Rule.** Keep both header and hero light; neither the rejected brown palette nor the briefly selected graphite hero has visual authority.
 
-`_config.yml` supplies theme colors through `main.scss`. Imports run `base`, `layout`, `github-markdown`, `beanzen`, then `catalog`; later literal overrides win. The white configured topbar is superseded by a transparent header over the native-gray hero. Inherited device, drop-shadow and syntax-highlight settings do not form a new brand palette. Markdown headings retain their inherited opaque-black color, while body copy uses Text.
+`_sass/colors.scss` defines palette variables. `main.scss` imports `colors`, `base`, `layout`, `github-markdown`, `beanzen`, then `catalog`; later literal overrides win. The white base topbar is superseded by a transparent header over the native-gray hero. Retained drop-shadow and syntax-highlight styles do not form a new brand palette. Markdown headings retain their inherited opaque-black color, while body copy uses Text.
 
 ## Typography
 
@@ -162,17 +162,17 @@ Manrope is hosted at `assets/fonts/manrope-variable.ttf`, with weights (200–80
 
 App name and hero proposition use the app-name and hero-description roles. The hero detail is (1.75rem), line height (1.7), capped at (47ch). Compact feature summaries use the feature-title/body roles. Reading pages use reading-body; second-level headings are (2.4rem), line height (1.35), and ordinary third-level headings are (1.85rem). Detailed feature headings use feature-detail-title. Reading text is capped at (75ch), introductory copy at (65ch); wide feature/catalog pages deliberately remove the page cap.
 
-At tablet width the hero proposition becomes (3rem), supporting detail (1.6rem) and header links (1.4rem). On mobile the proposition is `clamp(2.8rem, 7vw, 3.5rem)`, app name (3.8rem), reading title (3.2rem), reading body (1.6rem), reading second-level headings (2.25rem), and action labels (1.45rem). Home screenshot captions remain (1.2rem) with line height (1.5); gallery captions use screen-caption. Preserve these explicit differences.
+At tablet width the hero proposition becomes (3rem), supporting detail (1.6rem) and header links (1.4rem). On mobile the proposition is `clamp(2.8rem, 7vw, 3.5rem)`, app name (3.8rem), reading title (3.2rem), reading body (1.6rem), reading second-level headings (2.25rem), and action labels (1.45rem). The hero has no caption. Gallery captions use screen-caption. Preserve these explicit differences.
 
 ## Layout
 
-The inherited centered twelve-column grid is capped at (1170px), with (30px) column gaps and final horizontal gutters (28px). Header height is (96px). The hero nests columns (40% / remaining space), gap (6%), padding (38px 0 52px): screenshot left, app information right. The final raw preview width is (296px), with natural image height and a normal-flow caption.
+The inherited centered twelve-column grid is capped at (1170px), with (30px) column gaps and final horizontal gutters (28px). Header height is (96px). The hero nests columns (40% / remaining space), gap (6%), padding (38px 0 52px): screenshot left, app information right. The final raw preview width is (296px), with natural image height and no caption.
 
-At (992px) and below the hero stays in two columns with a (32px) gap; the screenshot is (270px) wide and feature summaries become two columns. At (700px) and below gutters become (22px); header links wrap into a full-width row; app information precedes the screenshot; feature summaries become one column. Mobile hero padding is (36px 0 30px), gap (42px), preview width `min(280px, 100%)`. These final catalog rules supersede earlier phone-frame dimensions in the inherited stylesheets.
+At (992px) and below the hero stays in two columns with a (32px) gap; the screenshot is (270px) wide and feature summaries become two columns. At (700px) and below gutters become (22px); header links wrap into a full-width row; the main screenshot precedes app information; feature summaries become one column. Mobile hero padding is (36px 0 30px), gap (42px), preview width `min(280px, 100%)`. The unused phone frames and video-preview rules have been removed.
 
-Feature summaries begin after (72px), tablet (56px), mobile (42px). Home expansion sections use top spacing (64px), mobile (48px). The screenshot gallery has three columns with gap (48px), tablet gap (24px), then one column with gap (36px). Gallery figures cap at (300px).
+Feature summaries begin after (72px), tablet (56px), mobile (42px). Home expansion sections use top spacing (64px), mobile (48px). The screenshot gallery has three columns with gap (48px), tablet gap (24px), then one column with gap (36px). Gallery figures have width (100%) capped at (300px), stable before image decoding.
 
-Reading pages span columns (2 / 12), margin (56px auto 24px); mobile uses full width and top margin (36px). Wide feature/catalog pages span all columns. Feature text with a capture uses `minmax(0, 1fr) 260px`, gap (72px); tablet uses (220px), gap (36px); mobile stacks with gap (12px). Feature text caps at (70ch). Catalog capabilities use seven columns, then four at tablet, three on mobile, with gap (12px 20px). Search caps at (600px). Anchor indexes wrap naturally; no JavaScript menu is required.
+Reading pages span columns (2 / 12), margin (56px auto 24px); mobile uses full width and top margin (36px). Wide feature/catalog pages span all columns. Feature text with a capture uses `minmax(0, 1fr) 260px`, gap (72px); tablet uses (220px), gap (36px); mobile stacks with gap (12px) and the screenshot first. Feature text caps at (70ch). Catalog capabilities use seven columns, then four at tablet, three on mobile, with gap (12px 20px). Search caps at (600px) and appears before results. Model names and explicit aliases are searchable. The model index and timer notes use native details controls. No JavaScript menu is required.
 
 ## Elevation & Depth
 
@@ -189,13 +189,13 @@ Raw hero screenshots use hero-screen, gallery screenshots gallery-screen, with t
 - **Primary APK action:** blue fill, white text, inline stroke arrow, minimum height (50px), gap (16px), frontmatter padding and radius. It links to `https://github.com/securny/beanzen/releases`; label the distribution APK. Hover uses action-hover. This is the download action; support remains a direct navigation destination.
 - **Secondary exploration link:** underlined blue link with no filled container; leads to detailed features. Public App Store and Google Play badges remain conditional on verified configured URLs; both are currently absent.
 - **Navigation:** Features, Scales, Guide and Support plus separate EN/RU navigation. Current page is underlined; current language is also weight (800). Home defaults use Navigation text; reading pages use Muted text. Hover/current states use Text. Language links target equivalent pages.
-- **Native captures:** unchanged raw (1206 × 2622) iOS PNGs, natural ratio, quiet border and readable captions; gallery links open the full image. The source of truth is `docs/screenshot-provenance.json`: app version (26.10.21), build (26102101), unchanged main commit `90110460fc5b03d1e8ef9f9ca7ff1ab5fd2d434a`, iPhone 17 Pro simulator running iOS (27.0). Captures are English even on Russian pages. Real saved `.slog` measurements coexist with explicitly sample coffee/water/equipment metadata; no live Bluetooth or Android capture is claimed.
+- **Native captures:** six unchanged PNGs from the authorized actual iPhone journal. The regular disconnected main screen is a direct physical iPhone capture (1290 × 2796). Other screens are native simulator captures (1206 × 2622). The rich main screen replays one original Bookoo brew through the existing transport, preserving 20.4 g dose and 46.1 g yield; it is not a live physical Bluetooth capture. Original journal coffee names and photos are preserved. Private fields were removed only from the screenshot working copy. Source evidence lives in `docs/screenshot-provenance.json`; raw database/photos are never site assets.
 - **Feature summaries and detail:** flat icon/text rows, then anchor-indexed groups with (24) detailed feature descriptions and optional native screenshots. Inline SVGs are (24px), stroke width (1.6); summary icon holders use (48px) basis and padding (12px). Do not put the rows into card shells.
-- **Scale catalog:** (26) entries across (19) implemented protocol families, separated by fine rules. Each entry states evidence scope, caveats and seven individual capabilities in a definition grid. Protocol implementation is distinct from physical model/platform/command testing. Search is progressively revealed by JavaScript, filters entries and their index links, and announces the remaining count; without JavaScript all entries remain readable.
+- **Scale catalog:** (26) entries across (19) implemented protocol families, separated by fine rules. Each entry states evidence scope, caveats and seven individual capabilities in a definition grid. Protocol implementation is distinct from physical model/platform/command testing. Search is progressively revealed by JavaScript, matches model names and aliases, filters entries and their index links, and announces the remaining count; without JavaScript all entries remain readable.
 - **Reading surfaces:** the guide is plain ordered explanatory content. Contents and contact blocks use native-gray fill and no shadow; contents links wrap. Contact padding becomes (20px) on mobile. Privacy summary is a horizontal border-separated row, stacked at tablet width.
 - **Footer:** centered author/contact, wrapping direct support/legal links and copyright. Public support, privacy, deletion and terms remain available without an account.
 
-**The Native Evidence Rule.** Use only the current documented application captures, with truthful platform, recording and sample-metadata captions; do not fabricate product UI or device validation.
+**The Native Evidence Rule.** Use only documented application captures. Keep source, platform, recording and sample-metadata evidence in internal documentation; do not fabricate product UI or device validation.
 
 All keyboard targets use a visible outline (3px solid Focus, offset 5px). Links underline on hover with offset (5px), except the filled primary action. The skip link appears on focus. The primary background transition is (.2s); reduced-motion preference disables transitions and changes smooth anchor scrolling to automatic. No chip, dialog, card or other input component is currently implemented beyond catalog search.
 
@@ -203,11 +203,11 @@ All keyboard targets use a visible outline (3px solid Focus, offset 5px). Links 
 
 ### Do:
 
-- **Do** preserve the selected upstream template, original app icon and local Manrope.
+- **Do** preserve the current Beanzen layout, original app icon and local Manrope.
 - **Do** use the existing configuration and Sass cascade, including final catalog overrides.
 - **Do** keep English and Russian layouts equivalent and allow navigation to wrap.
 - **Do** preserve visible focus, the skip link, meaningful alt text and reduced-motion behavior.
-- **Do** keep native screenshot provenance, captions and sample-data limitations accurate.
+- **Do** keep screenshot provenance accurate in docs/screenshot-provenance.json. Use short captions only when they help identify the screen or mode.
 - **Do** keep APK download, support and conditional store badges distinct.
 
 ### Don't:
@@ -216,3 +216,11 @@ All keyboard targets use a visible outline (3px solid Focus, offset 5px). Links 
 - **Don't** restore the old phone-frame overlay, generated app UI, July development screenshot or rejected composition comps.
 - **Don't** turn flat feature/catalog sections into elevated cards or add decorative reading-page surfaces.
 - **Don't** invent token scales, model validation, store URLs, Android captures or profile-export controls.
+
+## Copy and screenshot priorities
+
+Use short, natural sentences. One sentence carries one idea. Remove repeated instructions and editorial process notes. Keep hardware limitations and legal disclosures. The main brewing screen leads the hero and feature page. Show both standard scale setup and GaggiMate recording views. History and catalog screens support that primary interface. Screenshot capture details belong in docs, not marketing captions.
+
+## Verified design corrections
+
+Impeccable 4.8 reviewed the surface independently for visual hierarchy and technical behavior. Mobile main-screen placement, catalog lookup order, model-name search, lazy-figure stability and enlarged-text wrapping were corrected. Offscreen skip-link hiding now uses its own height. Keep copy concise and reserve screenshot provenance for docs. See docs/design-audit.md for scoped evidence.

@@ -1,7 +1,7 @@
 ---
 layout: page
 title: "Brewing guide"
-intro: "A practical walkthrough from your first connection to a saved brew. Button labels follow the English app interface."
+intro: "Connect a scale, record a brew and keep its details."
 lang: en
 key: guide
 permalink: /guide/
@@ -9,52 +9,73 @@ permalink: /guide/
 
 ## 1. Connect your scale {#connect}
 
-Check the [model catalog]({{ '/scales/' | relative_url }}) first: weight, tare and the scale’s own timer are separate capabilities. Turn the scale on, enable Bluetooth and keep it near your phone. Close other apps connected to the scale; many scales accept only one connection.
+Find your model in the [scale catalog]({{ '/scales/' | relative_url }}).
 
-Open Beanzen, grant Bluetooth or Nearby Devices access when asked, then tap **FIND**. Choose your scale if a list appears. If it is not found, restart the scale and check the app’s permissions in your phone settings. On Android, available permission prompts depend on the OS version.
+1. Turn on the scale and Bluetooth.
+2. Close other apps connected to the scale.
+3. Open Beanzen and allow Bluetooth or Nearby Devices access.
+4. Tap **FIND**. Select your scale if prompted.
 
-**HOTO:** this model may require Xiaomi sign-in to retrieve its device token. Use the Xiaomi account and region where the scale is registered. Beanzen itself has no account. See [Hoto setup]({{ '/support/#hoto' | relative_url }}) and the [privacy policy]({{ '/privacy/#integrations' | relative_url }}).
+If the scale is not found, restart it and check permissions in your phone settings.
+
+**HOTO:** use the Xiaomi account and region where your scale is registered. See [Hoto setup]({{ '/support/#hoto' | relative_url }}).
 
 ## 2. Set up your brew {#prepare}
 
-Place your brewing vessel on the scale and tap **TARE** if your model supports the command; otherwise use the scale’s own tare button. Tap the dose value to enter your coffee dose, or use **DOSE** to measure it with the scale. The dose is needed for a meaningful brew ratio.
+Place your brewing vessel on the scale. Tap **TARE**, or use the scale’s tare button if the app command is unavailable.
 
-Choose the coffee, grinder, brewer and water you want to associate with the record. You can also add or edit these details later in history. For espresso the scale usually weighs the cup and beverage; for filter coffee, the equipment placement determines what the measured weight represents.
+Tap the dose in the header to enter the coffee weight. Use **DOSE** to weigh it instead. Beanzen uses the dose to calculate the brew ratio.
+
+Select your coffee, grinder, brewer and water. You can add these details later in History.
+
+For espresso, weigh the cup and beverage. For filter coffee, the measured weight depends on where you place the brewer.
 
 ## 3. Record the brew {#record}
 
-Tap **START**. Follow weight, calculated flow rate, ratio and time. **PAUSE** pauses the app timer; **GO ON** continues it. **FINISH** ends the recording. The scale timer can have different capabilities from the app timer — check your model before relying on synchronization.
+Tap **START**. Follow weight, flow, ratio and time.
 
-The automatic start and stop options reduce manual actions when enabled. Auto-stop detects sustained negative weight after you remove the cup, rather than a target beverage weight. It requires a shown weight of at least 20 g and removal for about five seconds. It does not stop the machine or pump.
+- **PAUSE** pauses the app timer.
+- **GO ON** resumes it.
+- **FINISH** ends the brew.
+- **HOLD** freezes readings in the app.
+- **LIVE** returns to current readings.
 
-**HOLD** freezes displayed weight, flow and ratio so you can read them while moving the cup. **LIVE** returns to live readings. It does not command the scale’s display, is unavailable for GaggiMate sessions, and cannot begin after the cup is already removed. Automatic removal handling is suppressed during HOLD.
+The scale timer has its own capabilities. Check your model before relying on synchronization.
 
-See [automatic behavior]({{ '/features/#automatic' | relative_url }}) for the distinctions between app detection and a scale’s own automatic modes.
+Auto-stop pauses the timer when you remove the cup. It requires at least 20 g and negative weight for five seconds. It does not stop the machine.
 
-## 4. Find and describe your brew {#journal}
+HOLD is unavailable after cup removal and in GaggiMate mode. Auto-stop is disabled during HOLD. See [automatic controls]({{ '/features/#automatic' | relative_url }}).
 
-Open history with the list control or by swiping from the brewing screen. Finished recordings appear in the journal; very short or empty attempts may not be saved. Open a brew to review its curves, inspect values along the chart, and add notes, a rating, photos and equipment details.
+## 4. Open your journal {#journal}
 
-Use the history filters for **All**, **Brews**, **Coffee** or **Gear**, and search to find an earlier record. Coffee, grinder, brewer and water records keep reusable information in one place. You can add up to ten photos to each supported record.
+Tap the list control or swipe from the brewing screen to History. Open a brew to view its charts or add notes, ratings and photos. Very short or empty sessions may not be saved.
 
-Enter beverage TDS only if you have measured it with a suitable instrument; Beanzen does not measure TDS through the phone. The extraction calculation uses your entered TDS, dose and beverage weight.
+Use search or the **All**, **Brews**, **Coffee** and **Gear** filters to find records. Each supported record holds up to 10 photos.
 
-## 5. Connect a GaggiMate machine {#machine}
+To calculate extraction yield, enter the dose, beverage weight and measured TDS. Measure TDS with a refractometer.
 
-Add the GaggiMate integration to the machine’s brewer record and provide its local address. Your phone and machine must be reachable on the same local network. Allow local-network access when requested. Guest-network isolation or a VPN can prevent a connection.
+## 5. Connect GaggiMate {#machine}
 
-Beanzen records the measurement channels made available by the machine, such as pressure, temperature and flow, and displays their charts. The machine controls its session; this integration is not a remote recipe editor or pump controller. Available channels depend on firmware. Local HTTP and WebSocket connections should be used on a trusted network.
+Add a GaggiMate part to your brewer. Enter its local address. Enable **Use for brewing**.
+
+Connect the phone and machine to the same local network. Allow local-network access when asked. A VPN or guest-network isolation can block the connection.
+
+Beanzen records the channels your machine provides. The machine starts and ends the shot. Beanzen does not control the pump or edit recipes.
+
+Use a trusted network for the local HTTP and WebSocket connections.
 
 ## 6. Import and share {#files}
 
-To bring in Beanconqueror data, open **History → + → Import from Beanconqueror** and select the exported folder or ZIP with its related files. Review the import preview before proceeding. Repeated imports add new records; the **Override** option can replace matching information, so read the preview carefully.
+Open **History → + → Import from Beanconqueror**. Select the export folder or ZIP with its related files.
 
-Use the brew’s sharing action to create an image and choose a destination through the system share sheet. Saved images are useful for keeping a visual reference, but are not a full backup of the database, photos and settings. The current interface has no user command for a complete file or profile export.
+Review the import preview. Repeated imports can add records. **Override** replaces matching records.
 
-## 7. Keep control of your data {#data}
+Use the brew’s share action to send an image. Choose the destination in the system share sheet. An image is not a full backup of your journal, photos and settings.
 
-Beanzen stores its journal locally. It has no Beanzen accounts, developer-operated sync servers, analytics, advertising or subscriptions. Optional Xiaomi and GaggiMate connections have their own data flows. Device backups depend on your OS settings.
+## 7. Keep your data {#data}
 
-Before deleting the app or clearing its storage, check any backup you intend to rely on and save the images or notes you need. Recovery is not guaranteed. Read [data deletion]({{ '/delete-data/' | relative_url }}) for local records, Hoto tokens, shared files and device backups.
+The journal stays on your device. Device backups depend on your OS settings. Beanzen has no complete journal file export.
 
-Need help? Email [hello@beanzen.ru](mailto:hello@beanzen.ru) with your app version, OS version, scale model and firmware, and the steps that led to the problem.
+Before deleting the app, save the images or notes you need. Check any device backup you plan to use. See [data deletion]({{ '/delete-data/' | relative_url }}).
+
+For help, email [hello@beanzen.ru](mailto:hello@beanzen.ru). Include the app version, OS version, scale model, firmware and steps that led to the problem.

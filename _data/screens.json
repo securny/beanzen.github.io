@@ -1,80 +1,92 @@
 [
   {
-    "id": "brew",
-    "path": "assets/screenshot/beanzen-multichannel-ios-en.png",
+    "id": "main",
+    "path": "assets/screenshot/beanzen-real-main-replay-ios-en.png",
     "home": false,
+    "width": 1206,
+    "height": 2622,
     "en": {
-      "caption": "Recorded GaggiMate brew: weight, pressure, temperature and flow channels.",
-      "alt": "Saved espresso record in Beanzen on iOS with actual measurement curves and native channel toggles."
+      "caption": "Brew recording",
+      "alt": "Main brewing screen replaying a recorded brew: 20.4 g dose and 46.1 g yield."
     },
     "ru": {
-      "caption": "Записанное заваривание GaggiMate: вес, давление, температура и поток.",
-      "alt": "Сохранённая запись эспрессо в Beanzen на iOS: настоящие графики измерений и переключатели каналов."
+      "caption": "Запись заваривания",
+      "alt": "Главный экран с воспроизведением записанного заваривания: доза 20,4 г и напиток 46,1 г."
+    }
+  },
+  {
+    "id": "main-idle",
+    "path": "assets/screenshot/beanzen-main-iphone-idle-en.png",
+    "home": true,
+    "width": 1290,
+    "height": 2796,
+    "en": {
+      "caption": "Connect a scale",
+      "alt": "Beanzen main screen on iPhone before connecting a scale."
+    },
+    "ru": {
+      "caption": "Подключение весов",
+      "alt": "Главный экран Beanzen на iPhone до подключения весов."
     }
   },
   {
     "id": "history",
-    "path": "assets/screenshot/beanzen-history-ios-en.png",
+    "path": "assets/screenshot/beanzen-real-history-ios-en.png",
     "home": true,
+    "width": 1206,
+    "height": 2622,
     "en": {
-      "caption": "Brews, coffee, water and equipment in one local journal.",
-      "alt": "Actual Beanzen iOS history screen with three recorded brews and sample coffee and equipment entries."
+      "caption": "Brewing history",
+      "alt": "Brewing history with coffee, equipment and photos."
     },
     "ru": {
-      "caption": "Заваривания, кофе, вода и оборудование в локальном дневнике.",
-      "alt": "Настоящий экран истории Beanzen на iOS: три записанных заваривания и примеры карточек кофе и оборудования."
+      "caption": "История завариваний",
+      "alt": "История завариваний с кофе, оборудованием и фотографиями."
+    }
+  },
+  {
+    "id": "brew",
+    "path": "assets/screenshot/beanzen-real-brew-detail-ios-en.png",
+    "home": false,
+    "width": 1206,
+    "height": 2622,
+    "en": {
+      "caption": "Brew details",
+      "alt": "Espresso record with a coffee photo, dose, yield, ratio and equipment."
+    },
+    "ru": {
+      "caption": "Детали заваривания",
+      "alt": "Запись эспрессо с фотографией кофе, дозой, весом напитка, пропорцией и оборудованием."
     }
   },
   {
     "id": "coffee",
-    "path": "assets/screenshot/beanzen-coffee-ios-en.png",
+    "path": "assets/screenshot/beanzen-real-coffee-top-ios-en.png",
     "home": true,
+    "width": 1206,
+    "height": 2622,
     "en": {
-      "caption": "Coffee origins, processing and bags. Sample metadata.",
-      "alt": "Actual Beanzen iOS coffee card with sample origin, processing, elevation and bag details."
+      "caption": "Coffee and bags",
+      "alt": "Coffee card with a package photo, roaster and roast details."
     },
     "ru": {
-      "caption": "Происхождение кофе, обработка и пачки. Пример заполнения.",
-      "alt": "Настоящая карточка кофе в Beanzen на iOS с примерами происхождения, обработки, высоты и пачки."
-    }
-  },
-  {
-    "id": "water",
-    "path": "assets/screenshot/beanzen-water-ios-en.png",
-    "home": true,
-    "en": {
-      "caption": "Mineral recipe and calculated water composition. Example values.",
-      "alt": "Actual Beanzen iOS water card calculating hardness, alkalinity and ionic TDS for a sample recipe."
-    },
-    "ru": {
-      "caption": "Минеральный рецепт и расчёт состава воды. Пример значений.",
-      "alt": "Настоящая карточка воды в Beanzen на iOS: расчёт жёсткости, щёлочности и ионного TDS для примера рецепта."
+      "caption": "Кофе и пачки",
+      "alt": "Карточка кофе с фотографией упаковки, обжарщиком и обжаркой."
     }
   },
   {
     "id": "machine",
-    "path": "assets/screenshot/beanzen-brewer-ios-en.png",
+    "path": "assets/screenshot/beanzen-real-multichannel-ios-en.png",
     "home": false,
+    "width": 1206,
+    "height": 2622,
     "en": {
-      "caption": "Equipment entry for a GaggiMate brewer. Sample details.",
-      "alt": "Actual Beanzen iOS brewer card with a sample Gaggia Classic and GaggiMate entry."
+      "caption": "GaggiMate charts",
+      "alt": "Saved GaggiMate charts for weight, pressure, temperature and flow."
     },
     "ru": {
-      "caption": "Карточка оборудования с GaggiMate. Пример заполнения.",
-      "alt": "Настоящая карточка оборудования Beanzen на iOS с примером записи Gaggia Classic с GaggiMate."
-    }
-  },
-  {
-    "id": "gear",
-    "path": "assets/screenshot/beanzen-gear-ios-en.png",
-    "home": false,
-    "en": {
-      "caption": "Your reusable equipment and water records.",
-      "alt": "Actual Beanzen iOS Gear filter listing sample water, grinder and brewer records."
-    },
-    "ru": {
-      "caption": "Карточки оборудования и воды для повторного использования.",
-      "alt": "Настоящий фильтр Gear в Beanzen на iOS: примеры карточек воды, кофемолки и оборудования."
+      "caption": "Графики GaggiMate",
+      "alt": "Сохранённые графики GaggiMate: вес, давление, температура и поток."
     }
   }
 ]

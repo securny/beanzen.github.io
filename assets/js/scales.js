@@ -3,7 +3,7 @@
   if (!input) return;
   const entries = [...document.querySelectorAll('.scaleEntry')];
   const indexLinks = [...document.querySelectorAll('.scaleIndex a')];
-  const searchable = entries.map(entry => entry.textContent.normalize('NFKC').toLocaleLowerCase());
+  const searchable = entries.map(entry => entry.dataset.search.normalize('NFKC').toLocaleLowerCase());
   document.querySelector('.scaleSearch').hidden = false;
   input.addEventListener('input', () => {
     const query = input.value.trim().normalize('NFKC').toLocaleLowerCase();

@@ -4,19 +4,19 @@
       "id": "brewing",
       "en": "During the brew",
       "ru": "Во время заваривания",
-      "screen": "brew"
+      "screen": "main"
     },
     {
       "id": "automatic",
-      "en": "A little less to do by hand",
-      "ru": "Меньше действий вручную",
+      "en": "Automatic controls",
+      "ru": "Автоматические функции",
       "screen": null
     },
     {
       "id": "journal",
-      "en": "A journal with the details that matter",
-      "ru": "Дневник с важными деталями",
-      "screen": "history"
+      "en": "Brewing journal",
+      "ru": "Кофейный дневник",
+      "screen": "brew"
     },
     {
       "id": "coffee-gear",
@@ -37,15 +37,15 @@
       "group": "brewing",
       "en": {
         "title": "Live weight",
-        "description": "Read the weight from a connected Bluetooth scale in grams while you prepare your coffee. The brewing screen keeps the measurement alongside the timer and ratio.",
-        "how": "Turn on a compatible scale, tap FIND, and allow Bluetooth or Nearby devices when requested.",
-        "note": "Compatibility and available commands depend on the model; see Supported scales."
+        "description": "Read your scale’s weight in grams on the brewing screen.",
+        "how": "Turn on the scale. Tap FIND and allow Bluetooth access.",
+        "note": ""
       },
       "ru": {
         "title": "Вес в реальном времени",
-        "description": "Смотрите вес с подключённых Bluetooth-весов в граммах во время приготовления. На экране заваривания он находится рядом с таймером и пропорцией.",
-        "how": "Включите совместимые весы, нажмите FIND и разрешите Bluetooth или доступ к устройствам поблизости.",
-        "note": "Совместимость и доступные команды зависят от модели; проверьте страницу весов."
+        "description": "Смотрите вес в граммах на экране заваривания.",
+        "how": "Включите весы. Нажмите FIND и разрешите доступ к Bluetooth.",
+        "note": ""
       },
       "sources": [
         "Sources/BeanZen/BluetoothManager.swift",
@@ -57,15 +57,15 @@
       "group": "brewing",
       "en": {
         "title": "Live flow rate",
-        "description": "See how quickly the weight is changing, in grams per second. Use the live reading and the flow chart to understand the pace of a pour or an espresso extraction.",
-        "how": "Connect a scale and start a brew; follow the live flow reading and the plotted flow history.",
-        "note": "Scale update rate, movement and the app's filtering affect the reading. It is calculated from weight, rather than measured by a separate flow sensor."
+        "description": "Follow the flow rate in g/s and on a chart. Beanzen calculates it from changes in weight.",
+        "how": "Start a brew to record the flow.",
+        "note": ""
       },
       "ru": {
         "title": "Скорость потока",
-        "description": "Смотрите, как быстро меняется вес, в граммах в секунду. Текущее значение и график помогают оценить темп пролива или приготовления эспрессо.",
-        "how": "Подключите весы и начните заваривание; наблюдайте за показанием потока и его историей на графике.",
-        "note": "На показания влияют частота обновления весов, движения и фильтрация. Поток рассчитывается по весу, а не измеряется отдельным датчиком."
+        "description": "Следите за потоком в г/с и на графике. Beanzen рассчитывает его по изменению веса.",
+        "how": "Начните заваривание, чтобы записать поток.",
+        "note": ""
       },
       "sources": [
         "Sources/BeanZen/Helpers/FlowMeter.swift",
@@ -77,15 +77,15 @@
       "group": "brewing",
       "en": {
         "title": "Dose and tare",
-        "description": "Keep the coffee dose with the brew and zero the scale at the appropriate preparation step. The dose is also used to calculate the brew ratio.",
-        "how": "Use DOSE to capture the coffee weight during setup, or edit the dose from its field in the header.",
-        "note": "Preparation steps differ between the normal and supported smart-scale modes. Tare commands require scale support."
+        "description": "Save your coffee dose and zero the scale before brewing.",
+        "how": "Tap DOSE to weigh the coffee. Tap the dose in the header to enter it manually.",
+        "note": "TARE works only on scales that support the command."
       },
       "ru": {
         "title": "Доза и тара",
-        "description": "Сохраняйте дозу кофе вместе с завариванием и обнуляйте весы на нужном этапе подготовки. Доза также используется для расчёта пропорции.",
-        "how": "Нажмите DOSE на этапе подготовки или измените дозу через её поле в шапке.",
-        "note": "Шаги подготовки отличаются в обычном и поддерживаемом умном режиме весов. Для обнуления нужна поддержка команды тарирования."
+        "description": "Сохраните дозу кофе и обнулите весы перед завариванием.",
+        "how": "Нажмите DOSE, чтобы взвесить кофе. Для ручного ввода нажмите дозу в шапке.",
+        "note": "Команда TARE работает только на весах с её поддержкой."
       },
       "sources": [
         "Sources/BeanZen/BrewSession.swift",
@@ -97,15 +97,15 @@
       "group": "brewing",
       "en": {
         "title": "Brew ratio",
-        "description": "Follow the relationship between your coffee dose and the current measured weight. The final ratio remains with the saved brew so you can return to the same recipe.",
-        "how": "Set a coffee dose, then watch the ratio change as weight is added.",
-        "note": "For espresso the measured weight is typically beverage yield; for filter it depends on what is on the scale. The app does not know your physical setup."
+        "description": "See the ratio between the coffee dose and measured weight. The final ratio stays with the brew.",
+        "how": "Set a dose before brewing.",
+        "note": "For filter coffee, the measured weight depends on where you place the brewer."
       },
       "ru": {
         "title": "Пропорция заваривания",
-        "description": "Следите за отношением дозы кофе к текущему измеренному весу. Итоговая пропорция сохраняется в записи, чтобы можно было повторить рецепт.",
-        "how": "Задайте дозу кофе и наблюдайте за изменением пропорции при увеличении веса.",
-        "note": "В эспрессо измеряемый вес обычно означает выход напитка; в фильтре он зависит от того, что стоит на весах. Приложение не определяет физическую схему приготовления."
+        "description": "Следите за соотношением дозы кофе и измеренного веса. Итоговая пропорция сохраняется в записи.",
+        "how": "Укажите дозу перед завариванием.",
+        "note": "При приготовлении фильтра измеренный вес зависит от расположения оборудования."
       },
       "sources": [
         "Sources/BeanZen/Views/MetricsHeaderView.swift",
@@ -117,15 +117,15 @@
       "group": "brewing",
       "en": {
         "title": "Start, pause and continue",
-        "description": "Use the stopwatch to time a brew, pause it, and continue when needed. Timing and measurements remain together in the saved record.",
-        "how": "Tap START to begin, PAUSE to pause, GO ON to continue and FINISH when you are done.",
-        "note": "In GaggiMate mode the machine controls shot start and end. Hardware scale timers are a separate capability."
+        "description": "Time your brew and save its duration.",
+        "how": "START starts the timer. PAUSE pauses it. GO ON resumes it. FINISH ends the brew.",
+        "note": "GaggiMate starts and ends its own shots."
       },
       "ru": {
         "title": "Старт, пауза и продолжение",
-        "description": "Измеряйте длительность приготовления секундомером, ставьте его на паузу и продолжайте при необходимости. Время и измерения остаются вместе в записи.",
-        "how": "Нажмите START для начала, PAUSE для паузы, GO ON для продолжения и FINISH в конце.",
-        "note": "В режиме GaggiMate началом и концом шота управляет машина. Управление таймером самих весов — отдельная возможность."
+        "description": "Измеряйте время заваривания и сохраняйте его в записи.",
+        "how": "START запускает таймер. PAUSE ставит на паузу. GO ON продолжает. FINISH завершает заваривание.",
+        "note": "В режиме GaggiMate началом и концом шота управляет машина."
       },
       "sources": [
         "Sources/BeanZen/BrewSession.swift",
@@ -137,15 +137,15 @@
       "group": "brewing",
       "en": {
         "title": "Weight and flow charts",
-        "description": "See the shape of a brew as it happens and revisit its saved curves later. Select a point on a chart to inspect its value and time.",
-        "how": "Start brewing to record measurements. Open a saved brew to inspect its chart and drag across the plot.",
-        "note": "The live display filters measurement noise; saved curves are built from the recorded data. Machine channels are available for compatible GaggiMate recordings."
+        "description": "Watch weight and flow charts while brewing. Revisit them in saved records.",
+        "how": "Drag across a chart to inspect values and time.",
+        "note": "GaggiMate records also include supported machine channels."
       },
       "ru": {
         "title": "Графики веса и потока",
-        "description": "Наблюдайте за формой заваривания во время приготовления и возвращайтесь к сохранённым кривым. Выбирайте точку на графике, чтобы посмотреть значение и время.",
-        "how": "Начните заваривание для записи измерений. Откройте сохранённую запись и проведите пальцем по графику.",
-        "note": "Живое отображение фильтрует шум измерений; сохранённые кривые строятся по записанным данным. Дополнительные каналы доступны в записях совместимого GaggiMate."
+        "description": "Смотрите графики веса и потока во время заваривания. Возвращайтесь к ним в сохранённых записях.",
+        "how": "Проведите пальцем по графику, чтобы посмотреть значения и время.",
+        "note": "Записи GaggiMate также содержат доступные параметры машины."
       },
       "sources": [
         "Sources/BeanZen/Views/WeightChartView.swift",
@@ -157,15 +157,15 @@
       "group": "brewing",
       "en": {
         "title": "Controls within reach",
-        "description": "The main brewing controls sit at the bottom of the screen so they are easier to reach while holding the phone.",
-        "how": "Use the bottom controls to find a scale, record a dose and manage the brew.",
-        "note": "The available controls change with the current brewing state and selected equipment."
+        "description": "Brewing controls sit at the bottom of the screen, within reach of your thumb.",
+        "how": "",
+        "note": ""
       },
       "ru": {
         "title": "Управление под рукой",
-        "description": "Основные кнопки приготовления расположены внизу экрана, чтобы до них было проще дотянуться, удерживая телефон.",
-        "how": "Используйте нижние кнопки для поиска весов, записи дозы и управления завариванием.",
-        "note": "Доступные действия меняются в зависимости от этапа приготовления и выбранного оборудования."
+        "description": "Кнопки заваривания находятся внизу экрана, под большим пальцем.",
+        "how": "",
+        "note": ""
       },
       "sources": [
         "Sources/BeanZen/ContentView.swift"
@@ -176,15 +176,15 @@
       "group": "automatic",
       "en": {
         "title": "Automatic start",
-        "description": "Let the brew timer start when pouring begins, after the preparation steps required by the selected scale mode.",
-        "how": "Enable AUTO START and follow the preparation prompt shown on the brewing screen.",
-        "note": "This is not the same as a scale manufacturer's own automatic timer mode. Availability and setup depend on the selected scale."
+        "description": "Start the timer automatically when pouring begins.",
+        "how": "Enable AUTO START. Follow the preparation prompt on the screen.",
+        "note": "Setup depends on the scale. Its own automatic timer mode may behave differently."
       },
       "ru": {
         "title": "Автозапуск",
-        "description": "Таймер может запускаться с началом пролива после подготовки, необходимой для выбранного режима весов.",
-        "how": "Включите AUTO START и следуйте подсказке на экране заваривания.",
-        "note": "Это не то же самое, что собственный автоматический режим таймера производителя весов. Доступность и подготовка зависят от выбранных весов."
+        "description": "Запускайте таймер автоматически с началом пролива.",
+        "how": "Включите AUTO START. Следуйте подсказке на экране.",
+        "note": "Подготовка зависит от весов. Автоматический режим самих весов может работать иначе."
       },
       "sources": [
         "Sources/BeanZen/BrewSession.swift",
@@ -196,15 +196,15 @@
       "group": "automatic",
       "en": {
         "title": "Automatic stop on cup removal",
-        "description": "When a sufficiently developed brew is removed from the scale, the app can pause the timer and end the charts at the removal point.",
-        "how": "Finish brewing and lift the cup or brewer from the scale. The app confirms sustained removal before pausing.",
-        "note": "Removal is detected from a negative weight after tare. The current check waits five seconds; it is suspended while HOLD is active."
+        "description": "Pause the brew when you remove the cup. Charts end at the removal point.",
+        "how": "Lift the cup after brewing.",
+        "note": "Detection requires at least 20 g and negative weight for five seconds. It is disabled during HOLD. It does not stop the machine."
       },
       "ru": {
         "title": "Автостоп при снятии чашки",
-        "description": "Когда чашку или устройство с набранным напитком снимают с весов, приложение может поставить таймер на паузу и закончить графики в момент снятия.",
-        "how": "Завершите приготовление и снимите чашку или устройство с весов. Приложение проверит, что снятие устойчивое, прежде чем остановить отсчёт.",
-        "note": "Снятие определяется по отрицательному весу после тарирования. Текущая проверка длится пять секунд; при включённом HOLD она приостанавливается."
+        "description": "Ставьте заваривание на паузу при снятии чашки. Графики заканчиваются в момент снятия.",
+        "how": "Снимите чашку после заваривания.",
+        "note": "Нужны показание не менее 20 г и отрицательный вес в течение пяти секунд. В режиме HOLD автостоп отключён. Машину он не останавливает."
       },
       "sources": [
         "Sources/BeanZen/Helpers/RemovalWatch.swift",
@@ -216,15 +216,15 @@
       "group": "automatic",
       "en": {
         "title": "HOLD / LIVE",
-        "description": "Freeze the weight in the app before adding a lid or moving something on the scale. The held value is used for the displayed weight, ratio, charts and saved record; LIVE returns to current readings.",
-        "how": "During a running scale brew, tap HOLD after pouring, then LIVE when you want live measurements again.",
-        "note": "HOLD is an app function, not a command that changes the scale's display. It is unavailable in GaggiMate mode and will not arm after the cup has already been removed."
+        "description": "Freeze the weight in the app before moving the cup or adding a lid. The held value is used in the ratio, charts and saved record.",
+        "how": "Tap HOLD while brewing. Tap LIVE to return to current readings.",
+        "note": "HOLD is unavailable after cup removal and in GaggiMate mode. It does not freeze the scale’s display."
       },
       "ru": {
         "title": "HOLD / LIVE",
-        "description": "Зафиксируйте вес в приложении перед тем, как поставить крышку или что-то переместить на весах. Это значение используется в показании веса, пропорции, графиках и записи; LIVE возвращает текущие измерения.",
-        "how": "Во время заваривания с весами нажмите HOLD после пролива, а для возврата к текущим показаниям — LIVE.",
-        "note": "HOLD работает внутри приложения и не меняет дисплей весов. Функция недоступна в режиме GaggiMate и не включится после снятия чашки."
+        "description": "Зафиксируйте вес в приложении перед снятием чашки или добавлением крышки. Это значение используется в пропорции, графиках и сохранённой записи.",
+        "how": "Нажмите HOLD во время заваривания. Нажмите LIVE, чтобы вернуть текущие показания.",
+        "note": "HOLD недоступен после снятия чашки и в режиме GaggiMate. Дисплей весов он не фиксирует."
       },
       "sources": [
         "Sources/BeanZen/BrewSession.swift"
@@ -235,15 +235,15 @@
       "group": "automatic",
       "en": {
         "title": "Scale timer and physical buttons",
-        "description": "On compatible models, app actions send timer commands to the scale. Some models also send physical timer-button events back to the app.",
-        "how": "Use the app's start, pause and reset actions, or supported timer controls on the scale.",
-        "note": "Start, pause, reset and resume are separate capabilities. For example, Varia button events do not imply outgoing timer control; check the per-model matrix."
+        "description": "Control the scale timer from the app. On some models, scale buttons also control the app timer.",
+        "how": "Check the functions listed for your scale.",
+        "note": "Start, pause, reset and resume depend on the model. Varia sends button events but accepts no timer commands."
       },
       "ru": {
         "title": "Таймер и кнопки весов",
-        "description": "На совместимых моделях приложение отправляет команды таймеру весов. Некоторые модели также передают в приложение нажатия физических кнопок таймера.",
-        "how": "Используйте старт, паузу и сброс в приложении или поддерживаемые кнопки на весах.",
-        "note": "Старт, пауза, сброс и продолжение — отдельные возможности. Например, события кнопок Varia не означают управление таймером с телефона; проверьте таблицу моделей."
+        "description": "Управляйте таймером весов из приложения. Кнопки некоторых весов также управляют таймером приложения.",
+        "how": "Проверьте функции своей модели в каталоге весов.",
+        "note": "Старт, пауза, сброс и продолжение зависят от модели. Varia передаёт нажатия кнопок, но не принимает команды таймера."
       },
       "sources": [
         "Sources/BeanZen/Scales/ScaleAdapter.swift",
@@ -255,15 +255,15 @@
       "group": "journal",
       "en": {
         "title": "Saved brews and post-brew details",
-        "description": "Keep the measured curves, dose, weight, ratio and time with the coffee and equipment behind each brew. Add the details after finishing and return to them later.",
-        "how": "Finish a brew and complete its detail panel, or open the record from History to edit it.",
-        "note": "Very short or empty sessions may not create a record. Clearing the app's local storage removes its journal."
+        "description": "Keep charts, dose, weight and time with coffee and equipment details.",
+        "how": "Fill in the details after brewing. Open a saved brew to edit them later.",
+        "note": "Very short or empty sessions may not be saved."
       },
       "ru": {
         "title": "История и детали заваривания",
-        "description": "Храните измеренные кривые, дозу, вес, пропорцию и время вместе со сведениями о кофе и оборудовании. Дополняйте их после приготовления и возвращайтесь к ним позже.",
-        "how": "Завершите заваривание и заполните панель деталей либо откройте запись из истории для редактирования.",
-        "note": "Очень короткая или пустая сессия может не сохраниться. Очистка локального хранилища приложения удаляет дневник."
+        "description": "Храните графики, дозу, вес и время вместе со сведениями о кофе и оборудовании.",
+        "how": "Заполните детали после заваривания. Откройте сохранённую запись, чтобы изменить их позже.",
+        "note": "Очень короткие и пустые сессии могут не сохраниться."
       },
       "sources": [
         "Sources/BeanZen/History/BrewHistoryStore.swift",
@@ -275,15 +275,15 @@
       "group": "journal",
       "en": {
         "title": "Search and filters",
-        "description": "Find earlier brews and related records with the History search and the All, Brews, Coffee and Gear filters.",
-        "how": "Swipe from the brewing screen to History, choose a segment, and open the search field.",
-        "note": "Search covers the local records and their indexed descriptions; it is not a cloud search service."
+        "description": "Find records with search and the All, Brews, Coffee and Gear filters.",
+        "how": "Swipe from the brewing screen to History. Choose a filter or open search.",
+        "note": ""
       },
       "ru": {
         "title": "Поиск и фильтры",
-        "description": "Находите прежние заваривания и связанные записи через поиск истории и фильтры All, Brews, Coffee и Gear.",
-        "how": "Перейдите свайпом с экрана заваривания в историю, выберите раздел и откройте поле поиска.",
-        "note": "Поиск работает по локальным записям и их индексируемым описаниям; это не облачный сервис."
+        "description": "Находите записи через поиск и фильтры All, Brews, Coffee и Gear.",
+        "how": "Смахните с экрана заваривания в историю. Выберите фильтр или откройте поиск.",
+        "note": ""
       },
       "sources": [
         "Sources/BeanZen/History/HistoryView.swift",
@@ -295,15 +295,15 @@
       "group": "journal",
       "en": {
         "title": "Tasting notes and cupping scores",
-        "description": "Record how a brew tasted, give it a personal rating, and keep scores in named cupping systems such as SCA Q, SCA CVA or RRAF.",
-        "how": "Open the tasting section of a brew or the score list of a coffee, select a system, and enter the score and description.",
-        "note": "Scores from different systems use different scales. A coffee's published score is separate from your score for an individual brew."
+        "description": "Add tasting notes and a personal brew rating. Record cupping scores in SCA Q, SCA CVA or RRAF.",
+        "how": "Open the tasting section of a brew or the score list of a coffee.",
+        "note": "Each scoring system has its own scale. Coffee scores are separate from individual brew ratings."
       },
       "ru": {
         "title": "Вкусовые заметки и оценки каппинга",
-        "description": "Записывайте впечатления от заваривания, личную оценку и баллы в именованных системах каппинга, например SCA Q, SCA CVA или RRAF.",
-        "how": "Откройте раздел вкуса заваривания или список оценок кофе, выберите систему и введите балл и описание.",
-        "note": "У разных систем разные шкалы. Опубликованная оценка кофе отделена от вашей оценки конкретного заваривания."
+        "description": "Добавляйте вкусовые заметки и личную оценку заваривания. Записывайте баллы каппинга по SCA Q, SCA CVA или RRAF.",
+        "how": "Откройте раздел вкуса в заваривании или список оценок кофе.",
+        "note": "У каждой системы своя шкала. Оценки кофе и отдельных завариваний хранятся раздельно."
       },
       "sources": [
         "Sources/BeanZen/History/ScoresList.swift",
@@ -315,15 +315,15 @@
       "group": "journal",
       "en": {
         "title": "Photos for brews, coffee and gear",
-        "description": "Keep up to ten photos with a brew, coffee, grinder, brewer or water record. Pick a cover photo and open the gallery to inspect the rest.",
-        "how": "Use the record's photo controls to take or choose a photo, crop it, replace it, choose a cover or remove it.",
-        "note": "Photos stay with local records unless you choose to share them. Camera and library access depend on device permissions."
+        "description": "Add up to 10 photos to a brew, coffee, grinder, brewer or water record.",
+        "how": "Take or choose a photo. Crop it and pick a cover for the record.",
+        "note": ""
       },
       "ru": {
         "title": "Фотографии завариваний, кофе и оборудования",
-        "description": "Храните до десяти фотографий у заваривания, кофе, кофемолки, устройства приготовления или воды. Выбирайте обложку и открывайте галерею для просмотра остальных.",
-        "how": "Через управление фотографиями сделайте или выберите снимок, обрежьте его, замените, назначьте обложкой либо удалите.",
-        "note": "Фотографии остаются в локальных записях, пока вы не решите ими поделиться. Камера и библиотека зависят от разрешений устройства."
+        "description": "Добавляйте до 10 фотографий к завариванию, кофе, кофемолке, устройству приготовления или воде.",
+        "how": "Сделайте снимок или выберите его из галереи. Обрежьте фото и назначьте обложку записи.",
+        "note": ""
       },
       "sources": [
         "Sources/BeanZen/History/PhotoGallery.swift",
@@ -335,15 +335,15 @@
       "group": "coffee-gear",
       "en": {
         "title": "Coffee and bags",
-        "description": "Keep a coffee's roaster, origin, processing and other details together, and distinguish the bags you brew from. Link that coffee and bag to a brew.",
-        "how": "Add a coffee from History or while editing a brew, fill in its details, and add bag information when useful.",
-        "note": "Catalog suggestions help with entry; they do not replace the information printed on your coffee."
+        "description": "Record the roaster, origin and processing of your coffee. Keep bag details separately.",
+        "how": "Add a coffee in History. Select the coffee and bag for each brew.",
+        "note": ""
       },
       "ru": {
         "title": "Кофе и пачки",
-        "description": "Храните обжарщика, происхождение, обработку и другие сведения о кофе вместе и различайте пачки, из которых готовите. Привязывайте кофе и пачку к завариванию.",
-        "how": "Добавьте кофе из истории или при редактировании заваривания, заполните сведения и при необходимости добавьте данные пачки.",
-        "note": "Подсказки справочников помогают вводить данные, но не заменяют сведения на упаковке кофе."
+        "description": "Записывайте обжарщика, происхождение и обработку кофе. Храните сведения о каждой пачке отдельно.",
+        "how": "Добавьте кофе в истории. Выбирайте кофе и пачку для каждого заваривания.",
+        "note": ""
       },
       "sources": [
         "Sources/BeanZen/History/CoffeeCardView.swift",
@@ -355,15 +355,15 @@
       "group": "coffee-gear",
       "en": {
         "title": "Grinders, burrs and grind settings",
-        "description": "Keep grinder details and burr information with your setup, and save the grind setting used for a brew.",
-        "how": "Add a grinder in Gear, enter its details, then select it in the brew's grinder section.",
-        "note": "Settings are recorded in the context of that grinder. Numbers from different grinders are not directly comparable."
+        "description": "Record your grinder, burrs and grind settings.",
+        "how": "Add a grinder in Gear. Select it when editing a brew.",
+        "note": "Grind settings from different grinders are not directly comparable."
       },
       "ru": {
         "title": "Кофемолки, жернова и помол",
-        "description": "Храните сведения о кофемолке и жерновах и сохраняйте настройку помола для конкретного заваривания.",
-        "how": "Добавьте кофемолку в Gear, заполните сведения и выберите её в разделе помола заваривания.",
-        "note": "Настройка сохраняется в контексте выбранной кофемолки. Числа на разных кофемолках не являются напрямую сопоставимыми."
+        "description": "Записывайте кофемолку, жернова и настройку помола.",
+        "how": "Добавьте кофемолку в Gear. Выберите её в записи заваривания.",
+        "note": "Значения помола у разных кофемолок нельзя сравнивать напрямую."
       },
       "sources": [
         "Sources/BeanZen/History/GrinderCardView.swift",
@@ -375,15 +375,15 @@
       "group": "coffee-gear",
       "en": {
         "title": "Brewers and their parts",
-        "description": "Describe your brewing device and its parts so records retain the actual setup, not just a method name.",
-        "how": "Add a brewer in Gear, record its parts, and select the relevant setup for a brew.",
-        "note": "A GaggiMate connection is configured as part of a brewer; other equipment entries are journal information, not remote controls."
+        "description": "Save your brewing device and its parts.",
+        "how": "Add a brewer in Gear. Select it for a brew.",
+        "note": "Configure a GaggiMate connection in the brewer’s parts."
       },
       "ru": {
         "title": "Устройства приготовления и их части",
-        "description": "Опишите устройство приготовления и его части, чтобы в записи оставалась фактическая конфигурация, а не только название метода.",
-        "how": "Добавьте устройство в Gear, укажите части и выберите нужную конфигурацию для заваривания.",
-        "note": "Подключение GaggiMate настраивается как часть устройства. Другие записи оборудования — сведения дневника, а не дистанционное управление."
+        "description": "Сохраняйте устройство приготовления и его части.",
+        "how": "Добавьте устройство в Gear. Выберите его для заваривания.",
+        "note": "Подключение GaggiMate настраивается в частях устройства."
       },
       "sources": [
         "Sources/BeanZen/History/BrewerCardView.swift",
@@ -395,15 +395,15 @@
       "group": "coffee-gear",
       "en": {
         "title": "Water composition and calculations",
-        "description": "Record a water's TDS, hardness, alkalinity and composition. Where the entered composition is sufficient, the app calculates characteristics such as GH, KH and ionic TDS.",
-        "how": "Add water in Gear, enter composition components and amounts, review Calculated, then choose Use calculated if appropriate.",
-        "note": "Calculated ionic TDS is not necessarily the same as a meter reading. Incomplete composition can produce bounds or exclusions; check the notes displayed in the app."
+        "description": "Record water composition, hardness, alkalinity and TDS. Beanzen calculates GH, KH and ionic TDS from the composition.",
+        "how": "Add water in Gear. Enter its components. Review Calculated before choosing Use calculated.",
+        "note": "Ionic TDS can differ from a meter reading. Check the calculation notes if the composition is incomplete."
       },
       "ru": {
         "title": "Состав воды и расчёты",
-        "description": "Записывайте TDS, жёсткость, щёлочность и состав воды. Когда введённого состава достаточно, приложение рассчитывает характеристики, включая GH, KH и ионный TDS.",
-        "how": "Добавьте воду в Gear, укажите компоненты и количества, проверьте Calculated и при необходимости выберите Use calculated.",
-        "note": "Расчётный ионный TDS не обязательно совпадает с показанием прибора. Неполный состав может давать границы или исключения; учитывайте пояснения в приложении."
+        "description": "Записывайте состав воды, жёсткость, щёлочность и TDS. Beanzen рассчитывает GH, KH и ионный TDS по составу.",
+        "how": "Добавьте воду в Gear. Укажите компоненты. Проверьте Calculated перед выбором Use calculated.",
+        "note": "Ионный TDS может отличаться от показания прибора. При неполном составе проверьте пояснения к расчёту."
       },
       "sources": [
         "Sources/BeanZen/History/WaterCardView.swift",
@@ -415,15 +415,15 @@
       "group": "coffee-gear",
       "en": {
         "title": "Beverage TDS and extraction yield",
-        "description": "Keep beverage weight and a refractometer TDS reading with the brew. The app can calculate extraction yield from those values and the dose.",
-        "how": "Open the brew details and enter beverage weight, beverage TDS and coffee dose.",
-        "note": "A TDS measurement must come from your instrument. The app does not measure dissolved solids through the phone or Bluetooth scale."
+        "description": "Calculate extraction yield from beverage TDS, beverage weight and coffee dose.",
+        "how": "Enter those values in the brew details.",
+        "note": "Measure TDS with a refractometer. The phone and scale do not measure it."
       },
       "ru": {
         "title": "TDS напитка и выход экстракции",
-        "description": "Храните вес напитка и измеренный рефрактометром TDS в заваривании. По этим значениям и дозе приложение может рассчитать выход экстракции.",
-        "how": "В деталях заваривания укажите вес напитка, его TDS и дозу кофе.",
-        "note": "Значение TDS нужно измерить прибором. Приложение не измеряет растворённые вещества через телефон или Bluetooth-весы."
+        "description": "Рассчитывайте выход экстракции по TDS напитка, его весу и дозе кофе.",
+        "how": "Введите эти значения в деталях заваривания.",
+        "note": "Измерьте TDS рефрактометром. Телефон и весы его не измеряют."
       },
       "sources": [
         "Sources/BeanZen/History/BrewSectionView.swift",
@@ -435,15 +435,15 @@
       "group": "connections",
       "en": {
         "title": "GaggiMate shot recording",
-        "description": "Follow a shot from a GaggiMate-equipped machine over your local network. Record supported weight, pressure, temperature and flow channels, then inspect them together with their targets.",
-        "how": "Add a GaggiMate part to a brewer, enter the local machine address and enable Use for brewing. The machine starts and ends the shot.",
-        "note": "Beanzen monitors the machine; it does not run the espresso recipe. Available channels depend on firmware and equipment. Local HTTP/WebSocket traffic requires a trusted network."
+        "description": "Record weight, pressure, temperature and flow from a GaggiMate machine. Compare measurements with targets on the charts.",
+        "how": "Add a GaggiMate part to the brewer. Enter its local address. Enable Use for brewing.",
+        "note": "The machine controls the shot. Available channels depend on firmware. Use a trusted network for HTTP and WebSocket connections."
       },
       "ru": {
         "title": "Запись шотов GaggiMate",
-        "description": "Наблюдайте за шотом машины с GaggiMate в локальной сети. Записывайте поддерживаемые каналы веса, давления, температуры и потока и просматривайте их вместе с целями.",
-        "how": "Добавьте к устройству часть GaggiMate, укажите локальный адрес машины и включите Use for brewing. Началом и концом шота управляет машина.",
-        "note": "Beanzen наблюдает за машиной, а не выполняет рецепт эспрессо. Каналы зависят от прошивки и оборудования. Для локальных HTTP/WebSocket-соединений нужна доверенная сеть."
+        "description": "Записывайте вес, давление, температуру и поток машины с GaggiMate. Сравнивайте измерения с целями на графиках.",
+        "how": "Добавьте к устройству часть GaggiMate. Укажите её локальный адрес. Включите Use for brewing.",
+        "note": "Шотом управляет машина. Доступные параметры зависят от прошивки. Используйте доверенную сеть для соединений HTTP и WebSocket."
       },
       "sources": [
         "Sources/BeanZen/GaggiMate/GaggiMateClient.swift",
@@ -455,15 +455,15 @@
       "group": "connections",
       "en": {
         "title": "Import from Beanconqueror",
-        "description": "Bring coffee, bags, equipment, water, brews, supported measurement curves and photos into your local Beanzen journal. Review the import preview before writing anything.",
-        "how": "In History, tap + and choose Import from Beanconqueror, then select the export folder or zip.",
-        "note": "Repeated imports can add new items; Override rewrites previously imported records. Read the preview and keep the original export."
+        "description": "Import coffee, bags, equipment, water, brews, supported charts and photos.",
+        "how": "Open History → + → Import from Beanconqueror. Select the export folder or ZIP.",
+        "note": "Review the preview. Repeated imports can add records. Override replaces matching records."
       },
       "ru": {
         "title": "Импорт из Beanconqueror",
-        "description": "Переносите кофе, пачки, оборудование, воду, заваривания, поддерживаемые измерения и фотографии в локальный дневник Beanzen. До записи можно проверить предварительный просмотр.",
-        "how": "В истории нажмите +, выберите Import from Beanconqueror и укажите папку экспорта или zip.",
-        "note": "Повторный импорт может добавлять новые объекты; Override перезаписывает импортированные ранее записи. Проверяйте предварительный просмотр и сохраняйте исходный экспорт."
+        "description": "Переносите кофе, пачки, оборудование, воду, заваривания, доступные графики и фотографии.",
+        "how": "Откройте History → + → Import from Beanconqueror. Выберите папку экспорта или ZIP.",
+        "note": "Проверьте предварительный просмотр. Повторный импорт может добавлять записи. Override заменяет совпадающие записи."
       },
       "sources": [
         "Sources/BeanZen/History/BeanconquerorImportView.swift",
@@ -475,15 +475,15 @@
       "group": "connections",
       "en": {
         "title": "Share a brew image",
-        "description": "Create an image of a brew with its chart and selected details, then send it through your device's share sheet.",
-        "how": "Open a brew and use its share action to choose a destination.",
-        "note": "Sharing is initiated by you. The receiving app or service controls the copy you send."
+        "description": "Share a brew image with its chart and selected details.",
+        "how": "Use the brew’s share action. Choose an app or destination.",
+        "note": "Shared images are not a full journal backup."
       },
       "ru": {
         "title": "Отправка изображения заваривания",
-        "description": "Создайте изображение заваривания с графиком и выбранными деталями и отправьте его через системное меню.",
-        "how": "Откройте заваривание и воспользуйтесь отправкой, затем выберите получателя или приложение.",
-        "note": "Отправку запускаете вы. Копией у получателя управляет принимающее приложение или сервис."
+        "description": "Делитесь изображением заваривания с графиком и выбранными деталями.",
+        "how": "Откройте отправку в заваривании. Выберите приложение или получателя.",
+        "note": "Изображение заваривания не заменяет резервную копию дневника."
       },
       "sources": [
         "Sources/BeanZen/Share/ShareCardView.swift",
@@ -495,15 +495,15 @@
       "group": "connections",
       "en": {
         "title": "Local by design",
-        "description": "Use a journal stored on your device, without a Beanzen account, developer-operated cloud, analytics, ads or subscriptions.",
-        "how": "Keep your journal on this device. Use the system share sheet to save a brew image when you need a visual reference.",
-        "note": "Optional Xiaomi setup, user-initiated sharing and operating-system backups are separate data flows described in the Privacy Policy."
+        "description": "Your journal stays on your device. Beanzen has no accounts, cloud sync, analytics, ads or subscriptions.",
+        "how": "",
+        "note": "Optional Xiaomi connections and device backups are described in the privacy policy."
       },
       "ru": {
         "title": "Локальное хранение",
-        "description": "Ведите дневник на своём устройстве без аккаунта Beanzen, облака разработчика, аналитики, рекламы и подписок.",
-        "how": "Ведите дневник на этом устройстве. Если нужны визуальные сведения о заваривании, сохраните его изображение через системное меню отправки.",
-        "note": "Необязательная настройка Xiaomi, отправка по вашему выбору и резервное копирование системы — отдельные потоки данных, описанные в политике конфиденциальности."
+        "description": "Дневник хранится на вашем устройстве. У Beanzen нет аккаунтов, облачной синхронизации, аналитики, рекламы и подписок.",
+        "how": "",
+        "note": "Подключение Xiaomi и резервные копии устройства описаны в политике конфиденциальности."
       },
       "sources": [
         "Sources/BeanZen/History/BrewHistoryStore.swift",

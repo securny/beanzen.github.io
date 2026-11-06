@@ -50,3 +50,13 @@ The product name is **Beanzen**, with a lowercase z. Use this spelling in all we
 Add equivalent English/Russian detailed feature, scale compatibility and brewing guide pages. Use current native screenshots with recorded measurements and explicit sample metadata. Android downloads link to https://github.com/securny/beanzen/releases, labelled APK. Distinguish protocol implementation from model/platform/command hardware tests. Do not advertise the unused profile serializer as a user-facing export.
 
 The owner rejected the brown/cream palette and finally selected variant 1: a fully light native palette with white and light-gray surfaces, dark text and blue accents. The briefly selected graphite header/hero is superseded. Keep the chosen upstream template structure, the app icon and Jekyll/GitHub Pages compatibility. Pages artifact retention remains one day.
+
+## Copy and template cleanup (2026-11-06)
+
+The owner requests natural, simple language with one idea per sentence. Apply infostyle to public product copy. Remove screenshot-authenticity captions and other process commentary. Keep factual equipment limitations. The MAIN brewing screen must lead the site, because it is the primary interface. Current captures include the native normal scale-mode setup and GaggiMate recording playback. No synthetic app UI or physical live Bluetooth claim.
+
+The owner authorizes removal of template branding and unused configuration/assets. The site has no external Jekyll theme dependency. Retain working local CSS and the MIT notice for copied code. Palette variables now live in _sass/colors.scss. See docs/template-audit.md.
+
+## Actual journal captures
+
+The owner explicitly authorized read-only download of the paired iPhone journal and use of its actual coffee/brew records for screenshots. The raw journal/photos stay private and are not website assets. Replace all prepared-sample screenshots. The primary rich main capture uses one original Bookoo brew (20.4 g / 46.1 g) with native playback through the existing transport; it is not a physical live Bluetooth connection. The standard idle main screenshot is directly from iPhone. Keep that distinction in source provenance.

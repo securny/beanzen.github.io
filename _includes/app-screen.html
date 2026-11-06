@@ -1,5 +1,5 @@
 {% assign screen = site.data.screens | where: 'id', include.id | first %}{% if screen %}
 <figure class="appScreenFigure">
-  <a href="{{ screen.path | relative_url }}" aria-label="{{ screen[language].alt | escape }}"><img src="{{ screen.path | relative_url }}" width="1206" height="2622" alt="{{ screen[language].alt | escape }}" loading="lazy" decoding="async"></a>
+  <a href="{{ screen.path | relative_url }}" aria-label="{{ screen[language].alt | escape }}"><img src="{{ screen.path | relative_url }}" width="{{ screen.width }}" height="{{ screen.height }}" alt="{{ screen[language].alt | escape }}" loading="lazy" decoding="async"></a>
   <figcaption>{{ screen[language].caption }}</figcaption>
 </figure>{% endif %}

@@ -4,7 +4,6 @@
   grid-template-areas: "c c c c c c c c c c c c" "x x x x x x x x x x x x" "f f f f f f f f f f f f";
 }
 .homeDetails { grid-area: x; }
-.downloadNote { font-size: 1.3rem; line-height: 1.6; margin-top: 16px; color: $app-price-color; max-width: 48ch; }
 .iphonePreview { background: none; width: 296px; height: auto; padding: 0; }
 .iphoneScreen { width: 100%; height: auto; margin: 0; border-radius: 28px; border: 1px solid rgba(128, 128, 128, .25); }
 .iphonePreview figcaption { position: static; width: 100%; margin-top: 12px; font-size: 1.2rem; }
@@ -68,3 +67,21 @@
   .iphonePreview { width: min(280px, 100%); height: auto; }
   .iphoneScreen { width: 100%; height: auto; margin: 0; }
 }
+
+
+/* Keep the primary app interface visible before supporting mobile copy. */
+@media (max-width: 700px) {
+  .landingMain { grid-template-areas: "p" "i"; }
+  .featureGroupBody.withScreen .appScreenFigure { grid-row: 1; }
+}
+.catalogControls { display: flex; flex-wrap: wrap; gap: 8px 24px; margin: 18px 0 28px; }
+.catalogControls details { max-width: 100%; }
+.catalogControls summary { cursor: pointer; padding: 10px 0; min-height: 44px; font-size: 1.5rem; color: $accent-color; text-decoration: underline; text-underline-offset: 5px; }
+.catalogControls .scaleIndex { margin: 8px 0 20px; }
+.catalogControls .scaleIntro { margin: 8px 0 20px; }
+.catalogControls .scaleIntro p { font-size: 1.5rem; }
+.appScreenFigure { width: 100%; }
+.homeSection h2 { overflow-wrap: anywhere; }
+.skipLink { top: 12px; transform: translateY(calc(-100% - 24px)); }
+.skipLink:focus { transform: translateY(0); }
+.appDetail, .featureText p, .featureDetail p, .scaleEntry p { text-wrap: pretty; }

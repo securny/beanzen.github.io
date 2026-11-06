@@ -1,5 +1,4 @@
-/* Beanzen adaptation of Automatic App Landing Page. The original layout
-   remains in layout.scss; these overrides add localization and accessibility. */
+/* Beanzen site styles. */
 @font-face { font-family: Manrope; src: url($font-path) format("truetype"); font-weight: 200 800; font-style: normal; font-display: swap; }
 html { scroll-behavior: smooth; scroll-padding-top: 24px; }
 body { color: #1c1c1e; font-family: Manrope, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; line-height: 1.65; }

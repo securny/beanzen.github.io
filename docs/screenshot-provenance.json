@@ -1,113 +1,97 @@
 {
-  "captured_at_utc": "2026-11-06T11:10:35.301914+00:00",
   "application": "Beanzen",
-  "commit": "90110460fc5b03d1e8ef9f9ca7ff1ab5fd2d434a",
-  "branch": "main",
+  "captured_at_utc": "2026-11-06T13:50:42.037873+00:00",
   "version": "26.10.21",
   "build": "26102101",
-  "bundle_id": "ru.beanzen.app",
-  "platform": "iOS Simulator",
-  "os": "iOS 27.0",
-  "device": "iPhone 17 Pro, isolated simulator",
-  "locale": "en_US",
-  "language": "en",
-  "capture_method": "XCTest XCUIScreen.main.screenshot, exported raw PNG attachments; no image editing or synthetic UI",
-  "app_build": "Unchanged main, Debug iphonesimulator, external temporary XCTest driver.",
-  "authenticity": "Current native UI with actual .slog recording measurements and clearly designated sample metadata. Disposable simulator database prepared directly to avoid private user data and real devices. No mock/live Bluetooth data, no fake graph, no photo/author/contact/IP published.",
-  "data": {
-    "records": [
-      {
-        "source": "000000.slog",
-        "sha256": "08858309512e340e7f619a28e626a807243c3176d1a1c0e0bf99a60da75b87a1",
-        "samples": 111,
-        "seconds": 27.5,
-        "weight": 38.8
-      },
-      {
-        "source": "000001.slog",
-        "sha256": "29b5330fd2ddcf5b557f2d4022253bb7817869c8d8bba46db928ec632a104da5",
-        "samples": 125,
-        "seconds": 31.0,
-        "weight": 38.1
-      },
-      {
-        "source": "000002.slog",
-        "sha256": "1cff1cc06404ce1945fda1ffda3f5a63c52b7806f131db253eea8eba18c527c6",
-        "samples": 142,
-        "seconds": 35.25,
-        "weight": 37.5
-      }
+  "source_commit": "90110460fc5b03d1e8ef9f9ca7ff1ab5fd2d434a",
+  "application_source_changed": false,
+  "language": "English UI; original product/coffee names preserved in their recorded language",
+  "source": "User-authorized actual Beanzen journal downloaded read-only from an already trusted paired iPhone. All original device data preserved.",
+  "journal_screenshots": "Captured in isolated iPhone17Pro iOS27 simulator using a separate privacy-filtered journal working copy.",
+  "capture_method": "Untouched native PNG screenshots via XCTest/simctl, plus physical-device read-only screenshot service; no editing, compositing, generated interface or fabricated measurement arrays.",
+  "privacy": "Raw database and photos are private temporary inputs and must never be published. Freeform notes/author/contact/extension fields removed from screenshot working copy only. Selected images reviewed for coffee packaging, brewed coffee and equipment; no people, credentials or network addresses.",
+  "main_brew": {
+    "source_scale": "BOOKOO Themis",
+    "dose_g": 20.4,
+    "yield_g": 46.1,
+    "original_duration_seconds": 27.90386199951172,
+    "sample_count": 279,
+    "measurements_sha256": "7c7dc0bf653e9cfd47d7248f911bbbfede541269cc1167db6b5cd402df99142d",
+    "preserved_channels": [
+      "weight/time"
     ],
-    "sample_metadata": "Sample coffee country/region/processing/elevation/harvest, 250g bag and roast date; mineral water recipe; 18g dose; screen record dates; grinder and equipment are prepared illustrative metadata. No claim these describe original shots. Measurement seconds, weight, pressure, temperature, pump flow, puck flow and targets are unmodified actual .slog arrays parsed per current main GaggiMateShotLog."
+    "playback_capture_limit": "Only primary idle screen is a direct physical-device capture. Rich main screenshot uses an existing native recording replay route, not a physical live Bookoo connection. Runtime stopwatch differs naturally by about0.1s. No machine channels invented."
   },
-  "limitations": [
-    "No Android capture: no connected Android device or configured running emulator. All supplied captures must be described as iOS.",
-    "No physical Bluetooth connection and no live brewing capture; shown charts are saved genuine GaggiMate recordings.",
-    "Sample coffee/water/equipment values illustrate native fields and are not original shot metadata."
-  ],
   "selected_screenshots": [
     {
-      "filename": "beanzen-multichannel-ios-en.png",
-      "description": "Saved recorded GaggiMate shot chart. Genuine measured channels and targets, all channels on. Native scrolled detail view, no live BLE claim.",
-      "sha256": "64ed07862fe8b12b755c9181da73ed561bdc15a958fa03488e6cb9007ecf473a",
+      "scenario": "Actual physical iPhone primary main screen in disconnected Bluetooth scale mode, captured read-only without app launch/install or data writes.",
+      "platform": "iPhone 15 Pro Max, physical iOS device",
+      "filename": "beanzen-main-iphone-idle-en.png",
+      "sha256": "9ebdcc8af86ad60fbd8e322ae4c14086cf9516a862219d16d891f39b8519ddad",
+      "dimensions": [
+        1290,
+        2796
+      ]
+    },
+    {
+      "scenario": "Actual native main screen after real-time replay of a genuine recorded Bookoo brew, original 20.4g dose and unaltered weight/time arrays; native ratio 1:2.3, 46.1g yield, ~27.8s runtime, 1.7g/s native average flow.",
+      "source": "Actual authorized journal Bookoo Themis brew",
+      "playback": true,
+      "channels": [
+        "weight"
+      ],
+      "required_description": "Main brewing screen with a real recorded brew replayed in Beanzen. No physical live Bluetooth connection in this capture.",
+      "filename": "beanzen-real-main-replay-ios-en.png",
+      "sha256": "33c4543f420887e53f396b2ab85e5501b230f2119804da204e1590727c02f4cc",
       "dimensions": [
         1206,
         2622
       ]
     },
     {
-      "filename": "beanzen-history-ios-en.png",
-      "description": "Native local history feed, three actual recorded shot arrays and neutral sample metadata.",
-      "sha256": "bde24bcc29799c533975d740e544b7699a0ed632fcacd4116bf242567a19d9e8",
+      "scenario": "Actual journal history feed with original product names, measured brews, and coffee-only photos.",
+      "filename": "beanzen-real-history-ios-en.png",
+      "sha256": "05574a70f0e652ffa25826a54417fb0b55f921548d897ecfaf589e45a256d920",
       "dimensions": [
         1206,
         2622
       ]
     },
     {
-      "filename": "beanzen-coffee-ios-en.png",
-      "description": "Native coffee card with prepared sample bean and bag metadata.",
-      "sha256": "9e67497b389bdc24be25e545899895aebebeb38d80ce053e136a838cf821a222",
+      "scenario": "Actual Bookoo brew detail, original espresso cup photo, Kenya Nairobi coffee and WPM brewer association, original 20.4g dose /46.1g yield.",
+      "filename": "beanzen-real-brew-detail-ios-en.png",
+      "sha256": "c446948e4f5fcbc04a019d98ed2d4d5d66e79be79c471ef44593b50e22dc4a80",
       "dimensions": [
         1206,
         2622
       ]
     },
     {
-      "filename": "beanzen-water-ios-en.png",
-      "description": "Native water card, calculated analysis of an example mineral recipe (150 mg/L MgSO4·7H2O + 50 mg/L NaHCO3).",
-      "sha256": "ab4e0f1ff6f2d6e74673ea4e477e7386ae7d2e6ad7ed8c98d17636b2be0a91c2",
+      "scenario": "Actual Tasty Coffee Kenya Nairobi coffee card, original coffee package photo and product fields.",
+      "filename": "beanzen-real-coffee-top-ios-en.png",
+      "sha256": "871769cd17a95f95d1c7a53415a87d2cfb567b3e609378e9a01316d3a25c1dd5",
       "dimensions": [
         1206,
         2622
       ]
     },
     {
-      "filename": "beanzen-gear-ios-en.png",
-      "description": "Native equipment history filter containing prepared sample water/grinder/brewer records.",
-      "sha256": "e9853decca9dfb9ab6b893edd2ae29207a4f664e1b3ded81fd877027bbee0933",
-      "dimensions": [
-        1206,
-        2622
-      ]
-    },
-    {
-      "filename": "beanzen-brewer-ios-en.png",
-      "description": "Native brewer card with sample Gaggia Classic with GaggiMate equipment entry.",
-      "sha256": "2b60b3a1787d884f1b859997d26d9449f8f3ecaac8d99f44f3a47e193ba1a3c0",
+      "scenario": "Actual saved GaggiMate journal record for Tasty Coffee Costa Rica Reposado with original recorded machine channels and target lines. Separate genuine record from Bookoo main-screen brew.",
+      "channels": [
+        "weight",
+        "pressure",
+        "temperature",
+        "pump flow",
+        "puck flow",
+        "targets"
+      ],
+      "playback": false,
+      "filename": "beanzen-real-multichannel-ios-en.png",
+      "sha256": "60ae522d6ba64c344fa537061d8694595972c0c1bc450ce2e1119ebd7d9a7563",
       "dimensions": [
         1206,
         2622
       ]
     }
-  ],
-  "additional_raw_screenshots": [
-    "beanzen-detail-top-ios-en.png",
-    "beanzen-chart-bottom-ios-en.png",
-    "beanzen-coffee-top-ios-en.png",
-    "beanzen-water-middle-ios-en.png",
-    "beanzen-chart-scroll-1-ios-en.png",
-    "beanzen-water-top-ios-en.png",
-    "beanzen-coffee-list-ios-en.png"
   ]
 }

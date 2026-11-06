@@ -1,16 +1,17 @@
 {% assign language = page.lang | default: 'en' %}{% assign t = site.data.locales[language] %}{% assign locale = site.data.languages | where: 'code', language | first %}{% assign prefix = locale.prefix | default: '' %}
-<p>{{ t.scale_intro }}</p>
-<section class="scaleIntro" aria-labelledby="scaleLimits"><h2 id="scaleLimits">{{ t.scale_limits_title }}</h2><p>{{ t.scale_limits }}</p><a href="{{ prefix | append: '/guide/#connect' | relative_url }}">{{ t.scale_more }}</a></section>
 <div class="scaleSearch" hidden><label for="scaleSearch">{{ t.scale_search }}</label><input id="scaleSearch" type="search" placeholder="{{ t.scale_search_placeholder }}" autocomplete="off" aria-controls="scaleList"><p class="searchCount" aria-live="polite"><span>{{ t.matching_models }}</span> <span id="scaleCount">{{ site.data.scales.rows.size }}</span></p></div>
 <p class="catalogExplanation">{{ t.capability_caption }}</p>
-<nav class="scaleIndex" aria-label="{{ t.scale_index }}">{% for scale in site.data.scales.rows %}<a href="#{{ scale.id }}">{{ scale.name }}</a>{% endfor %}</nav>
+<div class="catalogControls">
+  <details><summary>{{ t.scale_index }}</summary><nav class="scaleIndex" aria-label="{{ t.scale_index }}">{% for scale in site.data.scales.rows %}<a href="#{{ scale.id }}">{{ scale.name }}</a>{% endfor %}</nav></details>
+  <details><summary>{{ t.catalog_notes }}</summary><div class="scaleIntro"><p>{{ t.scale_intro }}</p><p>{{ t.scale_limits }}</p><a href="{{ prefix | append: '/guide/#connect' | relative_url }}">{{ t.scale_more }}</a></div></details>
+</div>
 <div id="scaleList">
 {% assign capability_keys = 'weight,tare,timerStart,timerPause,timerReset,scaleTimerRead,physicalButtonEvents' | split: ',' %}
 {% for scale in site.data.scales.rows %}
-<section class="scaleEntry" aria-labelledby="{{ scale.id }}">
+<section class="scaleEntry" aria-labelledby="{{ scale.id }}" data-search="{{ scale.search_names | escape }}">
   <h2 id="{{ scale.id }}">{{ scale.name }}</h2>
   {% assign status_label = 'status_' | append: scale.status %}<p class="scaleStatus">{{ t[status_label] }}</p>
-  <p>{{ scale.notes[language] }}</p>{% if scale.evidence_text[language] != '' %}<p class="hardwareScope"><strong>{{ t.hardware_title }}.</strong> {{ scale.evidence_text[language] }}</p>{% endif %}
+  {% if scale.notes[language] != '' %}<p>{{ scale.notes[language] }}</p>{% endif %}{% if scale.evidence_text[language] != '' %}<p class="hardwareScope"><strong>{{ t.hardware_title }}.</strong> {{ scale.evidence_text[language] }}</p>{% endif %}
   <dl class="capabilityList">{% for key in capability_keys %}<div><dt>{{ t[key] }}</dt><dd>{% if scale.capabilities[key] %}{{ t.yes }}{% else %}{{ t.no }}{% endif %}</dd></div>{% endfor %}</dl>
 </section>{% endfor %}</div>
 <p id="noScaleResults" role="status" hidden>{{ t.no_scale_results }}</p>

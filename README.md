@@ -2,7 +2,7 @@
 
 Jekyll website for **Beanzen**, developed by **Dmitry Berezkin**. English at `/`, Russian at `/ru/`. Public support contact: **hello@beanzen.ru**. Domain: **beanzen.ru**.
 
-Based on [Automatic App Landing Page](https://github.com/emilbaehr/automatic-app-landing-page) by Emil Baehr. The template's phone preview, application hero, feature section, Sass structure and Markdown pages are retained and adapted. Its MIT license is preserved in [LICENSE](LICENSE).
+Standalone Jekyll site. It uses adapted source styles from Automatic App Landing Page, with attribution in [docs/credits.md](docs/credits.md) and [LICENSE](LICENSE). There is no external theme dependency. See [the template audit](docs/template-audit.md).
 
 ## Run locally
 
@@ -59,14 +59,15 @@ The workflow retains the `github-pages` build artifact for **1 day**. Retrying o
 
 ## Edit content
 
-- `_config.yml`: developer, contact, domain, template colors, phone frame, screenshot and store links.
+- `_config.yml`: developer, contact, domain, screenshot and download links.
+- `_sass/colors.scss`: the Beanzen light palette.
 - `_data/locales/en.json`, `ru.json`: localized navigation, home page and feature list.
 - `_pages/*.md`, `_pages/ru/*.md`: support and policy content. Use the same `key` on equivalent pages and explicit `permalink` values.
 - `_sass/beanzen.scss`: Beanzen adaptation over the original template styles.
 - `_data/features.json`: bilingual detailed descriptions and implementation evidence.
 - `_data/scales.json`: model names, individual adapter capabilities and scoped hardware observations. Audit and sources: `docs/scale-audit.md` and `docs/scale-evidence.json`.
 - `_data/screens.json`: localized captions and alt text for actual native screens.
-- `assets/screenshot/`: six unchanged current-main iOS captures. `docs/screenshot-provenance.json` records source commit, version, measurement provenance, sample metadata and SHA-256 hashes. No Android or live Bluetooth capture is claimed.
+- `assets/screenshot/`: six unchanged native iOS captures from the actual authorized iPhone journal. `docs/screenshot-provenance.json` records source commit, version, measurement provenance and playback limits and SHA-256 hashes. No Android or live Bluetooth capture is claimed.
 - `_sass/catalog.scss`: responsive catalog, guide and screenshot presentation.
 
 The Android action uses `android_download_link`, currently the public GitHub Releases page. It is labelled Download APK, not Google Play. Store badges stay hidden until `appstore_link` and/or `playstore_link` contain verified public listing URLs. No third-party app ID is shipped. To enable Apple's Smart App Banner, fill `ios_app_id` with Beanzen's numeric ID and set `enable_smart_app_banner: true`.
@@ -92,5 +93,7 @@ Asset and template provenance is recorded in [docs/credits.md](docs/credits.md).
 ## Content evidence
 
 Descriptions are audited against app main `90110460fc5b03d1e8ef9f9ca7ff1ab5fd2d434a` (26.10.21). A serializer for brew-profile export exists in the code but has no production UI caller; do not advertise file export or a complete journal backup. Sharing currently creates brew images. Scale adapters are cross-platform implementation evidence, not a claim that all models and commands have been tested on both operating systems. Keep evidence scoped to the named model, firmware, app, platform and operation.
+
+Public copy uses short, complete sentences with one idea each. Omit process notes and screenshot-authenticity disclaimers from marketing pages. Keep provenance in internal documentation. Keep equipment limitations and legal disclosures accurate.
 
 The owner selected the fully light native palette: white/light gray, dark text, blue accents. The briefly considered graphite hero was rejected.

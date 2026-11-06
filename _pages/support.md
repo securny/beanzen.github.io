@@ -1,8 +1,8 @@
 ---
 layout: page
 title: "Beanzen support"
-intro: "Questions about a brew, a connection, or your data? You can contact the developer directly."
-description: "Questions about a brew, a connection, or your data? You can contact the developer directly."
+intro: "Connection problems, app questions and feedback."
+description: "Connection problems, app questions and feedback."
 lang: en
 key: support
 permalink: /support/
@@ -26,45 +26,44 @@ sections:
 
 <div class="contactBlock">
 <p><strong>{{ site.your_name }}</strong><br><a href="mailto:{{ site.email_address }}?subject=Beanzen%20support">{{ site.email_address }}</a></p>
-<p>Use this address for app issues, feedback, feature requests and privacy questions. English and Russian are welcome.</p>
+<p>Write in English or Russian.</p>
 </div>
 
-To help investigate an issue, include your Beanzen version, iOS or Android version, equipment model and firmware if relevant, and the steps that led to the problem. Attach a screenshot only if you are comfortable sharing its contents.
+Describe the problem and how to reproduce it. Include your Beanzen version, OS version, equipment model and firmware. Attach a screenshot if it helps.
 
-Never send passwords, verification codes or Xiaomi device tokens. Remove personal information from logs before sending them. Read our [Privacy Policy]({{ prefix | append: '/privacy/' | relative_url }}) for how support correspondence is handled.
+Remove personal information from logs. Never send passwords, verification codes or Xiaomi tokens. Read the [Privacy Policy]({{ prefix | append: '/privacy/' | relative_url }}) for how we handle support messages.
 
 ## Connect a Bluetooth scale {#scales}
 
-1. Turn on your scale, enable Bluetooth, and keep the scale near your phone.
-2. Allow Beanzen to use Bluetooth or Nearby devices when your phone asks.
-3. Close other apps that might already be connected to the scale. Many scales allow only one active connection.
-4. Use **FIND** in Beanzen and select your scale if prompted.
+1. Turn on the scale and Bluetooth.
+2. Allow Bluetooth or Nearby Devices access.
+3. Close other apps connected to the scale.
+4. Tap **FIND** in Beanzen.
 
-If the scale is not found, restart it and check permissions in your phone settings. Compatibility depends on the exact model and firmware. Contact support with those details if you are unsure.
+If the scale is not found, restart it and check app permissions. Check your model in the [scale catalog]({{ prefix | append: '/scales/' | relative_url }}).
 
 ## Hoto / Xiaomi setup {#hoto}
 
-Some Hoto scales need a token associated with your Xiaomi account. Use the Xiaomi sign-in flow in Beanzen when requested, with the account and region where your scale is registered. Complete any verification requested by Xiaomi.
+When Beanzen asks for Xiaomi sign-in, use the account and region where your Hoto scale is registered. Complete Xiaomi’s verification.
 
-This optional connection communicates with Xiaomi and is described in the [Privacy Policy]({{ prefix | append: '/privacy/' | relative_url }}#integrations). If a saved token no longer works, you can clear it by pressing and holding **RESET** on the brewing screen. This clears saved Hoto tokens and may require signing in again.
+If the token stops working, press and hold **RESET** on the brewing screen. This clears saved Hoto tokens. Sign in again to reconnect.
 
-## Connect a GaggiMate machine {#machine}
+## Connect GaggiMate {#machine}
 
-Your phone and GaggiMate-equipped machine must be on a local network where they can reach each other. Check the machine's local address and the local-network permission in your phone settings. A guest network, VPN or network isolation can prevent a connection.
+Connect the phone and machine to the same local network. Check the machine’s local address and the app’s local-network permission. A VPN or guest-network isolation can block the connection.
 
-Supported measurements depend on your machine and firmware. The integration uses local HTTP and WebSocket connections; use a trusted network.
+Use a trusted network for local HTTP and WebSocket connections. Available measurements depend on the machine and firmware.
 
-## History, photos and files {#history}
+## History and files {#history}
 
-Brew records are stored locally. You can save or share an image of a brew, but this is not a full backup of your journal, photos and settings. The current interface has no complete file or profile export command. Before deleting the app or clearing storage, verify any device backup you intend to rely on; recovery is not guaranteed.
+The journal stays on your device. Shared brew images are not a full backup. Check your device backup before deleting the app or clearing its storage.
 
-When importing from Beanconqueror, select the export file and any associated photo files requested by the import flow. If an import fails, tell support the format and error message without sending private journal content unless needed and you choose to share it.
+For Beanconqueror imports, select the export folder or ZIP with its photos. If import fails, send the error message and file format. Send journal data only if needed and you choose to share it.
 
-## Privacy and deleting data {#privacy}
+## Privacy and deletion {#privacy}
 
-Beanzen has no Beanzen account or developer-hosted coffee journal. To remove records, saved tokens, exported files or device backups, follow **[Delete Beanzen data]({{ prefix | append: '/delete-data/' | relative_url }})**.
+Follow [Delete Beanzen data]({{ prefix | append: '/delete-data/' | relative_url }}) to remove records, tokens and saved copies.
 
-For a request concerning an email you sent to support, write to [{{ site.email_address }}](mailto:{{ site.email_address }}?subject=Beanzen%20privacy%20request).
+For support-message deletion, email [{{ site.email_address }}](mailto:{{ site.email_address }}?subject=Beanzen%20privacy%20request).
 
-
-See the [brewing guide]({{ '/guide/' | relative_url }}), [all features]({{ '/features/' | relative_url }}) and the [scale catalog]({{ '/scales/' | relative_url }}).
+See the [brewing guide]({{ prefix | append: '/guide/' | relative_url }}) for setup and the [feature list]({{ prefix | append: '/features/' | relative_url }}) for individual functions.

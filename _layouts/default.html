@@ -7,7 +7,7 @@
   <div class="imageWrapper"><div class="headerBackground"><div class="container">
     {% include header.html %}
     <main id="main" class="landingMain" tabindex="-1">
-      <figure class="iphonePreview">{% include screencontent.html %}<figcaption>{{ t.screenshot_caption }}</figcaption></figure>
+      <figure class="iphonePreview">{% include screencontent.html %}</figure>
       <div class="appInfo">
         <img class="appIconLarge" src="{{ site.app_icon | relative_url }}" width="120" height="120" alt="">
         <div class="appNamePriceContainer"><h1 class="appName">{{ site.app_name }}</h1><p class="appPrice">{{ t.platforms }}</p></div>
@@ -17,7 +17,7 @@
           {% if site.playstore_link != '' %}<a class="playStoreLink" href="{{ site.playstore_link }}"><img class="playStore" src="{{ '/assets/playstore.png' | relative_url }}" alt="{{ t.google_play }}" width="253" height="75"></a>{% endif %}
           <a class="primaryButton" href="{{ site.android_download_link }}">{{ t.download_android }} {% include icon.html name='arrow' %}</a>
           <a class="secondaryButton" href="{{ prefix | append: '/features/' | relative_url }}">{{ t.explore }}</a>
-        </div><p class="downloadNote">{{ t.download_note }}</p><p class="privacyNote">{{ t.hero_note }}</p>
+        </div><p class="privacyNote">{{ t.hero_note }}</p>
       </div>
     </main>
   </div></div></div>

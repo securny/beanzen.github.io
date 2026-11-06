@@ -303,8 +303,7 @@
       "_layouts",
       "_includes",
       "docs/screenshot-provenance.json",
-      ".impeccable/review/direction.md",
-      ".impeccable/review/en-home-1440-top.png"
+      "_sass/colors.scss"
     ],
     "previewUnits": "Component previews use pixel equivalents of actual rem values at the site default 62.5% root; the site itself retains rem units.",
     "capturedAuthority": "Owner-approved fully light variant 1; replaces stale brown and superseded graphite directions."
@@ -374,13 +373,13 @@
     }
   ],
   "narrative": {
-    "northStar": "Automatic App Landing Page",
-    "overview": "Beanzen extends emilbaehr/automatic-app-landing-page: an authentic application preview beside app information, flat feature summaries, and straightforward reading pages. The approved variant 1 is fully light: white and native gray surfaces, dark text, and blue links/actions. The original app icon remains the identity asset; its brown artwork does not define a brown website palette.\n\nLocally hosted Manrope serves English and Russian. Preserve the upstream layout, Jekyll/Sass structure and MIT attribution while extending the same readable visual language to detailed features, scale compatibility and the brewing guide. Real native application captures supply product evidence, rather than generated app UI or decorative phone hardware.",
+    "northStar": "Beanzen brewing interface",
+    "overview": "Beanzen is a standalone Jekyll site: an authentic application preview beside app information, flat feature summaries, and straightforward reading pages. The approved variant 1 is fully light: white and native gray surfaces, dark text, and blue links/actions. The original app icon remains the identity asset; its brown artwork does not define a brown website palette.\n\nLocally hosted Manrope serves English and Russian. Preserve the Beanzen layout, Jekyll/Sass structure and retained MIT attribution while extending the same readable visual language to detailed features, scale compatibility and the brewing guide. Real native application captures supply product evidence, rather than generated app UI or decorative phone hardware.",
     "keyCharacteristics": [
       "Fully light native palette, including the header and hero.",
-      "Template-led application preview and app-information hero.",
+      "Main brewing interface as the primary product image.",
       "Flat reading pages, quiet dividers and blue interactive cues.",
-      "Actual iOS screenshots with captions and source provenance.",
+      "Actual iOS main-screen captures with internal source provenance.",
       "Equivalent English/Russian navigation and visible keyboard focus."
     ],
     "rules": [
@@ -391,16 +390,16 @@
       },
       {
         "name": "The Native Evidence Rule",
-        "body": "Use only the current documented application captures, with truthful platform, recording and sample-metadata captions; do not fabricate product UI or device validation.",
+        "body": "Use only documented application captures. Keep source, platform, recording and sample-metadata evidence in internal documentation; do not fabricate product UI or device validation.",
         "section": "components"
       }
     ],
     "dos": [
-      "**Do** preserve the selected upstream template, original app icon and local Manrope.",
+      "**Do** preserve the current Beanzen layout, original app icon and local Manrope.",
       "**Do** use the existing configuration and Sass cascade, including final catalog overrides.",
       "**Do** keep English and Russian layouts equivalent and allow navigation to wrap.",
       "**Do** preserve visible focus, the skip link, meaningful alt text and reduced-motion behavior.",
-      "**Do** keep native screenshot provenance, captions and sample-data limitations accurate.",
+      "**Do** keep screenshot provenance accurate in docs/screenshot-provenance.json. Use short captions only when they help identify the screen or mode.",
       "**Do** keep APK download, support and conditional store badges distinct."
     ],
     "donts": [
