@@ -34,8 +34,7 @@ jobs:
         with:
           name: github-pages
           path: _site
-          # Allow deployment retries throughout GitHub's 30-day rerun window.
-          retention-days: 30
+          retention-days: 1
 
   deploy:
     if: github.event_name != 'pull_request'
