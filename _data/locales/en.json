@@ -18,10 +18,10 @@
   "tagline": "Your brewing journal.",
   "description": "Connect your Bluetooth scale. Track weight, flow and time. Save brews with coffee and equipment details.",
   "get_support": "Get support",
-  "explore": "Explore the features",
+  "explore": "Brew images",
   "hero_note": "No Beanzen account. No ads. No subscriptions.",
   "features_title": "Tools for your daily brew",
-  "screenshot_alt": "Main brewing screen replaying a recorded brew: 20.4 g dose and 46.1 g yield.",
+  "screenshot_alt": "Main brewing screen with a 20.4 g dose, 46.1 g yield and brew chart.",
   "screenshot_caption": "",
   "app_store": "Download on the App Store",
   "google_play": "Get it on Google Play",
@@ -50,7 +50,7 @@
     {
       "icon": "photo",
       "title": "Photos",
-      "description": "Add photos to coffee, brews and equipment. Share a brew image.",
+      "description": "Add up to 10 photos to a coffee, brew or equipment record.",
       "anchor": "photo-galleries"
     },
     {
@@ -113,5 +113,15 @@
   "scale_limits": "BOOKOO Themis Ultra and DiFluid cannot resume their scale timers through Start. DiFluid also has no Reset command. The app timer can continue.",
   "scale_more": "Connection steps and troubleshooting",
   "screenshot_language": "",
-  "catalog_notes": "Timer behavior"
+  "catalog_notes": "Timer behavior",
+  "share_title": "Create a picture of your brew",
+  "share_description": "Add your coffee and brewing details to a photo.",
+  "share_details": "Choose what to show: coffee, equipment, water, tasting score and brew parameters.",
+  "share_steps": [
+    "Open a brew with a photo.",
+    "Choose the details for the picture.",
+    "Tap Share to save or send it."
+  ],
+  "share_guide": "How to create a picture",
+  "share_open": "Open the full-size brew image"
 }

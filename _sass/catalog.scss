@@ -1,7 +1,7 @@
 /* Content expansion: template structure, native app captures, reading surfaces. */
 .contentContainer {
-  grid-template-rows: auto auto auto;
-  grid-template-areas: "c c c c c c c c c c c c" "x x x x x x x x x x x x" "f f f f f f f f f f f f";
+  grid-template-rows: auto auto auto auto;
+  grid-template-areas: "s s s s s s s s s s s s" "c c c c c c c c c c c c" "x x x x x x x x x x x x" "f f f f f f f f f f f f";
 }
 .homeDetails { grid-area: x; }
 .iphonePreview { background: none; width: 296px; height: auto; padding: 0; }
@@ -27,8 +27,10 @@
 .featureGroupBody.withScreen { display: grid; grid-template-columns: minmax(0, 1fr) 260px; gap: 72px; }
 .featureGroupBody > div { max-width: 70ch; }
 .featureGroupBody .appScreenFigure { margin-top: 30px; }
-.featureDetail { padding: 4px 0 20px; }
-.page.markdown-body .featureDetail h3 { font-size: 2.1rem; margin-top: 26px; }
+.featureDetail { display: grid; grid-template-columns: 48px minmax(0, 1fr); align-items: start; gap: 16px; padding: 26px 0 20px; }
+.featureDetail .featureIcon { width: 48px; height: 48px; align-items: center; justify-content: center; }
+.featureDetailCopy { min-width: 0; padding-top: 9px; }
+.page.markdown-body .featureDetail h3 { font-size: 2.1rem; margin-top: 0; margin-bottom: 14px; }
 .page.markdown-body .featureDetail p { margin-bottom: 12px; }
 .featureNote { color: $feature-text-color; font-size: 1.5rem; }
 .scaleIntro { max-width: 80ch; }

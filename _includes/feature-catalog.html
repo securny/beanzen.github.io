@@ -5,7 +5,7 @@
   <h2 id="{{ group.id }}">{{ group[language] }}</h2>
   <div class="featureGroupBody{% if group.screen %} withScreen{% endif %}"><div>
   {% assign items = site.data.features.items | where: 'group', group.id %}{% for item in items %}{% assign copy = item[language] %}
-    <article class="featureDetail" aria-labelledby="{{ item.id }}"><h3 id="{{ item.id }}">{{ copy.title }}</h3><p>{{ copy.description }}</p>{% if copy.how != '' %}<p>{{ copy.how }}</p>{% endif %}{% if copy.note != '' %}<p class="featureNote">{{ copy.note }}</p>{% endif %}</article>
+    <article class="featureDetail" aria-labelledby="{{ item.id }}"><div class="featureIcon" aria-hidden="true">{% include icon.html name=item.icon %}</div><div class="featureDetailCopy"><h3 id="{{ item.id }}">{{ copy.title }}</h3><p>{{ copy.description }}</p>{% if copy.how != '' %}<p>{{ copy.how }}</p>{% endif %}{% if copy.note != '' %}<p class="featureNote">{{ copy.note }}</p>{% endif %}{% if item.id == 'share-brew' %}{% include brew-card.html id='filter' %}{% endif %}</div></article>
   {% endfor %}
   </div>{% if group.screen %}{% include app-screen.html id=group.screen %}{% endif %}</div>
 </section>{% endfor %}

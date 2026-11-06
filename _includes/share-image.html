@@ -1,0 +1,5 @@
+<section class="shareFeature" id="brew-image" aria-labelledby="shareTitle">
+  <h2 id="shareTitle">{{ t.share_title }}</h2>
+  <div class="shareCopy"><p class="shareDescription">{{ t.share_description }}</p><p>{{ t.share_details }}</p><ol>{% for step in t.share_steps %}<li>{{ step }}</li>{% endfor %}</ol><a href="{{ prefix | append: '/guide/#share-image' | relative_url }}">{{ t.share_guide }} {% include icon.html name='arrow' %}</a></div>
+  {% include brew-card.html id='espresso' %}
+</section>

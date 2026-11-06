@@ -26,8 +26,8 @@
     },
     {
       "id": "connections",
-      "en": "Machines, files and sharing",
-      "ru": "Кофемашины, файлы и отправка",
+      "en": "Connections and data",
+      "ru": "Подключения и данные",
       "screen": "machine"
     }
   ],
@@ -50,7 +50,8 @@
       "sources": [
         "Sources/BeanZen/BluetoothManager.swift",
         "Sources/BeanZen/Views/MetricsHeaderView.swift"
-      ]
+      ],
+      "icon": "weight"
     },
     {
       "id": "flow-rate",
@@ -70,7 +71,8 @@
       "sources": [
         "Sources/BeanZen/Helpers/FlowMeter.swift",
         "Sources/BeanZen/BrewSession.swift"
-      ]
+      ],
+      "icon": "flow"
     },
     {
       "id": "dose-and-tare",
@@ -90,7 +92,8 @@
       "sources": [
         "Sources/BeanZen/BrewSession.swift",
         "Sources/BeanZen/ContentView.swift"
-      ]
+      ],
+      "icon": "weight"
     },
     {
       "id": "brew-ratio",
@@ -110,7 +113,8 @@
       "sources": [
         "Sources/BeanZen/Views/MetricsHeaderView.swift",
         "Sources/BeanZen/History/BrewRecord.swift"
-      ]
+      ],
+      "icon": "ratio"
     },
     {
       "id": "brew-timer",
@@ -130,7 +134,8 @@
       "sources": [
         "Sources/BeanZen/BrewSession.swift",
         "Sources/BeanZen/ContentView.swift"
-      ]
+      ],
+      "icon": "timer"
     },
     {
       "id": "brew-charts",
@@ -150,7 +155,8 @@
       "sources": [
         "Sources/BeanZen/Views/WeightChartView.swift",
         "Sources/BeanZen/History/BrewSeries.swift"
-      ]
+      ],
+      "icon": "chart"
     },
     {
       "id": "one-hand-controls",
@@ -169,7 +175,8 @@
       },
       "sources": [
         "Sources/BeanZen/ContentView.swift"
-      ]
+      ],
+      "icon": "hand"
     },
     {
       "id": "auto-start",
@@ -189,7 +196,8 @@
       "sources": [
         "Sources/BeanZen/BrewSession.swift",
         "Sources/BeanZen/ContentView.swift"
-      ]
+      ],
+      "icon": "timer-start"
     },
     {
       "id": "auto-stop",
@@ -209,7 +217,8 @@
       "sources": [
         "Sources/BeanZen/Helpers/RemovalWatch.swift",
         "Sources/BeanZen/BrewSession.swift"
-      ]
+      ],
+      "icon": "timer-stop"
     },
     {
       "id": "hold-live",
@@ -228,7 +237,8 @@
       },
       "sources": [
         "Sources/BeanZen/BrewSession.swift"
-      ]
+      ],
+      "icon": "pause"
     },
     {
       "id": "scale-timer-buttons",
@@ -248,7 +258,8 @@
       "sources": [
         "Sources/BeanZen/Scales/ScaleAdapter.swift",
         "Sources/BeanZen/BrewSession.swift"
-      ]
+      ],
+      "icon": "connection"
     },
     {
       "id": "brew-history",
@@ -268,7 +279,31 @@
       "sources": [
         "Sources/BeanZen/History/BrewHistoryStore.swift",
         "Sources/BeanZen/History/BrewDetailsEditor.swift"
-      ]
+      ],
+      "icon": "journal"
+    },
+    {
+      "id": "share-brew",
+      "group": "journal",
+      "en": {
+        "title": "Create a brew image",
+        "description": "Make a picture from your brew photo. Choose which coffee, equipment, water, tasting and brew details appear.",
+        "how": "Open the brew and tap Share image. Choose the sections. Tap Share to save or send the result.",
+        "note": "Add a cover photo to the brew before creating the image."
+      },
+      "ru": {
+        "title": "Создание картинки заваривания",
+        "description": "Соберите картинку из фото заваривания. Выберите подписи о кофе, оборудовании, воде, вкусе и параметрах заваривания.",
+        "how": "Откройте заваривание и нажмите Share image. Выберите разделы. Нажмите Share, чтобы сохранить или отправить результат.",
+        "note": "Для создания картинки сначала добавьте фотографию к завариванию."
+      },
+      "sources": [
+        "Sources/BeanZen/Share/ShareCardView.swift",
+        "Sources/BeanZen/Share/ShareCardContent.swift",
+        "Sources/BeanZen/Share/ShareRender.swift",
+        "Sources/BeanZen/Share/ShareCardPainter.swift"
+      ],
+      "icon": "photo"
     },
     {
       "id": "search-filters",
@@ -288,7 +323,8 @@
       "sources": [
         "Sources/BeanZen/History/HistoryView.swift",
         "Sources/BeanZen/History/HistoryFilterPicker.swift"
-      ]
+      ],
+      "icon": "search"
     },
     {
       "id": "tasting-scores",
@@ -308,7 +344,8 @@
       "sources": [
         "Sources/BeanZen/History/ScoresList.swift",
         "Sources/BeanZen/History/RatingRow.swift"
-      ]
+      ],
+      "icon": "star"
     },
     {
       "id": "photo-galleries",
@@ -328,7 +365,8 @@
       "sources": [
         "Sources/BeanZen/History/PhotoGallery.swift",
         "Sources/BeanZen/History/PhotoViews.swift"
-      ]
+      ],
+      "icon": "photo"
     },
     {
       "id": "coffee-bags",
@@ -348,7 +386,8 @@
       "sources": [
         "Sources/BeanZen/History/CoffeeCardView.swift",
         "Sources/BeanZen/History/BagSheet.swift"
-      ]
+      ],
+      "icon": "coffee"
     },
     {
       "id": "grinders",
@@ -368,7 +407,8 @@
       "sources": [
         "Sources/BeanZen/History/GrinderCardView.swift",
         "Sources/BeanZen/History/GrinderPartSQL.swift"
-      ]
+      ],
+      "icon": "grinder"
     },
     {
       "id": "brewers",
@@ -388,7 +428,8 @@
       "sources": [
         "Sources/BeanZen/History/BrewerCardView.swift",
         "Sources/BeanZen/History/BrewerPartSQL.swift"
-      ]
+      ],
+      "icon": "brewer"
     },
     {
       "id": "water",
@@ -408,7 +449,8 @@
       "sources": [
         "Sources/BeanZen/History/WaterCardView.swift",
         "Sources/BeanZen/History/WaterCalc.swift"
-      ]
+      ],
+      "icon": "water"
     },
     {
       "id": "extraction",
@@ -428,7 +470,8 @@
       "sources": [
         "Sources/BeanZen/History/BrewSectionView.swift",
         "Sources/BeanZen/History/BrewExtraction.swift"
-      ]
+      ],
+      "icon": "calculator"
     },
     {
       "id": "gaggimate",
@@ -448,7 +491,8 @@
       "sources": [
         "Sources/BeanZen/GaggiMate/GaggiMateClient.swift",
         "Sources/BeanZen/GaggiMate/GaggiMateShotTracker.swift"
-      ]
+      ],
+      "icon": "machine"
     },
     {
       "id": "beanconqueror-import",
@@ -468,27 +512,8 @@
       "sources": [
         "Sources/BeanZen/History/BeanconquerorImportView.swift",
         "Sources/BeanZen/Import/BeanconquerorImportPlan.swift"
-      ]
-    },
-    {
-      "id": "share-brew",
-      "group": "connections",
-      "en": {
-        "title": "Share a brew image",
-        "description": "Share a brew image with its chart and selected details.",
-        "how": "Use the brew’s share action. Choose an app or destination.",
-        "note": "Shared images are not a full journal backup."
-      },
-      "ru": {
-        "title": "Отправка изображения заваривания",
-        "description": "Делитесь изображением заваривания с графиком и выбранными деталями.",
-        "how": "Откройте отправку в заваривании. Выберите приложение или получателя.",
-        "note": "Изображение заваривания не заменяет резервную копию дневника."
-      },
-      "sources": [
-        "Sources/BeanZen/Share/ShareCardView.swift",
-        "Sources/BeanZen/Share/ShareSender.swift"
-      ]
+      ],
+      "icon": "transfer"
     },
     {
       "id": "local-storage",
@@ -508,7 +533,8 @@
       "sources": [
         "Sources/BeanZen/History/BrewHistoryStore.swift",
         "Sources/BeanZen/Helpers/XiaomiCloudAuth.swift"
-      ]
+      ],
+      "icon": "shield"
     }
   ]
 }

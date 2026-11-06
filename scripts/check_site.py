@@ -94,6 +94,11 @@ def main():
             if route == "privacy/":
                 check("Dmitry Berezkin" in text and "Xiaomi" in text and "GitHub" in text,
                       f"{relative}: missing operator or integration disclosure")
+                policy_sections = {"about", "local-data", "integrations", "permissions", "website",
+                                   "legal-bases", "retention", "international", "rights", "children", "changes"}
+                check(policy_sections <= document.ids, f"{relative}: missing privacy sections")
+                check("Gmail" in text and ("Russia" in text if lang == "en" else "России" in text),
+                      f"{relative}: missing support provider or operator country")
             if route == "delete-data/":
                 check("RESET" in text and "Android" in text and "iOS" in text,
                       f"{relative}: missing local deletion instructions")
@@ -102,9 +107,15 @@ def main():
                       f"{relative}: missing Android APK download")
                 check('class="playStoreLink"' not in text and 'class="appStoreLink"' not in text,
                       f"{relative}: unverified store badge")
+                check("brew-image" in document.ids and "assets/share/beanzen-share-espresso.jpg" in text,
+                      f"{relative}: missing brew image section or native output")
             if route == "features/":
                 for feature in json.loads((source / "_data/features.json").read_text())["items"]:
                     check(feature["id"] in document.ids, f"{relative}: feature missing: {feature['id']}")
+                check("assets/share/beanzen-share-filter.jpg" in text,
+                      f"{relative}: missing filter brew image")
+            if route == "guide/":
+                check("share-image" in document.ids, f"{relative}: missing image creation guide")
             if route == "scales/":
                 for scale in json.loads((source / "_data/scales.json").read_text())["rows"]:
                     check(scale["id"] in document.ids, f"{relative}: scale missing: {scale['id']}")
@@ -156,6 +167,13 @@ def main():
         if path.exists():
             check(hashlib.sha256(path.read_bytes()).hexdigest() == screenshot["sha256"],
                   f"Native screenshot differs from source capture: {path.name}")
+    share_provenance = json.loads((source / "docs/share-image-provenance.json").read_text())
+    for output in share_provenance["outputs"]:
+        path = root / "assets/share" / output["filename"]
+        check(path.is_file(), f"Missing native brew image: {path.name}")
+        if path.is_file():
+            check(hashlib.sha256(path.read_bytes()).hexdigest() == output["sha256"],
+                  f"Brew image differs from native output: {path.name}")
     check(not (root / "assets/screenshot/beanzen-ios.png").exists(), "Superseded screenshot is still published")
     dictionaries = source / "_data/locales"
     english = json.loads((dictionaries / "en.json").read_text())

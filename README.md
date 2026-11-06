@@ -69,6 +69,8 @@ The workflow retains the `github-pages` build artifact for **1 day**. Retrying o
 - `_data/screens.json`: localized captions and alt text for actual native screens.
 - `assets/screenshot/`: six unchanged native iOS captures from the actual authorized iPhone journal. `docs/screenshot-provenance.json` records source commit, version, measurement provenance and playback limits and SHA-256 hashes. No Android or live Bluetooth capture is claimed.
 - `_sass/catalog.scss`: responsive catalog, guide and screenshot presentation.
+- `assets/share/` and `_data/share_images.json`: unchanged native brew-image JPEGs and translated alternatives; provenance in `docs/share-image-provenance.json`.
+- `_sass/share.scss` and `_includes/share-image.html`: the prominent brew-image section after the home hero.
 
 The Android action uses `android_download_link`, currently the public GitHub Releases page. It is labelled Download APK, not Google Play. Store badges stay hidden until `appstore_link` and/or `playstore_link` contain verified public listing URLs. No third-party app ID is shipped. To enable Apple's Smart App Banner, fill `ios_app_id` with Beanzen's numeric ID and set `enable_smart_app_banner: true`.
 
@@ -84,7 +86,7 @@ English is the default and `x-default` language. There are no automatic language
 
 ## Privacy content maintenance
 
-The owner confirmed local storage and no Beanzen accounts, servers, analytics, advertising or subscriptions. The policy also documents optional Xiaomi authentication, local GaggiMate HTTP/WebSocket traffic, protected scale tokens, photos, imports, user-initiated image sharing, operating-system backups, support email and GitHub Pages hosting.
+The owner confirmed developer Dmitry Berezkin (individual hobby creator, Russia), Gmail for hello@beanzen.ru, a general audience, local storage and no Beanzen accounts, servers, analytics, advertising or subscriptions. The policy also documents optional Xiaomi authentication, local GaggiMate HTTP/WebSocket traffic, protected scale tokens, photos, imports, user-initiated image sharing, operating-system backups, support email and GitHub Pages hosting. Both translations include conditional regional rights, developer-held support data legal bases, international processing, security, retention and deletion. Source coverage and remaining release duties are documented in `docs/privacy-review.md`.
 
 If these practices change, update both policy translations, the effective date in `_config.yml`, in-app disclosures and both store privacy declarations together. Implement the published support-mail retention practice: keep messages only as needed to resolve the request and related follow-up, then delete unless law requires retention.
 

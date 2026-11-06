@@ -1,0 +1,2 @@
+{% assign card_id = include.id | default: 'espresso' %}{% assign card = site.data.share_images | where: 'id', card_id | first %}
+<figure class="brewCard"><a href="{{ card.path | relative_url }}" aria-label="{{ t.share_open }}"><img src="{{ card.path | relative_url }}" width="{{ card.width }}" height="{{ card.height }}" alt="{{ card.alt[language] | escape }}" loading="lazy" decoding="async"></a></figure>

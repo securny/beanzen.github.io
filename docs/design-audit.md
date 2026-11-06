@@ -38,3 +38,12 @@ Both independent reviewers confirmed their material findings resolved. Optional 
 Tests use emulated browser states. They are not a physical Safari/screen-reader audit or a complete WCAG conformance claim.
 
 Questions skipped: the owner already supplied the palette, copy rules, main-screen priority and authorization to complete the corrections.
+
+
+## Brew-image and feature-icon extension — 2026-11-06
+
+Preserved the approved fully light palette and main brewing hero. Added a native brew-image section immediately after the hero and a filter image in the feature catalog. All 24 feature descriptions use the shared inline SVG system, including the six existing homepage symbols. No external asset requests or icon library were introduced.
+
+Rendered the changed home, feature, guide and privacy routes in EN/RU at 390, 768 and 1440px (24 route/viewport combinations). No horizontal overflow, browser page errors or axe WCAG 2 A/AA and 2.1 A/AA violations remained. Inspected desktop/mobile screenshots directly. Confirmed links from hero to the image section and from there to the relevant guide anchor. New JPEGs decoded at their declared 1080 × 1080 dimensions. Fixed a discovered language-control label mismatch by including the visible EN/RU abbreviation in its accessible name. Jekyll/static resource checks passed both at the domain root and a nonempty baseurl.
+
+This is a bounded verification of the extension, not a new whole-site critique score or a store-approval guarantee. Source manifests preserve hashes of every published native screenshot and brew-image JPEG. Browser screenshots and runtime logs remain local review artifacts and are not published.

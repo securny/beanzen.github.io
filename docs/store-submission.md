@@ -1,6 +1,6 @@
 # Store submission and launch checklist
 
-Checked against official store documentation on **2026-11-01**. This repository supplies the website portion of a submission. Publishing the website does not complete the app binary, console declarations, developer verification, or store review.
+Checked against official store documentation on **2026-11-06**. This repository supplies the website portion of a submission. Publishing the website does not complete the app binary, console declarations, developer verification, or store review.
 
 ## Public resources prepared
 
@@ -62,10 +62,15 @@ Read-only inspection of `/Users/berezkin/development/BeanZen` found these starte
 | `Darwin/fastlane/metadata/en-US/subtitle.txt` | Skip starter subtitle | Actual Beanzen subtitle |
 | `Darwin/fastlane/metadata/app_privacy_details.json` | `DATA_NOT_COLLECTED` | Verify against all release flows before use |
 
-The mobile repository was not modified by this website task. Verify the in-app policy entry point separately.
+The mobile repository was not modified by this website task. A read-only search of Sources, Darwin and Android at app commit `90110460fc5b03d1e8ef9f9ca7ff1ab5fd2d434a` found no production in-app privacy-policy link. Add and verify an easily accessible entry point before store submission; both stores require it. The website cannot implement that app control.
 
 ## Website maintenance
 
 Run `JEKYLL_ENV=production bundle exec jekyll build` and `python3 scripts/check_site.py _site`. The check covers the required pages, contact identity, locale counterparts, internal links and anchors, generated metadata, sitemap and CNAME.
 
-App Store and Google Play badges are intentionally hidden until their real public URLs are entered in `_config.yml`. Replace the development-build preview with a current screenshot when available. Keep the template MIT notice and asset licenses.
+App Store and Google Play badges are intentionally hidden until their real public URLs are entered in `_config.yml`. Keep native screenshots and generated JPEGs aligned with their source manifests. Keep the template MIT notice and asset licenses.
+
+
+## International distribution
+
+The owner confirms Russia and support email on Gmail. The public policy describes those facts. Before choosing all territories, assess the actual applicability of local privacy duties, Russian collection/localization and cross-border-transfer rules, provider arrangements, and any EU/UK representative requirements. A translated policy and provider links do not themselves establish a lawful transfer mechanism, a provider contract, or country-wide compliance. See [privacy review](privacy-review.md). No representation, contract, SCC or registration has been invented by the website work.

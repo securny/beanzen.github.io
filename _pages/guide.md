@@ -64,15 +64,24 @@ Beanzen records the channels your machine provides. The machine starts and ends 
 
 Use a trusted network for the local HTTP and WebSocket connections.
 
-## 6. Import and share {#files}
+## 6. Import from Beanconqueror {#files}
 
 Open **History → + → Import from Beanconqueror**. Select the export folder or ZIP with its related files.
 
 Review the import preview. Repeated imports can add records. **Override** replaces matching records.
 
-Use the brew’s share action to send an image. Choose the destination in the system share sheet. An image is not a full backup of your journal, photos and settings.
+## 7. Create a brew image {#share-image}
 
-## 7. Keep your data {#data}
+1. Open a saved brew with a cover photo.
+2. Tap **Share image** near the bottom of its details.
+3. Choose the sections: **Coffee**, **Brewer**, **Grinder**, **Water**, **Tasting** or **Brew**.
+4. Tap **Share** to save the picture or send it through another app.
+
+The preview updates when you change a section. Sections without data are unavailable. Add the missing details in the brew record if you want to include them.
+
+Beanzen adds the selected details to your photo. The picture does not include measurement charts.
+
+## 8. Keep your data {#data}
 
 The journal stays on your device. Device backups depend on your OS settings. Beanzen has no complete journal file export.
 

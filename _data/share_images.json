@@ -1,0 +1,22 @@
+[
+  {
+    "id": "espresso",
+    "path": "assets/share/beanzen-share-espresso.jpg",
+    "width": 1080,
+    "height": 1080,
+    "alt": {
+      "en": "Espresso photo with coffee, equipment, water, rating and brewing parameters added by Beanzen.",
+      "ru": "Фото эспрессо со сведениями о кофе, оборудовании, воде, оценкой вкуса и параметрами заваривания."
+    }
+  },
+  {
+    "id": "filter",
+    "path": "assets/share/beanzen-share-filter.jpg",
+    "width": 1080,
+    "height": 1080,
+    "alt": {
+      "en": "Filter coffee photo with the brew details added by Beanzen.",
+      "ru": "Фото фильтр-кофе с данными заваривания, добавленными Beanzen."
+    }
+  }
+]

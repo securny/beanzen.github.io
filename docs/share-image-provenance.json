@@ -1,0 +1,95 @@
+{
+  "application": "Beanzen",
+  "generated_at_utc": "2026-11-06T14:22:36.733793+00:00",
+  "version": "26.10.21",
+  "build": "26102101",
+  "source_commit": "90110460fc5b03d1e8ef9f9ca7ff1ab5fd2d434a",
+  "source_unchanged": true,
+  "platform": "iOS Simulator",
+  "device": "isolated iPhone17Pro",
+  "os": "iOS27.0",
+  "locale": "en_US",
+  "data_source": "User-authorized actual iPhone Beanzen journal and coffee-only cover photographs, copied read-only previously; privacy-filtered separate working copy used. No actual iPhone data changed.",
+  "what_this_demonstrates": "Native generated share images, not screenshots or recreations of a share card. Square JPEG over the original brew photo with user-selected record information.",
+  "native_navigation": [
+    "Open History.",
+    "Open a brew with a cover photo.",
+    "Scroll to Share image, before Delete Brew, and tap it.",
+    "Preview is generated automatically. Switch Coffee, Brewer, Grinder, Water, Tasting or Brew sections on/off.",
+    "Tap Share to open the platform share menu and choose a destination. No external destination was opened or used during these captures."
+  ],
+  "control_behavior": {
+    "default": "All filled sections start enabled.",
+    "without_cover_photo": "Share image is unavailable until a brew cover photo is attached.",
+    "without_section_data": "The unavailable section is disabled; selecting the empty row leads back to its details.",
+    "regeneration": "Changing a section regenerates the native preview and JPEG.",
+    "chart": "No chart section or chart included.",
+    "brew_fields": "Dose, weight, ratio, time and temperature where available.",
+    "other_fields": "Coffee roaster/name/country, brewer, grinder and setting, water/TDS, tasting rating where available."
+  },
+  "outputs": [
+    {
+      "filename": "beanzen-share-espresso.jpg",
+      "mime_type": "image/jpeg",
+      "dimensions": [
+        1080,
+        1080
+      ],
+      "bytes": 360694,
+      "sha256": "257c6f0ad423e08e5889bd5b552ffc9b0ca0112d04ea7666c36b7ff3c6f1a881",
+      "method": "Espresso",
+      "coffee": "Tasty Coffee · Kenya Nairobi",
+      "real_journal_values": {
+        "dose_g": 20.4,
+        "beverage_weight_g": 46.1,
+        "duration_seconds": 27.90386199951172,
+        "temperature_celsius": 93.0,
+        "rating": 8.9
+      },
+      "enabled_sections": [
+        "Coffee",
+        "Brewer",
+        "Grinder",
+        "Water",
+        "Tasting",
+        "Brew"
+      ],
+      "native_generator": "ShareCardView → ShareRender → ShareCardPainter; completed file extracted directly from ShareFiles cache",
+      "unchanged_app_generated_bytes": true,
+      "chart_included": false,
+      "metadata_review": "Only orientation, resolution, color space and image dimensions; no GPS, author or comment tags."
+    },
+    {
+      "filename": "beanzen-share-filter.jpg",
+      "mime_type": "image/jpeg",
+      "dimensions": [
+        1080,
+        1080
+      ],
+      "bytes": 432439,
+      "sha256": "29939936d516475febae7b834508be97db84db7a4c17866436c79f9f3d045810",
+      "method": "Filter",
+      "coffee": "Submarine · El Salvador Periscope Cascatleco",
+      "real_journal_values": {
+        "dose_g": 15.4,
+        "beverage_weight_g": 256.6,
+        "duration_seconds": 169.20126342773438,
+        "temperature_celsius": 95.0,
+        "rating": 8.8
+      },
+      "enabled_sections": [
+        "Coffee",
+        "Brewer",
+        "Grinder",
+        "Water",
+        "Tasting",
+        "Brew"
+      ],
+      "native_generator": "ShareCardView → ShareRender → ShareCardPainter; completed file extracted directly from ShareFiles cache",
+      "unchanged_app_generated_bytes": true,
+      "chart_included": false,
+      "metadata_review": "Only orientation, resolution, color space and image dimensions; no GPS, author or comment tags."
+    }
+  ],
+  "publication_handling": "Copy these exact JPEG bytes; do not recompress or recreate the native overlay. Raw database, original photos, private provenance and UI test logs must remain local."
+}

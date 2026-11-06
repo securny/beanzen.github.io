@@ -2,4 +2,4 @@
 ---
 $font-path: "{{ '/assets/fonts/manrope-variable.ttf' | relative_url }}";
 
-@import "colors", "base", "layout", "github-markdown", "beanzen", "catalog";
+@import "colors", "base", "layout", "github-markdown", "beanzen", "catalog", "share";

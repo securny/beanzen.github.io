@@ -47,7 +47,7 @@ The product name is **Beanzen**, with a lowercase z. Use this spelling in all we
 
 ## Approved expansion (2026-11-06)
 
-Add equivalent English/Russian detailed feature, scale compatibility and brewing guide pages. Use current native screenshots with recorded measurements and explicit sample metadata. Android downloads link to https://github.com/securny/beanzen/releases, labelled APK. Distinguish protocol implementation from model/platform/command hardware tests. Do not advertise the unused profile serializer as a user-facing export.
+Add equivalent English/Russian detailed feature, scale compatibility and brewing guide pages. Use current native screenshots with source provenance kept internally. Android downloads link to https://github.com/securny/beanzen/releases, labelled APK. Distinguish protocol implementation from model/platform/command hardware tests. Do not advertise the unused profile serializer as a user-facing export.
 
 The owner rejected the brown/cream palette and finally selected variant 1: a fully light native palette with white and light-gray surfaces, dark text and blue accents. The briefly selected graphite header/hero is superseded. Keep the chosen upstream template structure, the app icon and Jekyll/GitHub Pages compatibility. Pages artifact retention remains one day.
 
@@ -60,3 +60,12 @@ The owner authorizes removal of template branding and unused configuration/asset
 ## Actual journal captures
 
 The owner explicitly authorized read-only download of the paired iPhone journal and use of its actual coffee/brew records for screenshots. The raw journal/photos stay private and are not website assets. Replace all prepared-sample screenshots. The primary rich main capture uses one original Bookoo brew (20.4 g / 46.1 g) with native playback through the existing transport; it is not a physical live Bluetooth connection. The standard idle main screenshot is directly from iPhone. Keep that distinction in source provenance.
+
+
+## Brew images and privacy (2026-11-06)
+
+A brew image is a key acquisition feature. Show it immediately after the main-interface hero, with an unchanged native JPEG made from the authorized actual journal. The image combines a cover photo with selected Coffee, Brewer, Grinder, Water, Tasting and Brew sections. It contains no measurement chart. The guide must follow the shipped History → brew → Share image → sections → Share flow. A cover photo is required; empty sections are unavailable. Keep capture provenance in docs, never public process captions.
+
+Detailed feature descriptions use the same inline SVG icon system as the homepage. Give every feature an appropriate icon. Keep icons decorative and the heading as its accessible name.
+
+The owner confirms Russia as the country of the individual creator Dmitry Berezkin, general audience (not child-directed), and Gmail for hello@beanzen.ru. Public copy presents the support contact as operational. International policy coverage must disclose actual processing and conditional statutory rights without promising universal legal compliance. In-app links, console labels and operational duties remain separate from the website.
