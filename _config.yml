@@ -11,7 +11,6 @@ appstore_link: ""
 playstore_link: ""
 android_download_link: "https://github.com/securny/beanzen/releases"
 enable_smart_app_banner: false
-app_screenshot: assets/screenshot/beanzen-real-main-replay-ios-en.png
 your_name: Dmitry Berezkin
 email_address: hello@beanzen.ru
 policy_date: "2026-11-06"
@@ -35,6 +34,7 @@ strict_front_matter: true
 liquid:
   error_mode: strict
 exclude:
+  - AGENTS.md
   - LICENSE
   - README.md
   - PRODUCT.md

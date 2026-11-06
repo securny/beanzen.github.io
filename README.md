@@ -59,15 +59,15 @@ The workflow retains the `github-pages` build artifact for **1 day**. Retrying o
 
 ## Edit content
 
-- `_config.yml`: developer, contact, domain, screenshot and download links.
+- `_config.yml`: developer, contact, domain and download links.
 - `_sass/colors.scss`: the Beanzen light palette.
 - `_data/locales/en.json`, `ru.json`: localized navigation, home page and feature list.
 - `_pages/*.md`, `_pages/ru/*.md`: support and policy content. Use the same `key` on equivalent pages and explicit `permalink` values.
 - `_sass/beanzen.scss`: Beanzen adaptation over the original template styles.
 - `_data/features.json`: bilingual detailed descriptions and implementation evidence.
 - `_data/scales.json`: model names, individual adapter capabilities and scoped hardware observations. Audit and sources: `docs/scale-audit.md` and `docs/scale-evidence.json`.
-- `_data/screens.json`: localized captions and alt text for actual native screens.
-- `assets/screenshot/`: six unchanged native iOS captures from the actual authorized iPhone journal. `docs/screenshot-provenance.json` records source commit, version, measurement provenance and playback limits and SHA-256 hashes. No Android or live Bluetooth capture is claimed.
+- `_data/screens.json`: the single primary screenshot selection (`id: main`), dimensions, localized captions and alt text. The hero and main feature share this record.
+- `assets/screenshot/`: six unchanged native iOS captures from the actual authorized iPhone journal. `docs/screenshot-provenance.json` records source commit, version, measurement provenance, simulator/harness limits, exact-byte visual review and SHA-256 hashes. No Android or live Bluetooth capture is claimed.
 - `_sass/catalog.scss`: responsive catalog, guide and screenshot presentation.
 - `assets/share/` and `_data/share_images.json`: unchanged native brew-image JPEGs and translated alternatives; provenance in `docs/share-image-provenance.json`.
 - `_sass/share.scss` and `_includes/share-image.html`: the prominent brew-image section after the home hero.
@@ -99,3 +99,6 @@ Descriptions are audited against app main `90110460fc5b03d1e8ef9f9ca7ff1ab5fd2d4
 Public copy uses short, complete sentences with one idea each. Omit process notes and screenshot-authenticity disclaimers from marketing pages. Keep provenance in internal documentation. Keep equipment limitations and legal disclosures accurate.
 
 The owner selected the fully light native palette: white/light gray, dark text, blue accents. The briefly considered graphite hero was rejected.
+
+
+Primary screenshot acceptance and the correction of the missing flow chart are documented in [docs/screenshot-review.md](docs/screenshot-review.md). Read [AGENTS.md](AGENTS.md) before capture or product-image changes. The site check rejects the old machine-mode image, a primary capture without reviewed weight/flow charts, and mismatches between the hero and primary feature selection. These checks enforce recorded review evidence; they do not replace inspection of actual pixels.

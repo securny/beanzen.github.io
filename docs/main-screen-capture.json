@@ -1,0 +1,156 @@
+{
+  "application": "Beanzen",
+  "generated_at_utc": "2026-11-06T15:39:16.724895+00:00",
+  "filename": "beanzen-main-scale-flow-ios-en.png",
+  "sha256": "47ad65371b6ff2a312eb64b3cad8dc03287cbd3aadd081271ad2ad2047c50ceb",
+  "dimensions": [
+    1206,
+    2622
+  ],
+  "mode": "scale",
+  "ui_mode": "scale",
+  "machineMode": false,
+  "visible_features": [
+    "weight_chart",
+    "flow_chart",
+    "brew_controls",
+    "time",
+    "weight",
+    "flow",
+    "dose",
+    "ratio"
+  ],
+  "state": "paused",
+  "live_hardware": false,
+  "capture_method": "Untouched native XCTest XCUIScreen screenshot of an external simulator harness directly displaying the existing production BrewView. No screenshot editing, compositing or chart drawing in harness.",
+  "data_source": "Actual user-authorized Bookoo Themis journal recording, original 279 weight/time samples and original dose/duration.",
+  "input": {
+    "input_payload_sha256": "0b499c274d7e14d559fc8df4cf195717a0f24c337acfc30a7aa531eee96321a2",
+    "measurements_sha256": "7c7dc0bf653e9cfd47d7248f911bbbfede541269cc1167db6b5cd402df99142d",
+    "samples": 279,
+    "raw_samples_unchanged": true,
+    "synthetic_measurements_added": false,
+    "source_last_raw_weight_g": 46.2,
+    "source_stored_final_weight_g": 46.099998474121094,
+    "source_original_duration_seconds": 27.90386199951172
+  },
+  "runtime_verification": {
+    "dose": 20.399999618530273,
+    "elapsed": 27.90386199951172,
+    "flow_meter_value": 1.6428565979003906,
+    "has_finished_panel": false,
+    "has_machine_channels": false,
+    "machineMode": false,
+    "mode": "scale",
+    "native_flow_chart_count": 28,
+    "native_raw_weight_count": 279,
+    "native_weight_chart_count": 160,
+    "nonzero_flow_bars": 19,
+    "raw_times_max_float_conversion_error": 0,
+    "raw_weights_exact_match": true,
+    "simulator_transport_connected": true,
+    "source_samples": 279,
+    "state": "paused",
+    "weight": 46.20000076293945
+  },
+  "native_values": {
+    "time_display": "0:27.9",
+    "weight_display_g": 46.2,
+    "dose_display_g": 20.4,
+    "ratio_display": "1:2.3",
+    "flow_meter_display_g_per_s": 1.6,
+    "normal_controls": [
+      "AUTO START off",
+      "HOLD disabled on pause",
+      "GO ON",
+      "FINISH"
+    ],
+    "finished_review_panel": false
+  },
+  "genuine_record_difference": "The last two original raw samples are46.2g; saved final_weight and native filtered weight-chart endpoint are46.1g. Normal production pause freezes the latest raw scale value46.2g. This difference was preserved; neither measurements nor metadata were changed to force matching digits.",
+  "production_framework": {
+    "source_app_version_reference": "26.10.21 (26102101)",
+    "source_commit": "90110460fc5b03d1e8ef9f9ca7ff1ab5fd2d434a",
+    "existing_framework_sha256": "9d4c24807bbe6e823eb824c18e3d25eff7de5b1839028b24dea54bfedb2887ee",
+    "embedded_framework_sha256": "9d4c24807bbe6e823eb824c18e3d25eff7de5b1839028b24dea54bfedb2887ee",
+    "exact_binary_equality": true,
+    "source_file_sha256": {
+      "Sources/BeanZen/ContentView.swift": "3bc15d145e97b0be9547c39f02c25db7ae9fcf365767213c0ea2547e554869dd",
+      "Sources/BeanZen/BrewSession.swift": "93b8788060dd7f6bb4f050655b213e86d642329f64b4f38baa659eb47a6d1c75",
+      "Sources/BeanZen/Helpers/FlowMeter.swift": "cd2f894e5e3a9e1e1b8f901b89f4330a41695c3e1f687cf36cf8d203362de537",
+      "Sources/BeanZen/Views/WeightChartView.swift": "5155cf211dfcd7a1afffd9b8d94f8e1c3ee75a715d73f00b905eb922bb6f66bc",
+      "Sources/BeanZen/Views/FlowrateChartView.swift": "611a7cfdc695fd615939aa35f9a7dd7683a597f98bb59bf4f0b3c3c2c9eb6afa",
+      "Sources/BeanZen/Views/MetricsHeaderView.swift": "676829458037561e015d48b7c24b4260091df40aef5cb19560838eb465319b55"
+    },
+    "production_source_modified": false,
+    "production_views_reimplemented": false,
+    "production_algorithms_modified": false
+  },
+  "harness_boundary": {
+    "wrapper": "Separate local.beanzen.mainflowcapture simulator application built only under /private/tmp; @testable imports existing Debug BeanZen.framework. It is a capture wrapper, not a production app release or physical BLE session.",
+    "injected_state": [
+      "BluetoothManager.state connected for simulator-only presentation",
+      "Original recorded weights and measurement timestamps supplied to BluetoothManager",
+      "Original dose supplied to BrewSession",
+      "StopWatch elapsed/state driven by original recording timestamps instead of a real-time timer",
+      "GaggiMate mode keys absent; channels nil"
+    ],
+    "production_calls": [
+      "FlowMeter.add(weight:at:) and tick(at:) for normal instantaneous header flow",
+      "BrewSession.onWeightTick() once for each original sample",
+      "BrewSession.onFlowTick() at production1-second cadence using current original sample",
+      "BrewSession.pause(fromScale:true) for native normal-scale paused controls"
+    ],
+    "forbidden_changes_not_made": [
+      "No assignments to weightData or flowrateData",
+      "No custom chart points or fabricated flow values",
+      "No modifications to production source, binary, view layout, fonts or chart algorithms",
+      "No physical iPhone operations"
+    ],
+    "harness_swift_sha256": "1ee67928392e4943a38f130d41d1135d882d865c66f2a99bc5b1692cd2841211",
+    "harness_project_sha256": "8bfee511d2d022d2dc15f2362c733dd1f1bceb9293fd1abc142f670198e58d4e",
+    "additional_wrapper_differences": [
+      "Main ContentView app-root timer subscriptions are replaced by a deterministic recorded-time driver calling the same production session methods.",
+      "Navigation callbacks are no-ops in the screenshot-only external wrapper.",
+      "Light color scheme chosen from the supported production presentation; production BrewView and all chart/metric/control views are unchanged."
+    ]
+  },
+  "render_verification": {
+    "screenshot_sha256": "47ad65371b6ff2a312eb64b3cad8dc03287cbd3aadd081271ad2ad2047c50ceb",
+    "full_native_png_visually_reviewed": true,
+    "reviewer": "capture agent",
+    "weight_chart_nonempty_and_visible": true,
+    "flow_chart_nonempty_and_visible": true,
+    "charts_simultaneously_visible": true,
+    "flow_axis_g_per_s_visible": true,
+    "auto_start_visible_and_off": true,
+    "gaggimate_toggle_absent": true,
+    "normal_pause_controls_consistent": true,
+    "weight_chart_bounds_points": {
+      "x": 16,
+      "y": 256,
+      "width": 370,
+      "height": 286
+    },
+    "flow_chart_bounds_points": {
+      "x": 16,
+      "y": 562,
+      "width": 370,
+      "height": 110
+    },
+    "native_xctest_result": "PASS",
+    "native_accessibility_hierarchy": "render-verification.txt",
+    "runtime_evidence": "runtime-verification.json",
+    "verdict": "PASS"
+  },
+  "platform": "iOS27.0 simulator, iPhone17Pro",
+  "locale": "en_US",
+  "publication_description": "Ordinary scale-mode main screen, replaying an actual recorded brew through unchanged production views and algorithms in an isolated native capture harness. Do not describe as physical live Bluetooth brewing.",
+  "cleanup": {
+    "created_simulator_deleted": true,
+    "preexisting_simulator_identities_and_states_unchanged": true,
+    "servers_created": false,
+    "physical_iphone_operations": false,
+    "raw_png_evidence_harness_and_private_inputs_preserved": true
+  }
+}

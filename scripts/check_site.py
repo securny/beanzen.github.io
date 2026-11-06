@@ -155,7 +155,7 @@ def main():
                   f"{stylesheet.name}: missing CSS resource {resource}")
 
     check((root / "CNAME").read_text().strip() == "beanzen.ru", "CNAME must contain beanzen.ru")
-    for private in ("README.md", "PRODUCT.md", "Gemfile", "docs", "scripts", "LICENSE"):
+    for private in ("README.md", "PRODUCT.md", "AGENTS.md", "Gemfile", "docs", "scripts", "LICENSE"):
         check(not (root / private).exists(), f"Internal source published: {private}")
     tree = ET.parse(root / "sitemap.xml")
     locations = tree.findall("{*}url/{*}loc")
@@ -167,6 +167,51 @@ def main():
         if path.exists():
             check(hashlib.sha256(path.read_bytes()).hexdigest() == screenshot["sha256"],
                   f"Native screenshot differs from source capture: {path.name}")
+    # A preserved PNG can still depict the wrong product mode. Check its role,
+    # the review bound to its exact bytes, and the actual published image selection.
+    # These are metadata/selection checks; visual inspection remains mandatory.
+    screens = json.loads((source / "_data/screens.json").read_text())
+    main_screen = next((screen for screen in screens if screen["id"] == "main"), {})
+    captures = {capture["filename"]: capture for capture in provenance["selected_screenshots"]}
+    primary_path = main_screen.get("path", "")
+    capture = captures.get(Path(primary_path).name, {})
+    check(bool(capture), "Primary screen lacks capture provenance")
+    check(capture.get("ui_mode") == "scale", "Primary screen must show ordinary scale mode")
+    required_visuals = {"weight_chart", "flow_chart", "brew_controls", "time", "weight", "flow", "dose", "ratio"}
+    review = capture.get("visual_review", {})
+    check(required_visuals <= set(review.get("visible_features", [])),
+          "Primary screen review must confirm both nonempty charts, metrics and scale controls")
+    check(bool(capture.get("sha256")) and review.get("image_sha256") == capture.get("sha256"),
+          "Primary visual review must match the exact screenshot bytes")
+    check(review.get("weight_chart_has_data") is True and review.get("flow_chart_has_data") is True,
+          "Primary screen needs nonempty weight and flow charts")
+    rejected = {item["sha256"] for item in provenance.get("rejected_primary_screenshots", [])}
+    check(capture.get("sha256") not in rejected, "Rejected primary screenshot cannot be reused")
+    selected_paths = {"assets/screenshot/" + filename for filename in captures}
+    for path in (root / "assets/screenshot").glob("*"):
+        if not path.is_file():
+            continue
+        relative = path.relative_to(root).as_posix()
+        check(relative in selected_paths, f"Unreviewed screenshot published: {relative}")
+        check(hashlib.sha256(path.read_bytes()).hexdigest() not in rejected,
+              f"Rejected primary screenshot published: {relative}")
+    for locale in locales:
+        prefix = locale["prefix"].strip("/")
+        prefix = prefix + "/" if prefix else ""
+        home = documents.get(prefix + "index.html")
+        expected_src = base + "/" + primary_path
+        if home:
+            hero_images = [img for img in home.images if "iphoneScreen" in img.get("class", "").split()]
+            check(len(hero_images) == 1 and hero_images[0].get("src") == expected_src,
+                  f"{prefix}index.html: hero must use the reviewed primary scale screen")
+            if hero_images:
+                check(hero_images[0].get("width") == str(main_screen.get("width"))
+                      and hero_images[0].get("height") == str(main_screen.get("height")),
+                      f"{prefix}index.html: primary image dimensions differ from source")
+        features = documents.get(prefix + "features/index.html")
+        if features:
+            check(any(img.get("src") == expected_src for img in features.images),
+                  f"{prefix}features/index.html: missing reviewed primary scale screen")
     share_provenance = json.loads((source / "docs/share-image-provenance.json").read_text())
     for output in share_provenance["outputs"]:
         path = root / "assets/share" / output["filename"]

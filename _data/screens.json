@@ -1,17 +1,17 @@
 [
   {
     "id": "main",
-    "path": "assets/screenshot/beanzen-real-main-replay-ios-en.png",
+    "path": "assets/screenshot/beanzen-main-scale-flow-ios-en.png",
     "home": false,
     "width": 1206,
     "height": 2622,
     "en": {
-      "caption": "Brew recording",
-      "alt": "Main brewing screen with a 20.4 g dose, 46.1 g yield and brew chart."
+      "caption": "Brewing",
+      "alt": "Main brewing screen with weight and flow charts, a 20.4 g dose and 46.2 g weight."
     },
     "ru": {
-      "caption": "Запись заваривания",
-      "alt": "Главный экран: доза 20,4 г, напиток 46,1 г и график заваривания."
+      "caption": "Заваривание",
+      "alt": "Главный экран с графиками веса и потока: доза 20,4 г и вес 46,2 г."
     }
   },
   {

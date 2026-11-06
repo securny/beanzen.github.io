@@ -8,7 +8,7 @@
   "language": "English UI; original product/coffee names preserved in their recorded language",
   "source": "User-authorized actual Beanzen journal downloaded read-only from an already trusted paired iPhone. All original device data preserved.",
   "journal_screenshots": "Captured in isolated iPhone17Pro iOS27 simulator using a separate privacy-filtered journal working copy.",
-  "capture_method": "Untouched native PNG screenshots via XCTest/simctl, plus physical-device read-only screenshot service; no editing, compositing, generated interface or fabricated measurement arrays.",
+  "capture_method": "Unedited native PNGs captured through XCTest/simctl or the physical-device read-only screenshot service. The primary main screen is a production BrewView rendered in an isolated native harness with actual recorded scale inputs; other capture methods are unchanged.",
   "privacy": "Raw database and photos are private temporary inputs and must never be published. Freeform notes/author/contact/extension fields removed from screenshot working copy only. Selected images reviewed for coffee packaging, brewed coffee and equipment; no people, credentials or network addresses.",
   "main_brew": {
     "source_scale": "BOOKOO Themis",
@@ -20,7 +20,11 @@
     "preserved_channels": [
       "weight/time"
     ],
-    "playback_capture_limit": "Only primary idle screen is a direct physical-device capture. Rich main screenshot uses an existing native recording replay route, not a physical live Bookoo connection. Runtime stopwatch differs naturally by about0.1s. No machine channels invented."
+    "playback_capture_limit": "The primary main screen uses the unchanged production BrewView in ordinary scale mode, linked from the existing Debug BeanZen.framework. An isolated harness injects connected transport and a recorded clock, feeds all279 original raw weight/time samples through production session/flow algorithms, then pauses natively. No physical BLE connection, machine replay, image editing, fabricated samples or hand-built chart arrays.",
+    "source_final_weight_g": 46.1,
+    "displayed_raw_weight_g": 46.2,
+    "weight_difference": "Saved final_weight and filtered weight chart end at46.1g; the original raw measurements end with46.2g. The scale-mode header displays raw weight46.2g without overriding or retouching it.",
+    "derived_flow": "Production BrewSession.onFlowTick derives28 flow bars from the original raw measurements;19 bars are nonzero. Production FlowMeter supplies the native flow metric."
   },
   "selected_screenshots": [
     {
@@ -34,19 +38,79 @@
       ]
     },
     {
-      "scenario": "Actual native main screen after real-time replay of a genuine recorded Bookoo brew, original 20.4g dose and unaltered weight/time arrays; native ratio 1:2.3, 46.1g yield, ~27.8s runtime, 1.7g/s native average flow.",
-      "source": "Actual authorized journal Bookoo Themis brew",
-      "playback": true,
-      "channels": [
-        "weight"
-      ],
-      "required_description": "Main brewing screen with a real recorded brew replayed in Beanzen. No physical live Bluetooth connection in this capture.",
-      "filename": "beanzen-real-main-replay-ios-en.png",
-      "sha256": "33c4543f420887e53f396b2ab85e5501b230f2119804da204e1590727c02f4cc",
+      "scenario": "Ordinary scale brewing screen paused after original Bookoo measurements. Both weight and flow charts and normal scale controls are visible.",
+      "filename": "beanzen-main-scale-flow-ios-en.png",
+      "sha256": "47ad65371b6ff2a312eb64b3cad8dc03287cbd3aadd081271ad2ad2047c50ceb",
       "dimensions": [
         1206,
         2622
-      ]
+      ],
+      "ui_mode": "scale",
+      "platform": "Isolated iPhone17Pro iOS simulator",
+      "capture_method": "Exact XCTest screenshot attachment of unchanged production BrewView linked from existing BeanZen.framework, with simulator transport/clock input injection.",
+      "playback": true,
+      "physical_ble_connection": false,
+      "channels": [
+        "weight",
+        "derived flow"
+      ],
+      "runtime_verification": {
+        "source_samples": 279,
+        "raw_weights_exact_match": true,
+        "raw_times_max_float_conversion_error": 0,
+        "weight_chart_points": 160,
+        "flow_chart_bars": 28,
+        "nonzero_flow_bars": 19,
+        "machine_mode": false,
+        "finished_panel": false,
+        "state": "paused"
+      },
+      "visual_review": {
+        "image_sha256": "47ad65371b6ff2a312eb64b3cad8dc03287cbd3aadd081271ad2ad2047c50ceb",
+        "reviewer": "Primary website agent, separately from the native capture agent",
+        "method": "Complete original PNG inspected after XCTest attachment export. Website render reviewed separately before publication.",
+        "visible_features": [
+          "weight_chart",
+          "flow_chart",
+          "brew_controls",
+          "time",
+          "weight",
+          "flow",
+          "dose",
+          "ratio"
+        ],
+        "weight_chart_has_data": true,
+        "flow_chart_has_data": true,
+        "visible_controls": [
+          "AUTO START off",
+          "HOLD disabled",
+          "GO ON",
+          "FINISH"
+        ],
+        "metrics": {
+          "time": "0:27.9",
+          "weight_g": 46.2,
+          "flow_g_per_second": 1.6,
+          "dose_g": 20.4,
+          "ratio": "1:2.3"
+        },
+        "website_review": {
+          "viewports_px": [
+            390,
+            768,
+            1440
+          ],
+          "languages": [
+            "en",
+            "ru"
+          ],
+          "hero_and_primary_feature_identical": true,
+          "both_charts_visible_without_image_crop": true,
+          "horizontal_overflow": false,
+          "browser_page_errors": 0
+        }
+      },
+      "capture_details": "docs/main-screen-capture.json"
     },
     {
       "scenario": "Actual journal history feed with original product names, measured brews, and coffee-only photos.",
@@ -93,5 +157,13 @@
         2622
       ]
     }
-  ]
+  ],
+  "rejected_primary_screenshots": [
+    {
+      "filename": "beanzen-real-main-replay-ios-en.png",
+      "sha256": "33c4543f420887e53f396b2ab85e5501b230f2119804da204e1590727c02f4cc",
+      "reason": "Bookoo weight-only replay rendered in GaggiMate machine mode. The ordinary-scale flow chart is absent. Reject as the primary scale scenario even if renamed."
+    }
+  ],
+  "updated_at_utc": "2026-11-06T15:39:15.020933+00:00"
 }

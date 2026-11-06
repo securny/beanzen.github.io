@@ -53,13 +53,13 @@ The owner rejected the brown/cream palette and finally selected variant 1: a ful
 
 ## Copy and template cleanup (2026-11-06)
 
-The owner requests natural, simple language with one idea per sentence. Apply infostyle to public product copy. Remove screenshot-authenticity captions and other process commentary. Keep factual equipment limitations. The MAIN brewing screen must lead the site, because it is the primary interface. Current captures include the native normal scale-mode setup and GaggiMate recording playback. No synthetic app UI or physical live Bluetooth claim.
+The owner requests natural, simple language with one idea per sentence. Apply infostyle to public product copy. Remove screenshot-authenticity captions and other process commentary. Keep factual equipment limitations. The MAIN brewing screen must lead the site, because it is the primary interface. The primary capture must show ordinary scale mode with nonempty weight and flow charts. Machine mode belongs only to the GaggiMate feature. No synthetic app UI or physical live Bluetooth claim.
 
 The owner authorizes removal of template branding and unused configuration/assets. The site has no external Jekyll theme dependency. Retain working local CSS and the MIT notice for copied code. Palette variables now live in _sass/colors.scss. See docs/template-audit.md.
 
 ## Actual journal captures
 
-The owner explicitly authorized read-only download of the paired iPhone journal and use of its actual coffee/brew records for screenshots. The raw journal/photos stay private and are not website assets. Replace all prepared-sample screenshots. The primary rich main capture uses one original Bookoo brew (20.4 g / 46.1 g) with native playback through the existing transport; it is not a physical live Bluetooth connection. The standard idle main screenshot is directly from iPhone. Keep that distinction in source provenance.
+The owner explicitly authorized read-only download of the paired iPhone journal and use of its actual coffee/brew records for screenshots. The raw journal/photos stay private and are not website assets. Replace all prepared-sample screenshots. The primary main capture feeds the279 original Bookoo weight/time samples into the unchanged production BrewView/session/flow algorithms using a separate native harness. It shows ordinary scale mode with both charts. The dose is20.4g and the raw header weight46.2g; the saved record final weight is46.1g. Simulator transport and clock state are injected; no physical live Bluetooth connection is claimed. The standard idle main screenshot is directly from iPhone. Keep that distinction in source provenance.
 
 
 ## Brew images and privacy (2026-11-06)
@@ -69,3 +69,8 @@ A brew image is a key acquisition feature. Show it immediately after the main-in
 Detailed feature descriptions use the same inline SVG icon system as the homepage. Give every feature an appropriate icon. Keep icons decorative and the heading as its accessible name.
 
 The owner confirms Russia as the country of the individual creator Dmitry Berezkin, general audience (not child-directed), and Gmail for hello@beanzen.ru. Public copy presents the support contact as operational. International policy coverage must disclose actual processing and conditional statutory rights without promising universal legal compliance. In-app links, console labels and operational duties remain separate from the website.
+
+
+## Primary screenshot acceptance
+
+The main screenshot must show ordinary scale mode, both nonempty weight and flow charts, the five metrics and ordinary scale controls. _data/screens.json[id=main] supplies both hero and feature capture; do not configure a second path. Capture provenance and exact-byte visual review are required. Known wrong GaggiMate playback bytes must not be published, even under another filename. See AGENTS.md and docs/screenshot-review.md.
