@@ -6,6 +6,7 @@ import json
 import re
 import sys
 import xml.etree.ElementTree as ET
+from html import unescape
 from html.parser import HTMLParser
 from pathlib import Path
 from urllib.parse import unquote, urljoin, urlsplit
@@ -91,6 +92,19 @@ def main():
                 url = "https://beanzen.ru" + base + "/" + other_prefix + route
                 check(document.alternates.get(other) == url, f"{relative}: wrong {other} alternate")
             text = (root / relative).read_text()
+            if route == "roasters/":
+                # Verify rendered code, not just source fences: raw HTML tags are invisible.
+                blocks = re.findall(r"<pre\b[^>]*>(.*?)</pre>", text, re.S)
+                code = [unescape(re.sub(r"<[^>]+>", "", block)) for block in blocks]
+                check(len(code) == 2, f"{relative}: expected two visible HTML examples")
+                for snippet in ('<script id="beanzen-brew-profile" type="application/json">',
+                                '<link rel="https://beanzen.ru/rel/brew-profile"',
+                                'href="https://your-roastery.com/profiles/coffee.json"'):
+                    check(any(snippet in block for block in code),
+                          f"{relative}: missing visible code example: {snippet}")
+                check('id="beanzen-brew-profile"' not in text
+                      and '<link rel="https://beanzen.ru/rel/brew-profile"' not in text,
+                      f"{relative}: instructional HTML must not become active markup")
             if route == "privacy/":
                 check("Dmitry Berezkin" in text and "Xiaomi" in text and "GitHub" in text,
                       f"{relative}: missing operator or integration disclosure")

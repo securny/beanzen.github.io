@@ -23,11 +23,11 @@ Open the example on a computer and scan its QR with Beanzen. The app should show
 
 Place one block in the original HTML of the relevant coffee page:
 
-```html
+~~~html
 <script id="beanzen-brew-profile" type="application/json">
   ...your complete brew-profile 0.5 document...
 </script>
-```
+~~~
 
 Include one coffee and all of its linked recipes. Include bag details only when they describe that individual bag. A product's standard package size does not identify a particular bag. Use stable UUIDv7 identifiers for the coffee and recipes.
 
@@ -35,11 +35,11 @@ Serialize the JSON and escape every `<` as `\u003c` before embedding it. Do not 
 
 An existing JSON service can instead be declared with an HTML link:
 
-```html
+~~~html
 <link rel="https://beanzen.ru/rel/brew-profile"
       href="https://your-roastery.com/profiles/coffee.json"
       type="application/json">
-```
+~~~
 
 The address must contain the complete request. Beanzen does not add parameters. Serve the page and profile over HTTPS.
 
