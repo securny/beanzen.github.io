@@ -72,7 +72,7 @@ def main():
             check("alt" in image, f"{relative}: missing image alternative")
         check("mailto:hello@beanzen.ru" in text, f"{relative}: no public contact")
 
-    required = ("", "features/", "scales/", "guide/", "support/", "privacy/", "delete-data/", "terms/")
+    required = ("", "features/", "scales/", "guide/", "support/", "privacy/", "delete-data/", "terms/", "roasters/")
     for locale in locales:
         lang = locale["code"]
         prefix = locale["prefix"].strip("/")

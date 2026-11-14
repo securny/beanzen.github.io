@@ -1,0 +1,112 @@
+{
+  "schemaVersion": "0.5",
+  "coffee": [
+    {
+      "id": "019a8200-1000-7000-8000-000000000001",
+      "roaster": "Beanzen Demo Roaster",
+      "name": "Beanzen Demo Coffee",
+      "code": "DEMO-COFFEE-001",
+      "url": "https://beanzen.ru/roasters/examples/inline-profile/",
+      "roast": "medium-light",
+      "beans": [
+        {
+          "country": "BR",
+          "region": "Cerrado",
+          "processing": "natural"
+        }
+      ],
+      "bags": [
+        {
+          "code": "DEMO-BAG-250",
+          "roastDate": "2026-11-01",
+          "weight": 250
+        }
+      ],
+      "recipeIds": [
+        "019a8200-1000-7000-8000-000000000002",
+        "019a8200-1000-7000-8000-000000000003"
+      ]
+    }
+  ],
+  "recipes": [
+    {
+      "id": "019a8200-1000-7000-8000-000000000002",
+      "name": "Demo V60",
+      "method": "filter",
+      "dose": 15,
+      "finalWeight": 250,
+      "brewTemperature": 93,
+      "brewTime": 180,
+      "brewer": {
+        "type": "cone-dripper",
+        "brand": "Hario",
+        "model": "V60"
+      },
+      "steps": [
+        {
+          "time": 0,
+          "duration": 10,
+          "action": "pour",
+          "target": {
+            "weight": 50
+          }
+        },
+        {
+          "time": 10,
+          "duration": 20,
+          "action": "bloom"
+        },
+        {
+          "time": 30,
+          "duration": 30,
+          "action": "pour",
+          "target": {
+            "weight": 150
+          }
+        },
+        {
+          "time": 60,
+          "duration": 30,
+          "action": "pour",
+          "target": {
+            "weight": 250
+          }
+        },
+        {
+          "time": 90,
+          "action": "drawdown"
+        }
+      ]
+    },
+    {
+      "id": "019a8200-1000-7000-8000-000000000003",
+      "name": "Demo French press",
+      "method": "filter",
+      "dose": 30,
+      "finalWeight": 500,
+      "brewTemperature": 94,
+      "brewTime": 480,
+      "brewer": {
+        "type": "french-press"
+      },
+      "steps": [
+        {
+          "time": 0,
+          "duration": 30,
+          "action": "pour",
+          "target": {
+            "weight": 500
+          }
+        },
+        {
+          "time": 240,
+          "action": "stir"
+        },
+        {
+          "time": 480,
+          "action": "press"
+        }
+      ]
+    }
+  ]
+}

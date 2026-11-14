@@ -102,3 +102,22 @@ The owner selected the fully light native palette: white/light gray, dark text, 
 
 
 Primary screenshot acceptance and the correction of the missing flow chart are documented in [docs/screenshot-review.md](docs/screenshot-review.md). Read [AGENTS.md](AGENTS.md) before capture or product-image changes. The site check rejects the old machine-mode image, a primary capture without reviewed weight/flow charts, and mismatches between the hero and primary feature selection. These checks enforce recorded review evidence; they do not replace inspection of actual pixels.
+
+## Roaster integration examples
+
+The English `/roasters/` and Russian `/ru/roasters/` pages explain the inline
+brew-profile 0.5 contract. The linked `/roasters/examples/inline-profile/` page
+and its Russian equivalent are synthetic, noindex scanner fixtures. Their single
+source is `_data/roaster_inline_example.json`: one coffee, one bag and two linked
+recipes. `_includes/roaster-inline-profile.html` serializes this data into one
+non-executable `application/json` script in the initial HTML. No JSON endpoint,
+JavaScript fetch or new backend is used.
+
+`assets/roasters/inline-profile-qr.png` was generated locally for the exact URL
+`https://beanzen.ru/roasters/examples/inline-profile/`, with error correction M and
+a four-module quiet zone. Changing that URL requires regenerating the QR.
+
+Check the generated HTML before deployment: one profile block, JSON equal to the
+source fixture, complete coffee-to-recipe references, and a size below the app's
+256 KiB HTML limit. The example is not a real roaster recommendation. App recipe
+storage and execution remain separate from profile acquisition.
