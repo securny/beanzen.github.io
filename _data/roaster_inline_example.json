@@ -8,6 +8,18 @@
       "code": "DEMO-COFFEE-001",
       "url": "https://beanzen.ru/roasters/examples/inline-profile/",
       "roast": "medium-light",
+      "photos": [
+        {
+          "uri": "https://beanzen.ru/assets/roasters/demo-coffee-bag.png"
+        }
+      ],
+      "scores": [
+        {
+          "system": "sca-q",
+          "score": 84,
+          "description": "Milk chocolate, roasted hazelnut, and orange zest."
+        }
+      ],
       "beans": [
         {
           "country": "BR",
