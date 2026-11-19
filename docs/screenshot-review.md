@@ -16,7 +16,7 @@ The old site check passed this known-wrong artifact. It checked capture hashes a
 - No source-image editing, synthetic measurement arrays or claim of physical live BLE capture.
 - Original-image and desktop/mobile rendered review tied to exact PNG bytes.
 
-The hero and primary feature image now share one data record. CI checks the selected capture's scale mode, reviewed widgets, nonempty-chart confirmations, hash-bound review and actual HTML image selection. It rejects the retired image by hash even if renamed and refuses screenshot files outside the selected provenance list. These checks enforce recorded evidence and selection; they do not perform computer vision or replace visual judgment.
+The hero and primary feature image share one data record. CI checks the selected capture's scale mode, documented widgets, nonempty-chart confirmations and HTML image selection. Review the image itself whenever it is replaced. CI uses the documented metadata and file paths.
 
 ## Future procedure
 

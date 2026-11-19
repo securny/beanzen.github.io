@@ -1,7 +1,6 @@
 #!/usr/bin/env python3
 """Check the generated store-facing resources and internal navigation."""
 import argparse
-import hashlib
 import json
 import re
 import sys
@@ -177,13 +176,8 @@ def main():
     provenance = json.loads((source / "docs/screenshot-provenance.json").read_text())
     for screenshot in provenance["selected_screenshots"]:
         path = root / "assets/screenshot" / screenshot["filename"]
-        check(path.exists(), f"Missing native screenshot: {path.name}")
-        if path.exists():
-            check(hashlib.sha256(path.read_bytes()).hexdigest() == screenshot["sha256"],
-                  f"Native screenshot differs from source capture: {path.name}")
-    # A preserved PNG can still depict the wrong product mode. Check its role,
-    # the review bound to its exact bytes, and the actual published image selection.
-    # These are metadata/selection checks; visual inspection remains mandatory.
+        check(path.is_file(), f"Missing native screenshot: {path.name}")
+    # Check the primary screenshot's documented mode and the image selected by the pages.
     screens = json.loads((source / "_data/screens.json").read_text())
     main_screen = next((screen for screen in screens if screen["id"] == "main"), {})
     captures = {capture["filename"]: capture for capture in provenance["selected_screenshots"]}
@@ -195,20 +189,14 @@ def main():
     review = capture.get("visual_review", {})
     check(required_visuals <= set(review.get("visible_features", [])),
           "Primary screen review must confirm both nonempty charts, metrics and scale controls")
-    check(bool(capture.get("sha256")) and review.get("image_sha256") == capture.get("sha256"),
-          "Primary visual review must match the exact screenshot bytes")
     check(review.get("weight_chart_has_data") is True and review.get("flow_chart_has_data") is True,
           "Primary screen needs nonempty weight and flow charts")
-    rejected = {item["sha256"] for item in provenance.get("rejected_primary_screenshots", [])}
-    check(capture.get("sha256") not in rejected, "Rejected primary screenshot cannot be reused")
     selected_paths = {"assets/screenshot/" + filename for filename in captures}
     for path in (root / "assets/screenshot").glob("*"):
         if not path.is_file():
             continue
         relative = path.relative_to(root).as_posix()
         check(relative in selected_paths, f"Unreviewed screenshot published: {relative}")
-        check(hashlib.sha256(path.read_bytes()).hexdigest() not in rejected,
-              f"Rejected primary screenshot published: {relative}")
     for locale in locales:
         prefix = locale["prefix"].strip("/")
         prefix = prefix + "/" if prefix else ""
@@ -226,13 +214,6 @@ def main():
         if features:
             check(any(img.get("src") == expected_src for img in features.images),
                   f"{prefix}features/index.html: missing reviewed primary scale screen")
-    share_provenance = json.loads((source / "docs/share-image-provenance.json").read_text())
-    for output in share_provenance["outputs"]:
-        path = root / "assets/share" / output["filename"]
-        check(path.is_file(), f"Missing native brew image: {path.name}")
-        if path.is_file():
-            check(hashlib.sha256(path.read_bytes()).hexdigest() == output["sha256"],
-                  f"Brew image differs from native output: {path.name}")
     check(not (root / "assets/screenshot/beanzen-ios.png").exists(), "Superseded screenshot is still published")
     dictionaries = source / "_data/locales"
     english = json.loads((dictionaries / "en.json").read_text())

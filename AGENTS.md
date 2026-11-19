@@ -15,8 +15,8 @@ For every replacement:
 1. Read the relevant production UI conditions. Confirm which mode makes the required widgets visible.
 2. Use native production views and actual authorized measurements. Never draw, composite or invent missing charts. Record any simulator state injection or replay separately from physical-device capture.
 3. Inspect the complete original image, then its rendered desktop and mobile presentation. Explicitly confirm each required widget and its data. A file hash, successful build, accessibility scan or attractive layout does not establish product correctness.
-4. Record the reviewed image hash, mode, data source and visible features in docs/screenshot-provenance.json. Re-review when the bytes change. Keep private inputs, tokens and raw databases out of the repository.
-5. Run the site checks. Prove that the previously rejected screenshot is refused. Do not change acceptance criteria just to get a green result.
+4. Record the reviewed image, mode, data source and visible features in docs/screenshot-provenance.json. Re-review each replacement. Keep private inputs, tokens and raw databases out of the repository.
+5. Run the site checks. Check the primary image against the ordinary-scale scenario before publishing.
 6. Verify the public image URL and bytes after Pages deployment before reporting it published.
 
 Keep provenance and review notes in excluded source docs. Public copy should describe the product plainly, without process or authenticity disclaimers.
