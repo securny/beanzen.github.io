@@ -55,11 +55,13 @@
         "model": "V60"
       },
       "grinder": {
-        "model": "Demo grinder",
-        "grindSetting": "Medium-fine"
+        "brand": "Mahlkönig",
+        "model": "EK43 (0–16)",
+        "grindSetting": "10.0",
+        "grindSizeMicrons": 569
       },
       "water": {
-        "name": "Demo brew water",
+        "name": "Remineralized reverse osmosis water",
         "tds": 90
       },
       "steps": [
@@ -110,12 +112,10 @@
         "type": "french-press"
       },
       "grinder": {
-        "model": "Demo grinder",
-        "grindSetting": "Coarse"
+        "grindSetting": "Medium to coarse"
       },
       "water": {
-        "name": "Demo brew water",
-        "tds": 110
+        "notes": "Suggested TDS: 100–150 ppm."
       },
       "steps": [
         {

@@ -119,5 +119,13 @@ a four-module quiet zone. Changing that URL requires regenerating the QR.
 
 Check the generated HTML before deployment: one profile block, JSON equal to the
 source fixture, complete coffee-to-recipe references, and a size below the app's
-256 KiB HTML limit. The example is not a real roaster recommendation. App recipe
-storage and execution remain separate from profile acquisition.
+256 KiB HTML limit. Coffee, bag and recipe steps are demo data. Equipment and water
+examples use published Tasty Coffee recommendations.
+
+- Demo V60 uses the grinder and the recipe-specific TDS from Tasty Coffee recipe 77937.
+  [Brazil Iguazu recipes](https://shop.tastycoffee.ru/coffee/braziliya-sul-de-minas?tab=recipes)
+- Demo French press uses the grind range in the brew guide and the TDS range in its
+  linked water guide. [French press](https://shop.tastycoffee.ru/blog/guide-french-press) ·
+  [Brewing water](https://shop.tastycoffee.ru/blog/kak-vibrat-vodu-dlya-kofe)
+
+App recipe storage and execution remain separate from profile acquisition.
