@@ -112,7 +112,7 @@
         "type": "french-press"
       },
       "grinder": {
-        "grindSetting": "Medium to coarse"
+        "info": "Medium to coarse grind."
       },
       "water": {
         "notes": "Suggested TDS: 100–150 ppm."
