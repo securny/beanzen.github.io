@@ -54,6 +54,14 @@
         "brand": "Hario",
         "model": "V60"
       },
+      "grinder": {
+        "model": "Demo grinder",
+        "grindSetting": "Medium-fine"
+      },
+      "water": {
+        "name": "Demo brew water",
+        "tds": 90
+      },
       "steps": [
         {
           "time": 0,
@@ -100,6 +108,14 @@
       "brewTime": 480,
       "brewer": {
         "type": "french-press"
+      },
+      "grinder": {
+        "model": "Demo grinder",
+        "grindSetting": "Coarse"
+      },
+      "water": {
+        "name": "Demo brew water",
+        "tds": 110
       },
       "steps": [
         {
