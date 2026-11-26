@@ -75,4 +75,5 @@
 </template>
 <noscript><p>{{ copy.javascript }}</p></noscript>
 <script type="application/json" id="profile-builder-copy">{{ copy | jsonify }}</script>
+<script type="application/json" id="profile-builder-catalogs">{{ site.data.profile_catalogs[page.lang] | jsonify }}</script>
 <script type="module" src="{{ '/assets/js/profile-builder.mjs' | relative_url }}"></script>

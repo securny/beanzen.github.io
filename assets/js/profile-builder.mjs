@@ -60,10 +60,9 @@ function originProfile(row) {
   const { country, variety, ...origin } = row.values;
   const bean = compact({
     ...origin,
-    country: country.toUpperCase(),
-    variety: variety ? variety.split(",").map(value => value.trim()).filter(Boolean) : undefined
+    country,
+    variety: variety.length ? variety : undefined
   });
-  if (bean.variety?.length === 0) delete bean.variety;
   need(Object.keys(bean).length, "missingOrigin", row, "country");
   return bean;
 }
@@ -117,7 +116,8 @@ export function buildProfile(coffeeRow, origins, recipeRows) {
   const v = coffeeRow.values;
   need(v.name, "requiredField", coffeeRow, "name");
   need(v.roaster, "requiredField", coffeeRow, "roaster");
-  need(!v.description || v.score !== undefined, "missingScore", coffeeRow, "score");
+  need(!(v.scoreSystem || v.description) || v.score !== undefined, "missingScore", coffeeRow, "score");
+  need(v.score === undefined || v.scoreSystem, "missingScoreSystem", coffeeRow, "scoreSystem");
   const id = uuid(v.id, coffeeRow);
   const ids = new Set([id]);
   const recipes = recipeRows.map(row => {
@@ -131,7 +131,7 @@ export function buildProfile(coffeeRow, origins, recipeRows) {
     id, name: v.name, roaster: v.roaster, code: v.code,
     url: secureURL(v.url, coffeeRow, "url"), roast: v.roast,
     photos: photo ? [{ uri: photo }] : undefined,
-    scores: v.score === undefined ? undefined : [compact({ system: "sca-q", score: v.score, description: v.description })],
+    scores: v.score === undefined ? undefined : [compact({ system: v.scoreSystem, score: v.score, description: v.description })],
     beans: origins.map(originProfile),
     recipeIds: recipes.length ? recipes.map(recipe => recipe.id) : undefined
   });
@@ -152,7 +152,7 @@ function element(tag, attrs = {}, label = "") {
   return node;
 }
 
-function mount(root, copy) {
+function mount(root, copy, catalogs) {
   const form = root.querySelector("form");
   const snippet = root.querySelector("#profile-snippet");
   const status = root.querySelector("[data-status]");
@@ -162,6 +162,7 @@ function mount(root, copy) {
   const glyphs = document.querySelector("#profile-glyphs").content;
   const numbers = new Intl.NumberFormat(document.documentElement.lang, { maximumFractionDigits: 3 });
   const plurals = new Intl.PluralRules(document.documentElement.lang);
+  const collator = new Intl.Collator(document.documentElement.lang);
   const origins = [];
   const recipes = [];
   let invalidField;
@@ -177,7 +178,7 @@ function mount(root, copy) {
   }
 
   function field(container, name, options = {}) {
-    const { type = "text", choices, required, min, max, pattern, length, value, icon, title, noLabel } = options;
+    const { type = "text", choices, sorted, required, min, max, length, value, icon, title, noLabel } = options;
     const wrapper = element("div", { class: "profileField" });
     const id = "profile-field-" + ++fieldID;
     const label = element("label", { for: id });
@@ -188,8 +189,11 @@ function mount(root, copy) {
     const control = element(choices ? "select" : type === "textarea" ? "textarea" : "input", { id, name });
     const example = copy.examples[name];
     if (choices) {
-      control.append(element("option", { value: "" }, example ? copy.selectExample + choices[example] : "—"));
-      for (const [token, text] of Object.entries(choices)) control.append(element("option", { value: token }, text));
+      const exampleLabel = choices[example];
+      control.append(element("option", { value: "" }, exampleLabel ? copy.selectExample + exampleLabel : "—"));
+      const entries = Object.entries(choices);
+      if (sorted) entries.sort((left, right) => collator.compare(left[1], right[1]));
+      for (const [token, text] of entries) control.append(element("option", { value: token }, text));
     } else {
       if (type === "textarea") control.rows = noLabel ? 4 : 2;
       else control.type = type;
@@ -198,7 +202,6 @@ function mount(root, copy) {
     if (type === "number") control.step = "any";
     if (min !== undefined) control.min = min;
     if (max !== undefined) control.max = max;
-    if (pattern) control.pattern = pattern;
     if (length) control.maxLength = length;
     if (value !== undefined) control.value = value;
     wrapper.append(label, control);
@@ -264,11 +267,12 @@ function mount(root, copy) {
     ...fields(coffeeArea, {
       roaster: { required: true, length: 200, icon: "roaster" },
       name: { required: true, length: 200, icon: "tag", type: "textarea" },
-      roast: { ...optionalText, icon: "temperature" }
+      roast: { choices: catalogs.roast, icon: "temperature" }
     }),
     ...fields(more(coffeeArea), { code: { ...optionalText, icon: "tag" }, url: link, id: { ...identity, value: createID() } }),
     ...fields(scoresArea, {
-      score: { type: "number", min: 0, max: 100, icon: "score" },
+      scoreSystem: { choices: catalogs.scoreSystem, icon: "tag" },
+      score: { type: "number", min: 0, max: 999, icon: "score" },
       description: { type: "textarea", length: 2000 }
     }),
     photo
@@ -282,13 +286,17 @@ function mount(root, copy) {
   coffee.name.rows = 1;
 
   function refreshCoffee() {
-    const { name, roast, roaster, description } = data(coffee).values;
-    const roastLabel = roast && !roast.toLocaleLowerCase().endsWith(copy.roastSuffix) ? roast + " " + copy.roastSuffix : roast;
+    const { name, roast, roaster, description, score, scoreSystem } = data(coffee).values;
+    const roastName = catalogs.roast[roast] ?? "";
+    const roastLabel = roastName && !roastName.toLocaleLowerCase().endsWith(copy.roastSuffix)
+      ? roastName + " " + copy.roastSuffix : roastName;
     const header = [roaster, roastLabel].filter(Boolean).join(" · ");
     coffeeHeading.textContent = header || name || copy.newCoffee;
     coffeeSubtitle.textContent = header ? name : "";
     coffeeSubtitle.hidden = !coffeeSubtitle.textContent;
-    setRequired(coffee.score, description !== "");
+    setRequired(coffee.scoreSystem, score !== undefined || description !== "");
+    setRequired(coffee.score, scoreSystem !== "" || description !== "");
+    coffee.score.max = scoreSystem === "sca-q" ? 100 : 999;
   }
 
   function removeButton(target, text, action) {
@@ -310,13 +318,15 @@ function mount(root, copy) {
     const primary = rows(origin.body);
     origin.fields = {
       ...fields(primary, {
-        country: { pattern: "[A-Za-z]{2}", length: 2, icon: "country" },
-        processing: optionalText, variety: { ...optionalText, icon: "bean" }
+        country: { choices: catalogs.country, sorted: true, icon: "country" },
+        processing: { choices: catalogs.processing, sorted: true },
+        variety: { choices: catalogs.variety, sorted: true, icon: "bean" }
       }),
       ...fields(more(primary), {
         region: optionalText, farm: optionalText, producer: optionalText, percentage: { ...positive, max: 100 }
       })
     };
+    origin.varieties = varietySelection(origin.fields.variety);
     origins.push(origin);
     removeButton(primary, copy.removeOrigin, () => {
       origins.splice(origins.indexOf(origin), 1);
@@ -329,6 +339,53 @@ function mount(root, copy) {
     origin.fields.country.focus();
     invalidate();
   });
+
+  function varietySelection(select) {
+    const values = new Set();
+    const chips = element("ul", { class: "profileSelection", hidden: "" });
+    const empty = select.options[0];
+    const example = empty.textContent;
+    select.after(chips);
+
+    select.addEventListener("change", () => {
+      const code = select.value;
+      if (!code || values.has(code)) return;
+      const option = select.selectedOptions[0];
+      const label = option.textContent;
+      values.add(code);
+      select.value = "";
+      option.disabled = true;
+      chips.hidden = false;
+      empty.textContent = copy.addVariety;
+
+      const item = element("li");
+      const button = element("button", {
+        type: "button", "aria-label": copy.removeVariety + " " + label
+      }, label + " ×");
+      button.addEventListener("click", () => {
+        values.delete(code);
+        option.disabled = false;
+        item.remove();
+        if (!values.size) {
+          chips.hidden = true;
+          empty.textContent = example;
+        }
+        invalidate();
+        select.focus();
+      });
+      item.append(button);
+      chips.append(item);
+      invalidate();
+    });
+
+    return values;
+  }
+
+  function readOrigin(origin) {
+    const row = data(origin.fields);
+    row.values.variety = [...origin.varieties];
+    return row;
+  }
 
   function readRecipe(recipe) {
     return { ...data(recipe.fields), steps: recipe.steps.map(step => data(step.fields)) };
@@ -533,7 +590,7 @@ function mount(root, copy) {
     event.preventDefault();
     invalidate();
     try {
-      const profile = buildProfile(data(coffee), origins.map(row => data(row.fields)), recipes.map(readRecipe));
+      const profile = buildProfile(data(coffee), origins.map(readOrigin), recipes.map(readRecipe));
       snippet.value = htmlBlock(profile);
       status.textContent = copy.generated;
       copyButton.disabled = false;
@@ -572,5 +629,6 @@ function mount(root, copy) {
 if (typeof document !== "undefined") {
   const root = document.querySelector("[data-profile-builder]");
   const copy = JSON.parse(document.querySelector("#profile-builder-copy").textContent);
-  mount(root, copy);
+  const catalogs = JSON.parse(document.querySelector("#profile-builder-catalogs").textContent);
+  mount(root, copy, catalogs);
 }

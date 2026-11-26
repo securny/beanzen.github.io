@@ -105,7 +105,7 @@ def main():
                       and '<link rel="https://beanzen.ru/rel/brew-profile"' not in text,
                       f"{relative}: instructional HTML must not become active markup")
             if route == "roasters/profile-builder/":
-                check({"profile-form", "profile-snippet", "profile-builder-copy"} <= document.ids,
+                check({"profile-form", "profile-snippet", "profile-builder-copy", "profile-builder-catalogs"} <= document.ids,
                       f"{relative}: missing profile builder elements")
                 check(f'src="{base}/assets/js/profile-builder.mjs"' in text,
                       f"{relative}: missing profile builder script")

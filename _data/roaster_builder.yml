@@ -25,7 +25,10 @@ en:
   duplicateID: Each recipe needs a different ID.
   https: Enter an HTTPS address.
   missingOrigin: Enter at least one detail for this origin, or remove it.
-  missingScore: Enter a score if you have a tasting description. Otherwise clear the description.
+  missingScore: Enter a score or clear the scoring system and description.
+  missingScoreSystem: Choose a scoring system.
+  addVariety: Add a variety
+  removeVariety: Remove
   stepContent: Choose an action or enter a target weight, temperature, flow, or pressure.
   firstStep: The first step must start at 0 seconds.
   stepOrder: This step starts before the previous step ends.
@@ -43,15 +46,16 @@ en:
     url: Coffee page URL
     photo: Coffee photo URL
     roast: Roast
-    score: SCA Q score
+    scoreSystem: System
+    score: Score
     description: Description
     id: Profile ID
-    country: Country (two-letter code)
+    country: Country
     region: Region
     farm: Farm
     producer: Producer
     processing: Processing
-    variety: Varieties (separated by commas)
+    variety: Varieties
     percentage: Blend share (%)
     recipeName: Recipe name
     dose: Coffee dose (g)
@@ -136,15 +140,16 @@ en:
     code: "CERRADO-24"
     url: "https://example.com/coffee"
     photo: "https://example.com/bag.jpg"
-    roast: "Medium-light"
+    roast: medium-light
+    scoreSystem: sca-q
     score: "84.5"
     description: "Cocoa, hazelnut and orange zest"
     country: "BR"
     region: "Cerrado Mineiro"
     farm: "Fazenda Santa Maria"
     producer: "Maria Alves"
-    processing: "Natural"
-    variety: "Catuaí, Mundo Novo"
+    processing: natural
+    variety: catuai
     percentage: "60"
     recipeName: "Cerrado V60"
     dose: "15"
@@ -213,7 +218,10 @@ ru:
   duplicateID: У каждого рецепта должен быть свой ID.
   https: Введите HTTPS-адрес.
   missingOrigin: Укажите хотя бы один параметр зерна или удалите его.
-  missingScore: Укажите балл для описания вкуса или очистите описание.
+  missingScore: Укажите балл или очистите систему оценки и описание.
+  missingScoreSystem: Выберите систему оценки.
+  addVariety: Добавить разновидность
+  removeVariety: Убрать
   stepContent: Выберите действие или укажите целевой вес, температуру, поток или давление.
   firstStep: Первый шаг должен начинаться с 0 секунд.
   stepOrder: Этот шаг начинается до окончания предыдущего.
@@ -231,15 +239,16 @@ ru:
     url: Ссылка на страницу кофе
     photo: Ссылка на фото кофе
     roast: Обжарка
-    score: Балл SCA Q
+    scoreSystem: Система оценки
+    score: Балл
     description: Описание
     id: ID профиля
-    country: Страна (двухбуквенный код)
+    country: Страна
     region: Регион
     farm: Ферма
     producer: Производитель
     processing: Обработка
-    variety: Разновидности через запятую
+    variety: Разновидности
     percentage: Доля в смеси (%)
     recipeName: Название рецепта
     dose: Доза кофе (г)
@@ -324,15 +333,16 @@ ru:
     code: "CERRADO-24"
     url: "https://example.com/coffee"
     photo: "https://example.com/bag.jpg"
-    roast: "Средне-светлая"
+    roast: medium-light
+    scoreSystem: sca-q
     score: "84.5"
     description: "Какао, фундук и цедра апельсина"
     country: "BR"
     region: "Серрадо-Минейро"
     farm: "Фазенда Санта-Мария"
     producer: "Мария Алвес"
-    processing: "Натуральная"
-    variety: "Катуаи, Мундо-Ново"
+    processing: natural
+    variety: catuai
     percentage: "60"
     recipeName: "Серрадо V60"
     dose: "15"

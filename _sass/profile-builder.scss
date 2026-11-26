@@ -1,5 +1,7 @@
 $profile-error-color: #a12621;
 $profile-target-color: #d62c32;
+$profile-control-border: #8e8e93;
+$profile-placeholder-color: #727279;
 
 .profileBuilder {
   display: grid;
@@ -69,7 +71,7 @@ $profile-target-color: #d62c32;
   align-items: start;
   min-width: 0;
   min-height: 44px;
-  padding: 0 12px;
+  padding: 5px 12px;
 }
 .profileRows > :is(.profileField, .profileMore, .profileStep, .profileTextButton):not(:first-child) {
   border-top: 1px solid #d1d1d6;
@@ -90,25 +92,57 @@ $profile-target-color: #d62c32;
   width: 100%;
   min-width: 0;
   min-height: 44px;
-  padding: 8px 4px;
-  border: 1px solid transparent;
+  padding: 8px 10px;
+  border: 1px solid $profile-control-border;
   border-radius: 8px;
   color: $feature-title-color;
-  background-color: transparent;
+  background-color: $body-color;
   font: inherit;
   box-sizing: border-box;
 }
 .profileField :is(input, textarea)::placeholder, #profile-snippet::placeholder {
-  color: $feature-text-color;
+  color: $profile-placeholder-color;
   opacity: 1;
 }
-.profileField select:has(option:checked[value=""]) { color: $feature-text-color; }
-.profileField :is(input, select, textarea):hover { border-color: #d1d1d6; }
+.profileField select:has(option:checked[value=""]) { color: $profile-placeholder-color; }
+.profileField select option { color: $feature-title-color; }
+.profileField :is(input, select, textarea):hover { border-color: $feature-text-color; }
+.profileField :is(input, select, textarea):focus {
+  border-color: $accent-color;
+  outline: 2px solid $accent-color;
+  outline-offset: 0;
+}
+.profileField [aria-invalid="true"] { border-color: $profile-error-color; }
 .profileField textarea { resize: vertical; field-sizing: content; }
 .profileField textarea[rows="1"] { resize: none; }
 .profileField:has(label.profileVisuallyHidden) { grid-template-columns: minmax(0, 1fr); }
 .profileField:has(label.profileVisuallyHidden) textarea { min-height: 104px; }
 .profileBuilder .profileRowHint { padding: 0 12px; }
+.profileBuilder .profileSelection {
+  grid-column: 2;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 6px;
+  margin: 2px 0 0;
+  padding: 0;
+  list-style: none;
+}
+.profileBuilder .profileSelection li { max-width: 100%; }
+.profileBuilder .profileSelection li + li { margin-top: 0; }
+.profileSelection button {
+  min-height: 44px;
+  padding: 4px 10px;
+  border: 1px solid #d1d1d6;
+  border-radius: 8px;
+  background: $feature-icons-background-color;
+  color: $feature-title-color;
+  font: inherit;
+  font-size: 1.4rem;
+  overflow-wrap: anywhere;
+  cursor: pointer;
+}
+.profileSelection button:hover { border-color: $profile-control-border; }
+
 
 .profileRecipe { min-width: 0; margin-bottom: 12px; }
 .profileBuilder .profileRecipe > summary {
@@ -220,7 +254,8 @@ $profile-target-color: #d62c32;
   .profileObject, .profileOutput { padding: 12px; }
   .profileField { grid-template-columns: minmax(100px, .8fr) minmax(0, 1fr); gap: 4px 6px; }
   .subPageContainer:has(.profileBuilder) { grid-template-columns: repeat(12, minmax(0, 1fr)); column-gap: 0; }
-  .profileField:has(input[type="url"]) { grid-template-columns: minmax(0, 1fr); gap: 0; }
-  .profileField:has(input[type="url"]) label { padding-bottom: 0; }
+  .profileField:has(input[type="url"], .profileSelection) { grid-template-columns: minmax(0, 1fr); gap: 0; }
+  .profileField:has(input[type="url"], .profileSelection) label { padding-bottom: 3px; }
+  .profileBuilder .profileSelection { grid-column: auto; margin-top: 6px; }
   .profileCharts text { font-size: 17px; }
 }
