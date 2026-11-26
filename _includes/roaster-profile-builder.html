@@ -3,22 +3,35 @@
 {% assign prefix = locale.prefix | default: '' %}
 <div class="profileBuilder" data-profile-builder hidden>
   <form id="profile-form">
-    <section class="profileSection" aria-labelledby="profile-coffee-title">
-      <h2 id="profile-coffee-title">{{ copy.coffee }}</h2>
-      <div class="profileFields" data-coffee></div>
-      <details class="profileDetails">
-        <summary>{{ copy.coffeeExtras }}</summary>
-        <div class="profileFields" data-coffee-extras></div>
+    <p class="profileHint"><span class="profileRequired" aria-hidden="true">*</span> {{ copy.requiredHint }}</p>
+    <div class="profileObject">
+      <header class="profileObjectHeader">
+        {% include icon.html name='bean' %}
+        <div>
+          <h2 data-coffee-heading>{{ copy.newCoffee }}</h2>
+          <p data-coffee-subtitle hidden></p>
+        </div>
+      </header>
+      <div class="profilePhoto" data-coffee-photo></div>
+
+      <details class="profileSection" open>
+        <summary>{{ copy.coffee }}</summary>
+        <div class="profileRows" data-coffee></div>
       </details>
+      <details class="profileSection">
+        <summary>{{ copy.scores }}</summary>
+        <div class="profileRows" data-scores></div>
+      </details>
+
       <div data-origins></div>
       <button class="profileTextButton" type="button" data-add-origin>{{ copy.addOrigin }}</button>
-    </section>
 
-    <section class="profileSection" aria-labelledby="profile-recipes-title">
-      <h2 id="profile-recipes-title">{{ copy.recipes }}</h2>
-      <div data-recipes></div>
-      <button class="profileTextButton" type="button" data-add-recipe>{{ copy.addRecipe }}</button>
-    </section>
+      <details class="profileSection profileRecipes" open>
+        <summary>{{ copy.recipes }}</summary>
+        <div data-recipes></div>
+        <button class="profileTextButton" type="button" data-add-recipe>{{ copy.addRecipe }}</button>
+      </details>
+    </div>
 
     <button class="profilePrimary" type="submit">{{ copy.generate }}</button>
     <p class="profileError" id="profile-error" data-error role="alert" hidden></p>
@@ -28,13 +41,38 @@
     <h2 id="profile-output-title">{{ copy.html }}</h2>
     <p>{{ copy.instructions }}</p>
     <label class="profileVisuallyHidden" for="profile-snippet">{{ copy.html }}</label>
-    <textarea id="profile-snippet" wrap="off" rows="12" readonly spellcheck="false" placeholder="{{ copy.placeholder | escape }}"></textarea>
+    <textarea id="profile-snippet" wrap="off" rows="9" readonly spellcheck="false" placeholder="{{ copy.placeholder | escape }}"></textarea>
     <button class="profilePrimary" type="button" data-copy disabled>{{ copy.copy }}</button>
     <p class="profileStatus" data-status role="status"></p>
-    <p><a href="{{ prefix | append: '/roasters/examples/inline-profile/' | relative_url }}">{{ copy.example }}</a></p>
-    <p><a href="{{ prefix | append: '/roasters/' | relative_url }}">{{ copy.guide }}</a></p>
+    <p><a href="{{ prefix | append: '/roasters/examples/inline-profile/' | relative_url }}">{{ copy.example }}</a> · <a href="{{ prefix | append: '/roasters/' | relative_url }}">{{ copy.guide }}</a></p>
+    <details class="profileCatalog">
+      <summary>{{ copy.catalogTitle }}</summary>
+      <dl>
+        {% for item in copy.catalog %}
+        <dt>{{ item.title }}</dt>
+        <dd>{{ item.fields }}</dd>
+        {% endfor %}
+      </dl>
+    </details>
   </aside>
 </div>
+<template id="profile-glyphs">
+  <span data-glyph="book">{% include icon.html name='book' %}</span>
+  <span data-glyph="photo">{% include icon.html name='photo' %}</span>
+  <span data-glyph="tag">{% include icon.html name='tag' %}</span>
+  <span data-glyph="roaster">{% include icon.html name='flame' %}</span>
+  <span data-glyph="temperature">{% include icon.html name='temperature' %}</span>
+  <span data-glyph="website">{% include icon.html name='website' %}</span>
+  <span data-glyph="bean">{% include icon.html name='bean' %}</span>
+  <span data-glyph="country">{% include icon.html name='globe' %}</span>
+  <span data-glyph="score">{% include icon.html name='star' %}</span>
+  <span data-glyph="brewer">{% include icon.html name='brewer' %}</span>
+  <span data-glyph="grinder">{% include icon.html name='grinder' %}</span>
+  <span data-glyph="water">{% include icon.html name='water' %}</span>
+  <span data-glyph="time">{% include icon.html name='timer' %}</span>
+  <span data-glyph="weight">{% include icon.html name='weight' %}</span>
+  <span data-glyph="person">{% include icon.html name='person' %}</span>
+</template>
 <noscript><p>{{ copy.javascript }}</p></noscript>
 <script type="application/json" id="profile-builder-copy">{{ copy | jsonify }}</script>
 <script type="module" src="{{ '/assets/js/profile-builder.mjs' | relative_url }}"></script>

@@ -1,72 +1,171 @@
+$profile-error-color: #a12621;
+$profile-target-color: #d62c32;
+
 .profileBuilder {
   display: grid;
-  grid-template-columns: minmax(0, 1.45fr) minmax(0, 1fr);
+  grid-template-columns: minmax(0, 1.65fr) minmax(0, 1fr);
   align-items: start;
-  gap: clamp(24px, 4vw, 64px);
-  margin: 36px 0 0;
+  gap: clamp(24px, 4vw, 52px);
+  margin-top: 32px;
 }
 
 .profileBuilder [hidden], .profileBuilder[hidden] { display: none; }
+.page.markdown-body .profileBuilder h2 { margin: 0; padding: 0; border: 0; }
+.profileBuilder p.profileHint { margin: 0 0 12px; font-size: 1.4rem; color: $feature-text-color; }
+.profileRequired { color: $profile-error-color; font-weight: 800; }
 
-.page.markdown-body .profileBuilder h2 { margin: 0 0 16px; padding: 0; border: 0; }
-.profileSection { margin-bottom: 32px; }
-.profileSection + .profileSection { border-top: 1px solid #d1d1d6; padding-top: 24px; }
-
-.profileFields {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 12px 16px;
+.profileObject, .profileOutput {
+  min-width: 0;
+  background: $feature-icons-background-color;
+  border-radius: 12px;
+  padding: 20px;
 }
 
-.profileFieldWide { grid-column: 1 / -1; }
-.profileField { min-width: 0; }
-.profileField label { display: block; font-weight: 700; font-size: 1.4rem; margin-bottom: 4px; }
+.profileObjectHeader {
+  display: flex;
+  gap: 10px;
+  align-items: start;
+  padding: 4px 4px 0;
+  margin-bottom: 16px;
+}
+.profileObjectHeader > svg { flex: none; margin-top: 3px; color: $feature-text-color; }
+.profileObjectHeader > div { min-width: 0; overflow-wrap: anywhere; }
+.profileBuilder .profileObjectHeader p { color: $feature-text-color; margin: 2px 0 0; }
+.profilePhoto { border-radius: 12px; background: $body-color; }
+.profilePhoto .profileField { min-height: 52px; }
+
+.profileSection { margin-top: 16px; min-width: 0; }
+.profileBuilder :is(.profileSection, .profileMore, .profileStep, .profileRecipe, .profileCatalog) > summary {
+  cursor: pointer;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 44px;
+  padding: 8px 12px;
+  overflow-wrap: anywhere;
+}
+.profileBuilder summary::-webkit-details-marker { display: none; }
+.profileBuilder :is(.profileSection, .profileMore, .profileStep, .profileRecipe, .profileCatalog) > summary::after {
+  content: "";
+  width: 7px;
+  height: 7px;
+  flex: none;
+  border: solid $feature-text-color;
+  border-width: 0 1.5px 1.5px 0;
+  transform: rotate(-45deg);
+  margin-inline-start: auto;
+}
+.profileBuilder details[open] > summary::after { transform: rotate(45deg); }
+.profileBuilder .profileSection > summary { color: $feature-text-color; font-weight: 700; }
+.profileRows, .profileRecipe > summary { border-radius: 12px; background: $body-color; }
+.profileRows .profileRows { border-radius: 0; background: transparent; }
+.profileRows + .profileRows { margin-top: 12px; }
+
+.profileField {
+  display: grid;
+  grid-template-columns: minmax(112px, .75fr) minmax(0, 1fr);
+  gap: 4px 12px;
+  align-items: start;
+  min-width: 0;
+  min-height: 44px;
+  padding: 0 12px;
+}
+.profileRows > :is(.profileField, .profileMore, .profileStep, .profileTextButton):not(:first-child) {
+  border-top: 1px solid #d1d1d6;
+}
+.profileField label {
+  display: flex;
+  align-items: start;
+  gap: 6px;
+  min-width: 0;
+  padding: 10px 0;
+  font-size: 1.4rem;
+  font-weight: 700;
+  overflow-wrap: anywhere;
+}
+.profileField label svg { width: 17px; height: 22px; flex: none; margin-right: 2px; }
 .profileField input, .profileField select, .profileField textarea, #profile-snippet {
   display: block;
   width: 100%;
+  min-width: 0;
   min-height: 44px;
-  padding: 8px 12px;
-  border: 1px solid #d1d1d6;
+  padding: 8px 4px;
+  border: 1px solid transparent;
   border-radius: 8px;
   color: $feature-title-color;
-  background-color: $body-color;
+  background-color: transparent;
   font: inherit;
   box-sizing: border-box;
 }
-
-.profileField textarea, #profile-snippet { resize: vertical; }
-.profileDetails { margin: 14px 0; }
-.profileDetails summary {
-  cursor: pointer;
-  padding: 8px 0;
-  min-height: 44px;
-  color: $accent-color;
-  font-weight: 700;
+.profileField :is(input, textarea)::placeholder, #profile-snippet::placeholder {
+  color: $feature-text-color;
+  opacity: 1;
 }
-.profileDetails .profileFields { margin-top: 8px; }
-.profileBuilder p.profileHint { margin: 0; font-size: 1.35rem; color: $feature-text-color; }
+.profileField select:has(option:checked[value=""]) { color: $feature-text-color; }
+.profileField :is(input, select, textarea):hover { border-color: #d1d1d6; }
+.profileField textarea { resize: vertical; field-sizing: content; }
+.profileField textarea[rows="1"] { resize: none; }
+.profileField:has(label.profileVisuallyHidden) { grid-template-columns: minmax(0, 1fr); }
+.profileField:has(label.profileVisuallyHidden) textarea { min-height: 104px; }
+.profileBuilder .profileRowHint { padding: 0 12px; }
 
-.profileGroup {
-  border: 1px solid #d1d1d6;
-  border-radius: 12px;
-  padding: 16px;
-  margin: 12px 0;
+.profileRecipe { min-width: 0; margin-bottom: 12px; }
+.profileBuilder .profileRecipe > summary {
+  gap: 10px;
+  font-size: 1.65rem;
+  padding-block: 10px;
 }
-.profileGroupHeader {
+.profileRecipe > summary svg { flex: none; width: 20px; }
+.profileRecipeHeader, .profileObjectSubtitle { display: block; min-width: 0; }
+.profileRecipeName { font-weight: 800; }
+.profileObjectSubtitle { color: $feature-text-color; font-size: 1.4rem; }
+.profileRecipe > div { padding: 16px 2px 0; }
+.profileRecipe > div > .profileRows { margin-top: 16px; }
+.profileBuilder .profileStep > summary { font-size: 1.5rem; }
+.profileStepClock { color: $feature-text-color; min-width: 4.6ch; font-variant-numeric: tabular-nums; }
+.profileStep > div { padding-bottom: 4px; }
+.profileRows > .profileTextButton { width: 100%; padding-inline: 12px; }
+
+.profileMetrics { margin-bottom: 8px; }
+.profileMetricUpper, .profileMetricLower { display: grid; text-align: center; gap: 0; padding: 4px 0; }
+.profileMetricUpper { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.profileMetricLower { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.profileMetric { padding: 0 4px; }
+.profileMetrics :is(.profileMetricUpper, .profileMetricLower) > :not(:first-child) { border-inline-start: 1px solid #d1d1d6; }
+.profileMetrics :is(.profileMetricUpper, .profileMetricLower) > .profileField {
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
   align-items: center;
-  justify-content: space-between;
-  gap: 0 12px;
-  margin-bottom: 6px;
+  gap: 0;
+  padding-inline: 5px;
 }
-.profileBuilder .profileGroupHeader :is(h3, h4) { margin: 0; font-size: 1.7rem; }
-.profileSteps .profileGroup {
-  border: 0;
-  border-top: 1px solid #d1d1d6;
-  border-radius: 0;
-  padding: 12px 0 0;
+.profileMetricLabel, .profileMetrics :is(.profileMetricUpper, .profileMetricLower) label {
+  color: $feature-text-color;
+  font-size: 1.35rem;
+  text-transform: uppercase;
+  min-height: 24px;
+  padding: 0;
+  font-weight: 700;
+  justify-content: center;
 }
+.profileMetricNumber, .profileMetrics :is(.profileMetricUpper, .profileMetricLower) input {
+  display: block;
+  font-family: ui-monospace, monospace;
+  font-variant-numeric: tabular-nums;
+  font-size: 1.85rem;
+  font-weight: 700;
+  min-height: 44px;
+  line-height: 1.35;
+  padding: 6px 2px;
+  text-align: center;
+  overflow-wrap: anywhere;
+}
+.profileMetrics :is(.profileMetricUpper, .profileMetricLower) input::placeholder { font-weight: 400; }
+.profileCharts svg { display: block; width: 100%; height: auto; }
+.profileChartGrid { stroke: #d1d1d6; stroke-width: 1; }
+.profileChartTarget { fill: none; stroke: $profile-target-color; stroke-width: 2; stroke-dasharray: 6 4; }
+.profileCharts text { font: 12px Manrope, sans-serif; fill: $feature-text-color; }
 
 .profilePrimary, .profileTextButton {
   font: inherit;
@@ -75,43 +174,53 @@
   cursor: pointer;
 }
 .profilePrimary { border: 0; border-radius: 8px; padding: 10px 16px; background: $accent-color; color: #fff; }
-.profilePrimary:hover:not(:disabled) { filter: brightness(.85); }
+.profilePrimary:hover:not(:disabled) { background: #0052a3; }
 .profilePrimary:disabled { opacity: .55; cursor: default; }
-.profileTextButton { border: 0; padding: 8px 0; background: transparent; text-align: start; color: $accent-color; }
+.profileObject + .profilePrimary { margin-top: 16px; }
+.profileTextButton { border: 0; padding: 8px 12px; background: transparent; text-align: start; color: $accent-color; }
 .profileTextButton:hover { text-decoration: underline; }
-.profileRemove { font-size: 1.35rem; }
+.profileRemove { color: $profile-error-color; font-size: 1.4rem; }
+.profileBuilder .profileError { margin: 6px 0; font-size: 1.4rem; color: $profile-error-color; grid-column: 1 / -1; }
 
-.profileOutput {
-  position: sticky;
-  top: 24px;
-  min-width: 0;
-  border-radius: 12px;
-  padding: 20px;
-  background: $feature-icons-background-color;
-}
-
+.profileOutput { position: sticky; top: 24px; }
 .profileOutput #profile-snippet {
-  font: 1.35rem/1.55 ui-monospace, Menlo, Consolas, monospace;
+  font: 1.35rem/1.55 ui-monospace, monospace;
   min-height: 160px;
+  padding-inline: 10px;
+  border: 1px solid #d1d1d6;
+  background: $body-color;
   margin: 12px 0;
   overflow: auto;
+  resize: vertical;
 }
-.profileBuilder .profileOutput p { margin: 8px 0; font-size: 1.45rem; }
+.profileBuilder .profileOutput p { margin: 8px 0; font-size: 1.4rem; }
 .profileOutput .profileStatus:empty { margin: 0; }
-.profileBuilder .profileError { margin: 8px 0; font-size: 1.4rem; color: #a12621; }
-.profileVisuallyHidden {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  overflow: hidden;
-  clip-path: inset(50%);
-}
+.profileCatalog { border-top: 1px solid #d1d1d6; margin-top: 12px; }
+.profileBuilder .profileCatalog > summary { padding-inline: 0; font-size: 1.4rem; font-weight: 700; }
+.profileCatalog dl { margin: 0; font-size: 1.4rem; }
+.profileCatalog dt { margin-top: 8px; font-weight: 700; }
+.profileCatalog dd { margin: 0 0 10px; color: $feature-text-color; }
+.profileVisuallyHidden { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); }
 
-@media (max-width: 760px) {
+@media (max-width: 780px) {
   .profileBuilder { grid-template-columns: minmax(0, 1fr); }
   .profileOutput { position: static; }
   .profileField input, .profileField select, .profileField textarea { font-size: max(16px, 1em); }
 }
-@media (max-width: 460px) {
-  .profileFields { grid-template-columns: minmax(0, 1fr); }
+.profileRecipe > div { container-type: inline-size; }
+
+@container (min-width: 520px) {
+  .profileMetrics { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); text-align: center; }
+  .profileMetricUpper, .profileMetricLower { display: contents; }
+  .profileMetricLower > :first-child { border-inline-start: 1px solid #d1d1d6; }
+  .profileMetrics > .profileMore { grid-column: 1 / -1; text-align: start; }
+}
+
+@media (max-width: 480px) {
+  .profileObject, .profileOutput { padding: 12px; }
+  .profileField { grid-template-columns: minmax(100px, .8fr) minmax(0, 1fr); gap: 4px 6px; }
+  .subPageContainer:has(.profileBuilder) { grid-template-columns: repeat(12, minmax(0, 1fr)); column-gap: 0; }
+  .profileField:has(input[type="url"]) { grid-template-columns: minmax(0, 1fr); gap: 0; }
+  .profileField:has(input[type="url"]) label { padding-bottom: 0; }
+  .profileCharts text { font-size: 17px; }
 }

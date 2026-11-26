@@ -1,7 +1,5 @@
 en:
   coffee: Coffee
-  coffeeExtras: Links, roast, score and profile ID
-  addOrigin: + Add origin
   addRecipe: + Add recipe
   recipes: Recipes
   generate: Generate HTML
@@ -13,12 +11,9 @@ en:
   guide: Integration guide
   javascript: Enable JavaScript to use the builder.
   identityHint: When updating a published profile, use its existing coffee and recipe IDs.
-  origin: Origin
   recipe: Recipe
   step: Step
   addStep: + Add step
-  stepTargets: Temperature, flow and pressure
-  equipment: Brewer, grinder, water and author
   removeOrigin: Remove origin
   removeRecipe: Remove recipe
   removeStep: Remove step
@@ -42,31 +37,31 @@ en:
   maxValue: The upper value must be at least as high as the lower value.
   sizeLimit: This block exceeds the 256 KiB limit even before it is added to the page. Use an external JSON profile.
   fields:
-    name: Coffee name
+    name: Name
     roaster: Roaster
     code: Coffee or lot code
     url: Coffee page URL
-    photo: Photo URL
-    roast: Roast level
+    photo: Coffee photo URL
+    roast: Roast
     score: SCA Q score
-    description: Tasting description
+    description: Description
     id: Profile ID
     country: Country (two-letter code)
     region: Region
     farm: Farm
     producer: Producer
-    processing: Process
+    processing: Processing
     variety: Varieties (separated by commas)
     percentage: Blend share (%)
     recipeName: Recipe name
     dose: Coffee dose (g)
     finalWeight: Final weight (g)
-    brewTime: Brew time (s)
+    brewTime: Total time (s)
     timeMax: Upper brew time (s)
     brewTemperature: Water temperature (°C)
     temperatureMax: Upper temperature (°C)
     method: Method
-    notes: Recipe notes
+    notes: Notes
     brewerType: Brewer type
     brewerBrand: Brewer brand
     brewerModel: Brewer model
@@ -106,10 +101,93 @@ en:
     turkish: Turkish
     moka: Moka
     cupping: Cupping
+  newCoffee: "New coffee"
+  scores: "Scores"
+  more: "More"
+  steps: "Steps"
+  finish: "Finish"
+  ratio: "Brew ratio"
+  brewer: "Brewer"
+  method: "Method"
+  grinder: "Grinder"
+  water: "Water"
+  notes: "Notes"
+  author: "Author"
+  catalogTitle: "Fields with Beanzen catalogs"
+  requiredHint: "Required fields"
+  weightChart: "Planned weight"
+  flowChart: "Planned flow"
+  weightUnit: g
+  roastSuffix: roast
+  flowUnit: g/s
+  stepCounts: {one: step, other: steps}
+  selectExample: "e.g. "
+  stepNeedsValue: "Choose an action or enter a target."
+  metricDose: "Dose, g"
+  metricWeight: "Weight, g"
+  metricTemperature: "Temp, °C"
+  metricTime: "Time"
+  extraMetrics: "Temperature range"
+  addOrigin: "+ Add bean"
+  origin: "Bean"
+  examples:
+    name: "Brazil Cerrado"
+    roaster: "North Roast"
+    code: "CERRADO-24"
+    url: "https://example.com/coffee"
+    photo: "https://example.com/bag.jpg"
+    roast: "Medium-light"
+    score: "84.5"
+    description: "Cocoa, hazelnut and orange zest"
+    country: "BR"
+    region: "Cerrado Mineiro"
+    farm: "Fazenda Santa Maria"
+    producer: "Maria Alves"
+    processing: "Natural"
+    variety: "Catuaí, Mundo Novo"
+    percentage: "60"
+    recipeName: "Cerrado V60"
+    dose: "15"
+    finalWeight: "250"
+    brewTime: "180"
+    timeMax: "195"
+    brewTemperature: "93"
+    temperatureMax: "95"
+    method: "filter"
+    brewerType: "Cone dripper"
+    brewerBrand: "Hario"
+    brewerModel: "V60 02"
+    grinderBrand: "Comandante"
+    grinderModel: "C40 MK4"
+    grindSetting: "24 clicks"
+    grindInfo: "Grind slightly finer if the drawdown is too fast."
+    waterName: "Remineralized water"
+    waterTDS: "90"
+    waterNotes: "Use water around 80–100 ppm TDS."
+    authorName: "Maria Alves"
+    authorURL: "https://example.com/maria"
+    time: "30"
+    duration: "15"
+    action: "pour"
+    targetWeight: "50"
+    targetTemperature: "93"
+    targetFlow: "3"
+    targetPressure: "2"
+    comment: "Pour in small circles."
+    notes: "Rinse the filter with hot water."
+  catalog:
+    - title: "Coffee"
+      fields: "Roaster and roast"
+    - title: "Scores"
+      fields: "Scoring system, such as SCA Q, SCA CVA or RRAF"
+    - title: "Bean"
+      fields: "Country, processing and varieties"
+    - title: "Recipe"
+      fields: "Method and brewer type. Step actions use a separate list."
+    - title: "Equipment"
+      fields: "Brewer and grinder models, grind settings for a selected grinder, and water templates."
 ru:
   coffee: Кофе
-  coffeeExtras: Ссылки, обжарка, оценка и ID профиля
-  addOrigin: + Добавить зерно
   addRecipe: + Добавить рецепт
   recipes: Рецепты
   generate: Сформировать HTML
@@ -121,12 +199,9 @@ ru:
   guide: Инструкция по подключению
   javascript: Включите JavaScript, чтобы воспользоваться конструктором.
   identityHint: При обновлении опубликованного профиля сохраните прежние ID кофе и рецептов.
-  origin: Зерно
   recipe: Рецепт
   step: Шаг
   addStep: + Добавить шаг
-  stepTargets: Температура, поток и давление
-  equipment: Брювер, кофемолка, вода и автор
   removeOrigin: Удалить зерно
   removeRecipe: Удалить рецепт
   removeStep: Удалить шаг
@@ -150,14 +225,14 @@ ru:
   maxValue: Верхнее значение должно быть не меньше нижнего.
   sizeLimit: Блок сам по себе превышает предел 256 КиБ. Используйте внешний JSON-профиль.
   fields:
-    name: Название кофе
+    name: Название
     roaster: Обжарщик
     code: Код кофе или лота
     url: Ссылка на страницу кофе
-    photo: Ссылка на фото
-    roast: Степень обжарки
+    photo: Ссылка на фото кофе
+    roast: Обжарка
     score: Балл SCA Q
-    description: Описание вкуса
+    description: Описание
     id: ID профиля
     country: Страна (двухбуквенный код)
     region: Регион
@@ -169,12 +244,12 @@ ru:
     recipeName: Название рецепта
     dose: Доза кофе (г)
     finalWeight: Итоговый вес (г)
-    brewTime: Время заваривания (с)
+    brewTime: Общее время (с)
     timeMax: Верхняя граница времени (с)
     brewTemperature: Температура воды (°C)
     temperatureMax: Верхняя граница температуры (°C)
     method: Метод
-    notes: Заметки к рецепту
+    notes: Заметки
     brewerType: Тип брювера
     brewerBrand: Бренд брювера
     brewerModel: Модель брювера
@@ -214,3 +289,88 @@ ru:
     turkish: Турка
     moka: Гейзерная кофеварка
     cupping: Каппинг
+  newCoffee: "Новый кофе"
+  scores: "Оценки"
+  more: "Ещё"
+  steps: "Шаги"
+  finish: "Финиш"
+  ratio: "Пропорция"
+  brewer: "Брювер"
+  method: "Метод"
+  grinder: "Кофемолка"
+  water: "Вода"
+  notes: "Заметки"
+  author: "Автор"
+  catalogTitle: "Поля со справочниками Beanzen"
+  requiredHint: "Обязательные поля"
+  weightChart: "Целевой вес"
+  flowChart: "Целевой поток"
+  weightUnit: г
+  roastSuffix: обжарка
+  flowUnit: г/с
+  stepCounts: {one: шаг, few: шага, other: шагов}
+  selectExample: "Например, "
+  stepNeedsValue: "Выберите действие или задайте цель."
+  metricDose: "Доза, г"
+  metricWeight: "Вес, г"
+  metricTemperature: "Темп., °C"
+  metricTime: "Время"
+  extraMetrics: "Диапазон температуры"
+  addOrigin: "+ Добавить зерно"
+  origin: "Зерно"
+  examples:
+    name: "Бразилия Серрадо"
+    roaster: "Север"
+    code: "CERRADO-24"
+    url: "https://example.com/coffee"
+    photo: "https://example.com/bag.jpg"
+    roast: "Средне-светлая"
+    score: "84.5"
+    description: "Какао, фундук и цедра апельсина"
+    country: "BR"
+    region: "Серрадо-Минейро"
+    farm: "Фазенда Санта-Мария"
+    producer: "Мария Алвес"
+    processing: "Натуральная"
+    variety: "Катуаи, Мундо-Ново"
+    percentage: "60"
+    recipeName: "Серрадо V60"
+    dose: "15"
+    finalWeight: "250"
+    brewTime: "180"
+    timeMax: "195"
+    brewTemperature: "93"
+    temperatureMax: "95"
+    method: "filter"
+    brewerType: "Конусная воронка"
+    brewerBrand: "Hario"
+    brewerModel: "V60 02"
+    grinderBrand: "Comandante"
+    grinderModel: "C40 MK4"
+    grindSetting: "24 щелчка"
+    grindInfo: "Смелите чуть мельче, если пролив идёт слишком быстро."
+    waterName: "Реминерализованная вода"
+    waterTDS: "90"
+    waterNotes: "Подойдёт вода с TDS 80–100 ppm."
+    authorName: "Мария Алвес"
+    authorURL: "https://example.com/maria"
+    time: "30"
+    duration: "15"
+    action: "pour"
+    targetWeight: "50"
+    targetTemperature: "93"
+    targetFlow: "3"
+    targetPressure: "2"
+    comment: "Вливайте небольшими кругами."
+    notes: "Промойте фильтр горячей водой."
+  catalog:
+    - title: "Кофе"
+      fields: "Обжарщик и степень обжарки"
+    - title: "Оценки"
+      fields: "Система оценки, например SCA Q, SCA CVA или RRAF"
+    - title: "Зерно"
+      fields: "Страна, обработка и разновидности"
+    - title: "Рецепт"
+      fields: "Метод и тип брювера. Для действий шага есть отдельный список."
+    - title: "Оборудование"
+      fields: "Модели брюверов и кофемолок, деления шкалы выбранной кофемолки и шаблоны воды."

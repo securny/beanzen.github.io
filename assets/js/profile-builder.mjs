@@ -1,3 +1,5 @@
+import { formatTime, showRecipeCharts } from "./profile-charts.mjs";
+
 const UUID_V7 = /^[0-9a-f]{8}-[0-9a-f]{4}-7[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i;
 const HTML_LIMIT = 256 * 1024;
 const MAX_BREW_SECONDS = 86400; // RecipeChartProjector accepts recipes up to 24 hours.
@@ -66,9 +68,8 @@ function originProfile(row) {
   return bean;
 }
 
-function recipeProfile(row) {
+function recipePlan(row) {
   const v = row.values;
-  need(v.recipeName, "requiredField", row, "recipeName");
   let previousEnd = 0;
   let previousWeight = 0;
   const steps = row.steps.map((step, index) => {
@@ -94,17 +95,21 @@ function recipeProfile(row) {
     return compact({ time: start, duration: length > 0 ? length : undefined, action, target, comment });
   });
   need(previousWeight === v.finalWeight, "finalWeight", row, "finalWeight");
+  return { finalWeight: v.finalWeight, brewTime: range(v.brewTime, v.timeMax, row, "timeMax"), steps };
+}
+
+function recipeProfile(row) {
+  const v = row.values;
+  need(v.recipeName, "requiredField", row, "recipeName");
   return compact({
     id: uuid(v.id, row), name: v.recipeName, method: v.method,
-    dose: v.dose, finalWeight: v.finalWeight,
-    brewTime: range(v.brewTime, v.timeMax, row, "timeMax"),
+    dose: v.dose, ...recipePlan(row),
     brewTemperature: range(v.brewTemperature, v.temperatureMax, row, "temperatureMax"),
     notes: v.notes,
     brewer: nested({ type: v.brewerType, brand: v.brewerBrand, model: v.brewerModel }),
     grinder: nested({ brand: v.grinderBrand, model: v.grinderModel, grindSetting: v.grindSetting, info: v.grindInfo }),
     water: nested({ name: v.waterName, tds: v.waterTDS, notes: v.waterNotes }),
-    author: nested({ name: v.authorName, url: secureURL(v.authorURL, row, "authorURL") }),
-    steps
+    author: nested({ name: v.authorName, url: secureURL(v.authorURL, row, "authorURL") })
   });
 }
 
@@ -149,38 +154,56 @@ function element(tag, attrs = {}, label = "") {
 
 function mount(root, copy) {
   const form = root.querySelector("form");
-  const snippet = root.querySelector("textarea");
+  const snippet = root.querySelector("#profile-snippet");
   const status = root.querySelector("[data-status]");
   const error = root.querySelector("[data-error]");
   const generate = form.querySelector('button[type="submit"]');
-  let invalidField;
   const copyButton = root.querySelector("[data-copy]");
+  const glyphs = document.querySelector("#profile-glyphs").content;
+  const numbers = new Intl.NumberFormat(document.documentElement.lang, { maximumFractionDigits: 3 });
+  const plurals = new Intl.PluralRules(document.documentElement.lang);
   const origins = [];
   const recipes = [];
+  let invalidField;
   let fieldID = 0;
 
+  function glyph(name) {
+    return glyphs.querySelector('[data-glyph="' + name + '"] > svg')?.cloneNode(true);
+  }
+
+  function setRequired(control, required) {
+    control.required = Boolean(required);
+    control.labels[0]?.querySelector(".profileRequired")?.toggleAttribute("hidden", !required);
+  }
+
   function field(container, name, options = {}) {
-    const { type = "text", choices, placeholder, required, min, max, pattern, length, value } = options;
+    const { type = "text", choices, required, min, max, pattern, length, value, icon, title, noLabel } = options;
     const wrapper = element("div", { class: "profileField" });
     const id = "profile-field-" + ++fieldID;
-    const label = element("label", { for: id }, copy.fields[name]);
+    const label = element("label", { for: id });
+    if (icon) label.append(glyph(icon));
+    label.append(document.createTextNode(title ?? copy.fields[name]));
+    if (name !== "id") label.append(element("span", { class: "profileRequired", "aria-hidden": "true", hidden: "" }, "*"));
+    if (noLabel) label.classList.add("profileVisuallyHidden");
     const control = element(choices ? "select" : type === "textarea" ? "textarea" : "input", { id, name });
+    const example = copy.examples[name];
     if (choices) {
-      control.append(element("option", { value: "" }, "—"));
-      for (const [token, title] of Object.entries(choices)) control.append(element("option", { value: token }, title));
-    } else if (type === "textarea") control.rows = 2;
-    else control.type = type;
-    if (required) control.required = true;
+      control.append(element("option", { value: "" }, example ? copy.selectExample + choices[example] : "—"));
+      for (const [token, text] of Object.entries(choices)) control.append(element("option", { value: token }, text));
+    } else {
+      if (type === "textarea") control.rows = noLabel ? 4 : 2;
+      else control.type = type;
+      if (example) control.placeholder = example;
+    }
     if (type === "number") control.step = "any";
     if (min !== undefined) control.min = min;
     if (max !== undefined) control.max = max;
     if (pattern) control.pattern = pattern;
     if (length) control.maxLength = length;
-    if (placeholder) control.placeholder = placeholder;
     if (value !== undefined) control.value = value;
-    if (type === "textarea") wrapper.classList.add("profileFieldWide");
     wrapper.append(label, control);
     container.append(wrapper);
+    setRequired(control, required);
     return control;
   }
 
@@ -195,38 +218,32 @@ function mount(root, copy) {
     return { fields: controls, values };
   }
 
-  function group(parent, list, title, remove, nextFocus, tag = "h3") {
-    const region = element("section", { class: "profileGroup" });
-    const header = element("div", { class: "profileGroupHeader" });
-    const h = element(tag, { id: "profile-group-" + ++fieldID });
-    region.setAttribute("aria-labelledby", h.id);
-    const button = element("button", { type: "button", class: "profileTextButton profileRemove" }, remove);
-    const group = { region, heading: h, removeButton: button };
-    function update() {
-      list.forEach((item, i) => {
-        item.heading.textContent = title + " " + (i + 1);
-        item.removeButton.setAttribute("aria-label", remove + " " + (i + 1));
-      });
-    }
-    button.addEventListener("click", () => {
-      list.splice(list.indexOf(group), 1);
-      region.remove();
-      update();
-      nextFocus.focus();
-      invalidate();
-    });
-    header.append(h, button);
-    region.append(header);
+  function disclosure(parent, title, className, open = false) {
+    const region = element("details", { class: className });
+    const summary = element("summary", {}, title);
+    const body = element("div");
+    region.open = open;
+    region.append(summary, body);
     parent.append(region);
-    list.push(group);
-    update();
-    return group;
+    return { region, summary, body };
   }
 
-  function grid(parent) {
-    const div = element("div", { class: "profileFields" });
-    parent.append(div);
-    return div;
+  function rows(parent) {
+    const body = element("div", { class: "profileRows" });
+    parent.append(body);
+    return body;
+  }
+
+  function section(parent, title, open = false) {
+    return rows(disclosure(parent, title, "profileSection", open).body);
+  }
+
+  function more(parent) {
+    return rows(disclosure(parent, copy.more, "profileMore").body);
+  }
+
+  function withIndex(title, index) {
+    return title + " " + (index + 1);
   }
 
   const optionalText = { length: 200 };
@@ -235,76 +252,250 @@ function mount(root, copy) {
   const weight = { ...positive, max: MAX_FLOAT };
   const temperature = { type: "number", min: 0, max: 100 };
   const notes = { type: "textarea", length: 4000 };
+  const link = { type: "url", length: 2000, icon: "website" };
+  const identity = { required: true, length: 36 };
+  const coffeeArea = root.querySelector("[data-coffee]");
+  const scoresArea = root.querySelector("[data-scores]");
+  const coffeeHeading = root.querySelector("[data-coffee-heading]");
+  const coffeeSubtitle = root.querySelector("[data-coffee-subtitle]");
+  const photo = field(root.querySelector("[data-coffee-photo]"), "photo", { ...link, icon: "photo" });
+
   const coffee = {
-    ...fields(root.querySelector("[data-coffee]"), { name: { required: true, length: 200 }, roaster: { required: true, length: 200 } }),
-    ...fields(root.querySelector("[data-coffee-extras]"), {
-      url: { type: "url", length: 2000 }, photo: { type: "url", length: 2000 },
-      code: optionalText, roast: optionalText, score: { type: "number", min: 0, max: 100 },
-      description: { type: "textarea", length: 2000 }, id: { required: true, value: createID(), length: 36 }
-    })
+    ...fields(coffeeArea, {
+      roaster: { required: true, length: 200, icon: "roaster" },
+      name: { required: true, length: 200, icon: "tag", type: "textarea" },
+      roast: { ...optionalText, icon: "temperature" }
+    }),
+    ...fields(more(coffeeArea), { code: { ...optionalText, icon: "tag" }, url: link, id: { ...identity, value: createID() } }),
+    ...fields(scoresArea, {
+      score: { type: "number", min: 0, max: 100, icon: "score" },
+      description: { type: "textarea", length: 2000 }
+    }),
+    photo
   };
-  coffee.id.parentElement.after(element("p", { class: "profileHint profileFieldWide" }, copy.identityHint));
+
+  function hintAfter(control, text) {
+    control.parentElement.after(element("p", { class: "profileHint profileRowHint" }, text));
+  }
+
+  hintAfter(coffee.id, copy.identityHint);
+  coffee.name.rows = 1;
+
+  function refreshCoffee() {
+    const { name, roast, roaster, description } = data(coffee).values;
+    const roastLabel = roast && !roast.toLocaleLowerCase().endsWith(copy.roastSuffix) ? roast + " " + copy.roastSuffix : roast;
+    const header = [roaster, roastLabel].filter(Boolean).join(" · ");
+    coffeeHeading.textContent = header || name || copy.newCoffee;
+    coffeeSubtitle.textContent = header ? name : "";
+    coffeeSubtitle.hidden = !coffeeSubtitle.textContent;
+    setRequired(coffee.score, description !== "");
+  }
+
+  function removeButton(target, text, action) {
+    const button = element("button", { type: "button", class: "profileTextButton profileRemove" }, text);
+    button.addEventListener("click", action);
+    target.append(button);
+    return button;
+  }
 
   const addOrigin = root.querySelector("[data-add-origin]");
-  addOrigin.addEventListener("click", () => {
-    const origin = group(root.querySelector("[data-origins]"), origins, copy.origin, copy.removeOrigin, addOrigin);
-    origin.fields = fields(grid(origin.region), {
-      country: { pattern: "[A-Za-z]{2}", length: 2, placeholder: "BR" }, region: optionalText, farm: optionalText,
-      producer: optionalText, processing: optionalText, variety: optionalText, percentage: { ...weight, max: 100 }
+  function refreshOrigins() {
+    origins.forEach((origin, i) => {
+      origin.summary.textContent = origins.length === 1 ? copy.origin : withIndex(copy.origin, i);
     });
+  }
+
+  addOrigin.addEventListener("click", () => {
+    const origin = disclosure(root.querySelector("[data-origins]"), copy.origin, "profileSection", true);
+    const primary = rows(origin.body);
+    origin.fields = {
+      ...fields(primary, {
+        country: { pattern: "[A-Za-z]{2}", length: 2, icon: "country" },
+        processing: optionalText, variety: { ...optionalText, icon: "bean" }
+      }),
+      ...fields(more(primary), {
+        region: optionalText, farm: optionalText, producer: optionalText, percentage: { ...positive, max: 100 }
+      })
+    };
+    origins.push(origin);
+    removeButton(primary, copy.removeOrigin, () => {
+      origins.splice(origins.indexOf(origin), 1);
+      origin.region.remove();
+      refreshOrigins();
+      addOrigin.focus();
+      invalidate();
+    });
+    refreshOrigins();
     origin.fields.country.focus();
     invalidate();
   });
 
+  function readRecipe(recipe) {
+    return { ...data(recipe.fields), steps: recipe.steps.map(step => data(step.fields)) };
+  }
+
+  function rangeText(lower, upper, format) {
+    if (lower === undefined) return "—";
+    return upper !== undefined && lower < upper ? format(lower) + "–" + format(upper) : format(lower);
+  }
+
+  function refreshRecipe(recipe, index, chartsChanged = true) {
+    const draft = readRecipe(recipe);
+    const v = draft.values;
+    recipe.heading.textContent = v.recipeName || withIndex(copy.recipe, index);
+    const brewer = [v.brewerBrand, v.brewerModel].filter(Boolean).join(" ") || v.brewerType || copy.methods[v.method];
+    const countLabel = copy.stepCounts[plurals.select(recipe.steps.length)] ?? copy.stepCounts.other;
+    const commonTemperature = !draft.steps.some(step => step.values.targetTemperature !== undefined);
+    const temperature = commonTemperature && v.brewTemperature !== undefined
+      ? rangeText(v.brewTemperature, v.temperatureMax, numbers.format) + " °C" : "";
+    recipe.subtitle.textContent = [brewer, recipe.steps.length + " " + countLabel, temperature].filter(Boolean).join(" · ");
+    recipe.ratio.textContent = v.dose > 0 && v.finalWeight > 0 ? "1:" + numbers.format(Math.round(v.finalWeight / v.dose * 10) / 10) : "—";
+    recipe.time.textContent = rangeText(v.brewTime, v.timeMax, formatTime);
+    recipe.finishTime.textContent = recipe.time.textContent;
+    let previous = 0;
+    for (const [index, step] of draft.steps.entries()) {
+      const { time, targetWeight, action, targetTemperature, targetFlow, targetPressure } = step.values;
+      const entry = recipe.steps[index];
+      entry.clock.textContent = formatTime(time);
+      let caption = copy.actions[action] || "";
+      if (targetWeight !== undefined) {
+        const delta = targetWeight - previous;
+        caption = [caption, (delta >= 0 ? "+" : "−") + numbers.format(Math.abs(delta)) + " " + copy.weightUnit, "→", numbers.format(targetWeight) + " " + copy.weightUnit].filter(Boolean).join(" ");
+        previous = targetWeight;
+      }
+      entry.title.textContent = caption || withIndex(copy.step, index);
+      setRequired(step.fields.duration, targetWeight !== undefined);
+      entry.hint.hidden = Boolean(action || [targetWeight, targetTemperature, targetFlow, targetPressure].some(value => value !== undefined));
+      entry.remove.hidden = recipe.steps.length === 1;
+    }
+    if (!chartsChanged) return;
+    let plan;
+    try {
+      plan = recipePlan(draft);
+    } catch (failure) {
+      if (!(failure instanceof ProfileError)) throw failure;
+    }
+    showRecipeCharts(recipe.charts, plan, copy);
+  }
+
+  function metricOutput(parent, title) {
+    const metric = element("div", { class: "profileMetric" });
+    const output = element("span", { class: "profileMetricNumber" }, "—");
+    metric.append(element("span", { class: "profileMetricLabel" }, title), output);
+    parent.append(metric);
+    return output;
+  }
+
+  function stepRow(parent, title, open) {
+    const step = disclosure(parent, "", "profileStep", open);
+    step.clock = element("span", { class: "profileStepClock" }, "—");
+    step.title = element("span", {}, title);
+    step.summary.append(step.clock, step.title);
+    return step;
+  }
+
   const addRecipe = root.querySelector("[data-add-recipe]");
   addRecipe.addEventListener("click", () => {
-    const recipe = group(root.querySelector("[data-recipes]"), recipes, copy.recipe, copy.removeRecipe, addRecipe);
-    recipe.fields = fields(grid(recipe.region), {
-      recipeName: { required: true, length: 200 }, method: { choices: copy.methods },
-      dose: { ...weight, max: 1000 }, finalWeight: { ...weight, required: true },
-      brewTime: { ...seconds, required: true }, timeMax: seconds,
-      brewTemperature: temperature, temperatureMax: temperature
+    const recipe = disclosure(root.querySelector("[data-recipes]"), "", "profileRecipe", true);
+    recipe.heading = element("span", { class: "profileRecipeName" });
+    recipe.subtitle = element("span", { class: "profileObjectSubtitle" });
+    const header = element("span", { class: "profileRecipeHeader" });
+    header.append(recipe.heading, recipe.subtitle);
+    recipe.summary.append(glyph("book"), header);
+
+    recipe.charts = element("div", { class: "profileCharts", hidden: "" });
+    const metrics = element("div", { class: "profileMetrics" });
+    const upper = element("div", { class: "profileMetricUpper" });
+    const lower = element("div", { class: "profileMetricLower" });
+    metrics.append(upper, lower);
+    recipe.body.append(recipe.charts, metrics);
+    recipe.fields = fields(upper, {
+      dose: { ...weight, max: 1000, title: copy.metricDose },
+      finalWeight: { ...weight, required: true, title: copy.metricWeight }
     });
-    const equipment = element("details", { class: "profileDetails" });
-    equipment.append(element("summary", {}, copy.equipment));
-    Object.assign(recipe.fields, fields(grid(equipment), {
-      brewerType: optionalText, brewerBrand: optionalText, brewerModel: optionalText,
-      grinderBrand: optionalText, grinderModel: optionalText, grindSetting: { length: 100 }, grindInfo: notes,
-      waterName: optionalText, waterTDS: { type: "number", min: 0 }, waterNotes: notes,
-      authorName: optionalText, authorURL: { type: "url", length: 2000 }, notes,
-      id: { required: true, value: createID(), length: 36 }
-    }));
-    recipe.fields.id.parentElement.after(element("p", { class: "profileHint profileFieldWide" }, copy.identityHint));
+    recipe.ratio = metricOutput(upper, copy.ratio);
+    recipe.time = metricOutput(lower, copy.metricTime);
+    recipe.fields.brewTemperature = field(lower, "brewTemperature", { ...temperature, title: copy.metricTemperature });
+    const extra = disclosure(metrics, copy.extraMetrics, "profileMore");
+    recipe.fields.temperatureMax = field(rows(extra.body), "temperatureMax", temperature);
+
+    const steps = section(recipe.body, copy.steps, true);
     const stepList = element("div", { class: "profileSteps" });
     const addStep = element("button", { type: "button", class: "profileTextButton" }, copy.addStep);
+    steps.append(stepList, addStep);
     recipe.steps = [];
+
+    // Finish owns the total time, shares its summary with the metric strip and is not removable.
+    const finish = stepRow(steps, copy.finish, true);
+    recipe.finishTime = finish.clock;
+    Object.assign(recipe.fields, fields(rows(finish.body), {
+      brewTime: { ...seconds, required: true, icon: "time" }, timeMax: seconds
+    }));
+
+    recipe.fields.recipeName = field(rows(recipe.body), "recipeName", { required: true, length: 200, type: "textarea", icon: "tag" });
+    recipe.fields.recipeName.rows = 1;
+    Object.assign(recipe.fields, fields(section(recipe.body, copy.brewer), {
+      brewerBrand: { ...optionalText, icon: "brewer" }, brewerModel: optionalText, brewerType: optionalText
+    }));
+    recipe.fields.method = field(rows(recipe.body), "method", { choices: copy.methods, icon: "brewer" });
+    Object.assign(recipe.fields, fields(section(recipe.body, copy.grinder), {
+      grinderBrand: { ...optionalText, icon: "grinder" }, grinderModel: optionalText, grindSetting: { length: 100 }, grindInfo: notes
+    }));
+    Object.assign(recipe.fields, fields(section(recipe.body, copy.water), {
+      waterName: { ...optionalText, icon: "water" }, waterTDS: { type: "number", min: 0 }, waterNotes: notes
+    }));
+    recipe.fields.notes = field(section(recipe.body, copy.notes), "notes", { ...notes, noLabel: true });
+    Object.assign(recipe.fields, fields(section(recipe.body, copy.author), {
+      authorName: { ...optionalText, icon: "person" }, authorURL: link
+    }));
+    recipe.fields.id = field(more(recipe.body), "id", { ...identity, value: createID() });
+    hintAfter(recipe.fields.id, copy.identityHint);
+    removeButton(recipe.body, copy.removeRecipe, () => {
+      recipes.splice(recipes.indexOf(recipe), 1);
+      recipe.region.remove();
+      recipes.forEach((item, index) => refreshRecipe(item, index, false));
+      addRecipe.focus();
+      invalidate();
+    });
+
     function appendStep() {
       const previous = recipe.steps.at(-1)?.fields;
-      const time = previous ? Math.round((Number(previous.time.value) + Number(previous.duration.value)) * 1e6) / 1e6 : 0;
-      const step = group(stepList, recipe.steps, copy.step, copy.removeStep, addStep, "h4");
-      step.fields = fields(grid(step.region), {
-        time: { type: "number", min: 0, max: MAX_BREW_SECONDS, required: true, value: time }, duration: seconds,
-        action: { choices: copy.actions, value: recipe.steps.length === 1 ? "pour" : "" },
-        targetWeight: { ...weight, min: 0 }, comment: { type: "textarea", length: 500 }
+      const start = previous ? Math.round((Number(previous.time.value) + Number(previous.duration.value)) * 1e6) / 1e6 : 0;
+      const step = stepRow(stepList, copy.step, true);
+      const editable = rows(step.body);
+      step.fields = fields(editable, {
+        time: { type: "number", min: 0, max: MAX_BREW_SECONDS, required: true, value: start, icon: "time" },
+        targetWeight: { ...weight, min: 0, icon: "weight" }, duration: { ...seconds, icon: "time" }
       });
-      const targets = element("details", { class: "profileDetails" });
-      targets.append(element("summary", {}, copy.stepTargets));
-      Object.assign(step.fields, fields(grid(targets), {
-        targetTemperature: temperature, targetFlow: { type: "number", min: 0 },
-        targetPressure: { type: "number", min: 0 }
+      const advanced = more(editable);
+      Object.assign(step.fields, fields(advanced, {
+        action: { choices: copy.actions }, targetTemperature: { ...temperature, icon: "temperature" },
+        targetFlow: { type: "number", min: 0 }, targetPressure: { type: "number", min: 0 },
+        comment: { type: "textarea", length: 500 }
       }));
-      step.region.append(targets);
-      // A recipe always has at least one step. Keep the only step in place.
-      recipe.steps.forEach(item => { item.removeButton.hidden = recipe.steps.length === 1; });
-      step.removeButton.addEventListener("click", () => {
-        recipe.steps.forEach(item => { item.removeButton.hidden = recipe.steps.length === 1; });
+      step.hint = element("p", { class: "profileHint profileRowHint" }, copy.stepNeedsValue);
+      editable.append(step.hint);
+      step.remove = removeButton(editable, copy.removeStep, () => {
+        recipe.steps.splice(recipe.steps.indexOf(step), 1);
+        step.region.remove();
+        refreshRecipe(recipe, recipes.indexOf(recipe));
+        addStep.focus();
+        invalidate();
       });
+      recipe.steps.push(step);
       return step;
     }
-    recipe.region.append(equipment, stepList, addStep);
+
+    recipes.push(recipe);
     appendStep();
-    addStep.addEventListener("click", () => { appendStep().fields.time.focus(); invalidate(); });
-    recipe.fields.recipeName.focus();
+    refreshRecipe(recipe, recipes.length - 1);
+    addStep.addEventListener("click", () => {
+      const step = appendStep();
+      refreshRecipe(recipe, recipes.indexOf(recipe));
+      step.fields.time.focus();
+      invalidate();
+    });
+    recipe.summary.focus();
     invalidate();
   });
 
@@ -318,19 +509,31 @@ function mount(root, copy) {
     status.textContent = "";
   }
 
-  // Open collapsed fields before native validation tries to focus them.
-  form.addEventListener("invalid", event => {
-    const details = event.target.closest("details");
-    if (details) details.open = true;
-  }, true);
-  form.addEventListener("input", invalidate);
+  function reveal(control) {
+    for (let parent = control.parentElement; parent && parent !== form; parent = parent.parentElement) {
+      if (parent.tagName === "DETAILS") parent.open = true;
+    }
+  }
+
+  form.addEventListener("invalid", event => reveal(event.target), true);
+  form.addEventListener("input", event => {
+    invalidate();
+    const container = event.target.closest(".profileRecipe");
+    if (!container) {
+      refreshCoffee();
+      return;
+    }
+    const index = recipes.findIndex(recipe => recipe.region === container);
+    if (index === -1) return;
+    const changesPlan = ["finalWeight", "brewTime", "timeMax", "time", "duration", "action", "targetWeight",
+      "targetTemperature", "targetFlow", "targetPressure"].includes(event.target.name);
+    refreshRecipe(recipes[index], index, changesPlan);
+  });
   form.addEventListener("submit", event => {
     event.preventDefault();
     invalidate();
     try {
-      const profile = buildProfile(data(coffee), origins.map(row => data(row.fields)), recipes.map(row => ({
-        ...data(row.fields), steps: row.steps.map(step => data(step.fields))
-      })));
+      const profile = buildProfile(data(coffee), origins.map(row => data(row.fields)), recipes.map(readRecipe));
       snippet.value = htmlBlock(profile);
       status.textContent = copy.generated;
       copyButton.disabled = false;
@@ -338,19 +541,18 @@ function mount(root, copy) {
     } catch (failure) {
       if (!(failure instanceof ProfileError)) throw failure;
       error.textContent = copy[failure.message];
-      error.hidden = false;
       const field = failure.field;
       if (field) {
         field.parentElement.append(error);
         field.setAttribute("aria-invalid", "true");
         field.setAttribute("aria-describedby", error.id);
         invalidField = field;
-        const details = field.closest("details");
-        if (details) details.open = true;
+        reveal(field);
         field.focus();
       } else {
         generate.after(error);
       }
+      error.hidden = false;
     }
   });
 
