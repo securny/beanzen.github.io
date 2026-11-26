@@ -92,6 +92,8 @@ $profile-placeholder-color: #727279;
   width: 100%;
   min-width: 0;
   min-height: 44px;
+  // Native selects need the same line, padding and borders as text inputs.
+  min-height: max(44px, calc(1lh + 18px));
   padding: 8px 10px;
   border: 1px solid $profile-control-border;
   border-radius: 8px;
@@ -115,6 +117,11 @@ $profile-placeholder-color: #727279;
 .profileField [aria-invalid="true"] { border-color: $profile-error-color; }
 .profileField textarea { resize: vertical; field-sizing: content; }
 .profileField textarea[rows="1"] { resize: none; }
+.profileField textarea[rows="1"]:placeholder-shown {
+  field-sizing: fixed;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
 .profileField:has(label.profileVisuallyHidden) { grid-template-columns: minmax(0, 1fr); }
 .profileField:has(label.profileVisuallyHidden) textarea { min-height: 104px; }
 .profileBuilder .profileRowHint { padding: 0 12px; }
