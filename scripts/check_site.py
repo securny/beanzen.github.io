@@ -95,12 +95,16 @@ def main():
                 # Verify rendered code, not just source fences: raw HTML tags are invisible.
                 blocks = re.findall(r"<pre\b[^>]*>(.*?)</pre>", text, re.S)
                 code = [unescape(re.sub(r"<[^>]+>", "", block)) for block in blocks]
-                check(len(code) == 2, f"{relative}: expected two visible HTML examples")
+                check(len(code) == 3, f"{relative}: expected three visible integration examples")
                 for snippet in ('<script id="beanzen-brew-profile" type="application/json">',
                                 '<link rel="https://beanzen.ru/rel/brew-profile"',
-                                'href="https://your-roastery.com/profiles/coffee.json"'):
+                                'href="https://your-roastery.example/profiles/coffee.json"',
+                                'Link: <https://your-roastery.example/profiles/coffee.json>; '
+                                'rel="https://beanzen.ru/rel/brew-profile"; type="application/json"'):
                     check(any(snippet in block for block in code),
                           f"{relative}: missing visible code example: {snippet}")
+                check(f"{base}/{prefix}roasters/profile-builder/" in document.links,
+                      f"{relative}: missing localized profile builder link")
                 check('id="beanzen-brew-profile"' not in text
                       and '<link rel="https://beanzen.ru/rel/brew-profile"' not in text,
                       f"{relative}: instructional HTML must not become active markup")
