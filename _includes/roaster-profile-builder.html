@@ -1,0 +1,40 @@
+{% assign copy = site.data.roaster_builder[page.lang] %}
+{% assign locale = site.data.languages | where: 'code', page.lang | first %}
+{% assign prefix = locale.prefix | default: '' %}
+<div class="profileBuilder" data-profile-builder hidden>
+  <form id="profile-form">
+    <section class="profileSection" aria-labelledby="profile-coffee-title">
+      <h2 id="profile-coffee-title">{{ copy.coffee }}</h2>
+      <div class="profileFields" data-coffee></div>
+      <details class="profileDetails">
+        <summary>{{ copy.coffeeExtras }}</summary>
+        <div class="profileFields" data-coffee-extras></div>
+      </details>
+      <div data-origins></div>
+      <button class="profileTextButton" type="button" data-add-origin>{{ copy.addOrigin }}</button>
+    </section>
+
+    <section class="profileSection" aria-labelledby="profile-recipes-title">
+      <h2 id="profile-recipes-title">{{ copy.recipes }}</h2>
+      <div data-recipes></div>
+      <button class="profileTextButton" type="button" data-add-recipe>{{ copy.addRecipe }}</button>
+    </section>
+
+    <button class="profilePrimary" type="submit">{{ copy.generate }}</button>
+    <p class="profileError" id="profile-error" data-error role="alert" hidden></p>
+  </form>
+
+  <aside class="profileOutput" aria-labelledby="profile-output-title">
+    <h2 id="profile-output-title">{{ copy.html }}</h2>
+    <p>{{ copy.instructions }}</p>
+    <label class="profileVisuallyHidden" for="profile-snippet">{{ copy.html }}</label>
+    <textarea id="profile-snippet" wrap="off" rows="12" readonly spellcheck="false" placeholder="{{ copy.placeholder | escape }}"></textarea>
+    <button class="profilePrimary" type="button" data-copy disabled>{{ copy.copy }}</button>
+    <p class="profileStatus" data-status role="status"></p>
+    <p><a href="{{ prefix | append: '/roasters/examples/inline-profile/' | relative_url }}">{{ copy.example }}</a></p>
+    <p><a href="{{ prefix | append: '/roasters/' | relative_url }}">{{ copy.guide }}</a></p>
+  </aside>
+</div>
+<noscript><p>{{ copy.javascript }}</p></noscript>
+<script type="application/json" id="profile-builder-copy">{{ copy | jsonify }}</script>
+<script type="module" src="{{ '/assets/js/profile-builder.mjs' | relative_url }}"></script>

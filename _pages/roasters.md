@@ -21,6 +21,8 @@ Open the example on a computer and scan its QR with Beanzen. The app should show
 
 ## Add your own profile
 
+[Open the coffee profile builder]({{ '/roasters/profile-builder/' | relative_url }}). Fill in the coffee and recipes to get the HTML block.
+
 Place one block in the original HTML of the relevant coffee page:
 
 ~~~html

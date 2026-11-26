@@ -9,7 +9,7 @@
     <main class="page markdown-body{% if page.wide %} widePage{% endif %}" id="main" tabindex="-1">
       <h1>{{ page.title }}</h1>
       {% if page.intro %}<p class="pageIntro">{{ page.intro }}</p>{% endif %}
-      {% if page.policy %}<p class="updated">{{ t.effective }} <time datetime="{{ site.policy_date }}">{{ site.policy_date }}</time></p>{% endif %}
+      {% if page.policy %}{% assign effective_date = page.policy_date | default: site.policy_date %}<p class="updated">{{ t.effective }} <time datetime="{{ effective_date }}">{{ effective_date }}</time></p>{% endif %}
       {% if page.sections %}<nav class="contents" aria-label="{{ t.on_this_page }}"><span>{{ t.on_this_page }}</span><ul>{% for item in page.sections %}<li><a href="#{{ item.id }}">{{ item.title }}</a></li>{% endfor %}</ul></nav>{% endif %}
       {{ content }}
     </main>

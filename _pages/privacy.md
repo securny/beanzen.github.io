@@ -7,6 +7,7 @@ lang: en
 key: privacy
 permalink: /privacy/
 policy: true
+policy_date: "2026-11-26"
 sections:
   - id: about
     title: "Who is responsible"
@@ -39,7 +40,7 @@ sections:
 
 For support and privacy requests, write to **[{{ site.email_address }}](mailto:{{ site.email_address }}?subject=Beanzen%20privacy%20request)**.
 
-Beanzen has no Beanzen accounts, developer-operated app servers, cloud synchronization, analytics, advertising or subscriptions. Your coffee journal stays on your device. The developer does not automatically receive your journal, photos, scale measurements or Xiaomi credentials. Optional connections, sharing, website hosting and support email involve the recipients described below.
+Beanzen has no Beanzen accounts, developer-operated journal servers, cloud synchronization, advertising or subscriptions. Your coffee journal is stored on your device. The developer does not automatically receive your journal, photos, scale readings or Xiaomi credentials. Optional connections, Android recognition library diagnostics, sharing, website hosting and support email involve the recipients described below.
 
 ## Data on your device {#local-data}
 
@@ -71,6 +72,16 @@ The scale token is saved locally in **Keychain on iOS** or **encrypted preferenc
 
 This sign-in is optional. It is not needed for scales that do not require Xiaomi authentication. Clearing the token in Beanzen does not delete your Xiaomi account or information held by Xiaomi.
 
+### Coffee bag labels and published profiles
+
+Beanzen uses your camera to read coffee bag labels and supported codes. It can also read a bag label from a photo you add to a coffee record. Beanzen reads the label on your device and may use an available on-device system model to suggest fields for your coffee record. Beanzen does not upload camera frames, label photos or recognized label text to an online recognition service.
+
+If a supported QR code contains a web address, Beanzen sends an HTTPS request to look for a published coffee profile. It may follow redirects and request the profile and any included image from the servers named by the source. These servers receive the requested URL, including any parameters present in it, and connection information such as your IP address. A parameter may identify a particular bag. The site or host handles the request according to its own privacy practices. Beanzen does not attach your local journal, camera image or Xiaomi credentials to these requests.
+
+### Android recognition library diagnostics
+
+On Android, Beanzen uses Google ML Kit for QR recognition and, when an on-device model is available, to help extract fields from label text. Independent of local recognition, Google says that its SDKs collect technical and usage data over HTTPS. The data may include device and app information, identifiers, feature settings and languages, event and error information, performance measurements, and input and output sizes. Google uses this information for diagnostics and usage analytics. The GenAI input, inference and output are processed on the device. [Google ML Kit data disclosure](https://developers.google.com/ml-kit/android-data-disclosure) · [About ML Kit GenAI](https://developers.google.com/ml-kit/genai)
+
 ### Photos, imports and brew images
 
 Beanzen reads the photos and import files you select. A brew image is generated **on your device** from a cover photo and the sections you enable: coffee, brewer, grinder, water, tasting rating and brew parameters. Beanzen does not send the image to an AI or remote image-generation service.
@@ -79,7 +90,7 @@ The generated JPEG is stored temporarily in the app's cache. Saving or sharing i
 
 ### Backups and platform diagnostics
 
-Your operating system or backup provider may include app data in a device backup, depending on your settings. The operating system or app store may also process crash reports and diagnostics under its own settings and policies. Beanzen does not operate these services and does not include an analytics or advertising SDK. Consult your platform's privacy and backup controls for these copies and reports.
+Your operating system or backup provider may include app data in a device backup, depending on your settings. The operating system or app store may also process crash reports and diagnostics under its own settings and policies. Beanzen does not operate these services. Its Android library diagnostics are described above. Consult your platform's privacy and backup controls for these copies and reports.
 
 ## Permissions {#permissions}
 
@@ -87,8 +98,8 @@ Beanzen requests access when it is needed for a feature:
 
 - **Bluetooth / Nearby devices:** find and connect to compatible scales.
 - **Local network:** connect to a machine you configure, such as GaggiMate.
-- **Camera:** take a photo when you choose to add one.
-- **Photos and files:** select images or import files and save or share a generated image using system controls.
+- **Camera:** take photos and scan coffee bag codes and labels.
+- **Photos and files:** select photos for your journal or label recognition, select import files, and save or share images using system controls.
 
 You can decline access or revoke it in your device settings. The corresponding feature may then be unavailable. Permission does not authorize advertising, location tracking or an upload of your journal to the developer.
 
@@ -105,6 +116,8 @@ Support mail is handled through **Google's Gmail service**. Google processes mai
 **GitHub Pages** hosts this site. GitHub records visitors' IP addresses for security purposes. See [GitHub Pages data collection](https://docs.github.com/en/pages/getting-started-with-github-pages/what-is-github-pages#data-collection) and the [GitHub Privacy Statement](https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement) for its processing and retention practices.
 
 This website adds no analytics, advertising trackers, cookies or browser storage. Fonts, icons and images are hosted with the site. Following a download or other external link takes you to that provider, whose privacy practices apply there.
+
+The coffee profile builder processes your form entries in your browser. If you publish the generated HTML, the information in it is available in the source of your page.
 
 ## Purposes and legal bases {#legal-bases}
 
@@ -135,6 +148,8 @@ Beanzen uses app-local storage, platform-protected token storage and HTTPS for X
 The developer handles support requests from **Russia**. If you contact support from another country, the information in your email is made available to the developer there. Gmail, GitHub and Xiaomi may process information in other countries under their respective policies. Google's and GitHub's services include processing in the United States; Xiaomi's processing locations depend on the service and region you select. The laws in those countries may differ from those in your country.
 
 Your local journal is not transferred to the developer merely because you install or use Beanzen. Transfers arise from the optional services, hosting, email or sharing described in this policy. The linked provider policies explain their processing locations and applicable transfer safeguards. Contact {{ site.email_address }} for questions about information held by the developer and any safeguards applicable to your request.
+
+Coffee profile publishers, image hosts and the Android SDK provider may process data in the countries where they operate. For access, retention or deletion of data held by a provider, contact that provider.
 
 ## Your rights and choices {#rights}
 

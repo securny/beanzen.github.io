@@ -72,7 +72,7 @@ def main():
             check("alt" in image, f"{relative}: missing image alternative")
         check("mailto:hello@beanzen.ru" in text, f"{relative}: no public contact")
 
-    required = ("", "features/", "scales/", "guide/", "support/", "privacy/", "delete-data/", "terms/", "roasters/")
+    required = ("", "features/", "scales/", "guide/", "support/", "privacy/", "delete-data/", "terms/", "roasters/", "roasters/profile-builder/")
     for locale in locales:
         lang = locale["code"]
         prefix = locale["prefix"].strip("/")
@@ -104,6 +104,11 @@ def main():
                 check('id="beanzen-brew-profile"' not in text
                       and '<link rel="https://beanzen.ru/rel/brew-profile"' not in text,
                       f"{relative}: instructional HTML must not become active markup")
+            if route == "roasters/profile-builder/":
+                check({"profile-form", "profile-snippet", "profile-builder-copy"} <= document.ids,
+                      f"{relative}: missing profile builder elements")
+                check(f'src="{base}/assets/js/profile-builder.mjs"' in text,
+                      f"{relative}: missing profile builder script")
             if route == "privacy/":
                 check("Dmitry Berezkin" in text and "Xiaomi" in text and "GitHub" in text,
                       f"{relative}: missing operator or integration disclosure")
