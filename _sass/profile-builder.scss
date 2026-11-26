@@ -106,6 +106,16 @@ $profile-placeholder-color: #727279;
   color: $profile-placeholder-color;
   opacity: 1;
 }
+// WebKit draws its native menu bezel shorter than the declared field height.
+.profileField select {
+  -webkit-appearance: none;
+  appearance: none;
+  padding-inline-end: 28px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 8'%3E%3Cpath d='m1 1 5 5 5-5' fill='none' stroke='%2358585e' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-position: right 9px center;
+  background-repeat: no-repeat;
+  background-size: 12px 8px;
+}
 .profileField select:has(option:checked[value=""]) { color: $profile-placeholder-color; }
 .profileField select option { color: $feature-title-color; }
 .profileField :is(input, select, textarea):hover { border-color: $feature-text-color; }
